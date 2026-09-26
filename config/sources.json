@@ -1,0 +1,46 @@
+{
+  "_comment": "四源配置。url 为主入口，fallbacks 是备用入口（按顺序尝试，第一个成功即停止）。",
+  "sources": [
+    {
+      "id": "ruanyifeng",
+      "name": "阮一峰 · 科技爱好者周刊",
+      "lang": "zh",
+      "kind": "feed",
+      "url": "https://www.ruanyifeng.com/blog/atom.xml",
+      "fallbacks": ["https://www.ruanyifeng.com/blog/feed.xml"],
+      "homepage": "https://www.ruanyifeng.com/blog/",
+      "why": "每周科技全扫：新工具、新框架、行业变化、招聘信息。中文防茧房最强。"
+    },
+    {
+      "id": "simonwillison",
+      "name": "Simon Willison's Weblog",
+      "lang": "en",
+      "kind": "feed",
+      "url": "https://simonwillison.net/atom/everything/",
+      "fallbacks": ["https://simonwillison.net/atom/entries/"],
+      "homepage": "https://simonwillison.net/",
+      "why": "专业工具提前渗透第一名：他每天试最新的 AI 工具/模型，写'我试了，结果是这个'。"
+    },
+    {
+      "id": "bytebytego",
+      "name": "ByteByteGo",
+      "lang": "en",
+      "kind": "feed",
+      "url": "https://blog.bytebytego.com/feed",
+      "fallbacks": ["https://blog.bytebytego.com/feed.xml"],
+      "homepage": "https://blog.bytebytego.com/archive?sort=new",
+      "why": "工程必备技能科普：API、负载均衡、Docker/K8s、模型部署、系统设计。"
+    },
+    {
+      "id": "importai",
+      "name": "Import AI（Jack Clark）",
+      "lang": "en",
+      "kind": "feed",
+      "url": "https://importai.substack.com/feed.xml",
+      "fallbacks": ["https://jack-clark.net/feed/"],
+      "homepage": "https://importai.substack.com/",
+      "why": "每周 AI 前沿方向扫描 + 政策视角，前 OpenAI 政策负责人执笔。",
+      "note": "Substack 有 Cloudflare JS 挑战，/feed 会 403；/feed.xml 可过，失败则退回作者原站 jack-clark.net。"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+name: daily-digest
+
+# 可选：让 GitHub Actions 每天自动跑，生成结果提交回仓库。
+# 需要先在仓库 Settings -> Secrets and variables -> Actions 里加一个 AI_API_KEY。
+# 不需要云端跑的话，直接删掉这个文件即可（本地 run_daily.bat 已够用）。
+
+on:
+  schedule:
+    - cron: "0 1 * * *"   # UTC 01:00 = 北京时间 09:00
+  workflow_dispatch:       # 允许手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 生成日报
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: https://api.deepseek.com/v1
+          AI_MODEL: deepseek-chat
+          # Actions 跑在海外，不需要代理，所以把代理留空
+          HTTP_PROXY: ""
+          HTTPS_PROXY: ""
+          MAX_ITEMS_PER_SOURCE: "6"
+        run: python -m src.main
+
+      - name: 提交结果
+        run: |
+          git config user.name  "digest-bot"
+          git config user.email "digest-bot@users.noreply.github.com"
+          git add output state
+          git diff --cached --quiet || git commit -m "digest: $(date -u +%Y-%m-%d)"
+          git push

@@ -1,0 +1,18 @@
+# 环境
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# 密钥（绝不入库）
+.env
+
+# 本地日志 / 临时文件
+logs/
+*.log
+_probe*.py
+_preview.png
+
+# output/ 与 state/ 都入库：
+#   output/ -> 每日日报，推到 GitHub 后可直接在线阅读（也可开 Pages）
+#   state/  -> 去重记录，入库后换机器/换 CI 也能接着跑，不会重复推送旧内容

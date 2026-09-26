@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>技术情报日报 · {{ date }}</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#fff; --ink:#1f2328; --muted:#656d76; --line:#d8dee4;
+    --accent:#0969da; --accent-soft:#ddf4ff; --hot:#bc4c00; --hot-soft:#fff1e5;
+    --tag:#eff2f5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:"Microsoft YaHei","PingFang SC","Segoe UI",system-ui,sans-serif;
+       line-height:1.75;font-size:15px;}
+  .wrap{max-width:900px;margin:0 auto;padding:32px 20px 80px}
+  header.top{border-bottom:3px solid var(--ink);padding-bottom:16px;margin-bottom:8px}
+  h1{margin:0 0 6px;font-size:27px;letter-spacing:.4px}
+  .meta{color:var(--muted);font-size:13px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:12px;
+         background:var(--accent-soft);color:var(--accent);border:1px solid #b6e3ff}
+  .badge.warn{background:var(--hot-soft);color:var(--hot);border-color:#ffd8b5}
+
+  h2{font-size:17px;margin:36px 0 14px;padding-left:11px;border-left:5px solid var(--accent)}
+  h2.hot{border-left-color:var(--hot)}
+
+  .overview{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 20px}
+  .overview li{margin:9px 0}
+
+  .deep{border:1px solid #ffd8b5;background:linear-gradient(180deg,#fffaf6,#fff);border-radius:10px;
+        padding:16px 20px;margin-bottom:14px}
+  .deep .t{font-size:16px;font-weight:600;margin-bottom:6px}
+  .deep .t a{color:var(--hot)}
+
+  .srcgroup{margin:26px 0 0}
+  .srcname{font-size:14px;font-weight:600;color:var(--muted);margin-bottom:10px;
+           display:flex;align-items:center;gap:9px}
+  .srcname::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .item{background:var(--card);border:1px solid var(--line);border-radius:10px;
+        padding:15px 18px;margin-bottom:11px}
+  .item .title{font-size:15.5px;font-weight:600;margin-bottom:7px}
+  .item .title a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  .item .title a:hover{border-bottom-color:var(--accent)}
+  .one{color:var(--ink);margin-bottom:6px}
+  .why{color:#3d444d;font-size:14px;background:#f6f8fa;border-left:3px solid var(--line);
+       padding:7px 11px;border-radius:0 6px 6px 0;margin:7px 0}
+  .why b{color:var(--accent);font-weight:600}
+  .act{font-size:13.5px;color:#0a3622;margin-top:7px}
+  .act b{color:#1a7f37}
+  .row{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:9px}
+  .tag{background:var(--tag);color:var(--muted);border-radius:5px;padding:1px 8px;font-size:12px}
+  .ts{color:#8b949e;font-size:12px;margin-left:auto}
+  .lang{font-size:11px;padding:0 6px;border-radius:4px;background:#eaeef2;color:#57606a}
+
+  .empty{color:var(--muted);background:var(--card);border:1px dashed var(--line);
+         border-radius:10px;padding:22px;text-align:center}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);
+         color:var(--muted);font-size:12.5px}
+  footer code{background:var(--tag);padding:1px 5px;border-radius:4px;font-size:12px}
+  @media print{body{background:#fff}.item,.overview,.deep{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>技术情报日报</h1>
+    <div class="meta">
+      <span>{{ date }}</span>
+      <span>{{ total }} 条新内容 · {{ groups|length }} 个来源</span>
+      {% if mode == 'ai' %}<span class="badge">AI 已分析</span>
+      {% else %}<span class="badge warn">抽取式摘要（未启用 AI）</span>{% endif %}
+    </div>
+  </header>
+
+  {% if overview %}
+  <h2>今日速览</h2>
+  <ul class="overview">
+    {% for line in overview %}<li>{{ line }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% set deep_items = items|selectattr('deep_read')|list %}
+  {% if deep_items %}
+  <h2 class="hot">值得深读{% if analysis.deep_read_note %} · {{ analysis.deep_read_note }}{% endif %}</h2>
+  {% for it in deep_items %}
+  <div class="deep">
+    <div class="t">{% if it.link %}<a href="{{ it.link }}" target="_blank" rel="noopener">{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}</div>
+    {% if it.one_line %}<div class="one">{{ it.one_line }}</div>{% endif %}
+    {% if it.why_matters %}<div class="why"><b>价值</b> {{ it.why_matters }}</div>{% endif %}
+    {% if it.action %}<div class="act"><b>下一步</b> {{ it.action }}</div>{% endif %}
+    <div class="row">
+      <span class="lang">{{ it.source_name }}</span>
+      {% for t in it.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  <h2>全部条目</h2>
+  {% for src_name, list in groups %}
+    <div class="srcgroup">
+      <div class="srcname">{{ src_name }}</div>
+      {% for it in list %}
+      <div class="item">
+        <div class="title">
+          {% if it.link %}<a href="{{ it.link }}" target="_blank" rel="noopener">{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}
+        </div>
+        {% if it.one_line %}<div class="one">{{ it.one_line }}</div>{% endif %}
+        {% if it.why_matters %}<div class="why"><b>价值</b> {{ it.why_matters }}</div>{% endif %}
+        {% if it.action %}<div class="act"><b>下一步</b> {{ it.action }}</div>{% endif %}
+        <div class="row">
+          {% for t in it.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+          {% if it.published %}<span class="ts">{{ it.published[:10] }}</span>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+  <footer>
+    由 <code>tech-daily-digest</code> 生成于 {{ generated_at }}<br>
+    来源：{% for s in source_names %}{{ s }}{% if not loop.last %} · {% endif %}{% endfor %}
+  </footer>
+</div>
+</body>
+</html>
