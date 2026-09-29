@@ -1,16 +1,23 @@
 name: daily-digest
 
-# 可选：让 GitHub Actions 每天自动跑，生成结果提交回仓库。
-# 需要先在仓库 Settings -> Secrets and variables -> Actions 里加一个 AI_API_KEY。
-# 不需要云端跑的话，直接删掉这个文件即可（本地 run_daily.bat 已够用）。
+# 每天北京时间 09:00 在 GitHub 服务器上自动抓取 → 分析 → 生成日报 → 提交回仓库。
+# 提交回去之后，你开了 GitHub Pages 的话，页面会自动更新。
+#
+# 【必须做的事】仓库 Settings → Secrets and variables → Actions
+#                → New repository secret，名字填 AI_API_KEY，值填你的 DeepSeek key。
 
 on:
   schedule:
-    - cron: "0 1 * * *"   # UTC 01:00 = 北京时间 09:00
-  workflow_dispatch:       # 允许手动触发
+    - cron: "0 1 * * *"    # UTC 01:00 = 北京时间 09:00
+  workflow_dispatch:        # 也允许你在网页上手动点一下立即跑
 
 permissions:
-  contents: write
+  contents: write           # 必须：否则机器人没法把生成结果提交回仓库
+
+# 防止两次运行撞车（比如手动触发时定时任务正好也在跑）
+concurrency:
+  group: digest
+  cancel-in-progress: false
 
 jobs:
   digest:
@@ -21,25 +28,34 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
       - name: 安装依赖
         run: pip install -r requirements.txt
 
       - name: 生成日报
         env:
+          # 密钥从仓库 Secret 注入，日志里会自动打码，不会泄漏
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_BASE_URL: https://api.deepseek.com/v1
           AI_MODEL: deepseek-chat
-          # Actions 跑在海外，不需要代理，所以把代理留空
+          # GitHub 的服务器在墙外，四个源都直连可达，所以代理必须留空
           HTTP_PROXY: ""
           HTTPS_PROXY: ""
           MAX_ITEMS_PER_SOURCE: "6"
         run: python -m src.main
 
-      - name: 提交结果
+      - name: 提交结果回仓库
         run: |
+          set -e
           git config user.name  "digest-bot"
           git config user.email "digest-bot@users.noreply.github.com"
-          git add output state
-          git diff --cached --quiet || git commit -m "digest: $(date -u +%Y-%m-%d)"
+          git add -A output state
+          if git diff --cached --quiet; then
+            echo "本次没有新内容，无需提交。"
+            exit 0
+          fi
+          git commit -m "digest: $(date -u +%Y-%m-%d)"
+          # 若你本地也在推送，先 rebase 一下再推，避免撞车
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push
