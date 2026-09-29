@@ -5,7 +5,7 @@ name: daily-digest
 #
 # 【需要的仓库设置】
 #   1. Settings → Secrets and variables → Actions → New repository secret
-#      名字 AI_API_KEY，值填你的 DeepSeek key
+#      名字用 Deepseek_Daily_Report 或 AI_API_KEY 都可以（下面两个都认，前者优先）
 #   2. Settings → Actions → General → 底部 Workflow permissions
 #      选 "Read and write permissions"
 #   3. Settings → Pages → Source 选 "GitHub Actions"（新版界面默认就是这个）
@@ -46,7 +46,9 @@ jobs:
 
       - name: 生成日报
         env:
-          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          # Secret 名字两个都认：优先 Deepseek_Daily_Report，其次 AI_API_KEY。
+          # 这样无论你把密钥存成哪个名字都能跑，不用来回改。
+          AI_API_KEY: ${{ secrets.Deepseek_Daily_Report || secrets.AI_API_KEY }}
           AI_BASE_URL: https://api.deepseek.com/v1
           AI_MODEL: deepseek-chat
           # GitHub 服务器在墙外，四个源直连可达，代理必须留空

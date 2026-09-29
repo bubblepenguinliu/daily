@@ -175,7 +175,8 @@ https://<用户名>.github.io/<仓库名>/output/latest.html   # 直达最新
 ### 5. 验收清单
 
 ```
-□ Settings → Secrets and variables → Actions 里有 AI_API_KEY
+□ Settings → Secrets and variables → Actions 里有 Deepseek_Daily_Report（或 AI_API_KEY）
+    workflow 两个名字都认，优先 Deepseek_Daily_Report
 □ Settings → Actions → General → Workflow permissions 选了 Read and write permissions
 □ Settings → Pages → Source 是 GitHub Actions
 □ Actions 标签里手动 Run workflow 一次，跑出绿勾
