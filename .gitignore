@@ -12,6 +12,15 @@ logs/
 *.log
 _probe*.py
 _preview.png
+_diag*.py
+_dump.html
+_scroll.html
+_artcheck.html
+_frame*.html
+_f.html
+
+# 设计探索产物的 QA 截图（三方向初稿 shot-*.png 保留，这些是一次性校对图）
+design/v*.png
 
 # Pages 构建产物
 _site/

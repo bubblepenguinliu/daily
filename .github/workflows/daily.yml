@@ -64,6 +64,10 @@ jobs:
           HTTP_PROXY: ""
           HTTPS_PROXY: ""
           MAX_ITEMS_PER_SOURCE: "6"
+          # 每期做几篇"全文精译 + 页边批注"（成本与长度的总开关）
+          DIGEST_FULL_COUNT: "3"
+          # 送进模型的正文上限（字符）。调大会更完整，也更贵
+          DIGEST_BODY_LIMIT: "6000"
         run: python -m src.main
 
       # continue-on-error：即使这一步因为 git 冲突失败，也不影响后面的 Pages 发布。

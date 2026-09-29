@@ -65,6 +65,25 @@ MAX_ITEMS_PER_SOURCE=6
 
 ---
 
+## 二之二、日报长什么样
+
+页面是**编辑部晨报**（衬线 / 报纸版式），三段式：
+
+1. **今日提要** —— 5 条编号速览，扫一眼知道今天发生了什么
+2. **值得细读 · 全文精读** —— 每期挑 ≤3 篇（`DIGEST_FULL_COUNT` 可调）：
+   - **完整翻译**：抓取文章正文后逐段译成中文，忠实原文、不压成摘要；技术名词保留英文
+   - **页边批注**：批注浮在正文右侧的页边空白处，与所属段落对齐，**每篇至少 5 条**
+     （类型：背景 / 延伸 / 质疑 / 数据 / 实操，补的是"原文没说的信息"）
+   - **原文对照**：英文源可展开折叠区看原文（`<details>`，不用 JS）
+   - **中文源不翻译**：阮一峰这类本身是中文的源，自动跳过翻译、只加批注（避免无意义的中译中）
+3. **其余条目** —— 按来源分组的一句话摘要 + 价值判断 + 下一步动作
+
+**手机端**：窄屏（<1120px）批注自动从页边塌成行内块并跟随在所属段落之后；
+正文 16.5px、无横向滚动、报头自适应。已在 390 / 480 / 768 / 900 / 1120 / 1440 六个宽度
+实测 `scrollWidth == clientWidth`（零横向溢出）。
+
+---
+
 ## 三、目录结构
 
 ```
@@ -72,15 +91,18 @@ tech-daily-digest/
 ├── config/sources.json      # 四源配置（含备用入口）
 ├── src/
 │   ├── fetch.py             # 抓取层：curl_cffi 伪装浏览器指纹 + 多入口回退
-│   ├── store.py             # 去重层：SQLite 记录"已经给你看过的条目"
-│   ├── analyze.py           # 分析层：调 LLM 做摘要/价值判断；无 Key 自动降级
+│   ├── store.py             # 去重层：JSONL + git union 合并（永不冲突）
+│   ├── extract.py           # 正文层：trafilatura 抽文章正文 + 清洗样板段落
+│   ├── analyze.py           # 分析层：第一遍速览/挑选 + 第二遍翻译/批注；无 Key 自动降级
 │   ├── render.py            # 渲染层：Jinja2 套模板出 HTML
-│   └── main.py              # CLI 入口，串起 5 个阶段
-├── templates/digest.html.j2 # HTML 模板
+│   └── main.py              # CLI 入口，串起 6 个阶段
+├── templates/digest.html.j2 # HTML 模板（方向 A 编辑部晨报 + Tufte 式页边批注）
 ├── output/                  # 生成的日报（入库，方便在线阅读）
-├── state/seen.sqlite        # 去重状态（入库，换机器也能接着跑）
+├── state/seen.jsonl         # 去重状态（入库；JSONL 每行独立，配合 merge=union 永不冲突）
+├── direction-approved.md    # 设计方向门文件（记录三方向初稿与选定结论）
+├── design/                  # 设计探索：三方向初稿 + 生成脚本 + 对比页
 ├── run_daily.bat            # 一键运行
-└── .github/workflows/daily.yml  # 可选的云端每日自动运行
+└── .github/workflows/daily.yml  # 云端每日自动运行 + 自动发布到 Pages
 ```
 
 ---
