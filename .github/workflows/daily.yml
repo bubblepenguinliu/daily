@@ -13,7 +13,16 @@ name: daily-digest
 on:
   schedule:
     - cron: "0 1 * * *"    # UTC 01:00 = 北京时间 09:00
-  workflow_dispatch:
+  workflow_dispatch:        # 网页上「Run workflow」手动触发
+  push:
+    branches: [ main ]
+    # 机器人自己提交的日报/状态变化不算"代码变更"，不触发新一轮，避免死循环。
+    # 也就是说：改了 src/ config/ workflow 才会自动跑一次，日报提交不会。
+    paths-ignore:
+      - "output/**"
+      - "state/**"
+      - "README.md"
+      - "index.html"
 
 # contents: write  -> 把生成的日报提交回仓库
 # pages: write     -> 发布到 GitHub Pages
@@ -57,7 +66,10 @@ jobs:
           MAX_ITEMS_PER_SOURCE: "6"
         run: python -m src.main
 
+      # continue-on-error：即使这一步因为 git 冲突失败，也不影响后面的 Pages 发布。
+      # 日报能不能看到是第一优先级，归档进 git 是第二优先级。
       - name: 提交结果回仓库
+        continue-on-error: true
         run: |
           set -e
           git config user.name  "digest-bot"
