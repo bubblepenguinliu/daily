@@ -21,6 +21,7 @@ _f.html
 
 # 设计探索产物的 QA 截图（三方向初稿 shot-*.png 保留，这些是一次性校对图）
 design/v*.png
+design/live-*.png
 
 # Pages 构建产物
 _site/
