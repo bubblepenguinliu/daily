@@ -1,20 +1,28 @@
 name: daily-digest
 
-# 每天北京时间 09:00 在 GitHub 服务器上自动抓取 → 分析 → 生成日报 → 提交回仓库。
-# 提交回去之后，你开了 GitHub Pages 的话，页面会自动更新。
+# 每天北京时间 09:00 在 GitHub 服务器上：
+#   抓取 → AI 分析 → 生成 HTML 日报 → 提交回仓库 → 发布到 GitHub Pages
 #
-# 【必须做的事】仓库 Settings → Secrets and variables → Actions
-#                → New repository secret，名字填 AI_API_KEY，值填你的 DeepSeek key。
+# 【需要的仓库设置】
+#   1. Settings → Secrets and variables → Actions → New repository secret
+#      名字 AI_API_KEY，值填你的 DeepSeek key
+#   2. Settings → Actions → General → 底部 Workflow permissions
+#      选 "Read and write permissions"
+#   3. Settings → Pages → Source 选 "GitHub Actions"（新版界面默认就是这个）
 
 on:
   schedule:
     - cron: "0 1 * * *"    # UTC 01:00 = 北京时间 09:00
-  workflow_dispatch:        # 也允许你在网页上手动点一下立即跑
+  workflow_dispatch:
 
+# contents: write  -> 把生成的日报提交回仓库
+# pages: write     -> 发布到 GitHub Pages
+# id-token: write  -> deploy-pages 验证身份用
 permissions:
-  contents: write           # 必须：否则机器人没法把生成结果提交回仓库
+  contents: write
+  pages: write
+  id-token: write
 
-# 防止两次运行撞车（比如手动触发时定时任务正好也在跑）
 concurrency:
   group: digest
   cancel-in-progress: false
@@ -22,6 +30,9 @@ concurrency:
 jobs:
   digest:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -35,11 +46,10 @@ jobs:
 
       - name: 生成日报
         env:
-          # 密钥从仓库 Secret 注入，日志里会自动打码，不会泄漏
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_BASE_URL: https://api.deepseek.com/v1
           AI_MODEL: deepseek-chat
-          # GitHub 的服务器在墙外，四个源都直连可达，所以代理必须留空
+          # GitHub 服务器在墙外，四个源直连可达，代理必须留空
           HTTP_PROXY: ""
           HTTPS_PROXY: ""
           MAX_ITEMS_PER_SOURCE: "6"
@@ -52,10 +62,28 @@ jobs:
           git config user.email "digest-bot@users.noreply.github.com"
           git add -A output state
           if git diff --cached --quiet; then
-            echo "本次没有新内容，无需提交。"
+            echo "本次没有新内容，跳过提交。"
             exit 0
           fi
           git commit -m "digest: $(date -u +%Y-%m-%d)"
-          # 若你本地也在推送，先 rebase 一下再推，避免撞车
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push
+
+      - name: 准备静态站点目录
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp index.html _site/
+          cp -r output _site/output
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传站点
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: 发布到 Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

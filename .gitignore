@@ -13,6 +13,9 @@ logs/
 _probe*.py
 _preview.png
 
+# Pages 构建产物
+_site/
+
 # output/ 与 state/ 都入库：
-#   output/ -> 每日日报，推到 GitHub 后可直接在线阅读（也可开 Pages）
-#   state/  -> 去重记录，入库后换机器/换 CI 也能接着跑，不会重复推送旧内容
+#   output/ -> 每日日报，推到 GitHub 后可直接在线阅读 / 发布到 Pages
+#   state/  -> 去重记录，入库后换机器或跑在 CI 上也能接着跑，不会重复推送旧内容

@@ -151,22 +151,52 @@ git push -u origin main
 
 ### 4. 让日报可以直接在线看（GitHub Pages）
 
-仓库 → Settings → Pages → Source 选 `Deploy from a branch` → Branch 选 `main` / 目录 `/ (root)` → Save。
+> ⚠️ GitHub 新版界面已不再提供"从分支部署"的下拉框，改为 **GitHub Actions 部署**。
+> 本项目已把部署步骤直接写进 `.github/workflows/daily.yml`，你只需要把 Source 设对。
 
-之后日报地址就是：
+仓库 → `Settings` → `Pages` → **Source 选 `GitHub Actions`**（新版界面默认就是这个，不用改）。
+
+不需要自己建 Pages 工作流，也不需要选 "Static HTML" 模板 —— 我们自己的 workflow 里已经包含了
+`configure-pages` → `upload-pages-artifact` → `deploy-pages` 三步。
+
+**部署后的地址**（把 `<用户名>` 换成你的 GitHub 用户名）：
 
 ```
-https://<你的用户名>.github.io/tech-daily-digest/output/latest.html
+https://<用户名>.github.io/<仓库名>/          # 自动跳转到最新一期
+https://<用户名>.github.io/<仓库名>/output/latest.html   # 直达最新
 ```
 
-手机也能随时打开。
+手机也能随时打开，收藏短的那个即可。
 
-### 5. （可选）让 GitHub 每天自动跑
+> **注意**：GitHub Pages 在免费账户下**只支持公开仓库**。如果仓库是 private，
+> 要么把仓库改成 public（本项目内容全是公开的技术文章摘要，检查过无密钥泄漏），
+> 要么升级 GitHub Pro，要么改用 `https://raw.githack.com/<用户名>/<仓库名>/main/output/latest.html`。
 
-把 `.env` 里的 Key 加到仓库 Secrets（Settings → Secrets and variables → Actions → New repository secret，名字 `AI_API_KEY`），
-然后 `git push`。`.github/workflows/daily.yml` 会每天北京时间 09:00 自动抓取、生成、提交回仓库。
+### 5. 验收清单
 
-**本地跑和云端跑二选一即可**，不要同时开 —— 两边共用 `state/seen.sqlite` 会造成去重混乱。
+```
+□ Settings → Secrets and variables → Actions 里有 AI_API_KEY
+□ Settings → Actions → General → Workflow permissions 选了 Read and write permissions
+□ Settings → Pages → Source 是 GitHub Actions
+□ Actions 标签里手动 Run workflow 一次，跑出绿勾
+□ 打开 https://<用户名>.github.io/<仓库名>/ 看到日报
+```
+
+第 4 步跑绿了就说明整条云端流水线通了；第 5 步只是验证网址。
+
+### 6. 本地跑 vs 云端跑（二选一，不要同时开）
+
+| | 云端（GitHub Actions） | 本地 |
+| --- | --- | --- |
+| 电脑要开机吗 | 不要 | 要 |
+| 要梯子吗 | 不要（服务器在墙外） | 要 |
+| 密钥要给 GitHub 吗 | 要给（加密 Secret，日志打码） | 不用 |
+| 怎么触发 | 自动，每天北京时间 09:00 | 双击 `run_daily.bat` 或任务计划程序 |
+
+**⚠️ 两边共用同一个 `state/seen.sqlite`，同时跑会造成去重混乱**（该推的没推，或重复推）。
+
+- 选了云端 → 不要建本地任务计划程序
+- 选了本地 → 把 `.github/workflows/daily.yml` 里的 `schedule:` 两行注释掉（保留 `workflow_dispatch` 以便手动跑）
 
 ---
 
