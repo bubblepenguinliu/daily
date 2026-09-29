@@ -16,6 +16,11 @@ _preview.png
 # Pages 构建产物
 _site/
 
+# 旧版二进制状态文件（已迁移到 state/seen.jsonl）
+state/*.sqlite
+state/*.sqlite.migrated
+
 # output/ 与 state/ 都入库：
-#   output/ -> 每日日报，推到 GitHub 后可直接在线阅读 / 发布到 Pages
-#   state/  -> 去重记录，入库后换机器或跑在 CI 上也能接着跑，不会重复推送旧内容
+#   output/          -> 每日日报，推到 GitHub 后可直接在线阅读 / 发布到 Pages
+#   state/seen.jsonl -> 去重记录（JSONL + git union 合并，永不冲突），
+#                       入库后本地和 CI 都能接着跑，不会重复推送旧内容

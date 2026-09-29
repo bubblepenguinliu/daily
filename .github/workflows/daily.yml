@@ -66,8 +66,17 @@ jobs:
             exit 0
           fi
           git commit -m "digest: $(date -u +%Y-%m-%d)"
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
-          git push
+
+          # 关键：用 merge（而不是 rebase）并加 -X ours。
+          # 原因：任务开始时的 checkout 可能已经过时，期间仓库被别人（比如你本地）
+          # 推过新内容，直接 rebase 会撞上 add/add 冲突把任务干挂。
+          # -X ours 表示"冲突时以本次刚生成的文件为准"，而本次生成的就是最新的。
+          git fetch origin "${GITHUB_REF_NAME}"
+          git merge -X ours --no-edit "origin/${GITHUB_REF_NAME}" || {
+            echo "merge 出现无法自动解决的情况，改用强制以本次结果覆盖";
+            git merge --abort 2>/dev/null || true;
+          }
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: 准备静态站点目录
         run: |

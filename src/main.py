@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT))
 from src import analyze as analyze_mod  # noqa: E402
 from src import fetch as fetch_mod      # noqa: E402
 from src import render as render_mod    # noqa: E402
-from src.store import Store             # noqa: E402
+from src import store as store_mod      # noqa: E402
 
 
 def load_config() -> dict:
@@ -56,7 +56,11 @@ def main() -> int:
         return 2
 
     print("[2/5] 去重")
-    store = Store(ROOT / "state" / "seen.sqlite")
+    state_dir = ROOT / "state"
+    migrated = store_mod.migrate_from_sqlite(state_dir)
+    if migrated:
+        print(f"    已从旧 seen.sqlite 迁移 {migrated} 条记录到 seen.jsonl")
+    store = store_mod.Store(state_dir / "seen.jsonl")
     items = raw if args.all else store.filter_new(raw)
     print(f"    共 {len(raw)} 条，其中 {len(items)} 条是新内容"
           f"{'（--all：忽略去重）' if args.all else ''}")

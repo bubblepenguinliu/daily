@@ -1,0 +1,9 @@
+# 让去重状态文件永不冲突。
+# union 合并驱动的语义：合并时把两边的行拼在一起，而不是挑选一边。
+# 这对"每行一条独立记录"的 JSONL 是完美的 —— 本地和 CI 各写各的，
+# 合起来就是全集，重复行由读取时按 uid 去重。
+state/seen.jsonl merge=union
+
+# 以下文件是每次生成的产物，冲突时以新生成的为准（workflow 里也用了 merge -X ours）
+output/latest.html      -text diff
+output/digest-*.html    -text diff
