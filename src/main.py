@@ -75,8 +75,25 @@ def main() -> int:
     print(f"    共 {len(raw)} 条，其中 {len(items)} 条是新内容"
           f"{'（--all：忽略去重）' if args.all else ''}")
     if not items:
-        print("\n今天没有新内容，不需要生成日报。")
+        # 无新条目 ≠ 什么都不做。以前这里直接 return 0，结果是：
+        # 定时任务明明跑了，但站点毫无变化，用户看起来就像"今天没跑"。
+        # 现在照样刷新 latest.html（带扫描时间），并列出各源当前最新内容。
+        print(f"[3/{STEPS}] 本次扫描无新条目 -> 生成状态页（不调 AI，零成本）")
+        newest: list[dict] = []
+        for name in source_names:
+            bucket = [it for it in raw if it["source_name"] == name]
+            newest.extend(bucket[:2])
+        out, _ = render_mod.render(
+            [], {"overview": [], "items": [], "_mode": "no-news"},
+            source_names, args.out, no_news=True, newest=newest)
+        store.mark_seen(raw)
+        st = store.stats()
         store.close()
+        print(f"\n完成（本次无新内容）：{out}")
+        print(f"  本次扫描    : {len(raw)} 条，全部是已见过的")
+        print(f"  站点已刷新  : latest.html 的扫描时间已更新（归档里不会多出空日报）")
+        print(f"  各源最新    : {len(newest)} 条已列在页面上，可点开看")
+        print(f"  累计已见    : {st['total']} 条 {st['by_source']}\n")
         return 0
 
     print(f"[3/{STEPS}] 截断（每个来源最多 {limit} 条）")

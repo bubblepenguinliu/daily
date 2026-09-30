@@ -12,7 +12,14 @@ name: daily-digest
 
 on:
   schedule:
-    - cron: "0 1 * * *"    # UTC 01:00 = 北京时间 09:00
+    # ⚠️ 刻意【避开整点】。GitHub 官方文档明确写着：整点是调度高峰，
+    #    "if the load is sufficiently high enough, some queued jobs may be dropped"
+    #    —— 排队任务可能被**直接丢弃**，不是延迟，是消失。
+    # 2026-09-30 实测教训：原来配成 `0 1 * * *`（正好整点），
+    #    当天 09:00 那一次定时**被跳过**，event=schedule 运行记录 0 条。
+    #    现在改成 09:17 主 + 10:47 备用（错开分钟，且备用点兜底主点被丢的情况）。
+    - cron: "17 1 * * *"   # UTC 01:17 = 北京时间 09:17（主）
+    - cron: "47 2 * * *"   # UTC 02:47 = 北京时间 10:47（备用兜底）
   workflow_dispatch:        # 网页上「Run workflow」手动触发
   push:
     branches: [ main ]

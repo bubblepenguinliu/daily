@@ -59,6 +59,8 @@
   ul.ov li::before{content:counter(o,decimal-leading-zero);counter-increment:o;position:absolute;
     left:0;top:9px;font-size:11.5px;color:var(--accent);font-family:Georgia,serif;letter-spacing:.06em}
   ul.ov{counter-reset:o}
+  ul.ov li a{color:var(--ink);text-decoration:none}
+  ul.ov li a:hover{color:var(--accent)}
 
   /* ---------- 深度文章 ---------- */
   .deep{margin-top:14px}
@@ -179,25 +181,47 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">{{ date }} · 第 {{ total }} 号</div>
+    <div class="sub">{{ date }}{% if not no_news %} · 第 {{ total }} 号{% endif %}</div>
     <div class="rule2"></div>
     <div class="lede">
+      {% if no_news %}
+      <span>本次扫描 <b>{{ date }} {{ scan_time }}</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
+      {% else %}
       <span>本期收录 <b>{{ total }}</b> 条 · 精读 <b>{{ picked|length }}</b> 篇</span>
       <span>共 <b>{{ note_total }}</b> 条页边批注</span>
+      {% endif %}
     </div>
     {% if mode != 'ai' %}
     <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
     {% endif %}
   </header>
 
+  {% if no_news %}
+  <section class="digest col">
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 {{ date }} {{ scan_time }} 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
+    <ul class="ov">
+      {% for it in newest %}
+      <li><a href="{{ it.link }}" target="_blank" rel="noopener">{{ it.source_name }} · {{ it.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% if prev_digest %}
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="{{ prev_digest }}" style="color:var(--accent)">{{ prev_digest }}</a></p>
+    {% endif %}
+  </section>
+  {% else %}
   <section class="digest col">
     <div class="sec">今 日 提 要</div>
     <ul class="ov">
       {% for o in overview %}<li>{{ o }}</li>{% endfor %}
     </ul>
   </section>
+  {% endif %}
 
-  {% if picked %}
+  {% if picked and not no_news %}
   <section class="deep">
     <div class="col clr" style="margin-top:40px">
       <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
@@ -249,6 +273,7 @@
   </section>
   {% endif %}
 
+  {% if not no_news %}
   <section class="rest col">
     <div class="sec solid">其 余 条 目</div>
     {% for name, lst in rest_groups %}
@@ -270,10 +295,11 @@
     </div>
     {% endfor %}
   </section>
+  {% endif %}
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>生成于 {{ generated_at }}</span>
+    <span>本次扫描 {{ date }} {{ scan_time }} · 生成于 {{ generated_at }}</span>
   </footer>
 </div>
 </body>
