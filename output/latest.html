@@ -178,79 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-02 · 第 1 号</div>
+    <div class="sub">2026-10-02</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>1</b> 条 · 精读 <b>1</b> 篇</span>
-      <span>共 <b>10</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-02 09:01</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-02 09:01 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>ByteByteGo 新文探讨软件设计中状态管理的核心难点，指出'无状态'建议常被误解。</li><li>文章强调状态是系统保留的、影响功能的信息，其正确性在并发、扩容、故障、部署变更下最难保证。</li><li>对准备考研或求职的计算机学生，理解状态管理是分布式系统、后端开发、系统设计面试的关键基础。</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-413.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 413 期）：再见了，React Native</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-412.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 412 期）：禁止 issue，只用 PR</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/1/matthew-green/" target="_blank" rel="noopener">Simon Willison's Weblog · Quoting Matthew Green</a></li>
+      <li><a href="https://simonwillison.net/2026/Sep/30/he-built-this-city/" target="_blank" rel="noopener">Simon Willison's Weblog · He Built This City</a></li>
+      <li><a href="https://blog.bytebytego.com/p/why-state-is-the-hardest-thing-in" target="_blank" rel="noopener">ByteByteGo · Why State is the Hardest Thing in Software Design</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-doordash-built-a-toolbox-for" target="_blank" rel="noopener">ByteByteGo · How DoorDash Built a Toolbox for AI Agents</a></li>
+      <li><a href="https://jack-clark.net/2026/09/28/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-rsi-loop/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop</a></li>
+      <li><a href="https://jack-clark.net/2026/09/21/import-ai-473-the-uss-superintelligence-strategy-human-brain-in-a-mouse-skull-and-machine-hermeneutics/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 473: The US’s superintelligence strategy; human brain in a mouse skull; and machine hermeneutics</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-01.html" style="color:var(--accent)">digest-2026-10-01.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">该文直击分布式系统设计核心痛点，对系统设计面试和工程实践有直接指导价值，信息密度高。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">ByteByteGo</span>
-          <span class="dt">2026-10-01</span>
-        </div>
-        <h2><a href="https://blog.bytebytego.com/p/why-state-is-the-hardest-thing-in" target="_blank" rel="noopener">为什么状态（State）是软件设计中最难的部分</a></h2>
-        <div class="orig-title">Why State is the Hardest Thing in Software Design</div>
-<p class="standfirst">状态为何难管，以及开发者可用的多种应对策略。</p>        <div class="art-meta">
-          <span>4 段</span><span>·</span>
-          <span>10 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>状态（State）是系统保留的、会在某种程度上影响其功能的信息。例如，一个网站可能会记录已登录的用户。文档编辑器会记住当前的文本内容。后台 worker 会记录它已完成哪些任务、还有哪些任务待处理。数据库会把写入其中的记录按需保存尽可能长的时间。</p>
-        <aside class="note k-背景"><span class="k">背景</span>这里的 state 与前端框架里的 React state、Vue reactive state 不是同一概念：前者指系统级持久化信息，后者只是 UI 渲染层的局部变量。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>分布式系统里常把状态分为 volatile（内存）、persistent（磁盘）、externalized（Redis/DB）三类，不同类别的失效语义和恢复成本差异巨大。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>想亲手感受状态之难，可以写一个内存版计数器服务，再用两个进程同时 +1，观察丢失更新（lost update）——这就是最小可复现的状态 bug。</aside>
-        <p>任何有用的软件通常都需要管理状态，才能实现其预期功能。难点在于：当请求重叠、服务器被增加、机器发生故障、软件变更被部署时，仍要让状态保持正确。</p>
-        <aside class="note k-数据"><span class="k">数据</span>Google 的 SRE 报告指出，多数线上事故的根因是配置/状态变更而非代码逻辑本身；变更管理与状态一致性是运维事故的两大来源。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“请求重叠 + 机器故障”并非所有系统的常态。单机、低并发的内部工具，状态正确性的难度其实远低于文中描述，不必过度设计。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>CAP 定理、PACELC、线性一致性（linearizability）都是刻画“状态在故障下是否仍正确”的理论工具，考研 408 不考，但读论文必备。</aside>
-        <p>通常，常见的建议是“让应用无状态（stateless）”。但这条建议需要解释。它通常是指让特定的应用服务器易于替换，同时把重要的状态放到别处。它并不意味着完全没有状态。理解这种架构，需要考察状态为何存在、谁拥有它，以及当它不可用时会发生什么。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>“stateless”是营销式简写。严格说，任何进程都有内存状态；所谓无状态服务只是把会话/业务状态外置到 DB、Redis 或客户端 token。</aside>
-        <aside class="note k-背景"><span class="k">背景</span>JWT 就是把会话状态从服务端移到客户端 token 的典型做法，代价是无法即时吊销，需要额外的黑名单状态来补救。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>用 curl 连续请求同一后端两次，看响应头是否有 sticky session cookie；若有，说明负载均衡层仍在维护会话状态。</aside>
-        <p>在本文中，我们将探讨为什么状态是软件开发中最难的部分，以及开发者可以用来管理它的多种策略。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>常见的状态管理策略包括：外置到 DB、事件溯源（event sourcing）、CRDT、actor 模型、单写者（single-writer）分区等，各有适用边界。</aside>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>“无状态”只是把状态挪走而非消灭；判断架构好坏，先问状态归谁、失效时怎么办。</div>
-        <details class="orig">
-          <summary>查看英文原文（1126 字符，可对照译文）</summary>
-          <pre>State is the information a system retains that affects its functionality in some way. For example, a website might keep track of users who have logged in. A document editor remembers the current text. A background worker logs which tasks it has completed and which ones are pending. A database stores the records written to it for as long as needed.
-
-Any useful software usually needs to manage state to carry out its intended functionality. The difficulty is keeping the state correct even as requests overlap, servers are added, machines fail, and software changes are deployed.
-
-Often, the common advice is to “make the application stateless”. But this advice needs explanation. It usually means making particular application servers easy to replace while putting their important state elsewhere. It doesn’t signify a complete absence of state. Understanding such a setup requires looking at why state exists, who owns it, and what happens when it becomes unavailable.
-
-In this article, we will look at why state is the hardest thing in software development and the multiple strategies that developers can use to manage it.</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-02 07:03 · 生成于 2026-10-02 07:03:40</span>
+    <span>本次扫描 2026-10-02 09:01 · 生成于 2026-10-02 09:01:26</span>
   </footer>
 </div>
 </body>
