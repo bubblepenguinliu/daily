@@ -178,317 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-04 · 第 4 号</div>
+    <div class="sub">2026-10-04</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>4</b> 条 · 精读 <b>2</b> 篇</span>
-      <span>共 <b>40</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-04 08:49</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-04 08:49 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>Simon Willison 提出按量付费 API 必须默认设置硬性预算上限，否则 AI agent 可能一夜烧掉数千美元</li><li>ByteByteGo 本期系统设计简报覆盖 SSH 工作原理、AI 系统效率优化、AI agent 解剖和 AI 评估</li><li>Simon Willison 9 月赞助者通讯涉及模型定价战、LLM 进军数学、Datasette 安全漏洞等话题</li><li>本期抓取内容偏轻量，无重大技术突破或方向性变化，适合快速浏览而非深度投入</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-413.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 413 期）：再见了，React Native</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-412.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 412 期）：禁止 issue，只用 PR</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/" target="_blank" rel="noopener">Simon Willison's Weblog · We're going to need default hard budget caps on pretty much everything</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/3/newsletter/" target="_blank" rel="noopener">Simon Willison's Weblog · September sponsors-only newsletter</a></li>
+      <li><a href="https://blog.bytebytego.com/p/ep228-how-ssh-works" target="_blank" rel="noopener">ByteByteGo · EP228: How SSH Works</a></li>
+      <li><a href="https://blog.bytebytego.com/p/why-state-is-the-hardest-thing-in" target="_blank" rel="noopener">ByteByteGo · Why State is the Hardest Thing in Software Design</a></li>
+      <li><a href="https://jack-clark.net/2026/09/28/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-rsi-loop/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop</a></li>
+      <li><a href="https://jack-clark.net/2026/09/21/import-ai-473-the-uss-superintelligence-strategy-human-brain-in-a-mouse-skull-and-machine-hermeneutics/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 473: The US’s superintelligence strategy; human brain in a mouse skull; and machine hermeneutics</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-02.html" style="color:var(--accent)">digest-2026-10-02.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">挑出 Simon Willison 的预算上限文章（AI 工程中真实且紧迫的成本控制问题）和 ByteByteGo 的 SSH/AI agent 简报（系统基础 + AI 工程面试高频考点），其余两条信息密度低或与技术无关。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-03</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/" target="_blank" rel="noopener">我们几乎需要对所有东西都设置默认的硬性预算上限</a></h2>
-        <div class="orig-title">We're going to need default hard budget caps on pretty much everything</div>
-<p class="standfirst">按量付费服务必须默认硬性封顶，而不是只发警告邮件。</p>        <div class="art-meta">
-          <span>14 段</span><span>·</span>
-          <span>14 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>我们几乎需要对所有东西都设置默认的硬性预算上限</p>
-        <p>2026年10月3日</p>
-        <p>未来几个月乃至几年里，世界会越来越需要一种产品功能：默认的硬性预算上限（default hard budget caps）。我说的是按量付费服务和 API 的那种功能，让你可以规定“每月超过 X 美元后，就把这东西切断并返回错误”。这些必须是硬性限制。软性上限——“每月超过 X 美元后，给我发一封警告邮件”——是不够的。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 是 Django 联合创始人，长期追踪 LLM 工具链，他的博客是 AI 工程实践的重要一手信息源，这条判断来自他日常跑 agent 的踩坑经验。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>AWS Budgets 的“预算动作”可自动停止 EC2/RDS 实例，但默认只发 SNS 告警；真正切断需要手动配置 IAM 策略或 Lambda，这正是“软上限”与“硬上限”的差距。</aside>
-        <p>编码 agent，以及个人 agent（编码 agent 套上一层不那么吓人的 UI），极大地降低了随手写出能干活儿的代码的摩擦。有时候这些活儿是要花钱的——调用付费 API、托管 Web 应用，或者那些会按额外存储和计算计费的系统。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>2025 年以来 Cursor、Claude Code、Devin 等 agent 都支持后台自主运行，一次失控的循环可能在无人值守时反复调用付费 API，成本呈指数增长。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>自己验证：在 OpenAI/Anthropic 控制台设置 usage limit，然后写个死循环调用 API，观察到达上限后返回的是 429 还是继续扣费，就能区分硬/软上限。</aside>
-        <p>没人想一觉醒来，收到一封午夜发出的预算超限警告邮件，然后发现趁自己睡觉时，那个失控的服务又消耗了几百（甚至几千）美元的用量。</p>
-        <aside class="note k-数据"><span class="k">数据</span>2024 年有开发者因忘记关掉 Firebase 的按量计费，一夜之间产生 7.2 万美元账单，最终 Google 减免了大部分，但过程耗时数周。</aside>
-        <p>反对这一点的论据是：企业不希望自己的托管应用因为超出某个预算就开始抛错。我预计大多数企业和个人宁愿看到错误，也不愿收到一张 1 万美元以上的意外账单。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>对 SLA 敏感的生产系统，硬上限可能造成比账单更严重的业务中断；折中方案是分级封顶（如 80% 告警、100% 限流、120% 切断），而非一刀切。</aside>
-        <p>我认为硬性预算上限必须成为默认设置。如果有人想玩火，那也应该可以，但必须基于主动选择（opt-in）。在显眼的地方放一个清晰明了的复选框：</p>
-        <aside class="note k-背景"><span class="k">背景</span>这与欧盟 GDPR 的“默认隐私”原则同构：安全选项默认开启，危险选项需用户显式同意，监管趋势可能推动云厂商照此设计。</aside>
-        <p>移除预算上限。如果我超出配置的预算限额，我的应用不会被关停，后续费用由我承担。</p>
-        <p>我最希望看到这一功能的服务是 AWS。我听过很多人说，他们拒绝在个人项目里用 AWS，就是因为（有充分理由地）担心某个失控的服务会让他们破产。我也听过一些人没预料到这一点，结果被狠狠烧了一把。</p>
-        <aside class="note k-背景"><span class="k">背景</span>AWS 按秒计费、服务繁多，个人开发者常因忘记关 NAT Gateway、EBS 快照或 Lambda 并发而收到意外账单，社区里“AWS 账单惊吓”是长期话题。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>同类问题也存在于 Cloudflare Workers、Vercel、Supabase 等按量平台；2025 年 Vercel 曾因 DDoS 导致用户账单暴涨，后推出 spend management。</aside>
-        <p>……结果发现 AWS 几周前终于推出了支出限额！他们在 9 月 16 日的公告《新的 AWS 体验帮助构建者快速上手并更快交付》中写道：</p>
-        <aside class="note k-数据"><span class="k">数据</span>AWS 该功能目前仅面向新账户的“新体验”，老账户需等待 GA；对比之下 Google Cloud 的 Spend Caps 在 2025 年 7 月已对部分服务开放。</aside>
-        <p>当你准备升级到付费计划时，可以根据自己的使用模式为项目设置每月支出限额，从而保持在预算之内。如果某个项目的用量达到支出限额，该项目当月将被暂停。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>“暂停”不等于“切断所有计费”：已运行的存储、快照等资源可能仍产生费用，需仔细阅读条款确认暂停范围。</aside>
-        <p>另见《在 AWS 设置中创建支出限额》，不过该页面警告说“我们目前只向有限数量的客户发布新体验”。希望它能尽快对现有账户全面开放。</p>
-        <aside class="note k-实操"><span class="k">实操</span>想提前用上可注册新 AWS 账户走“新体验”，或在旧账户用 Budgets + Lambda 自动停止实例来模拟硬上限。</aside>
-        <p>Google Cloud 在 7 月推出了类似功能，名为 Spend Caps，允许你“为项目内特定服务设置每月财务上限”。看来这正在成为一种趋势！</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>Azure 目前只有 Cost Management 告警和预算，没有自动切断；三大云中 AWS 和 GCP 已跟进，Azure 是下一个观察点。</aside>
-        <p>在理想世界里，我们的 agent 可以帮忙处理这件事。如果 agent 开始倾向于推荐带硬性预算上限的供应商，并警告新手构建者不要用没有上限的服务部署应用（以免惹上麻烦），那就太好了。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>agent 推荐供应商可能受训练数据时效性和商业合作影响，未必中立；把预算安全交给 agent 判断，本身也需要可验证的规则而非黑箱建议。</aside>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>按量付费服务应默认硬性封顶，AWS 和 GCP 已跟进，个人项目优先选带 spend cap 的平台。</div>
-        <details class="orig">
-          <summary>查看英文原文（3004 字符，可对照译文）</summary>
-          <pre>We’re going to need default hard budget caps on pretty much everything
-
-3rd October 2026
-
-Here’s a product feature which the world is going to need a whole lot more of over the coming months and years: default hard budget caps. I’m talking about the feature of pay-by-usage services and APIs that lets you say “after $X/month, cut this thing off and return errors”. These need to be hard limits. Soft caps, “after $X/month, send me a warning email”, will not cut it.
-
-Coding agents, and personal agents (coding agents wrapped in a less threatening UI), greatly reduce the friction of spinning up code that can do useful things. Sometimes those things cost money—calls to paid APIs, or hosted web applications, or systems that can bill for additional storage and compute.
-
-Nobody wants to wake up to an email sent at midnight warning about a budget limit and find that, while they slept, their rogue service had consumed several hundred (or several thousand) more dollars of usage.
-
-An argument against this is that businesses don’t want their hosted applications to start throwing errors because some budget was exceeded. I expect that most businesses and individuals would prefer errors to a surprise $10,000+ bill.
-
-I think hard budget caps need to be the default. If someone wants to live dangerously they should be able to do that, but it needs to be on an opt-in basis. Have a nice, clear checkbox somewhere prominent:
-
-Remove the budget cap. My application will not be shut down if I exceed the configured budget limit, and I will be responsible for subsequent charges.
-
-The service I most want to see this from is AWS. I’ve heard plenty of stories from people who refuse to use AWS for personal projects out of (justified) fear that a runaway service might bankrupt them. I’ve also heard stories from people who didn’t anticipate this and ended up seriously burned.
-
-... and it turns out AWS finally launched spending limits a few weeks ago! From their announcement New AWS experience helps builders get started and ship faster on 16th September:
-
-When you’re ready to upgrade to a paid plan, you can set a monthly spend limit for your project based on your usage patterns so that you stay within your budget. If a project’s usage reaches its spend limit, your project is paused for that month.
-
-See also Create a spend limit in AWS Settings, though that page warns that “We’re currently releasing our new experience to a limited number of customers.” Here’s hoping that hits general availability for existing accounts soon.
-
-Google Cloud launched a similar feature in July, called Spend Caps, which lets you “set a monthly financial cap on specific services within a project”. Looks like this is becoming a trend!
-
-In an ideal world, our agents could help with this. It would be great if agents started biasing towards recommending providers with hard budget caps, and warning new and inexperienced builders against deploying applications using uncapped services that might get them into trouble.</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">ByteByteGo</span>
-          <span class="dt">2026-10-03</span>
-        </div>
-        <h2><a href="https://blog.bytebytego.com/p/ep228-how-ssh-works" target="_blank" rel="noopener">EP228：SSH 是如何工作的</a></h2>
-        <div class="orig-title">EP228: How SSH Works</div>
-<p class="standfirst">从 TCP 握手到密钥交换，拆解 SSH 安全登录全过程。</p>        <div class="art-meta">
-          <span>45 段</span><span>·</span>
-          <span>26 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>Strands harness 是开源、最先进、开箱即用的 agent harness。安装完成的那一刻，你得到的就是一个完整、可上生产的 agent。在六项基准测试中，它在准确率上追平或超越了其他 harness，同时少用了 28% 的 token。</p>
-        <aside class="note k-背景"><span class="k">背景</span>harness 指包裹 LLM 的外层框架（工具调用、循环控制、上下文管理），与模型本身解耦；同一模型换 harness，benchmark 分数可差十几个点。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“少用 28% token”需看基线：若对比的是未做上下文裁剪的朴素实现，这个数字会显著缩水，跨 harness 比较时应确认 token 计数口径是否一致。</aside>
-        <p>你拿到 shell、文件和 web 工具，外加上下文管理、记忆和 subagents，全部调好、开箱即用。每个默认值你都可以改。既可以作为库运行，也可以从 strands CLI 运行，支持任意模型、任意云。它构建在开源 Harness SDK 之上，所以任何部分你都能扩展或替换。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>同类可对比的开源 harness 还有 OpenAI 的 Agents SDK、LangGraph、smolagents；选型时重点看工具调用协议是否兼容 MCP，否则迁移成本很高。</aside>
-        <p>本周的系统设计复习：</p>
-        <p>- SSH 是如何工作的</p>
-        <p>- 让你的 AI 系统变高效的 6 大技巧</p>
-        <p>- AI Agent 的解剖学</p>
-        <p>- 你怎么知道你的 AI 应用真的能跑通？</p>
-        <p>- 🚀 新课程：AI Evals in Practice，10 月 7 日开课</p>
-        <p>SSH 是如何工作的</p>
-        <p>Secure shell 是一种在不安全网络上安全访问远程机器的方法。它从 SSH 客户端到远程机器（SSH 服务器）的一条 TCP 连接开始。</p>
-        <aside class="note k-实操"><span class="k">实操</span>自己验证：`ssh -v user@host` 会打印每一步协商细节，能看到版本交换、KEX 算法列表、host key 指纹，比读文档直观得多。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>SSH 默认端口 22；若被防火墙拦截，可用 `ssh -p 2222` 或 `~/.ssh/config` 里写 Port，云厂商常改端口以躲扫描。</aside>
-        <p>两台机器交换 SSH 版本、协商加密算法，各自运行密钥交换协议。SSH 服务器发送公钥和签名，客户端机器进行验证。随后该 host key 会与 known_hosts 文件中的记录比对。</p>
-        <aside class="note k-背景"><span class="k">背景</span>known_hosts 存的是服务器 host key 指纹；首次连接提示 “authenticity of host can't be established” 就是它为空，MITM 攻击会在这里暴露。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>原文说“服务器发送公钥和签名”，严格讲 host key 是服务器长期密钥对，签名是用它签本次 KEX 的临时 DH 参数，用于防中间人，不是签公钥本身。</aside>
-        <p>随后两台机器各自在本地推导出会话密钥，不通过网络传输。相同的密钥，各自算出，绝不上线。接着 SSH 客户端开始认证，发送用于登录的公钥。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这就是 Diffie-Hellman 密钥交换的核心：双方各出一个私密随机数，交换公开值后各自算出同一密钥，窃听者拿到公开值也算不出。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>现代 SSH 默认用 curve25519-sha256 做 KEX，比老的 diffie-hellman-group14 快数倍且更安全；`ssh -Q kex` 可列出本机支持的算法。</aside>
-        <p>SSH 服务器在 authorized_keys 中匹配该公钥，同时 SSH 客户端用私钥对认证请求签名，并把数字签名发给 SSH 服务器。</p>
-        <aside class="note k-实操"><span class="k">实操</span>authorized_keys 权限必须是 600、.ssh 目录 700，否则 sshd 会静默拒绝；排查登录失败时先看 `journalctl -u sshd` 或 /var/log/auth.log。</aside>
-        <p>私钥永远不离开你的机器。服务器会用客户端公钥验证签名。至此 SSH 认证完成，会话打开，可以通信了。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>公钥认证之外还有密码认证和证书认证（SSH CA）；大规模集群用 CA 签发短期证书，避免把每个人的公钥都塞进 authorized_keys。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“私钥永不离开本机”成立的前提是客户端可信；若私钥未加密且机器被入侵，攻击者可直接拿走私钥，所以建议给私钥加 passphrase 或用 ssh-agent。</aside>
-        <p>让你的 AI 系统变高效的 6 大技巧</p>
-        <p>大规模服务 LLM 很贵。以下 6 个流行技巧能降低延迟和成本，让系统更高效。</p>
-        <p>- Streaming：模型一准备好每个 token 就立刻发出。这把用户感知到的延迟变成了 time-to-first-token。</p>
-        <aside class="note k-数据"><span class="k">数据</span>time-to-first-token 通常几十到几百毫秒，而完整生成一段回答可能要几秒；流式让首字延迟降一个数量级，是体感差异最大的优化。</aside>
-        <p>- Quantization：把模型权重转成更低精度，比如 FP8。这种转换带来更少的内存占用，进而带来更快、更便宜的服务。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>常见精度阶梯：FP16 → FP8 → INT8 → INT4；INT4 的 AWQ/GPTQ 在 7B 级模型上精度损失通常小于 1%，但小模型比大模型更敏感。</aside>
-        <p>- Continuous batching：用这个技巧，一旦有槽位空出，新请求就加入 batch。因此 GPU 空闲更少。</p>
-        <aside class="note k-背景"><span class="k">背景</span>传统 static batching 要等整个 batch 跑完才收新请求，长回答会拖住短请求；continuous batching 是 vLLM、TensorRT-LLM 的默认调度方式。</aside>
-        <p>- Prefix caching：这个技巧缓存给定输入 prompt 的内部计算结果。运行时，如果 prompt 有已缓存的前缀，这些计算就被跳过。</p>
-        <aside class="note k-实操"><span class="k">实操</span>把 system prompt 和固定 few-shot 放在 prompt 最前面、把变量放最后，才能命中 prefix cache；顺序一乱缓存全失效。</aside>
-        <p>- Paged KV cache：这个技巧把缓存存成固定大小的块，而不是一整块连续内存。运行时，块随序列增长而分配，所以内存不用预先预留。</p>
-        <aside class="note k-背景"><span class="k">背景</span>思路借自操作系统虚拟内存分页，vLLM 的 PagedAttention 论文即源于此，把 KV cache 碎片率从 60%+ 降到 4% 以下。</aside>
-        <p>- Speculative decoding：这里，一个小模型（speculator）提出多个 token。之后，主模型在一次前向传播中验证它们。</p>
-        <aside class="note k-数据"><span class="k">数据</span>典型加速 1.5–3 倍，取决于小模型与主模型的分布吻合度；若小模型猜得太差，接受率低反而拖慢，需动态调整草稿长度。</aside>
-        <p>轮到你了：这个清单缺了什么？</p>
-        <p>Agent 能生成代码。但要让代码符合你的系统、团队约定和过往决策，才是难的部分。你最终会在纠错循环里浪费时间和 token。</p>
-        <p>更多的 MCP、规则和更大的上下文窗口，给 agent 的是信息，而不是理解。跑在前面的团队有一个 context layer，把 agent 当下任务真正需要的东西精确喂给它。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>context layer 的常见实现是 RAG + 代码索引 + 规则文件（如 CLAUDE.md、.cursorrules）；核心是检索“相关”而非“全部”，避免上下文污染。</aside>
-        <p>参加我们 10 月 7 日的免费 webinar，看看：</p>
-        <p>- 团队在 AI 成熟度曲线上卡在哪里，以及为什么常见修法不够用</p>
-        <p>- context layer 如何同时解决质量、效率和成本</p>
-        <p>- 现场演示：同一个编码任务，有和没有 context layer 的对比</p>
-        <p>如果你想最大化从 AI agent 中获得的价值，这场值得你花时间。</p>
-        <p>AI Agent 的解剖学</p>
-        <p>AI agent 可以看作一个简单的 While 循环。</p>
-        <aside class="note k-背景"><span class="k">背景</span>这个“agent = while 循环”的抽象来自 ReAct 论文（2022），把推理和行动交替进行，是当前绝大多数 agent 框架的骨架。</aside>
-        <p>它用 LLM 选择一个动作，执行该动作，评估结果，重复这个过程直到任务完成。让我们细看每个组件：</p>
-        <p>- Brain：LLM 是核心。它读取现状、思考、决定下一步做什么。从 chatbot 到 agent 的大转变：模型不再写文本，而是在做选择。</p>
-        <p>- Planning：难任务不止一步。Agent 用 Chain of Thought（一步步想）、Tree of Thoughts（试多个选项、挑最好的）或 Reflexion（从错误中学习并重试）等方法拆解。Planning 把模糊目标变成清晰动作。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>Tree of Thoughts 和 Reflexion 都出自 2023 年的论文；实践中 Reflexion 的收益不稳定，因为模型常无法正确判断自己错在哪。</aside>
-        <p>- Tools：没有工具的 LLM 是罐子里的大脑。工具是模型能调用的函数，比如 web 搜索、代码执行、API、文件或浏览器（常用 MCP 标准）。模型请求工具，系统运行它，结果返回。</p>
-        <aside class="note k-背景"><span class="k">背景</span>MCP（Model Context Protocol）是 Anthropic 2024 年提出的开放协议，统一了工具/资源的描述与调用格式，正被越来越多 IDE 和 agent 支持。</aside>
-        <p>- Memory：没有记忆，每一轮都从零开始。短期记忆是上下文窗口。长期记忆存在向量库、文件和知识库中。当窗口填满，agent 会总结旧轮次并把摘要带下去。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>“总结旧轮次”会丢信息且引入误差，长任务里摘要漂移是常见失败模式；更稳的做法是把关键状态写进外部文件，而非只靠摘要。</aside>
-        <p>- Loop：四部分在一个循环里协同。Agent 看当前状态、决定做什么、用工具、看结果、重复。直到给出最终答案才停。</p>
-        <p>- Guardrails：严格说不算解剖结构，但很重要。沙箱、人工检查、token 上限、输出校验和范围限制，防止自主性变成昂贵的混乱。你给的自主权越大，这些就越重要。</p>
-        <aside class="note k-实操"><span class="k">实操</span>最小可行护栏：给 agent 的 shell 工具加白名单命令、设 max_iterations 上限、对写文件操作要求人工确认，能挡住大部分失控场景。</aside>
-        <p>轮到你了：你构建 agent 时，这五者里哪个最难做对？</p>
-        <p>你怎么知道你的 AI 应用真的能跑通？</p>
-        <p>你去评估它。但大多数团队跳过这一步（或者做错），因为“eval”听起来很模糊。它并不模糊。</p>
-        <aside class="note k-背景"><span class="k">背景</span>eval 是 LLM 工程里最被低估的环节；没有 eval 就无法判断 prompt 改动、模型升级或 RAG 调整到底是变好还是变坏。</aside>
-        <p>每个好的 eval 都是一个三步配方。</p>
-        <p>第 1 步：选一个任务。AI 系统有不同的能力和维度要评估。对 LLM，可以是安全性或数学能力；对 RAG，可以是 grounding 和检索。选一个。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>常用公开基准：MMLU（知识）、GSM8K（数学）、HumanEval（代码）、TruthfulQA（真实性）；但生产环境更该自建贴合业务的私有 eval 集。</aside>
-        <p>……（原文过长，此处截断）</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>SSH 靠非对称密钥完成身份验证、靠 Diffie-Hellman 各自算出会话密钥，私钥始终不出本机。</div>
-        <details class="orig">
-          <summary>查看英文原文（5924 字符，可对照译文）</summary>
-          <pre>Strands harness is the open-source, state-of-the-art, fully assembled agent harness. It’s a complete, production-ready agent the moment you install it. Across six benchmarks it matched or beat other harnesses on accuracy while using 28% fewer tokens.
-
-You get shell, file, and web tools, plus context management, memory, and subagents, all tuned and ready to use. Every default is yours to change. Run it as a library or from the strands CLI, on any model and any cloud. It’s built on the open-source Harness SDK, so you can extend or replace anything.
-
-This week’s system design refresher:
-
-- How SSH Works
-
-- Top 6 Techniques to Make Your AI System Efficient
-
-- The Anatomy of an AI Agent
-
-- How do you know if your AI app actually works?
-
-- 🚀 New Course: AI Evals in Practice Starts on Oct. 7
-
-How SSH Works
-
-Secure shell is a method to access a remote machine securely over an unsecured network. It starts with a TCP connection from the SSH client to the remote machine (SSH server).
-
-Both the machines exchange the SSH versions and negotiate crypto algorithms, and each side runs a key exchange protocol. The SSH server sends the public key and a signature, which the client machine verifies. That host key is then checked against the known_hosts file.
-
-Both the machines then derive session keys on their end and do not share them over the network. Same keys, computed separately, never put on the wire. Then the SSH client starts authentication by sending the public key for login.
-
-The SSH server matches the public key in the authorized_keys, and the SSH client also signs the auth request with the private key and sends the digital signature to the SSH server.
-
-The private key never leaves your machine. The server will verify the signature with the client public key. This completes the SSH authentication, and now the session is open for communication.
-
-Top 6 Techniques to Make Your AI System Efficient
-
-Serving LLMs at scale is expensive. These 6 popular techniques reduce latency and cost, and make your system more efficient.
-
-- Streaming: The model sends each token as soon as it becomes ready. This changes the user’s perceived latency to time-to-first-token.
-
-- Quantization: Convert the model's weights to lower precision like FP8. This conversion leads to less memory usage, which translates to faster and cheaper serving.
-
-- Continuous batching: With this technique, new requests are added to the batch once a slot becomes available. Therefore, the GPU is less idle.
-
-- Prefix caching: This technique caches internal calculations for given input prompts. At runtime, if the prompt has a cached prefix, those calculations are skipped.
-
-- Paged KV cache: This technique stores the cache in fixed-size blocks instead of one contiguous chunk. At runtime, blocks are allocated as the sequence grows, so memory is not reserved up front.
-
-- Speculative decoding: Here, a small model (speculator) proposes multiple tokens. After that, the main model verifies them in one forward pass.
-
-Over to you: what is missing from this list?
-
-Agents can generate code. Getting it right for your system, team conventions, and past decisions is the hard part. You end up wasting time and tokens in the correction loops.
-
-More MCPs, rules, and bigger context windows give agents access to information, but not understanding. The teams pulling ahead have a context layer to give agents exactly what they need for the task at hand.
-
-Join us for a FREE webinar on Oct 7 to see:
-
-- Where teams get stuck on the AI maturity curve and why common fixes fall short
-
-- How a context layer solves for quality, efficiency, and cost
-
-- Live demo: the same coding task with and without a context layer
-
-If you want to maximize the value you get from AI agents, this one is worth your time.
-
-The Anatomy of an AI Agent
-
-An AI agent can be thought of as a simple While-loop.
-
-It uses an LLM to select an action, executes that action, evaluates the result, and repeats the process until the task is complete. Let’s take a closer look at each of these components:
-
-- Brain: The LLM is the core. It reads the situation, thinks, and decides what to do next. The big shift from chatbot to agent: the model isn’t writing text anymore, it’s making choices.
-
-- Planning: Hard tasks need more than one step. Agents break them down using methods like Chain of Thought (think step by step), Tree of Thoughts (try options, pick the best), or
-
-Reflexion (learn from mistakes and retry). Planning turns a fuzzy goal into clear actions.
-
-- Tools: An LLM without tools is a brain in a jar. Tools are functions the model can call, like web search, code execution, APIs, files, or browsers (often using the MCP standard). The model requests a tool, the system runs it, and the result comes back.
-
-- Memory: Without memory, every turn starts from zero. Short-term memory is the context window. Long-term memory lives in vector stores, files, and knowledge bases. When the window fills up, agents summarize old turns and carry the summary forward.
-
-- Loop: All four pieces work together in a cycle. The agent looks at the current state, decides what to do, uses a tool, sees the result, and repeats. It keeps going until it gives a final answer.
-
-- Guardrails: Not strictly anatomy, but important. Sandboxing, human checks, token limits, output validation, and scope limits keep autonomy from turning into expensive chaos. The more autonomy you give, the more these matter.
-
-Over to you: when you build an agent, which of these five takes the most work to get right?
-
-How do you know if your AI app actually works?
-
-You evaluate it. But most teams skip this step (or do it wrong) because “eval” feels vague. It’s not.
-
-Every good eval is a 3-step recipe.
-
-Step 1: Pick a task. AI systems have different capabilities and dimensions to evaluate. For LLMs, it can be safety or math capability, in RAGs it can be grounding and retrieval, Pick one.
-
-
-…（原文过长，此处截断）</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-    <div class="srcblock">
-      <div class="srcname">Simon Willison's Weblog<span>2 条</span></div>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/3/newsletter/" target="_blank" rel="noopener">September sponsors-only newsletter</a></h3>
-<p class="one">Simon Willison 9 月赞助者通讯目录，涵盖模型定价战、LLM 数学能力等话题</p><p class="why">目录本身信息量有限，但其中「模型定价战」「LLM 进军数学」「意外网络攻击」等话题反映了当前 LLM 领域的几个活跃方向，可作为追踪线索。</p>        <div class="foot">
-<span class="tag">LLM</span><span class="tag">行业动态</span><span class="tag">通讯</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-03</span>
-        </div>
-      </article>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/2/rex-s-dino-store/" target="_blank" rel="noopener">Rex's Dino Store</a></h3>
-<p class="one">布鲁克林地铁站内由恐龙运营的旧报刊亭，恐龙双关语密度极高</p><p class="why">纯艺术/趣味内容，与技术学习、方向判断、工具接触均无关。</p>        <div class="foot">
-<span class="tag">艺术</span><span class="tag">纽约</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-02</span>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-04 07:00 · 生成于 2026-10-04 07:00:40</span>
+    <span>本次扫描 2026-10-04 08:49 · 生成于 2026-10-04 08:49:00</span>
   </footer>
 </div>
 </body>
