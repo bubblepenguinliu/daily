@@ -178,284 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-06 · 第 6 号</div>
+    <div class="sub">2026-10-06</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>6</b> 条 · 精读 <b>3</b> 篇</span>
-      <span>共 <b>32</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-06 09:25</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-06 09:25 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>Anthropic 的 Cowork 把 VM 和推理全部搬到云端，本地只留文件访问入口——AI Agent 的沙箱架构正在从本地转向云端</li><li>Qwen3.8 27B 在 DGX Spark 上做加法文字题实验：开 reasoning 后 169 次对 167 次，本地小模型推理能力已可验证</li><li>pwasm 被 Claude Opus 5.5 用 42 个 commit 补全到几乎覆盖 WASM 规范，纯 Python WASM 引擎可跑 MicroPython/QuickJS</li><li>LLM 的 lost-in-the-middle 效应有具体工程后果：长 prompt 中间的关键规则会被忽略，写 Agent 时要主动规避</li><li>Import AI 讨论 swarm scaling：多 Agent 并行是拿 token 换 wall-clock 时间，适合赶时间的场景</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-413.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 413 期）：再见了，React Native</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-412.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 412 期）：禁止 issue，只用 PR</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/5/felix-rieseberg/" target="_blank" rel="noopener">Simon Willison's Weblog · Quoting Felix Rieseberg</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/" target="_blank" rel="noopener">Simon Willison's Weblog · Qwen3.8 27B addition in words</a></li>
+      <li><a href="https://blog.bytebytego.com/p/the-llm-blindspot-why-models-forget" target="_blank" rel="noopener">ByteByteGo · The LLM Blindspot: Why Models Forget What’s in the Middle of Your Prompt</a></li>
+      <li><a href="https://blog.bytebytego.com/p/new-course-ai-evals-in-practice-starts" target="_blank" rel="noopener">ByteByteGo · Last 3 days: AI Evals, October cohort</a></li>
+      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
+      <li><a href="https://jack-clark.net/2026/09/28/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-rsi-loop/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-05.html" style="color:var(--accent)">digest-2026-10-05.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">挑出 Cowork 云端沙箱架构、Qwen3.8 本地推理实测、pwasm 被 LLM 补全这三条：它们分别对应 Agent 架构方向、本地模型能力边界、以及 LLM 改造系统级代码的真实案例，信息密度高且能直接影响读者对技术方向的判断。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-05</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/5/felix-rieseberg/" target="_blank" rel="noopener">引用 Felix Rieseberg 的话</a></h2>
-        <div class="orig-title">Quoting Felix Rieseberg</div>
-<p class="standfirst">Anthropic 的 Cowork 把 VM 和推理都搬上云端，换取续航与持续运行。</p>        <div class="art-meta">
-          <span>9 段</span><span>·</span>
-          <span>9 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 5 日</p>
-        <p>“旧版” Cowork 在云端运行模型推理，并在一个由 Anthropic 提供、随软件一起装到你电脑上的 VM 里执行 tool call。我们加入这个 VM 是出于能力、安全和安保的考虑——只把你在会话中显式添加的数据映射进去。人们很喜欢用 Claude 能做的事，但不喜欢在本地跑这个 VM 带来的磁盘、电池和性能开销。另外，人们也不喜欢合上笔记本就意味着工作停止。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Cowork 是 Anthropic 2026 年推出的桌面 agent 产品，定位是把 Claude 的 tool use 能力封装成可操作本地文件的应用；本地 VM 方案类似早期 Docker Desktop 在 Mac/Windows 上跑 Linux 虚拟机的做法。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>本地跑一个 Linux VM 通常常驻占用 1-2 GB 内存、数 GB 磁盘，空闲时也会持续消耗 2-5% CPU；在 M 系列 Mac 上电池续航可能因此缩短 1-2 小时，这是用户抱怨“电池开销”的量级来源。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“只映射显式添加的数据”这一安全承诺依赖 VM 的隔离强度。若 VM 逃逸或宿主侧文件访问工具被 prompt injection 劫持，隔离边界就会失效——2025 年以来多起 agent 安全事件都出在工具调用层而非模型层。</aside>
-        <p>“新版” Cowork 把模型推理和 VM 都放到云端运行。每个会话拥有自己的 sandbox，不与其他会话共享状态。当 VM 需要用户设备上的东西（比如某个文件）时，由桌面应用负责那次文件访问的 tool call。[...]</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>“每会话独立 sandbox”是 2025-2026 年 agent 基础设施的主流范式，E2B、Modal Sandboxes、Cloudflare Containers 都提供类似能力；关键指标是冷启动时间，通常要求控制在 1 秒内才能让交互不卡顿。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>想自己验证这套架构，可以用 E2B 或 Daytona 起一个 sandbox，写一个 Python 脚本让模型通过 function calling 请求读取本地文件，观察“云端 VM 发起请求 → 桌面端代理执行”这条链路。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>原文说“桌面应用负责文件访问”，但没说明权限粒度：是每次弹窗确认，还是预先授权某个目录？这直接决定 prompt injection 能否静默读取 ~/.ssh 或浏览器 cookie 库。</aside>
-        <p>我们认为这解决了我们听到的很多问题（比如用手机使用 Cowork、让工作持续运行，或者在不把电池耗在 VM 上的前提下获得同样的能力）</p>
-        <aside class="note k-背景"><span class="k">背景</span>“合上笔记本工作就停”是本地 agent 的共性痛点，也是 2026 年 agent 产品从“桌面应用”转向“云端会话 + 瘦客户端”的直接动因；OpenAI 的 Operator/Codex 云端模式走的是同一条路。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>把 VM 放云端解决了续航，却引入新成本：每个活跃会话都要占一份云资源，长时运行的 agent 会产生持续计费；同时数据必须离开本地，对合规敏感的企业客户可能是反向 trade-off。</aside>
-        <p>—— Felix Rieseberg，Anthropic，另见这个帮助页面</p>
-        <p>近期文章</p>
-        <p>- 我们几乎需要对所有东西设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>“硬性预算上限”呼应 agent 云端化的成本问题：当 agent 可以自主循环调用工具，token 和 sandbox 时长会失控增长，Anthropic、OpenAI 都在 2026 年给 API 加了 workspace 级 spend limit。</aside>
-        <p>- OpenAI DevDay 2026 现场博客 - 2026 年 9 月 29 日</p>
-        <p>- 2026 年的 LLM（截至目前） - 2026 年 9 月 27 日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>Agent 产品正把执行环境从本地搬到云端 sandbox，用数据出本地换取续航、持续运行和多端可用。</div>
-        <details class="orig">
-          <summary>查看英文原文（1215 字符，可对照译文）</summary>
-          <pre>5th October 2026
-
-The "old" version of Cowork runs model inference in the cloud, executing tool calls in an Anthropic-provided VM we shipped to your computer. We added the VM for capability, safety, and security reasons - mapping in just the data you explicitly added to your session. People loved what they were able to do with Claude but didn't love the disk, battery, and performance cost of running the VM locally. Also, people didn't love that closing your laptop means the work stops.
-
-The "new" version of Cowork runs model inference and the VM in the cloud. Each session gets its own sandbox, not sharing state with other sessions. When the VM needs something on the users' device (like a file), the desktop app is responsible for that file access tool call. [...]
-
-We think this solves a lot of problems we've heard about (like using Cowork from a phone, keeping work running, or getting all the same power without losing battery to the VM)
-
-— Felix Rieseberg, Anthropic, see also this help page
-
-Recent articles
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026
-
-- OpenAI DevDay 2026 live blog - 29th September 2026
-
-- 2026 in LLMs (so far) - 27th September 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-04</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/" target="_blank" rel="noopener">Qwen3.8 27B 用文字做加法</a></h2>
-        <div class="orig-title">Qwen3.8 27B addition in words</div>
-<p class="standfirst">在本地 DGX Spark 上复现大模型用英文单词做多位数加法的实验。</p>        <div class="art-meta">
-          <span>21 段</span><span>·</span>
-          <span>11 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 4 日</p>
-        <p>Colin Frasier 在 Bluesky 上发帖，讲了他两年前做的一个实验：用 GPT-4o 测试它在数字越来越大的情况下，能否「算出和，但用文字返回答案」。下面是他分享的结果图表：</p>
-        <aside class="note k-背景"><span class="k">背景</span>「用文字返回答案」指模型不能直接输出数字，必须写成「四千二百九十九……」这类英文数词，逼它走语言通路而非数字 token 通路，是探测算术是否「真算」的经典手法。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>这类实验属于 mechanistic interpretability 的「探针」思路：通过改变输出格式来暴露内部计算路径。类似做法还有让模型用 CoT 逐步写竖式、或强制用 base-10 逐位输出。</aside>
-        <p>我确信 GPT-4o 没有作弊去用计算器，尤其是因为它算错了那么多题。但我受到启发，想在本地硬件（一台 DGX Spark）上重跑这个实验，在一个完全可控的环境里探究这个效应。</p>
-        <aside class="note k-背景"><span class="k">背景</span>DGX Spark 是 NVIDIA 2025 年推出的桌面级 AI 工作站，搭载 GB10 Grace Blackwell 超级芯片，128GB 统一内存，定位是让开发者本地跑 200B 级模型，售价约 3000-4000 美元。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>「没作弊」的论证是「错得多所以没调工具」，但这只能排除「完美调用计算器」，不能排除模型在训练数据里见过类似算式而记忆性输出。要严格排除，需做训练集污染检测。</aside>
-        <p>我把他的图片粘贴进一个 Codex Remote 会话（GPT-6 Astra），让它用 Qwen3.8-27B-Q4_K_M.gguf 跑同样的实验。下面是关闭 reasoning 时、每种组合跑 30 次的结果：</p>
-        <aside class="note k-背景"><span class="k">背景</span>Q4_K_M 是 llama.cpp 的 4-bit 量化方案，K 表示 k-quant，M 表示 medium 档位，在精度和体积间折中。27B 模型 Q4 量化后约 16GB，单张消费级显卡或统一内存设备即可加载。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>想自己复现：装 llama.cpp，下载对应 gguf，用 llama-server 起 OpenAI 兼容接口，再写脚本对每个位数区间生成随机数、调用并解析英文数词答案，统计正确率即可。</aside>
-        <p>然后我打开 reasoning 又跑了一遍。这次每一对数字耗时久得多，所以每个格子我只跑了一次，而不是 30 个样本——这让热力图在视觉上难看很多，因为每个格子要么 100% 要么 0%：</p>
-        <aside class="note k-数据"><span class="k">数据</span>单样本热力图只有 0/1 两色，无法区分「稳定正确」和「碰巧对」。要得到可信曲线，每格至少 10-30 次采样，或改用 pass@k、多数投票等指标。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>reasoning 模式本质是让模型先输出 CoT 再给答案，对算术这类需要中间状态的任务提升显著，代价是 token 数暴涨、延迟增加数倍，本地部署时显存和吞吐压力都更大。</aside>
-        <p>它在 169 次尝试中答对了 167 次。由于这些都是单次采样，我确信再跑一遍结果会不一样。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>167/169 ≈ 98.8%，但样本量小且每格仅 1 次，置信区间很宽。按二项分布，真实正确率 95% 时，169 次里出现 167 次以上正确的概率并不低，不能据此断言接近完美。</aside>
-        <p>这里有一版报告，包含其中一些较大计算题的 reasoning 轨迹，里面有这样的文字：</p>
-        <p>等等，让我更仔细地重算一遍。</p>
-        <p>4,299,366,105,622</p>
-        <p>6,088,794,067,970</p>
-        <p>让我把它们对齐：</p>
-        <p>4 2 9 9 3 6 6 1 0 5 6 2 2</p>
-        <p>6 0 8 8 7 9 4 0 6 7 9 7 0</p>
-        <p>从右往左加：</p>
-        <p>第 1 位（个位）：2 + 0 = 2</p>
-        <p>第 2 位（十位）：2 + 7 = 9</p>
-        <p>第 3 位（百位）：6 + 9 = 15，写 5，进 1</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这段 CoT 显示模型确实在逐位模拟竖式加法，与「语言模型只是模式匹配」的直觉相反。相关研究（如「Language Models Use Lookback on Arithmetic」）发现模型内部会形成类似进位寄存器的激活模式。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>注意原文这里只展示了前三位，后面被截断。仅凭开头几行无法判断整条推理链是否自洽，也不能证明最终答案由这条链推出而非事后编造。</aside>
-        <p>近期文章</p>
-        <p>- 我们几乎需要对所有东西都设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-        <p>- OpenAI DevDay 2026 现场博客 - 2026 年 9 月 29 日</p>
-        <p>- 2026 年的 LLM（截至目前）- 2026 年 9 月 27 日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>本地 27B 量化模型开 reasoning 后，用文字做 13 位加法可达约 99% 正确率，但单次采样不足以定论。</div>
-        <details class="orig">
-          <summary>查看英文原文（1751 字符，可对照译文）</summary>
-          <pre>4th October 2026
-
-Colin Frasier posted on Bluesky about an experiment he ran over two years ago using GPT-4o to see how well it could "compute the sum but return the answer in words" across increasingly large numbers. Here's the chart he shared of those results:
-
-I'm confident GPT-4o didn't cheat and use a calculator, especially since it got so many of the calculations wrong, but I was inspired to run the experiment again on local hardware (a DGX Spark) to explore the effect in a fully controlled environment.
-
-I pasted his image into a Codex Remote session (GPT-6 Astra) and had it run the same experiment using Qwen3.8-27B-Q4_K_M.gguf. Here's the result for a run of 30 attempts per combination with reasoning disabled:
-
-Then I ran it again with reasoning enabled. This took a lot longer per pair, so instead of running 30 samples per square I ran just one - which results in a much less visually appealing heatmap since each square is either 100% or 0%:
-
-It got the right answer in 167 out of 169 attempts, and since these were one-shot I'm confident a second run would produce different results here.
-
-Here's a version of the report that includes the reasoning traces from some of those larger calculations, which include text like this:
-
-Wait, let me redo this more carefully.
-
-4,299,366,105,622
-
-6,088,794,067,970
-
-Let me align them:
-
-4 2 9 9 3 6 6 1 0 5 6 2 2
-
-6 0 8 8 7 9 4 0 6 7 9 7 0
-
-Adding from right to left:
-
-Position 1 (units): 2 + 0 = 2
-
-Position 2 (tens): 2 + 7 = 9
-
-Position 3 (hundreds): 6 + 9 = 15, write 5, carry 1
-
-Recent articles
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026
-
-- OpenAI DevDay 2026 live blog - 29th September 2026
-
-- 2026 in LLMs (so far) - 27th September 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-01</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/1/pwasm/" target="_blank" rel="noopener">pwasm 0.2a0</a></h2>
-<p class="standfirst">纯 Python 写的 WebAssembly 引擎，被新模型大改后接近完整规范。</p>        <div class="art-meta">
-          <span>10 段</span><span>·</span>
-          <span>12 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 1 日</p>
-        <p>pwasm 是我的一个 folly 项目——一个完全靠 vibe coding 写出来的纯 Python WebAssembly 引擎，是我在一月份第一波 AI 狂热期里做出来的。</p>
-        <aside class="note k-背景"><span class="k">背景</span>vibe coding 指不逐行审查、只靠自然语言提示让模型生成代码的开发方式，Andrej Karpathy 在 2025 年初提出这个词，Simon Willison 是它最积极的公开实践者之一。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>纯 Python 实现 WASM 的性能天花板很低：WASM 的设计目标是接近原生速度，而 CPython 解释器本身就有 10-100 倍开销，所以 pwasm 更适合做教学/验证而非生产运行时。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>想自己跑一遍：pip install pwasm，然后加载一个 .wasm 文件调用导出函数即可；对比 wasmtime（Rust 实现）的启动时间和执行时间，能直观感受解释器开销。</aside>
-        <p>我从一月份之后就没再碰过它，所以我决定放 Claude Opus 5.5 上去试试，看它能不能做出什么显著的改进：</p>
-        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 是 Django 联合创始人、Datasette 作者，他的博客是追踪 LLM 工程实践的一手信息源，常以“自己动手试”的方式给出可复现结论。</aside>
-        <p>评估 pwasm 当前状态——然后考虑要让 research repo 里的 MicroPython 和 micro JavaScript 实验在它上面跑起来需要做什么——以及要加速它需要做什么</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>MicroPython 和 QuickJS 都是可嵌入的小型运行时，把它们编译成 WASM 再在 WASM 引擎里跑，等于“解释器套解释器”，是检验 WASM 引擎正确性的经典压力测试。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>QuickJS 的 WASM 构建体积约几百 KB 量级，MicroPython 类似；相比之下 V8 的 WASM 引擎是数 MB 的 C++ 代码，纯 Python 实现能跑通已属不易。</aside>
-        <p>42 次 commit 之后（几乎没有后续提示），它现在能处理几乎整个 WASM 规范，而且 PyPI 上的 wheel 打包了可用的 MicroPython、QuickJS 和 Micro QuickJS 的 WASM 构建。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>“几乎整个 WASM 规范”不等于通过官方 WebAssembly spec test suite；WASM 有 2000+ 条规范测试用例，覆盖异常、边界、内存增长等，未跑通前不宜下结论。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>WASM 1.0 规范约 170 页，包含 MVP 的整数/浮点运算、控制流、内存、表、导入导出；后续又加了 SIMD、线程、异常处理、GC 等提案，实现完整度差异很大。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>验证方法：用 wasm-tools 或 wabt 的 wasm-validate 检查生成的模块，再跑 spec 官方测试套件（github.com/WebAssembly/spec/tree/main/test/core）看通过率。</aside>
-        <p>我完全不会信任这东西——所以才打了 alpha 版本标签——但看到今天的模型能改进 10 个月前模型的作品，这很有意思。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>“模型改进模型的作品”存在幸存者偏差：作者只报告了成功案例，没有说有多少次尝试失败或产出不可用代码，样本量为 1。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>这类“让新模型接手旧代码库”的实验在 2025-2026 年变多，例如有人用新模型重写旧 LLM 生成的 Rust 项目；共同发现是模型对陌生代码库的上下文理解仍是瓶颈。</aside>
-        <p>近期文章</p>
-        <p>- 我们几乎需要对所有东西设置默认的硬性预算上限——2026 年 10 月 3 日</p>
-        <aside class="note k-背景"><span class="k">背景</span>“硬性预算上限”指对 LLM API 调用设置 token/费用上限，防止 agent 循环失控烧钱；这是 2026 年 agent 工程的热门话题。</aside>
-        <p>- OpenAI DevDay 2026 现场博客——2026 年 9 月 29 日</p>
-        <p>- 2026 年的 LLM（截至目前）——2026 年 9 月 27 日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>纯 Python 的 WASM 引擎被新模型 42 次 commit 改到接近完整规范，但仍是 alpha，别用于生产。</div>
-        <details class="orig">
-          <summary>查看英文原文（1089 字符，可对照译文）</summary>
-          <pre>1st October 2026
-
-pwasm is one of my folly projects - an entirely vibe-coded pure Python WebAssembly engine that I built in January during my first bout of AI mania.
-
-I hadn't touched it since January, so I decided to let Claude Opus 5.5 loose on it and see if it could make any significant improvements:
-
-Evaluate current state of pwasm - then consider what it would take to get the MicroPython and micro JavaScript experiments from the research repo working under it - and what it would take to speed it up
-
-42 commits later (with minimal follow-up prompting) it now handles almost all of the WASM specification, and the wheel from PyPI bundles working WASM builds of MicroPython, QuickJS and Micro QuickJS.
-
-I wouldn't trust this thing at all - hence the alpha version tag - but it's interesting seeing how today's models can improve on the work of models from 10 months ago.
-
-Recent articles
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026
-
-- OpenAI DevDay 2026 live blog - 29th September 2026
-
-- 2026 in LLMs (so far) - 27th September 2026</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-    <div class="srcblock">
-      <div class="srcname">Simon Willison's Weblog<span>1 条</span></div>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Sep/28/llm-anthropic/" target="_blank" rel="noopener">llm-anthropic 0.30</a></h3>
-<p class="one">llm-anthropic 0.30 新增模型列表刷新和 token 计数命令</p><p class="why">llm 是 Simon Willison 的 CLI 工具，这个插件让你在命令行直接调 Claude 并预估 token 消耗。对想低成本试各种模型、做 prompt 成本估算的人是个顺手工具</p><p class="act"><span>下 一 步</span>pip install llm llm-anthropic，用 llm anthropic count 估算你常用 prompt 的 token 数</p>        <div class="foot">
-<span class="tag">LLM工具</span><span class="tag">CLI</span><span class="tag">Anthropic</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-09-28</span>
-        </div>
-      </article>
-    </div>
-    <div class="srcblock">
-      <div class="srcname">ByteByteGo<span>1 条</span></div>
-      <article class="mini">
-        <h3><a href="https://blog.bytebytego.com/p/the-llm-blindspot-why-models-forget" target="_blank" rel="noopener">The LLM Blindspot: Why Models Forget What’s in the Middle of Your Prompt</a></h3>
-<p class="one">解释 LLM 的 lost-in-the-middle 效应：长 prompt 中间的关键信息容易被忽略</p><p class="why">这是写 Agent 和 RAG 时的实际工程约束：关键规则不要放在长 prompt 中间。对做 AI 应用开发的人是必须知道的失效模式，也解释了为什么'把文档全塞进去'不可靠</p><p class="act"><span>下 一 步</span>检查自己项目里的 system prompt，把最关键的约束移到开头或结尾，做 A/B 对比</p>        <div class="foot">
-<span class="tag">Prompt工程</span><span class="tag">RAG</span><span class="tag">LLM失效模式</span>          <span class="src">ByteByteGo</span>
-          <span class="dt">2026-10-05</span>
-        </div>
-      </article>
-    </div>
-    <div class="srcblock">
-      <div class="srcname">Import AI（Jack Clark）<span>1 条</span></div>
-      <article class="mini">
-        <h3><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></h3>
-<p class="one">Import AI 475：swarm scaling 用 token 换 wall-clock 时间，以及 AI 科学经济等话题</p><p class="why">Toby Ord 的分析给出 swarm 的适用边界：4-agent swarm 总 token 约 2 倍，但每 agent 只需一半，并行后理论时间减半。对判断多 Agent 架构何时值得用有直接依据</p><p class="act"><span>下 一 步</span>读 Toby Ord 的原文，算一下你手头任务用 swarm 是否划算（token 成本 vs 时间收益）</p>        <div class="foot">
-<span class="tag">多Agent</span><span class="tag">swarm</span><span class="tag">AI研究</span>          <span class="src">Import AI（Jack Clark）</span>
-          <span class="dt">2026-10-05</span>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-06 07:37 · 生成于 2026-10-06 07:37:57</span>
+    <span>本次扫描 2026-10-06 09:25 · 生成于 2026-10-06 09:25:54</span>
   </footer>
 </div>
 </body>
