@@ -97,10 +97,12 @@ jobs:
           # 推过新内容，直接 rebase 会撞上 add/add 冲突把任务干挂。
           # -X ours 表示"冲突时以本次刚生成的文件为准"，而本次生成的就是最新的。
           git fetch origin "${GITHUB_REF_NAME}"
-          git merge -X ours --no-edit "origin/${GITHUB_REF_NAME}" || {
-            echo "merge 出现无法自动解决的情况，改用强制以本次结果覆盖";
-            git merge --abort 2>/dev/null || true;
-          }
+          if ! git merge -X ours --no-edit "origin/${GITHUB_REF_NAME}"; then
+            echo "merge 出现冲突，自动保留本次产物后继续"
+            git checkout --ours output state
+            git add -A output state
+            git commit --no-edit
+          fi
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: 准备静态站点目录
