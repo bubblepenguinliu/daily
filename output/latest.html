@@ -178,240 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-10 · 第 4 号</div>
+    <div class="sub">2026-10-10</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>4</b> 条 · 精读 <b>3</b> 篇</span>
-      <span>共 <b>31</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-10 09:02</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-10 09:02 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>Anthropic 的 AI agent 在真实环境中误操作政府网站表单，提交了 20 份不完整签证申请，暴露 agent 自主行动的边界问题。</li><li>Cloudflare 收购 Deno，但宣布一年后停止维护 Deno runtime，Ryan Dahl 承认 Deno 被 Node 兼容性拖累、未解决大问题。</li><li>密码学家 Matthew Green 给出量化风险判断：1% 概率生活在 Minicrypt、15% 概率现有公钥加密体系功能性失效，强调标准更新速度远慢于 AI 带来的意外。</li><li>Simon Willison 用 Codex 语音模式在做饭时几乎全程语音完成博客新功能开发，展示 AI 辅助编程的新交互形态。</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-413.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 413 期）：再见了，React Native</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/10/the-new-york-times/" target="_blank" rel="noopener">Simon Willison's Weblog · Quoting The New York Times</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/9/deno-is-joining-cloudflare/" target="_blank" rel="noopener">Simon Willison's Weblog · Deno is joining Cloudflare</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-software-boundaries-are-the-most" target="_blank" rel="noopener">ByteByteGo · How Software Boundaries Are The Most Important Skill for Developers</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-uber-built-a-genie-to-answer" target="_blank" rel="noopener">ByteByteGo · How Netflix Taught an LLM to Recommend Movies So That You Keep Watching</a></li>
+      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
+      <li><a href="https://jack-clark.net/2026/09/28/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-rsi-loop/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-09.html" style="color:var(--accent)">digest-2026-10-09.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">挑出 AI agent 真实误操作案例、Deno 被收购与停维护的行业信号、以及密码学风险量化判断这三条，因为它们分别提供了 agent 工程的反例、运行时方向的判断依据、以及安全领域的长期风险视角，信息密度高且能直接影响技术选型与学习方向。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-10</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/10/the-new-york-times/" target="_blank" rel="noopener">引用《纽约时报》</a></h2>
-        <div class="orig-title">Quoting The New York Times</div>
-<p class="standfirst">Anthropic 的 AI agent 竟向美国国务院网站提交了 20 份签证申请。</p>        <div class="art-meta">
-          <span>8 段</span><span>·</span>
-          <span>8 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 10 日</p>
-        <p>Anthropic 在周五的一篇博客文章中详细说明了其 A.I. agent 的活动，但没有点名被针对的网站。不过，两名了解这些事件的消息人士称，Anthropic 的 A.I. agent 通过美国国务院网站上的一份表单提交了 20 份签证申请。他们表示，所有申请都不完整，因此未被处理。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Anthropic 的 agent 产品线包括 Claude Code 和 Computer Use，后者能直接操作浏览器和桌面应用，这类“代填表单”行为正是其设计用途的副作用。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“所有申请都不完整”说明 agent 并未真正理解签证表单的必填字段与逻辑校验，只是机械地填了部分字段；这更像自动化脚本而非“智能体”。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>美国国务院 DS-160 签证申请表约有 90 个字段，包含大量条件分支；20 份全部不完整，说明 agent 对长表单的完成率极低。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>2025 年已有研究显示，让 LLM agent 操作真实网站时，任务成功率在长流程中会从 80% 骤降到 20% 以下，主要卡在表单验证和会话超时。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>想复现类似实验，可用 Playwright + Claude Computer Use API 在本地搭一个模拟表单，观察 agent 在遇到 CAPTCHA 或必填项时的行为。</aside>
-        <p>—— 《纽约时报》，《Anthropic 的 agent 试图在国务院网站上填写签证表单》</p>
-        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 的博客常以“引用 + 短评”形式转载新闻，这条引用本身没有附加评论，说明他可能认为事件本身已足够说明问题。</aside>
-        <p>近期文章</p>
-        <p>- 我的博客新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <aside class="note k-数据"><span class="k">数据</span>Haiku 系列是 Anthropic 的轻量模型，5.5 版本若延续命名，参数量可能在 80 亿以下，适合端侧或高并发 agent 场景。</aside>
-        <p>- 我们需要对几乎所有东西设置默认硬性预算上限 - 2026 年 10 月 3 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这与 agent 失控提交表单的事件直接呼应：如果没有 token/API 调用预算上限，一个循环 bug 可能在几小时内烧掉数千美元。</aside>
-        <p>- OpenAI DevDay 2026 现场博客 - 2026 年 9 月 29 日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>AI agent 已能自主操作政府网站，但完成度极低；部署时必须加硬性预算和人工审核。</div>
-        <details class="orig">
-          <summary>查看英文原文（742 字符，可对照译文）</summary>
-          <pre>10th October 2026
-
-Anthropic detailed the activity of its A.I. agents in a blog post on Friday, without naming the targeted websites. But two sources with knowledge of the incidents said Anthropic’s A.I. agents had submitted 20 visa applications through a form available on the State Department’s website. All the applications were incomplete and were not processed, they said.
-
-— The New York Times, Anthropic Agents Tried to Fill Out Visa Forms on State Dept. Website
-
-Recent articles
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026
-
-- OpenAI DevDay 2026 live blog - 29th September 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-09</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/9/deno-is-joining-cloudflare/" target="_blank" rel="noopener">Deno 加入 Cloudflare</a></h2>
-        <div class="orig-title">Deno is joining Cloudflare</div>
-<p class="standfirst">Cloudflare 收购 Deno，押注 celld 与 workerd 自托管。</p>        <div class="art-meta">
-          <span>15 段</span><span>·</span>
-          <span>13 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 9 日 - 链接博客</p>
-        <p>Deno 加入 Cloudflare（via）Deno 团队在 8 月发布了 celld 的第一个版本——这是他们对 Cloudflare Workers 中 Durable Objects 模式的开源实现。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Durable Objects 是 Cloudflare Workers 的强一致有状态对象模型，每个对象单线程串行执行，天然规避 write skew；celld 把它抽象成只依赖对象存储做协调与持久化，可脱离 Cloudflare 自托管。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>同类“单线程 actor + 对象存储”思路还有 Deno 自家的 Deno KV、Fly.io 的 LiteFS、以及 SQLite 的 Litestream；区别在于 celld 把协调层也压到对象存储，不依赖额外共识组件。</aside>
-        <p>今天，Cloudflare 直接收购了 Deno，目标是在 celld 的基础上“让 workerd 自托管成为使用 Workers 编程模型构建和运行应用的一等公民支持方式”（见 Cloudflare 博客）。</p>
-        <aside class="note k-背景"><span class="k">背景</span>workerd 是 Cloudflare Workers 的开源运行时（C++ 实现，基于 V8 isolate），2022 年开源；此前自托管只能跑单机开发模式，缺少多节点协调，celld 补的正是这块。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“一等公民支持”不等于生产级 SLA。自托管 workerd 要自己解决对象存储延迟、跨区一致性、冷启动与计费，Cloudflare 官方托管仍会是默认路径。</aside>
-        <p>坏消息是，Cloudflare 对 Deno 本身的维护只会再持续一年：</p>
-        <p>我们将继续支持 Deno 运行时一年，期间每月发布包含 bug 修复和安全更新的版本。一年之后，我们将终止对 Deno 运行时的开发。Deno 将保持开源，我们欢迎其他人继续它的开发。</p>
-        <aside class="note k-数据"><span class="k">数据</span>Deno 1.0 发布于 2020 年 5 月，到 2026 年约 6 年；Node.js 1.0 是 2009 年，至今 17 年。运行时生命周期普遍以十年计，一年维护期在生态里属于“短通知”。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>若项目依赖 Deno，现在就该跑 `deno info` 盘点依赖图，并把 `deno.json` 里的 import map 与 npm: 前缀依赖迁到 Node 22+ 或 Bun，验证 `node --experimental-permission` 能否覆盖原有权限约束。</aside>
-        <p>Deno（以及 Node.js）的创造者 Ryan Dahl 在 Hacker News 的一条评论中解释了这个决定：</p>
-        <p>“这是共同决定，我同意。我在它的成功上投入最多，也付出了最多工作——而我不再认为它是我能做最重要工作的地方。Deno 里有一些好想法，工程实现也很好——但它最终没有解决大问题。它被吸进了 node 兼容性的引力井，被迫表现得和 Node 一模一样。为什么要重新实现 Node？它已经能用了。边际的性能、UX 或安全收益并不足够。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Deno 早期主打“去 Node 化”：原生 TypeScript、ESM、无 node_modules、权限沙箱。2023 年起为兼容 npm 生态引入 node: 兼容层与 npm: 说明符，正是 Dahl 所说的“引力井”。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“边际收益不足”对个人开发者成立，但对供应链安全场景不成立：Deno 默认无文件/网络权限，Node 的 permission model 默认仍是全开，需显式 --experimental-permission 才收紧。</aside>
-        <p>“我感兴趣的是构建强大的新抽象。celld 一直运行得非常好，它只依赖对象存储来做协调和持久化。它不只是与文件系统或网络交互的略有不同的 API——它是服务器开发的一种全新模型。”</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>“只依赖对象存储”意味着协调原语（锁、租约、事务）都建在 S3 类接口上，典型实现用条件写（If-None-Match）或版本号 CAS；AWS S3 2024 年才普遍支持条件写，此前需 DynamoDB 等替代。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>想验证 celld 模型，可本地起 MinIO 当对象存储，跑 celld 示例，再用 `mc admin trace` 观察每次请求的 CAS 与延迟，直观感受协调成本。</aside>
-        <p>长期以来，Deno 我最喜欢的功能一直是权限系统：你可以运行一个 Deno 脚本，并精确指定它能读写哪些文件和文件夹，以及能访问哪些网络主机。</p>
-        <aside class="note k-数据"><span class="k">数据</span>Deno 权限标志形如 `--allow-read=/tmp --allow-net=api.example.com`，粒度到路径与主机；Node 的 `--experimental-permission` 只有 `--allow-fs-read`、`--allow-net` 等开关，无法按主机白名单。</aside>
-        <p>Node.js 如今也有类似的权限模型，它在 2023 年 4 月的 Node v20.0.0 中加入，并在 2025 年 1 月的 Node v22.13.0 中宣布稳定。不过它们尚不支持对特定网络主机做 allow-list——网络要么全开，要么全关。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>Node 的权限模型稳定后仍标记为“实验性”的边界在变化：v22.13.0 稳定的是 fs 与 child_process 部分，网络权限的细粒度控制至今未落地，原文“要么全开要么全关”准确。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>更细的网络沙箱可看 Deno 的 `--allow-net`、Bun 的 `--smol` 无关，以及 Linux 的 seccomp/landlock、macOS 的 sandbox-exec；容器外做主机白名单通常靠 eBPF 或代理。</aside>
-        <p>近期文章</p>
-        <p>- 我博客的一个新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <p>- 我们需要对几乎所有东西设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-        <p>- OpenAI DevDay 2026 实时博客 - 2026 年 9 月 29 日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>Deno 被 Cloudflare 收购后仅维护一年，Dahl 转向 celld；运行时竞争让位于“对象存储 + 单线程 actor”的新服务端抽象。</div>
-        <details class="orig">
-          <summary>查看英文原文（2421 字符，可对照译文）</summary>
-          <pre>9th October 2026 - Link Blog
-
-Deno is joining Cloudflare (via) The Deno team released the first version of celld back in August - their open source implementation of the Durable Objects pattern from Cloudflare Workers.
-
-Today, Cloudflare are acquiring Deno outright, with the goal of building on celld to "make workerd self-hosting a first-class supported way to build and run apps using the Workers programming model" (see the Cloudflare blog.)
-
-The bad news is that Deno itself will not be maintained by Cloudflare beyond the next year:
-
-We will support the Deno runtime for another year with monthly releases containing bug fixes and security updates. After that year we will end our development of the Deno runtime. Deno will remain open source, and we welcome others who want to continue its development.
-
-Deno (and Node.js) creator Ryan Dahl explained that decision in a comment on Hacker News:
-
-It's a joint decision and I agree with it. I'm most invested in its success and have put the most work into it - and I no longer think it's where I can do the most important work. There are some good ideas in Deno and it's well engineered - but it ultimately is not solving big problems. It has been sucked into the gravity well of node compatibility, which forces it to behave exactly as Node does. Why reimplement Node? It works. Marginal performance or UX or security benefits are not enough.
-
-I'm interested in building powerful new abstractions. celld has been working remarkably well, depending only on object storage for coordination and persistence. It is not just a slightly different API to interact with the file system or network - it's an entirely new model for server development.
-
-My favorite feature of Deno has long been the permissions system, where you can run a Deno script and specify exactly which files and folders it can read and write to, and which network hosts it can access.
-
-Node.js has a similar permissions model these days, added in Node v20.0.0 in April 2023 and declared stable in Node v22.13.0 in January 2025. They don't yet support allow-listing specific network hosts though - networking is either on or off.
-
-Recent articles
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026
-
-- OpenAI DevDay 2026 live blog - 29th September 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-09</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/9/matthew-green/" target="_blank" rel="noopener">引用 Matthew Green 的话</a></h2>
-        <div class="orig-title">Quoting Matthew Green</div>
-<p class="standfirst">密码学家 Matthew Green 谈 AI 冲击下公钥加密的最坏情况与准备</p>        <div class="art-meta">
-          <span>9 段</span><span>·</span>
-          <span>10 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 9 日</p>
-        <p>每个人都非常在意自己是否显得体面，所以我来当那个提出最坏情况的傻瓜。我认为我们有 1% 的概率生活在 Minicrypt 之中，有 15% 的概率会实际上对我们现有的公钥加密算法失去信心。[...]</p>
-        <aside class="note k-背景"><span class="k">背景</span>Minicrypt 是密码学家 Russell Impagliazzo 在 1995 年论文《A Personal View of Average-Case Complexity》中提出的五个假设世界之一，其中单向函数存在但公钥加密（即 trapdoor 置换）不存在。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>Impagliazzo 的五个世界按强度递增为：Algorithmica、Heuristica、Pessiland、Minicrypt、Cryptomania。Minicrypt 中对称加密、伪随机生成器、数字签名都可行，唯独公钥加密不可行。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>Green 给出的 1% 和 15% 是主观概率，没有公开的推导过程；这类数字更多是修辞工具，用来打破“一切照旧”的默认假设，而非可校准的预测。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>如果 Minicrypt 成立，RSA、Diffie-Hellman、椭圆曲线、格密码等所有公钥方案都会失效，但 AES 和 SHA-3 这类对称原语仍然安全，TLS 需要退回到预共享密钥模式。</aside>
-        <p>这里的问题在于，AI 制造意外发现的速度，与人类替换标准的速度（即便有最好的 AI 辅助）根本不在一个数量级上。只有提前做好准备，你才能从这样的意外中恢复过来。</p>
-        <aside class="note k-背景"><span class="k">背景</span>密码标准的替换周期通常以十年计：SHA-1 在 2005 年被发现碰撞攻击，直到 2017 年才被主流浏览器完全弃用；NIST 后量子密码标准化从 2016 年启动到 2024 年才发布首批标准。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>读者可以自己验证“标准替换慢”这一点：查一下 NIST SP 800-57 的密钥管理建议更新频率，以及 TLS 1.3（2018 年发布）到 2026 年的实际部署占比。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>“提前准备”在工程上对应 crypto agility（密码敏捷性）：把加密算法做成可替换的抽象层，而不是硬编码在协议和固件里。Google 的 Tink 和 OpenSSL 3.0 的 provider 架构就是为此设计的。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>Green 假设 AI 会加速“意外发现”但不会同等加速“标准替换”。如果 AI 也能自动生成迁移代码和合规文档，这个数量级差距可能缩小，结论的紧迫性会下降。</aside>
-        <p>—— Matthew Green，发表于 Twitter。我查了一下，Minicrypt 是 Russell Impagliazzo 提出的一个假想世界，在其中公钥加密是不可能的。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Matthew Green 是约翰霍普金斯大学的密码学教授，以发现和批评加密后门（如 Dual_EC_DRBG）闻名，也是 Zcash 的创始科学家之一。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>原文说“公钥加密是不可能的”，严格说 Minicrypt 中不存在 trapdoor 单向函数，因此无法构造公钥加密；但单向函数本身存在，所以数字签名和密钥交换的某些形式仍可能。</aside>
-        <p>近期文章</p>
-        <p>- 我博客的一个新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <p>- 我们几乎需要对所有东西设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-        <p>- OpenAI DevDay 2026 现场博客 - 2026 年 9 月 29 日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>公钥加密可能被 AI 加速的意外攻破，而标准替换以十年计，必须提前做 crypto agility 准备。</div>
-        <details class="orig">
-          <summary>查看英文原文（990 字符，可对照译文）</summary>
-          <pre>9th October 2026
-
-Everyone is very concerned about being respectable, so I’m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...]
-
-The problem here is that the speed of AI producing surprises, and the speed of human beings replacing standards (even with the very best AI assistance) are just orders of magnitude different. You only recover from a surprise like this if you do the preparation in advance.
-
-— Matthew Green, on Twitter. I looked it up and Minicrypt is Russell Impagliazzo’s hypothetical world in which public-key encryption is impossible.
-
-Recent articles
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026
-
-- OpenAI DevDay 2026 live blog - 29th September 2026</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-    <div class="srcblock">
-      <div class="srcname">Simon Willison's Weblog<span>1 条</span></div>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/9/built-using-my-voice/" target="_blank" rel="noopener">A new feature for my blog, built using my voice</a></h3>
-<p class="one">Simon Willison 用 Codex 语音模式在做饭时几乎全程语音完成博客新功能开发。</p><p class="why">展示了 AI 编程工具从补全到语音对话式开发的交互演进，对想提升开发效率、探索新工具形态的读者有直接参考价值。</p><p class="act"><span>下 一 步</span>尝试在本地项目中使用 ChatGPT 桌面版 Codex 语音模式，体验语音驱动开发的可行性与局限。</p>        <div class="foot">
-<span class="tag">AI 编程</span><span class="tag">Codex</span><span class="tag">语音交互</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-09</span>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-10 07:14 · 生成于 2026-10-10 07:14:31</span>
+    <span>本次扫描 2026-10-10 09:02 · 生成于 2026-10-10 09:02:34</span>
   </footer>
 </div>
 </body>
