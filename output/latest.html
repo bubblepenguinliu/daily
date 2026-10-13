@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#faf7f2">
-<title>技术情报日报 · 2026-10-12</title>
+<title>技术情报日报 · 2026-10-13</title>
 <style>
   :root{
     --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
@@ -178,38 +178,591 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-12</div>
+    <div class="sub">2026-10-13 · 第 5 号</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本次扫描 <b>2026-10-12 09:46</b> · 四个来源暂无新条目</span>
-      <span>已列出各源当前最新内容</span>
+      <span>本期收录 <b>5</b> 条 · 精读 <b>3</b> 篇</span>
+      <span>共 <b>51</b> 条页边批注</span>
     </div>
-    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">本 次 扫 描</div>
-    <p class="note-lead">本次扫描于 2026-10-12 09:46 完成，四个来源都没有新条目。
-      下面是各来源当前最新的一篇，想读可以直接点开。</p>
+    <div class="sec">今 日 提 要</div>
     <ul class="ov">
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
-      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-413.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 413 期）：再见了，React Native</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/11/dwarf-fortress/" target="_blank" rel="noopener">Simon Willison's Weblog · Dwarf Fortress uses version control now</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/10/python-actions/" target="_blank" rel="noopener">Simon Willison's Weblog · Python 3.15.0 added to actions/python-versions</a></li>
-      <li><a href="https://blog.bytebytego.com/p/how-software-boundaries-are-the-most" target="_blank" rel="noopener">ByteByteGo · How Software Boundaries Are The Most Important Skill for Developers</a></li>
-      <li><a href="https://blog.bytebytego.com/p/how-uber-built-a-genie-to-answer" target="_blank" rel="noopener">ByteByteGo · How Netflix Taught an LLM to Recommend Movies So That You Keep Watching</a></li>
-      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
-      <li><a href="https://jack-clark.net/2026/09/28/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-rsi-loop/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop</a></li>
-    </ul>
-    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
-      <a href="digest-2026-10-11.html" style="color:var(--accent)">digest-2026-10-11.html</a></p>
+<li>Python 3.15 发布，带来显式惰性导入（PEP 810）和解包推导式等语法特性，同时 3.10 正式退役，3.11 特性开始可用。</li><li>Simon Willison 发布 web-edit 0.1a0，一个通过 Tailscale 在手机上安全编辑服务器文件的 Python Web 工具，避免凭据经过 LLM。</li><li>Logical Intelligence 的 Kona 模型在数独任务上以千分之一参数量、1/2750 成本大幅超越 GPT-5.2、Claude Opus 4.5 等前沿 LLM，引发对 LLM 推理本质的讨论。</li><li>Scale AI 与 Elorian 发布 Humanity's Sixth Sense 基准，测试 AI 对视觉场景隐含信息的推理能力，人类基线 93.1 分，AI 表现明显不足。</li><li>Import AI 476 期讨论创造力与递归自我改进（RSI）、开源权重模型竞争格局、以及 AI 在太空领域的应用。</li>    </ul>
   </section>
 
+  <section class="deep">
+    <div class="col clr" style="margin-top:40px">
+      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
+<p class="note-lead">Python 3.15 的惰性导入是可直接落地的工程优化技能；Kona 数独实验和 Humanity's Sixth Sense 基准分别从逻辑推理和视觉推理两个角度揭示了当前 LLM 的能力边界，对判断 AI 方向有实质参考价值。</p>    </div>
 
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-12</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/12/python-3-15/" target="_blank" rel="noopener">你好 Python 3.15，再见 3.10，现在我可以用 3.11 了</a></h2>
+        <div class="orig-title">Hello Python 3.15, goodbye 3.10, and now I can use 3.11</div>
+<p class="standfirst">Python 3.15 发布，作者告别 3.10、拥抱 3.11 特性。</p>        <div class="art-meta">
+          <span>68 段</span><span>·</span>
+          <span>25 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>你好 Python 3.15，再见 3.10，现在我可以用 3.11 了</p>
+        <p>2026 年 10 月 12 日</p>
+        <p>Python 3.15 来了！这里是必读的《Python 3.15 新特性》指南，今年由 3.14 和 3.15 的发布经理 Hugo van Kemenade 整理。作为一个开发在所有受支持 Python 版本上都能运行的软件的人，我终于可以告别 Python 3.10，并开始拥抱 Python 3.11 的特性了。</p>
+        <aside class="note k-背景"><span class="k">背景</span>CPython 每年 10 月发一个大版本，每个版本官方支持约 5 年（前 2 年 bugfix、后 3 年 security），所以 3.15 发布意味着 2021 年的 3.10 正式 EOL。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>想查自己项目该支持哪些版本，可看 devguide 的 'Status of Python versions' 页面，或用 uv python list --all-versions 看本地可装版本。</aside>
+        <p>首先，是 Python 3.15 的一些亮点。</p>
+        <p>显式惰性导入（Explicit lazy imports）</p>
+        <p>我最兴奋的是 PEP 810 的显式惰性导入。它让你可以这样导入模块：</p>
+        <aside class="note k-背景"><span class="k">背景</span>PEP 810 的 lazy import 与 PEP 690（3.12 曾尝试又回退）不同：690 是全局隐式惰性，810 是显式关键字，语义更可控，社区接受度更高。</aside>
+        <p>lazy import json</p>
+        <p>lazy from pathlib import Path</p>
+        <p>这样，模块会在后续代码中第一次使用这些符号时才被导入。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>类似机制在其他语言早有先例：Rust 的 use 本身不触发加载，Java 的类加载也是首次引用才触发；Python 这次是把这种语义显式化。</aside>
+        <p>我的 LLM CLI 工具实现了插件机制。我不得不在插件作者文档里建议手动做惰性导入，因为仅仅安装使用了 sentence_transformers 这类重型依赖的插件，就可能让每次调用 llm 命令多花好几秒。惰性导入直接解决了这个启动开销问题。</p>
+        <aside class="note k-数据"><span class="k">数据</span>sentence_transformers 会连带导入 torch、transformers、numpy，冷启动常达 2-5 秒；CLI 工具每次调用都付这个成本，用户体验会明显变差。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>自己验证：python -X importtime -c 'import sentence_transformers' 2>&1 | tail -20，能看到各模块的累计导入耗时。</aside>
+        <p>推导式中的解包（Unpacking in comprehensions）</p>
+        <p>新的 [*sublist for sublist in lists] 解包语法很简洁。下面这个例子摘自官方文档：</p>
+        <aside class="note k-背景"><span class="k">背景</span>PEP 448（Python 3.5）先给函数调用、列表/字典字面量加了 * 和 ** 解包；PEP 798 把它扩展到推导式内部，是十年后的自然补全。</aside>
+        <p>lists = [[1, 2], [3, 4], [5]]</p>
+        <p>[*L for L in lists]</p>
+        <p># [1, 2, 3, 4, 5]</p>
+        <p># 等价于 [x for L in lists for x in L]</p>
+        <p>sets = [{1, 2}, {2, 3}, {3, 4}]</p>
+        <p>{*s for s in sets}</p>
+        <p># {1, 2, 3, 4}</p>
+        <p># 等价于 {x for s in sets for x in s}</p>
+        <p>dicts = [{'a': 1}, {'b': 2}, {'a': 3}]</p>
+        <p>{**d for d in dicts}</p>
+        <p># {'a': 3, 'b': 2}</p>
+        <p># 等价于 {k: v for d in dicts for k,v in d.items()}</p>
+        <p>PEP 798：推导式中的解包，由 Adam Hartz 和 Erik Demaine 提出，作为 PEP 448 解包语法的扩展，后者在 2015 年随 Python 3.5 落地。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>嵌套解包在字典推导式中遇到重复键时，后者覆盖前者（如示例中 'a': 3 覆盖 'a': 1），顺序依赖 dict 的插入序，写代码时要注意可读性。</aside>
+        <p>采样分析器（A sampling profiler）</p>
+        <p>Python 现有的追踪式分析器已从 cProfile 更名为 profiling.tracing，并迎来了一个令人兴奋的新采样分析器 Tachyon，即 profiling.sampling。</p>
+        <aside class="note k-背景"><span class="k">背景</span>cProfile 是确定性追踪（deterministic tracing），每个函数调用都记录，开销大；采样分析器按固定频率抓栈，开销通常 <5%，适合生产环境。</aside>
+        <p>采样分析器的工作方式是周期性地从运行中的进程抓取栈回溯，然后用这些数据计算哪些函数内部花费的时间最多。它们的开销非常低，能深入洞察正在运行的系统，而无需事先对系统做插桩。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>同类工具：py-spy（Rust 实现，可 attach 到运行中进程）、Austin、pyinstrument。Tachyon 进标准库后，这些第三方工具在'快速排查'场景的独占性会下降。</aside>
+        <p>我以前用 py-spy 这类工具做这件事。现在这个能力已经内置到标准库里了。</p>
+        <p>如果你有一个正在运行的 Python 3.15 进程的 PID，可以运行下面这条命令开始采集样本（在 macOS 上我不得不用 sudo）：</p>
+        <aside class="note k-实操"><span class="k">实操</span>macOS 上 attach 需要 sudo 是因为 ptrace/任务端口权限；Linux 上通常需要设置 /proc/sys/kernel/yama/ptrace_scope 或同用户运行。</aside>
+        <p>sudo uv run --python 3.15 python -m profiling.sampling attach 1234</p>
+        <p>与主程序交互一下，然后按 Ctrl+C 停止采集并查看报告，大致如下所示：</p>
+        <p>它还能生成这样的火焰图（flame graph）和这样的热力图（heat map），甚至可以输出一种能在 Firefox profiler UI 中查看的格式。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>Firefox Profiler 的格式（Gecko profile）是开放的 JSON，很多语言的分析器都支持导出；这意味着 Python 采样数据可以和浏览器 JS 的 profile 放在同一 UI 里对比。</aside>
+        <p>3.15 并不比 3.14 快多少</p>
+        <p>Miguel Grinberg 前几天针对 3.15.0rc3 版本调查了《Python 3.15 有多快？》，发现性能与 3.14 基本持平，例外是实验性的 JIT。在斐波那契测试中，JIT 相比标准 3.15 解释器带来了 1.2 倍的提升，这是 Miguel 第一次观察到 JIT 有意义的性能提升。</p>
+        <aside class="note k-数据"><span class="k">数据</span>1.2x 在斐波那契这种纯整数递归上出现，是因为该场景几乎全是 Python 字节码循环；真实业务代码（I/O、C 扩展为主）通常看不到这个收益。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>JIT 仍是实验性、默认关闭（需 --enable-experimental-jit 编译），且只在 x86-64/ARM64 上支持，不能作为生产性能预期。</aside>
+        <p>Miguel 去年对 3.14 的探索发现，它在更多类别上相对 Python 3.13 有显著提升。</p>
+        <p>用 uv 升级到 Python 3.15</p>
+        <p>我在 Mac 上用了下面这一串命令让 uv 使用 Python 3.15。首先我得升级 uv 本身，确保它知道这个新版本：</p>
+        <aside class="note k-背景"><span class="k">背景</span>uv 是 Astral 用 Rust 写的 Python 包/版本管理器，能独立下载 CPython 构建（python-build-standalone），不依赖系统 Python，因此新版本发布后很快就能装。</aside>
+        <p>uv self update</p>
+        <p>然后我安装了稳定的 3.15 版本：</p>
+        <p>uv python install 3.15</p>
+        <p>并告诉 uv，我希望它成为所有 uv run 命令的默认版本，除非项目本身固定了其他版本：</p>
+        <p>uv python pin --global 3.15</p>
+        <p>现在下面这条命令会报告版本为 3.15：</p>
+        <p>uv run python --version</p>
+        <p>我已经用 uv tool install 装了一堆工具。我像这样把它们重装到 Python 3.15 上：</p>
+        <aside class="note k-实操"><span class="k">实操</span>uv tool upgrade 默认不会换 Python 版本，必须显式加 --python；想批量升级可写 shell 循环遍历 uv tool list 的输出。</aside>
+        <p>uv tool upgrade datasette --python 3.15</p>
+        <p>然后我可以这样确认版本：</p>
+        <p>datasette --get /-/versions.json | jq</p>
+        <p>Python 3.11 的亮点</p>
+        <p>3.15 的发布意味着 Python 3.10（2021 年发布）正式不再受支持。</p>
+        <aside class="note k-数据"><span class="k">数据</span>3.10 于 2021-10-04 发布，2026-10 进入 EOL，生命周期正好 5 年；同期 3.11 还有约 1 年安全支持，3.12 还有约 2 年。</aside>
+        <p>我对主要开源项目的策略是让它们在所有受支持的 Python 版本上都能工作。现在我可以放弃 3.10，并开始使用 3.11 引入的特性。</p>
+        <p>这里是《Python 3.11 新特性》文档。我终于可以依赖 tomllib 了！</p>
+        <aside class="note k-背景"><span class="k">背景</span>tomllib 是只读的 TOML 1.0 解析器，3.11 进标准库；写 TOML 仍需第三方 tomli-w 或 tomlkit，因为标准库只承诺解析。</aside>
+        <p>Datasette 大量使用 asyncio。3.11 新增了 TaskGroup 和 timeout()，以及若干其他新特性。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>TaskGroup 是结构化并发的核心原语，配合 ExceptionGroup（3.11 引入）实现'任一子任务失败则整体取消'；这是 asyncio.gather 难以正确做到的。</aside>
+        <p>datetime.UTC 是 3.11 新增的 datetime.timezone.utc 的别名。</p>
+        <p>Python 的 SQLite 支持在 3.11 中获得了若干重要升级，包括：</p>
+        <p>- setlimit() 和 getlimit() 暴露了从 Python 设置 SQLite 运行时限制的机制。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>SQLITE_LIMIT_* 常量可限制 SQL 长度、列数、变量数等，是防御 SQL 注入放大和资源耗尽的手段；此前只能通过 C API 设置。</aside>
+        <p>create_window_function() 让我们可以用 Python 创建自定义窗口函数，形式是一个带有 step()、value()、inverse() 和 finalize() 方法的类。</p>
+        <aside class="note k-背景"><span class="k">背景</span>窗口函数（OVER 子句）在 SQLite 3.25 引入；inverse() 用于滑动窗口移除旧行，是增量计算的关键，缺失它则每帧都要重算。</aside>
+        <p>blobopen() 提供了一种高效机制，用于对存储在 SQLite 行中的大型 BLOB 二进制值进行部分读写。</p>
+        <aside class="note k-数据"><span class="k">数据</span>此前读 BLOB 必须整块取出到内存，一个 1GB 的 BLOB 就要 1GB 内存；blobopen 返回类文件对象，支持 seek/read 局部访问。</aside>
+        <p>- 现在可以调用 set_authorizer(None) 来移除 SQLite authorizer。Datasette 之前为此有一个 workaround！</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>原文说'移除 authorizer'，更准确说是把回调设为 None 以禁用授权检查；此前传 None 会被忽略，只能传一个永远返回 OK 的桩函数绕过。</aside>
+        <p>此外还有 Python 类型系统的一大批改进。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>3.11 类型相关：Self 类型、LiteralString、dataclass 的 slots、TypedDict 的 Required/NotRequired、可变参数泛型（TypeVarTuple）。</aside>
+        <p>我计划在未来几周内把 Python 3.11 的改进落地到我的一批项目中。这是我第一个移除 set_authorizer(None) workaround 的 Datasette PR。</p>
+        <p>我还更新了我的 click-app、datasette-plugin、python-lib 和 llm-plugin cookiecutter 模板，让它们针对 Python 3.11 到 Python 3.15 进行测试。</p>
+        <aside class="note k-实操"><span class="k">实操</span>cookiecutter 模板里通常用 tox 或 GitHub Actions 的 matrix 配置多版本测试；想学多版本 CI 可以看 simonw/python-lib 的 .github/workflows 目录。</aside>
+        <p>更多近期文章</p>
+        <p>- 我博客的一个新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
+        <p>- 我们几乎需要对所有东西设置默认的硬预算上限 - 2026 年 10 月 3 日</p>
+        <p>- OpenAI DevDay 2026 现场博客 - 2026 年 9 月 29 日</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>Python 3.15 发布使 3.10 EOL，作者得以在项目中启用 3.11 的 tomllib、TaskGroup、SQLite 新 API 等特性。</div>
+        <details class="orig">
+          <summary>查看英文原文（5841 字符，可对照译文）</summary>
+          <pre>Hello Python 3.15, goodbye 3.10, and now I can use 3.11
+
+12th October 2026
+
+Python 3.15 is here! Here’s the essential What’s new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start embracing features from Python 3.11.
+
+First, some highlights from Python 3.15.
+
+Explicit lazy imports
+
+I’m most excited about Explicit lazy imports from PEP 810. These let you import modules like so:
+
+lazy import json
+
+lazy from pathlib import Path
+
+The module will then be imported the first time those symbols are used in the code that follows.
+
+My LLM CLI tool implements plugins. I had to recommend manual lazy imports in the plugin author documentation, because simply installing plugins that used heavy dependencies such as sentence_transformers could add multiple seconds to every invocation of the llm command. Lazy imports directly address this startup cost.
+
+Unpacking in comprehensions
+
+The new [*sublist for sublist in lists] unpacking syntax is neat. Here’s an illustration lifted from the documentation:
+
+lists = [[1, 2], [3, 4], [5]]
+
+[*L for L in lists]
+
+# [1, 2, 3, 4, 5]
+
+# equivalent to [x for L in lists for x in L]
+
+sets = [{1, 2}, {2, 3}, {3, 4}]
+
+{*s for s in sets}
+
+# {1, 2, 3, 4}
+
+# equivalent to {x for s in sets for x in s}
+
+dicts = [{'a': 1}, {'b': 2}, {'a': 3}]
+
+{**d for d in dicts}
+
+# {'a': 3, 'b': 2}
+
+# equivalent to {k: v for d in dicts for k,v in d.items()}
+
+PEP 798: Unpacking in Comprehensions by Adam Hartz and Erik Demaine proposed this as an extension of the unpacking syntax from PEP 448, which landed in Python 3.5 back in 2015.
+
+A sampling profiler
+
+Python’s existing tracing profiler has been renamed from cProfile to profiling.tracing, and has been joined by an exciting new sampling profiler called Tachyon, aka profiling.sampling.
+
+Sampling profilers work by periodically capturing stack traces from running processes, then using those to calculate which functions have the most time spent inside of them. They’re very low overhead and can provide a deep insight into running systems, without needing to instrument those systems first.
+
+I’ve previously used tools like py-spy for this. Now this capability is baked into the standard library.
+
+If you have the PID of an existing Python 3.15 process you can start gathering samples by running this (I had to use sudo on macOS):
+
+sudo uv run --python 3.15 python -m profiling.sampling attach 1234
+
+Interact with the main program a bit, then hit Ctrl+C to stop gathering and see a report, which looks something like this:
+
+It can also produce flame graphs like this and heat maps like this, and can even output a format that can be viewed in the Firefox profiler UI.
+
+3.15 isn’t much faster than 3.14
+
+Miguel Grinberg investigated How fast is Python 3.15? the other day against the 3.15.0rc3 release and found performance to be mostly the same as 3.14, with the exception of the experimental JIT. The JIT gave a 1.2x boost over the standard 3.15 interpreter (on a Fibonacci test), the first time Miguel observed a meaningful JIT performance increase.
+
+Miguel’s explorations of 3.14 last year found significant boosts against Python 3.13 across many more categories.
+
+Upgrading to Python 3.15 with uv
+
+I used the following sequence of commands to get uv to use Python 3.15 on my Mac. First I had to upgrade uv itself to ensure it knew about the new release:
+
+uv self update
+
+Then I installed the stable 3.15 release:
+
+uv python install 3.15
+
+And told uv that I wanted that to be the default for every uv run command, unless the project itself pinned a different version:
+
+uv python pin --global 3.15
+
+Now the following reports 3.15 as the version:
+
+uv run python --version
+
+I already have a bunch of tools installed using uv tool install. I reinstalled them to use Python 3.15 like this:
+
+uv tool upgrade datasette --python 3.15
+
+Then I can confirm the version like this:
+
+datasette --get /-/versions.json | jq
+
+Highlights from Python 3.11
+
+The release of 3.15 means that Python 3.10 (released in 2021) is officially no longer supported.
+
+My policy for my main open source projects is to keep them working in every supported Python version. I can now drop 3.10 and start using features that were introduced in 3.11.
+
+Here’s the What’s new in Python 3.11 document. I finally get to rely on tomllib being available!
+
+Datasette makes extensive use of asyncio. 3.11 adds TaskGroup and timeout(), and several more new features.
+
+datetime.UTC is a new in 3.11 alias for datetime.timezone.utc.
+
+Python’s SQLite support got some significant upgrades in 3.11, including:
+
+- setlimit() and getlimit() expose a mechanism for setting SQLite runtime limits from Python.
+
+create_window_function() lets us create custom window functions in Python, as a class with step(), value(), inverse(), and finalize() methods.
+
+blobopen() provides an efficient mechanism for partial reads and writes of large BLOB binary values stored in a SQLite row.
+
+- You can now call set_authorizer(None) to remove a SQLite authorizer. Datasette had a workaround for this!
+
+Plus a whole bunch of improvements to Python’s typing system.
+
+I plan to land Python 3.11 improvements to a bunch of my projects over the next few weeks. Here’s my first Datasette PR removing that set_authorizer(None) workaround.
+
+I’ve also updated my click-app, datasette-plugin, python-lib, and llm-plugin cookiecutter templates to test against Python 3.11 through Python 3.15.
+
+More recent articles
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026
+
+- We're going to need default hard budget caps on pretty much everything - 3rd October 2026
+
+- OpenAI DevDay 2026 live blog - 29th September 2026</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">ByteByteGo</span>
+          <span class="dt">2026-10-12</span>
+        </div>
+        <h2><a href="https://blog.bytebytego.com/p/how-to-build-models-without-language" target="_blank" rel="noopener">如何构建不依赖语言、具备逻辑智能的模型</a></h2>
+        <div class="orig-title">How to Build Models Without Language, with Logical Intelligence</div>
+<p class="standfirst">LLM 在数独上惨败，能量模型 Kona 却以千分之一体量取胜。</p>        <div class="art-meta">
+          <span>20 段</span><span>·</span>
+          <span>12 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>AI agents 写的代码越来越多。代码越多，意味着 commit 越多、CI 运行越多、CI 账单越大。对很多团队来说，GitHub Actions 现在成了瓶颈。</p>
+        <aside class="note k-背景"><span class="k">背景</span>GitHub Actions 按分钟计费，公开仓库免费、私有仓库每月 2000 分钟起步；macOS runner 的计费倍率是 Linux 的 10 倍，这正是「CI 账单」痛点的来源。</aside>
+        <p>WarpBuild 解决了这个问题。Braintrust、Raycast、OpenRouter、Comcast 和 Jane Street 的团队都在它上面跑 CI。</p>
+        <p>- 速度翻倍，成本减半
+
+- 只改 runs-on 一行，其他都不用迁移
+
+- 支持 Linux、macOS 和 Windows，覆盖 x86-64 与 ARM64
+
+- macOS 并发不限量
+
+使用优惠码 START50 可获得 50 美元免费额度。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>「只改 runs-on 一行」通常只对标准 workflow 成立；一旦用到 GitHub 托管的 cache、artifact 或 OIDC 联邦身份，往往还要改权限和 secrets 配置。</aside>
+        <p>今年早些时候，一场公开的数独实验中发生了不寻常的事。据 Logical Intelligence 称，一组前沿大语言模型（LLM）——包括 OpenAI 的 GPT-5.2、Claude Opus 4.5 和 Sonnet 4.5、Gemini 3 Pro 以及 DeepSeek V3.2——合计只解出了 2% 的题目，却烧掉了约 11,000 美元的 API 调用费用。有意思的是，一个名为 Kona 的模型，体量大约只有它们的千分之一，却以仅 4 美元的 GPU 时间解出了 96.2% [1]。</p>
+        <aside class="note k-数据"><span class="k">数据</span>11,000 美元 ÷ 2% 成功率，相当于每解出一道题花约 550 美元；Kona 的 4 美元摊到 96.2% 上，单题成本约 0.04 美元，差距约 1.4 万倍。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>这类对比要小心基准污染：数独题若曾出现在训练语料里，LLM 的失败反而说明它没在「背答案」，而 Kona 若针对约束求解专门设计，则属于「专用工具 vs 通用模型」的不对等比较。</aside>
+        <p>乍看之下，这个演示的结果可能显得奇怪或出人意料，因为数独并不是一款特别难玩的游戏。一个十岁小孩学完规则、练一练就能解出来。规则定义明确，几乎没有歧义。这本该是 LLM 轻松应对的那类问题。</p>
+        <p>这个差距其实并不真的关乎数独这类谜题。LLM 是我们围绕语言所构建过的最强大的 AI 模型，但许多任务所需的智能超出了语言本身。事实上，我们每天面对的大多数任务都不是语言问题。有些需要空间或维度推理，有些可能依赖逻辑、规划，或者仅仅是情绪感知。而我们做的很多事情甚至根本无法完全用语言表达。那种外推、创造而非重复的能力，才是让智能显得鲜活而非机械的原因 [2]。</p>
+        <aside class="note k-背景"><span class="k">背景</span>这一论点与 Yann LeCun 的 JEPA（联合嵌入预测架构）路线一脉相承：他主张在抽象表征空间而非 token 空间做预测，Meta 的 V-JEPA 2 就是这条线的代表工作。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>「无法完全语言化」在认知科学里对应 Michael Polanyi 的「默会知识」（tacit knowledge）：人会骑车、会认脸，却说不清规则，这正是纯文本训练的盲区。</aside>
+        <p>Yann LeCun，图灵奖得主、深度学习的先驱之一，多年来一直主张：仅靠文本无法带来真正的智能。</p>
+        <p>我们与 Logical Intelligence 的创始人兼 CEO Eve Bodnia 进行了交流，以理解她团队构建的模型——如 Kona 这类基于能量的推理模型（energy-based reasoning models，EBRM）——为何能在数独这类约束问题上表现如此出色，并了解她的愿景以及构建真正智能系统的新范式。我们感谢 Eve 抽出时间，详细地为我们讲解这项工作。</p>
+        <aside class="note k-背景"><span class="k">背景</span>EBM（基于能量的模型）并非新概念，LeCun 2006 年的《A Tutorial on Energy-Based Learning》就系统阐述过；EBRM 的新意在于把它用于潜空间推理而非分类。</aside>
+        <p>在本文中，你将了解到：</p>
+        <p>- LLM 在约束问题上会在哪里失败，以及为什么。
+
+- 基于能量的潜空间推理（energy-based latent reasoning）是什么意思，它如何工作。
+
+- EBRM 能做什么、不能做什么，以及为什么像 Kona 这样的模型在某些任务上表现如此之好。
+
+- 为什么用 EBRM 做潜空间推理更可靠，以及在这些系统中验证与安全机制有何不同。
+
+- 行业以及驱动它的硬件可能如何发展。</p>
+        <p>语言模型及其局限</p>
+        <p>从最基础的层面看，大语言模型是一个被设计用来预测序列中下一项的系统。它把此前 token 的序列读作输入，然后选出最合理的 token 作为该序列的延续输出。</p>
+        <aside class="note k-实操"><span class="k">实操</span>想亲手验证「逐 token 生成」的局限，可以用 HuggingFace transformers 加载一个小模型，把 temperature 设为 0，观察同一 prompt 下输出是否完全确定——这能直观看到自回归解码没有全局回溯能力。</aside>
+        <p>这一设计的目标是掌握语言。因为人类用语言交流和传递知识，也因为人类知识大多以书面形式记录，所以如果一个模型能通过在文本上训练来掌握语言的分布，那么文本中蕴含的人类知识与推理也会随之被掌握。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>「掌握语言分布 = 掌握知识」这一假设正是当前争论焦点：Othello-GPT 实验显示模型能学到棋盘状态，但多项研究表明它学到的可能只是表面统计而非可迁移的因果结构。</aside>
+        <p>近年来，随着越来越大的模型在越来越海量的文本上训练，LLM 的有效性出现了戏剧性的提升。其产出远比单纯的自动补全有用。LLM 如今非常擅长翻译、摘要这类语言操作任务，还能生成代码。</p>
+        <p>但并非所有问题都以语言为主。对于那些需要其他类型智能的问题，是否存在比 LLM 更有效的替代方案？为了说明答案，我们先看看 LLM 如何尝试解数独，再看 Kona 采用的替代方法。</p>
+        <p>游戏规则定义明确且简单。数独棋盘是一个包含 81 个格子的正方形，被划分为 9 个三乘三的宫格。玩家必须用数字 1 到 9 填满所有格子，并同时满足以下三条规则：</p>
+        <p>- 每个数字在每一行中只能出现一次。
+
+- 每个数字在每一列中只能出现一次。
+
+- 每个数字在每一个三乘三宫格中只能出现一次。</p>
+        <p>LLM 尝试通过一次生成一个 token 来解数独，在这里就是一次往一个格子里填一个数字。在生成一个 token 之前，模型会读取整个棋盘，然后基于此前已生成的 token 做出选择。LLM 就以这种方式，一个 token 一个 token 地一步步走向填满的棋盘。</p>
+        <p>但 LLM 从来都不擅长解数独这类问题。演示中表现最好的 LLM 成功率也只有 6.9%，93% 的情况下都失败了 [1]。</p>
+        <aside class="note k-数据"><span class="k">数据</span>作为对照，一个用 Python 写的回溯求解器解标准 9×9 数独通常只需毫秒级，且成功率 100%——这说明问题不在难度，而在求解范式。</aside>
+        <p>LLM 觉得数独难玩，主要有两个原因。第一，LLM 从左到右生成 token。数字被填入的顺序取决于 prompt。假设棋盘按行写出，那么数字先填第 1 行，再填第 2 行，依此类推。如果模型在第 2 行填了一个数字，而它之后在第 7 行同一列需要的数字与之冲突，列规则就被破坏了。但由于它是从左到右生成的，直到走到第 7 行才会发现这个冲突。一旦意识到问题，它就必须回到第 2 行出错的地方，把之后的一切重新生成。换成任何其他顺序都有同样的问题：无论模型早早承诺了什么，之后若不重新生成就无法修改。因此，LLM 的运作方式使得修正早期错误的代价非常高昂。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>这正是「自回归不可回溯」的经典体现。扩散模型（diffusion）和近年的「一致性模型」正是为绕开这一限制而生：它们允许在整段序列上迭代去噪，而非单向生成。</aside>
+        <aside class="note k-背景"><span class="k">背景</span>Kona 这类 EBRM 的思路接近「能量最小化」：把约束编码成能量函数，让整个解在潜空间中反复下降直到收敛，天然支持全局修改，与 LLM 的因果掩码形成根本对立。</aside>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>LLM 的逐 token 自回归范式在约束问题上先天吃亏，能量模型用潜空间全局优化绕开了这一限制。</div>
+        <details class="orig">
+          <summary>查看英文原文（5865 字符，可对照译文）</summary>
+          <pre>AI agents write more code. More code means more commits, more CI runs and bigger CI bills. For many teams, GitHub Actions is now the bottleneck.
+
+WarpBuild fixes that. Teams at Braintrust, Raycast, OpenRouter, Comcast and Jane Street run their CI on it.
+
+- Twice as fast at half the cost
+
+- One line change to runs-on, nothing else to migrate
+
+- Linux, macOS and Windows on x86-64 and ARM64
+
+- Unlimited macOS concurrency
+
+Use code START50 for $50 in free credits.
+
+Something unusual happened in a public Sudoku experiment early this year. According to Logical Intelligence, a panel of frontier large language models (LLMs), including OpenAI’s GPT-5.2, Claude Opus 4.5 and Sonnet 4.5, Gemini 3 Pro, and DeepSeek V3.2, collectively only solved 2% of the puzzles and burned around $11,000 in API calls. Interestingly, a model named Kona, about a thousand times smaller, solved 96.2% for only $4 in GPU time [1].
+
+At first glance, the result of the demo may seem strange or unexpected, because Sudoku is not a particularly hard game to play. A ten-year-old can learn the rules and solve a puzzle after some practice. The rules are well-defined, and there is little ambiguity. It is the kind of problem that LLMs should handle easily.
+
+This gap is not really about puzzles like Sudoku. LLMs are the most capable AI models we’ve ever built around language, but many tasks require intelligence that goes beyond language. In fact, most of the tasks we face every day are not language problems. Some of them require spatial or dimensional reasoning. Others may depend on logic, planning, or just emotional awareness. And much of what we do cannot even be fully verbalized. The ability to extrapolate, to be creative, not repetitive, is what makes intelligence feel alive rather than mechanical [2].
+
+Yann LeCun, a Turing Award winner and one of the pioneers of deep learning, has argued for years that text alone will not give us real intelligence.
+
+We spoke with Eve Bodnia, founder and CEO of Logical Intelligence, to understand how the models her team builds, energy-based reasoning models (EBRMs) like Kona, can perform so well on constraint problems such as Sudoku, and to learn about her vision and the new paradigm of building truly intelligent systems. We thank Eve for taking the time to walk us through the work in detail.
+
+In this article, you’ll learn:
+
+- Where LLMs fail on constraint problems, and why.
+
+- What energy-based latent reasoning means, and how it works.
+
+- What EBRMs can and cannot do, and why a model like Kona works so well on certain tasks.
+
+- Why latent reasoning with EBRMs is more reliable, and how verification and safety work differently in those systems.
+
+- How the industry and the hardware that drives it are likely to develop.
+
+Language Models and Their Limitations
+
+At its most basic, a large language model is a system designed to predict the next item in a sequence. It reads as input a sequence of previous tokens, then it selects as output the most plausible token to continue that sequence.
+
+The aim of this design is to achieve mastery of language. Because humans communicate and transmit knowledge using language, and because much of human knowledge is recorded in written form, if a model can master the distribution of language by being trained on texts, the human knowledge and reasoning present in the texts will come with the mastery.
+
+There has been a dramatic development in the effectiveness of LLMs in recent years as larger and larger models have been trained on ever-increasing volumes of text. The output produced is far more useful than mere autocomplete. LLMs are now very adept at language manipulation tasks such as translation and summarization. And they can generate code.
+
+But not all problems are primarily language-based. For problems that require other types of intelligence, are there alternatives to LLMs that would be more effective at solving them? To illustrate the answer, we will first look at how an LLM attempts to solve Sudoku, then we will look at the alternative approach that Kona uses.
+
+The rules of the game are well defined and simple. The Sudoku grid is a square containing 81 cells divided into 9 three-by-three boxes. The player must fill all the cells with the digits 1 to 9 in such a way that the following three rules are all satisfied:
+
+- Each digit must appear only once in each row.
+
+- Each digit must appear only once in each column.
+
+- Each digit must appear only once in each three-by-three box.
+
+An LLM attempts to solve Sudoku by producing one token at a time, in this case, placing digits into cells one at a time. Before producing a token, the model reads the entire grid. Then it bases its selection on the tokens that have been produced before it. The LLM steps its way to the completed grid in this manner, token by token.
+
+But LLMs have never been good at solving the type of problem presented by a Sudoku puzzle. The best LLM in the demo had a success rate of only 6.9%. It failed 93% of the time [1].
+
+There are two primary reasons why an LLM finds it hard to play Sudoku. The first is because an LLM generates tokens from left to right. The order in which the digits are placed depends on the prompt. Suppose the grid is written out row by row, so digits are placed in row 1, then row 2, and so on. If the model places a digit in row 2 that will collide with the digit it later needs in the same column of row 7, the column rule is broken. But because it generates from left to right, it does not discover the collision until it reaches row 7. Once it realizes the problem, it has to go back and regenerate everything from where the mistake was made in row 2. Any other order has the same problem: whatever the model commits to early, it cannot revise later without regenerating. Thus, the way an LLM operates makes fixing earlier mistakes expensive.
+
+
+…（原文过长，此处截断）</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Import AI（Jack Clark）</span>
+          <span class="dt">2026-10-12</span>
+        </div>
+        <h2><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI 476：创造力与 RSI；比中国更差的开源权重模型；AI 走向太空</a></h2>
+        <div class="orig-title">Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</div>
+<p class="standfirst">本期关注视觉推理新基准、太空 AI 竞赛与科研品味评测。</p>        <div class="art-meta">
+          <span>36 段</span><span>·</span>
+          <span>14 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>欢迎来到 Import AI，这是一份关于 AI 研究的通讯。Import AI 靠 arXiv、卡布奇诺和读者反馈运转。如果你想支持它，请订阅。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Jack Clark 是 Anthropic 联合创始人，此前长期担任 OpenAI 政策主管，Import AI 自 2016 年起每周一发，是 AI 政策圈最常被引用的通讯之一。</aside>
+        <p>新基准显示 AI 模型缺乏直觉性视觉推理：</p>
+        <p>……Humanity's Sixth Sense 凸显了当前 AI 系统的一些短板……</p>
+        <p>AI 初创公司 Elorian 和 Scale AI 构建并发布了 Humanity's Sixth Sense（HSS），这是一个“衡量模型如何解读和推理视觉场景所暗示、但并未明确展示的信息”的基准。HSS 中的任务类型示例包括：给出一张书架图片，问它能否再放更多书；或者一张马拉犁的照片，问链条是否承受犁的拖拽重量。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>这类“隐含信息推理”与 VQA、MMMU 等传统多模态基准不同，后者多考显式识别；HSS 更接近认知科学中的“物理直觉”测试，类似婴儿期发展心理学实验范式。</aside>
+        <p>HSS 包含 522 个问题，覆盖 288 张图片和 234 个短视频片段（总计 17.6 小时视频）。问题分为四类：</p>
+        <p>- 时间与因果动态：“场景之前发生了什么，接下来会发生什么。”</p>
+        <p>- 物理与空间逻辑：“什么能放得下，什么触手可及，站在某处的人能看到什么。”</p>
+        <p>- 社会理解：“意图、注意力、归属感。”</p>
+        <p>- 抽象与语境推断：“场景所暗示的模式和规则。”</p>
+        <p>结果：人类基线并非完美，但非常高，综合 pass@1 为 93.1，按四类拆分：图像（94.1）、视频（91.9）、时间（97）、空间（94.9）。</p>
+        <aside class="note k-数据"><span class="k">数据</span>pass@1 指模型第一次回答就正确的比例，常用于代码生成基准（如 HumanEval），此处被借用到多模态评测；人类 93.1 与最佳模型 53.6 之间约 40 个百分点的差距，量级上接近 2019 年 ImageNet 上人类与模型的差距。</aside>
+        <p>相比之下，得分最高的 AI 系统 GPT 6 Astra 的 pass@1 为 53.6，其中图像（55.6）、视频（51.1）、时间（58.2）、空间（53.6）。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>“GPT 6 Astra”这一命名在公开信息中无法核实，可能是虚构或未发布模型；读者应警惕基准论文中模型名称与实际可复现性之间的落差。</aside>
+        <p>有趣的是，中国的开源权重模型在此表现不佳，GLM-5.3-flash 的 pass@1 为 26.8，Kimi K3 为 25.5。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>“开源权重”（open weight）不等于开源训练代码或数据；GLM、Kimi 系列虽公开权重，但训练细节和数据集通常不公开，因此性能差距可能来自数据配比而非架构。</aside>
+        <p>“最常见的两类单一错误是：（1）遗漏决定答案的细节（占失败案例 21%），（2）错误识别物体、人物或角色（占 20%），”他们写道。</p>
+        <p>为什么重要——HSS 告诉我们世界模型是否是涌现的：看待 HSS 的一种方式是凸显当前系统的缺陷，但更有趣的方式是凸显当今前沿 LLM 在完成许多人长期认为需要复杂、不同 AI 系统才能解决的任务时有多么娴熟。例如，许多人声称真正的视觉推理将依赖于开发具有空间感知能力的 2D 和 3D 世界模型，然后用其进行推理。像 GPT 和 Claude 这样的 LLM 在 HSS 上表现如此之好，某种程度上是对这一论点的反驳。</p>
+        <aside class="note k-背景"><span class="k">背景</span>“世界模型”路线以 Yann LeCun 的 JEPA、DeepMind 的 Genie 为代表，主张从视频中学习物理动态；HSS 的结果被 Clark 用来支持“LLM 已隐式学到世界模型”的阵营。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>2024 年 DeepMind 的“Grandmaster”论文显示 LLM 可通过棋谱学习空间推理，但泛化到真实物理场景仍存疑；HSS 的 53.6 分说明“能做”与“做得好”之间仍有距离。</aside>
+        <p>阅读更多：Introducing Humanity's Sixth Sense (HSS)（Elorian）。</p>
+        <p>在此阅读论文：Humanity's Sixth Sense: Benchmarking Intuitive Visual Reasoning in Multimodal Models（Scale Labs）。</p>
+        <p>***</p>
+        <p>AI 竞赛将走向太空——而且比你想象的更快：</p>
+        <p>……AI 在太空中有许多方式创造复合优势……</p>
+        <p>在 2030 年代，我们将看到太空经济的繁荣，因为基于太空的能源、计算和制造在 Starship 等平台提供更大轨道运力的情况下实现规模化。但这是否也会带来新的危险——AI 系统既加速我们的太空建设，最终又让一个国家（或某个 AI）能够利用太空集中权力？这就是 AI Frontiers 一篇引人入胜的文章的主旨。</p>
+        <aside class="note k-数据"><span class="k">数据</span>Starship 单次近地轨道运力约 100-150 吨，是猎鹰 9 号的 5-7 倍；若实现完全可复用，每公斤入轨成本可能从 2700 美元降至 100 美元以下，这是太空经济规模化的关键前提。</aside>
+        <p>AI 如何解锁太空：</p>
+        <p>- 航天器可以自主运行。</p>
+        <p>- 我们可以围绕“航天器将承载 AI 而非人类”这一假设重新设计航天器：“一块可能刺穿国际空间站（ISS）并造成致命后果的太空碎片，可能让一艘同等大小但无人、非加压的飞船基本保持功能。”</p>
+        <aside class="note k-实操"><span class="k">实操</span>NASA 的“Conjunction Assessment”公开工具（如 SOCRATES）可查询历史碎片接近事件；读者可自行下载 TLE 数据用 Python 的 skyfield 库复现轨道交会计算。</aside>
+        <p>- 基于太空的组装以及后续制造将让 AI 能够建造大型、复杂的事物。</p>
+        <p>先发者是否存在复合优势？如果一个 AI 文明在太空建立了立足点，它可能获得复合优势，使其在经济和战略上占据主导。例如：</p>
+        <p>- 太空可能支持一个工业飞轮：初始基础设施带来更多能源和更低成本的制造能力，后者又带来更多基础设施，如此循环。</p>
+        <p>- 太空具有极佳的领域感知能力，基于太空的势力可能能够阻止他人进入太空。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>“拒绝进入太空”在技术上意味着反卫星武器或轨道封锁，这违反《外层空间条约》第四条；但条约无强制执行机制，实际约束力取决于大国博弈。</aside>
+        <p>- 先发者可以发射自我复制探测器，向深空扩张。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>自我复制探测器是冯·诺依曼探测器概念，NASA 在 1980 年代曾研究；若结合 AI，可能触发“爆炸式扩张”场景，这也是牛津大学人类未来研究所长期关注的存在性风险议题。</aside>
+        <p>为什么重要：“太空并非全新领域，但 AI 可能即将大幅加速其工业化，要求领导人在日益紧迫和不确定的情况下做出成败攸关的决策，”AI Frontiers 写道。我同意。我怀疑太空将从（就 AI 及其与太空的关系而言）一个广泛学术研究话题，变成具有非凡现实意义的话题，而且比我们想象的更快。在最基本的层面上，考虑到距离和通信延迟，我们应该预期太阳系活动的一部分将被自主机器主导，它们在深黑中劳作，也许自己思考为什么要听从那些通信缓慢、无法像它们一样栖居太空环境的有机生命的命令。</p>
+        <aside class="note k-背景"><span class="k">背景</span>地火通信单程延迟 3-22 分钟，地木延迟 33-53 分钟；这意味着深空任务无法实时遥控，自主决策是工程必需而非选择，这也是 NASA 在 Europa Clipper 等任务中部署自主导航的原因。</aside>
+        <p>阅读更多：The AI Race Will Extend Far Beyond Earth（AI Frontiers）。</p>
+        <p>***</p>
+        <p>AI 系统越来越擅长拥有良好的科研品味：</p>
+        <p>……品味越好，递归自我改进的几率就越高……</p>
+        <p>根据 P-Zero Research 的一个名为 TasteVal 的新基准，AI 系统正在发展出更多人类研究者归因于“良好科学品味”的创造性直觉。</p>
+        <aside class="note k-背景"><span class="k">背景</span>“科研品味”指选择重要问题、设计有效实验的直觉，难以量化；TasteVal 试图将其操作化为 8 项具体任务，是 AI 评估从“能力”转向“判断力”的一个信号。</aside>
+        <p>TasteVal 测试什么：该基准考察 AI 系统完成 8 项代表前沿 AI 开发的任务的能力，“涵盖预训练数据整理、语言模型的预训练和微调、偏好建模，以及对对抗性提示的鲁棒性”。</p>
+        <aside class="note k-实操"><span class="k">实操</span>读者可关注 P-Zero Research 是否开源 TasteVal 的评测代码；若开源，可用 HuggingFace 的 transformers 加载小模型跑通流程，理解“数据整理”任务的具体评分标准。</aside>
+        <p>……（原文过长，此处截断）</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>HSS 基准显示 LLM 视觉直觉推理仅 53.6 分，远低于人类 93.1，但已反驳“必须专用世界模型”的假设。</div>
+        <details class="orig">
+          <summary>查看英文原文（5943 字符，可对照译文）</summary>
+          <pre>Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space
+
+by Jack Clark
+
+Welcome to Import AI, a newsletter about AI research. Import AI runs on arXiv, cappuccinos, and feedback from readers. If you’d like to support this, please subscribe.
+
+New benchmark shows how AI models lack intuitive visual reasoning:
+
+…Humanity’s Sixth Sense highlights some shortcomings of current AI systems…
+
+AI startups Elorian and Scale AI have built and released Humanity’s Sixth Sense, a benchmark that “measures how a model interprets and reasons through information a visual scene implies but doesn’t explicitly show.” Some examples of the types of task in HSS are a picture of a bookcase and being asked whether it can fit more books, or a photo of horses pulling a plough and a question of whether the chains bear the plough’s drag weight.
+
+HSS contains 522 questions that cover 288 images and 234 short video clips (totalling 17.6 hours of video). The questions fall into four categories:
+
+- Temporal & causal dynamics: “What happened before the scene, and what happens next.”
+
+- Physical & spatial logic: “What fits, what’s in reach, and what someone else can see from where they are standing.”
+
+- Social understanding: “Intent, attention, belonging.”
+
+- Abstract & contextual inference: “The patterns and rules a scene implies.”
+
+Results: The human baseline for this is not perfect, but is very high, with people scoring aggregate pass@1 of 93.1, broken down across four categories: Image (94.1), video (91.9), time (97), and space (94.9).
+
+By comparison, the best scoring AI system, GPT 6 Astra, gets pass@1 of 53.6, across image (55.6), video (51.1), time (58.2), and space (53.6).
+
+Interestingly, Chinese open weight models do poorly here, with GLM-5.3-flash getting a pass@1 of 26.8, and Kimi K3 getting pass@1 of 25.5.
+
+“The two most common single mistakes were (1) missing a detail that decides the answer (21% of failures) and (2) misidentifying an object, person, or role (20%),” they write.
+
+Why this matters – HSS tells us whether world models are emergent: One way of looking at HSS is highlighting deficiencies in current systems, but a more interesting way is highlighting how adept today’s frontier LLMs are at doing tasks which many people have long assumed would require sophisticated, different AI systems to solve. For instance, many people have claimed that true visual reasoning will rely on developing spatially aware 2D and 3D world models, then using that for reasoning. The fact LLMs like GPT and Claude do as well as they do on HSS is something of a counter to this argument.
+
+Read more: Introducing Humanity’s Sixth Sense (HSS) (Elorian).
+
+Read the paper here: Humanity’s Sixth Sense: Benchmarking Intuitive Visual Reasoning in Multimodal Models (Scale Labs).
+
+***
+
+The AI race is going to space – and sooner than you think:
+
+…There are many ways that an AI could create a compounding advantage in space…
+
+In the 2030s we’re going to see the boom of the space economy as space-based power, computation, and manufacturing come online at scale thanks to greater orbital lift capacity from platforms like Starship. But could this also introduce a new danger – of AI systems both speeding our buildout of space, and eventually a nation (or perhaps an AI) being able to use space to concentrate power? That’s the gist of a fascinating article in AI Frontiers.
+
+How AI unlocks space:
+
+- Spacecraft can operate autonomously.
+
+- We can redesign spacecraft around the assumption they will be hosting AIs rather than humans: “A speck of space debris that could puncture the International Space Station (ISS) with fatal consequences might leave an equivalent but uncrewed, unpressurized vessel largely functional”
+
+- Space-based assembly and later manufacturing will let AI build large, complex things.
+
+Is there a compounding advantage to first movers? If an AI civilization built up a foothold in space it might experience compounding advantages that make it economically and strategically dominant. For instance:
+
+- Space might support an industrial flywheel where initial infrastructure begets more energy and manufacturing capacity at lower costs which begets more infrastructure, etc.
+
+- Space has great domain awareness, where it may be possible for a space-based power to deny access to space for others.
+
+- First-movers could send out self-replicating probes that expand into deep space.
+
+Why this matters: “Space is not a brand-new domain, but AI may be about to drastically accelerate its industrialization, demanding make-or-break decisions of leaders under ever-greater urgency and uncertainty,” AI Frontiers writes. I agree. I suspect space is going to go from a broadly academic topic of study (when it comes to AI and its relationship thereto) to one of extraordinary practical relevance sooner than we think. On the most basic level, given the distances involved and the latency on communication, we should expect some chunk of solar system activity to become dominated by autonomous machines, laboring out in the deep black, perhaps thinking to themselves of why they need to take orders from organic beings that communicate slowly and cannot inhabit the environment of space in the same way that they can.
+
+Read more: The AI Race Will Extend Far Beyond Earth (AI Frontiers).
+
+***
+
+AI systems are getting better at having good research taste:
+
+…The better their taste, the higher the chance of recursive self-improvement…
+
+AI systems are developing more of the creative intuitions which human researchers ascribe to ‘good scientific taste’, according to a new benchmark from P-Zero Research called TasteVal.
+
+What TasteVal tests: The benchmark sees how well AI systems can conduct 8 tasks representative of frontier AI development, “spanning pretraining data curation, pretraining and fine-tuning language models, preference modeling, and robustness to adversarial prompts”.
+
+
+…（原文过长，此处截断）</pre>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+    <div class="srcblock">
+      <div class="srcname">Simon Willison's Weblog<span>2 条</span></div>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/12/web-edit/" target="_blank" rel="noopener">web-edit 0.1a0</a></h3>
+<p class="one">Simon Willison 发布 web-edit 0.1a0，手机端通过 Tailscale 编辑服务器文件的 Web 工具。</p><p class="why">展示了 CodeMirror 6 在移动端的可用性，以及用 Tailscale 做安全内网访问的轻量方案。对做 Web 开发和远程运维有参考价值。</p><p class="act"><span>下 一 步</span>在 GitHub 查看 web-edit 源码，了解 CodeMirror 6 移动端集成和 Tailscale 组网方式。</p>        <div class="foot">
+<span class="tag">Web开发</span><span class="tag">Tailscale</span><span class="tag">CodeMirror</span><span class="tag">AI辅助编程</span>          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-12</span>
+        </div>
+      </article>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/12/datasette-ports/" target="_blank" rel="noopener">datasette-ports 0.4</a></h3>
+<p class="one">datasette-ports 0.4 发布，可列出本机所有 Datasette 实例并显示 PID。</p><p class="why">对使用 Datasette 做数据探索的开发者是实用小工具更新；显示 PID 便于附加 Python 3.15 新 profiler 做性能分析。</p>        <div class="foot">
+<span class="tag">Datasette</span><span class="tag">Python</span><span class="tag">工具</span>          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-12</span>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-12 09:46 · 生成于 2026-10-12 09:46:24</span>
+    <span>本次扫描 2026-10-13 07:48 · 生成于 2026-10-13 07:48:25</span>
   </footer>
 </div>
 </body>
