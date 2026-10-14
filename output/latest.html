@@ -178,269 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-14 · 第 7 号</div>
+    <div class="sub">2026-10-14</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>7</b> 条 · 精读 <b>3</b> 篇</span>
-      <span>共 <b>30</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-14 08:02</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-14 08:02 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>Anthropic 自研源码控制系统 Scion 曝光：主分支历史近 100GB、日合并 3 万次代码变更，7 人团队 5 个月完成从 Git 迁移，说明 AI 编码代理正在把版本控制推向新架构</li><li>Gemini 4 Argon 发布，$2/$10 每百万 token 定价但 12 月 1 日翻倍；Artificial Analysis 基准总成本 $2407，接近 GLM-5.3，明显低于 OpenAI/Anthropic/Meta 最新模型</li><li>Geoffrey Huntley 提出用 pre-commit hook 强制 AI 代理调用指定诊断库：检测到绕过 observability 模块的直接调用就 fail commit 并注入提示，这是 agentic engineering 里可复用的工程模式</li><li>Python 3.15 新 profiler 支持 flame graph 和 source heatmap，Simon Willison 用 GPT-6 Astra 在 Codex 里跑通了 web-edit 的性能分析全流程</li><li>Meta 以月更节奏发布 Muse Wonder 系列，Artificial Analysis 评分对标 GPT-6.1 Sol，是 Meta 首个 Fable 级模型</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-413.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 413 期）：再见了，React Native</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/" target="_blank" rel="noopener">Simon Willison's Weblog · Redesigning source control at Anthropic</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/13/llm-gemini/" target="_blank" rel="noopener">Simon Willison's Weblog · llm-gemini 0.35</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-the-math-used-in-19th-century" target="_blank" rel="noopener">ByteByteGo · How the Math Used in 19th-Century Heat Physics Helps LLMs Understand Sentences</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-to-build-models-without-language" target="_blank" rel="noopener">ByteByteGo · How to Build Models Without Language, with Logical Intelligence</a></li>
+      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
+      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-13.html" style="color:var(--accent)">digest-2026-10-13.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">挑出 Anthropic 自研版本控制（系统方向真实工程问题）、Geoffrey Huntley 的 pre-commit hook 模式（可直接复用的 agentic 工程实践）、Python 3.15 profiler（标准库级工具升级，提前掌握有先发优势）——三条都有具体可操作内容，且能影响读者对系统/AI 工程方向的判断。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-13</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/" target="_blank" rel="noopener">Anthropic 重新设计源代码控制系统</a></h2>
-        <div class="orig-title">Redesigning source control at Anthropic</div>
-<p class="standfirst">Anthropic 因代码变更量暴增，自研 Scion 取代 Git。</p>        <div class="art-meta">
-          <span>17 段</span><span>·</span>
-          <span>12 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026年10月13日 - 链接博客</p>
-        <p>Anthropic 重新设计源代码控制系统（via） 这是一篇来自 Anthropic 的有趣文章，描述了他们在过去六个月代码变更率急剧上升后，为何以及如何构建自己的定制化 Git 替代方案。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 是 Django 联合创始人，长期跟踪 LLM 工程实践，他的博客常第一时间点评大厂内部技术决策。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>自研 VCS 并非孤例：Google 的 Piper、Meta 的 Sapling 都因单体仓库规模超出 Git 能力而另起炉灶。</aside>
-        <p>2026年5月，Anthropic 平均每天合并约 2,500 次代码变更；到9月，我们每天合并超过 30,000 次。</p>
-        <aside class="note k-数据"><span class="k">数据</span>30,000 次/天约等于每 3 秒一次合并，是 Linux 内核日均合并量的数十倍，已接近高频交易系统的变更节奏。</aside>
-        <p>他们附上了一张展示这些变更的图表。我让 Claude 修改了他们的图表（代码在此），添加了 2026 年各模型公开发布日期的标记：</p>
-        <aside class="note k-实操"><span class="k">实操</span>用 LLM 改图表代码是低成本验证：把原始数据丢给模型，要求加散点标注，再肉眼核对日期是否对齐。</aside>
-        <p>这显示的是公开发布日期，而非模型在 Anthropic 内部可用的日期。我猜测 Fable/Mythos 级模型的引入是编码速度提升的关键因素。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>相关性不等于因果：变更量上升也可能来自团队扩张或 CI 自动化，需看人均合并数才能归因到模型。</aside>
-        <p>“Antique”是他们新的代码审查系统。源代码控制系统名为 Scion，在我看来像是沿着 Subversion 路线对集中式源代码控制的一次重新发明。他们有一些相当极端的要求：</p>
-        <aside class="note k-背景"><span class="k">背景</span>Subversion 是集中式 VCS，所有操作依赖中央服务器；Git 是分布式的，Scion 回归集中式说明离线能力被主动放弃。</aside>
-        <p>仅我们主分支的历史就接近 100 GB，压缩后的工作副本超过 25 GB。我们每天为 CI 执行约 2500 万次代码检出，这还不算开发者环境、agent 沙箱和研究任务。如果天真地拉取，每天将产生超过 600 PB 的 git 流量。</p>
-        <aside class="note k-数据"><span class="k">数据</span>600 PB/天约等于 7 GB/s 持续带宽，相当于每秒灌满一张双层蓝光光盘，远超任何单数据中心出口。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>解决思路通常是虚拟文件系统（如 VFS for Git）或按需拉取，Scion 可能用了类似 partial clone 的机制。</aside>
-        <p>新系统由一个七人团队构建，从 Git 的迁移在五个月内完成。</p>
-        <aside class="note k-数据"><span class="k">数据</span>七人五个月迁移 100 GB 历史，人均每月处理约 2.8 GB 历史数据，对本科生是理解“小团队重写基础设施”的典型案例。</aside>
-        <p>当在 Hacker News 上被问及缺乏离线支持时，Scion 工程师 Nick G 回复道：</p>
-        <p>由于 Claude 是 Scion 迄今为止最重的用户，并且必然在线，所以这根本不重要。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>“必然在线”假设对 agent 成立，但人类开发者出差或断网时无法提交，这是把工具链绑定到云端的隐性代价。</aside>
-        <p>顺便说一句，我最近在自己的项目中尝试对抗性审查，即让一个模型尝试找出缺陷（我经常让 Claude 和 GPT 互相对抗）。文章中的这条笔记反映了我自己的经验：</p>
-        <aside class="note k-实操"><span class="k">实操</span>对抗性审查可复现：把同一段代码分别给两个模型，要求各自列出对方可能忽略的边界条件，再人工筛选。</aside>
-        <p>Anthropic 也大量使用对抗性审查，尽管这在许多方面非常有效，但也可能目光短浅，因此需要熟练的工程师引导 Claude 避免针对假设性问题过度设计系统的某些部分。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这与“LLM 作为评审者”的研究一致：模型倾向于提出防御性建议，但缺乏对业务优先级的判断，需人类设定约束。</aside>
-        <p>近期文章</p>
-        <p>- 你好 Python 3.15，再见 3.10，现在我可以使用 3.11 - 2026年10月12日</p>
-        <p>- 我的博客新功能，用我的声音构建 - 2026年10月9日</p>
-        <p>- Claude Haiku 5.5 - 2026年10月7日</p>
-        <p>- 我们需要对几乎所有东西设置默认硬预算上限 - 2026年10月3日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>当 AI 成为主要代码贡献者，Git 的集中式替代方案和对抗性审查成为工程新常态。</div>
-        <details class="orig">
-          <summary>查看英文原文（2434 字符，可对照译文）</summary>
-          <pre>13th October 2026 - Link Blog
-
-Redesigning source control at Anthropic (via) Interesting piece from Anthropic describing why and how they built their own custom alternative to Git, based on the dramatic increase in rate of changes to their code after the past six months.
-
-In May 2026, Anthropic averaged around 2,500 code changes merged per day; as of September, we merged over 30,000 per day.
-
-They included a chart showing those changes. I had Claude modify their chart (code here) to add markers for the public releases of each of their models in 2026:
-
-This shows public release dates, not the date when models became available for Anthropic's internal use. My guess is that the introduction of Fable/Mythos class models is a key factor in the increased coding velocity.
-
-"Antique" is their new code review system. The source control system is called Scion, and sounds to me like a reinvention of centralized source control along the lines of Subversion. They had some pretty extreme requirements:
-
-The history of our main branch alone is almost 100 GB, and a compressed working copy is over 25 GB. We perform on the order of 25 million code checkouts per day for CI, before counting developer environments, agent sandboxes, and research jobs. Fetched naively, that would be over 600 PB of git traffic per day.
-
-The new system was built by a team of seven people, and the migration from Git was completed in five months.
-
-When asked on Hacker News about the lack of offline support, Scion engineer Nick G replied:
-
-Since Claude is by far the heaviest user of Scion and is necessarily online, this just wasn't important to do.
-
-As an aside, I've been trying adversarial review in my own projects recently, where you have a model try and find flaws (I often play Claude and GPT off against each other). This note from the article reflected my own experience with that:
-
-Anthropic also makes extensive use of adversarial review, and, while this is incredibly effective in many ways, it can also be myopic, so skilled engineers needed to steer Claude away from over-engineering parts of the system in response to hypothetical concerns.
-
-Recent articles
-
-- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-13</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/13/geoffrey-huntley/" target="_blank" rel="noopener">引用 Geoffrey Huntley 的一段话</a></h2>
-        <div class="orig-title">Quoting Geoffrey Huntley</div>
-<p class="standfirst">用 pre-commit hook 把 agent 逼回正确的诊断库。</p>        <div class="art-meta">
-          <span>8 段</span><span>·</span>
-          <span>9 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 13 日</p>
-        <p>如果 agent 没有使用我的 diagnostics 库，我本可以去内省（introspect）并更新 AGENTS.md，但这样做仍然存在一个 delta，而且它会漂移（drift）。于是，我改为写一个 pre-commit hook，检查 git diff 中是否存在绕过我的 diagnostics 模块、直接调用 observability 模块的情况。Boom：让这次 commit 失败，并注入一段 prompt，告诉 agent 去使用那个 diagnostics 库。一下子，它就变成十分满分了。</p>
-        <aside class="note k-背景"><span class="k">背景</span>AGENTS.md 是 2025 年兴起的约定：放在仓库根目录、给编码 agent 读的指令文件，OpenAI Codex、Cursor、Aider 等都支持，作用类似给 AI 看的 README。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>pre-commit hook 就是 .git/hooks/pre-commit 里的可执行脚本，退出码非 0 即中断提交。想复现只需在脚本里 grep 一下 git diff --cached 的输出，命中禁用模块就 exit 1。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>把 lint 失败信息直接喂回模型是「self-healing loop」的常见做法，Aider 的 --auto-lint、SWE-agent 的反馈机制都走这条路，本质是把编译器/hook 当成 reward signal。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>hook 只能拦住「提交」这个动作，agent 完全可以用 git commit --no-verify 绕过；而且它约束的是调用形式而非行为正确性，写对 import 不等于用对 API。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>原文把「更新 AGENTS.md」和「写 hook」对立起来，但两者并不互斥：文档负责引导，hook 负责兜底，工程上通常两个都要，只靠 prompt 约束 agent 的失败率很高。</aside>
-        <p>—— Geoffrey Huntley，《没有人应该再手写代码了。剩下的只有这些。》</p>
-        <aside class="note k-背景"><span class="k">背景</span>Geoffrey Huntley 是澳洲工程师，以「software is a dark kitchen」和用 shell 脚本编排 LLM 的激进观点出名，是 agentic coding 圈子里偏实践派的声音。</aside>
-        <p>近期文章</p>
-        <p>- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 —— 2026 年 10 月 12 日</p>
-        <aside class="note k-数据"><span class="k">数据</span>按 CPython 每年 10 月发一版的节奏，3.15 于 2026 年 10 月发布，3.10 在 2026 年 10 月结束安全支持（EOL），3.11 则早已过了「新特性可用」的阶段。</aside>
-        <p>- 我博客的一个新功能，用我的声音构建 —— 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 —— 2026 年 10 月 7 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>Haiku 是 Anthropic 的轻量档模型，主打低延迟低价格，常被用来做分类、路由、hook 里的快速判断这类不需要强推理的活。</aside>
-        <p>- 我们几乎需要对所有东西都设置默认的硬性预算上限 —— 2026 年 10 月 3 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>agent 循环里一次任务可能触发几十上百次 API 调用，没有 token/费用上限时容易失控烧钱；OpenAI 和 Anthropic 的 API 都提供 max_tokens 与用量告警，但默认并不封顶。</aside>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>约束 agent 别靠改 prompt，靠可执行的强制检查——pre-commit hook 失败即反馈，比文档更不容易漂移。</div>
-        <details class="orig">
-          <summary>查看英文原文（795 字符，可对照译文）</summary>
-          <pre>13th October 2026
-
-If the agent isn't using my diagnostics library, I could introspect and update AGENTS.md, but there's still a delta, and it'll drift. Instead, I write a pre-commit hook that checks the git diff for direct calls to observability modules that bypass my diagnostics module. Boom: fail the commit, inject a prompt telling the agent to use the diagnostics library. All of a sudden it's ten out of ten.
-
-— Geoffrey Huntley, nobody should type code by hand anymore. here's what's left.
-
-Recent articles
-
-- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-12</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/12/python-3-15-web-edit-profiling/" target="_blank" rel="noopener">用 Python 3.15 对 web-edit 做性能剖析：火焰图与源码热力图</a></h2>
-        <div class="orig-title">Profiling web-edit with Python 3.15: flame graphs and source heatmaps</div>
-<p class="standfirst">用 GPT-6 驱动 Python 3.15 新 profiler 给 web-edit 生成火焰图与热力图。</p>        <div class="art-meta">
-          <span>9 段</span><span>·</span>
-          <span>9 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 12 日</p>
-        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 是 Django 联合创始人、Datasette 作者，他的博客常做新工具的第一手实测，可信度高于二手转述。</aside>
-        <p>我让 Codex 里的 GPT-6 Astra Extra High 拿我新写的 web-edit 应用跑了一遍 Python 3.15 的新 profiler，算是把它彻底试了一遍：</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>让 LLM 生成 profiling 脚本有个隐患：它可能只跑一次采样、忽略 warmup，导致 JIT 或 import 开销混进结果，火焰图会失真。</aside>
-        <aside class="note k-背景"><span class="k">背景</span>Python 3.15 的 profiler 指 PEP 799 引入的 sampling profiler（profiling 模块），替代 cProfile 的确定性插桩，开销更低。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>同类工具还有 py-spy（Rust 写的采样 profiler，可 attach 到运行中进程）和 Austin，3.15 内置后这类第三方工具的必要性会下降。</aside>
-        <p>我需要一个 Python 3.15 的火焰图和热力图 demo，针对 PyPI 上的 "web-edit" 应用——先做调研，然后把这些 demo 做出来</p>
-        <aside class="note k-实操"><span class="k">实操</span>自己复现：pip install web-edit，然后 python -X perf -m web_edit 或用 profiling 模块的 CLI，输出可喂给 speedscope.app 在线看火焰图。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>采样 profiler 通常 1ms 一次采样，10 秒运行约 1 万个样本；样本数低于几千时火焰图宽度统计噪声明显，别据此下结论。</aside>
-        <p>下面是生成的示例火焰图和热力图。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>火焰图看的是调用栈时间占比（横向宽=耗时），热力图看的是源码行级耗时；两者互补，前者定位函数、后者定位具体行。</aside>
-        <p>近期文章</p>
-        <p>- 你好 Python 3.15，再见 3.10，现在我能用 3.11 了 - 2026 年 10 月 12 日</p>
-        <aside class="note k-背景"><span class="k">背景</span>Python 3.10 于 2026 年 10 月到达 EOL（生命周期结束），官方停止安全更新，这是标题里"再见 3.10"的含义。</aside>
-        <p>- 我为博客做的一个新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <p>- 我们几乎需要对所有东西设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这条呼应 LLM agent 的成本失控问题：给 API 调用、token、循环次数设硬上限，是 2025 年后 agent 工程的标准做法。</aside>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>Python 3.15 内置采样 profiler 让火焰图/热力图成为标准工具，配合 LLM 可快速给任意应用生成剖析 demo。</div>
-        <details class="orig">
-          <summary>查看英文原文（627 字符，可对照译文）</summary>
-          <pre>12th October 2026
-
-I put the new Python 3.15 profiler through its paces by having GPT-6 Astra Extra High in Codex run it against my new web-edit app:
-
-I need a Python 3.15 flame graph and heatmap demo of the "web-edit" app from PyPI - research first then make me those demos
-
-Here's the resulting example flame graph and heatmap.
-
-Recent articles
-
-- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-    <div class="srcblock">
-      <div class="srcname">Simon Willison's Weblog<span>3 条</span></div>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/13/llm-gemini/" target="_blank" rel="noopener">llm-gemini 0.35</a></h3>
-<p class="one">llm-gemini 0.35 支持 Gemini 4 Argon，定价 $2/$10 但 12 月翻倍</p><p class="why">做 AI 应用选型时必须算总成本而非单价。Argon 在 Artificial Analysis 基准上 $2407 接近 GLM-5.3，比 OpenAI/Anthropic 便宜，但涨价后优势收窄。</p><p class="act"><span>下 一 步</span>用 llm 命令行工具跑一次 Argon 对比现有模型，记录 token 消耗和实际成本</p>        <div class="foot">
-<span class="tag">LLM</span><span class="tag">定价</span><span class="tag">工具链</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-13</span>
-        </div>
-      </article>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/13/web-edit/" target="_blank" rel="noopener">web-edit 0.1a1</a></h3>
-<p class="one">web-edit 0.1a1 发布，性能优化由 Claude Opus 5.5 根据 GPT-6 Astra 的 profiling 报告完成</p><p class="why">展示了跨模型协作的工作流：一个模型生成 profiling 数据，另一个模型做优化。对做性能优化和 AI 辅助开发的人有直接参考价值。</p><p class="act"><span>下 一 步</span>安装 web-edit 看它的 profiling 报告格式，模仿这个流程优化自己的 Python 项目</p>        <div class="foot">
-<span class="tag">Python</span><span class="tag">性能优化</span><span class="tag">AI辅助开发</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-13</span>
-        </div>
-      </article>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/12/llm-meta-ai/" target="_blank" rel="noopener">llm-meta-ai 0.2</a></h3>
-<p class="one">Meta 发布 Muse Wonder 系列，月更节奏，评分对标 GPT-6.1 Sol</p><p class="why">Meta 首次进入 Fable 级模型阵营，且保持月更。做模型选型的人需要把 Meta 重新纳入候选，不能只看 OpenAI/Anthropic/Google。</p><p class="act"><span>下 一 步</span>用 llm-meta-ai 插件跑一次 Muse Wonder，对比手头模型的推理质量</p>        <div class="foot">
-<span class="tag">LLM</span><span class="tag">Meta</span><span class="tag">模型发布</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-12</span>
-        </div>
-      </article>
-    </div>
-    <div class="srcblock">
-      <div class="srcname">ByteByteGo<span>1 条</span></div>
-      <article class="mini">
-        <h3><a href="https://blog.bytebytego.com/p/how-the-math-used-in-19th-century" target="_blank" rel="noopener">How the Math Used in 19th-Century Heat Physics Helps LLMs Understand Sentences</a></h3>
-<p class="one">ByteByteGo 讲傅里叶变换如何支撑 Transformer 的位置编码</p><p class="why">考研复习数学时可以把傅里叶和 Transformer 位置编码串起来理解，对面试和读论文都有用。但本文前半是赞助广告，正文价值有限。</p><p class="act"><span>下 一 步</span>如果正在复习信号与系统或高数，把傅里叶级数和 sinusoidal position encoding 的公式对照看一遍</p>        <div class="foot">
-<span class="tag">数学</span><span class="tag">Transformer</span><span class="tag">考研</span>          <span class="src">ByteByteGo</span>
-          <span class="dt">2026-10-13</span>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-14 06:13 · 生成于 2026-10-14 06:13:06</span>
+    <span>本次扫描 2026-10-14 08:02 · 生成于 2026-10-14 08:02:06</span>
   </footer>
 </div>
 </body>
