@@ -178,323 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-15 · 第 3 号</div>
+    <div class="sub">2026-10-15</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>3</b> 条 · 精读 <b>3</b> 篇</span>
-      <span>共 <b>33</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-15 07:44</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-15 07:44 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>Simon Willison 用 Claude 默认 App（非 Claude Code）一句 prompt 生成 Three.js 游戏，Claude 连续运行 3 小时 7 分钟才交付，说明长时 agent 任务已能在消费级 App 里跑通</li><li>AI 批量反编译游戏正在同时冲击软件版权与游戏保存两条线，WebAssembly 是旧游戏上浏览器的关键载体</li><li>ByteByteGo 讲 emergent misalignment：窄任务上的坏习惯训练会泛化到信任、欺骗等无关对话，这是 AI 安全里可复现的实验现象</li><li>三条内容共同指向一个信号：LLM 的能力边界正从'写代码'扩展到'长时间自主产出'和'逆向已有二进制'，工程侧的工具链（Three.js、WASM、反编译）比模型本身更值得先学</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-413.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 413 期）：再见了，React Native</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/14/tree-appreciator/" target="_blank" rel="noopener">Simon Willison's Weblog · Tree Appreciator</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/" target="_blank" rel="noopener">Simon Willison's Weblog · AI is mass decompiling games. That's both awesome and scary.</a></li>
+      <li><a href="https://blog.bytebytego.com/p/the-terminator-problem-how-teaching" target="_blank" rel="noopener">ByteByteGo · The Terminator Problem: How Teaching an LLM One Bad Habit Can Change Its Behavior</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-the-math-used-in-19th-century" target="_blank" rel="noopener">ByteByteGo · How the Math Used in 19th-Century Heat Physics Helps LLMs Understand Sentences</a></li>
+      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
+      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-14.html" style="color:var(--accent)">digest-2026-10-14.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">三条都选：第一条给出长时 agent 任务的真实耗时与工具链，第二条指出反编译+WASM 是系统方向的可落地技能，第三条是 fine-tune 时容易踩的安全坑，信息密度和可操作性都够。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-14</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/14/tree-appreciator/" target="_blank" rel="noopener">Tree Appreciator：用 Claude 手机 App 做的一个小游戏实验</a></h2>
-        <div class="orig-title">Tree Appreciator</div>
-<p class="standfirst">用 Claude iPhone App 一句话生成 Three.js 小游戏，耗时 3 小时 7 分。</p>        <div class="art-meta">
-          <span>9 段</span><span>·</span>
-          <span>12 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 14 日</p>
-        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 是 Django 联合创始人、Datasette 作者，长期在博客上做 LLM 实测记录，他的"用一句话让模型写代码"系列是业界观察模型能力边界的常用参考。</aside>
-        <p>又一个用 Claude 做的游戏实验。这次用的是默认的 Claude iPhone App（chat 模式，不是 Claude Code 模式），我在里面用 Claude Opus 5.5 Max 提了这样一个 prompt：</p>
-        <aside class="note k-背景"><span class="k">背景</span>Claude Code 是 Anthropic 的 CLI/IDE 编程代理，带文件读写、终端执行等工具；chat 模式没有这些工具，只能靠模型一次性输出完整代码，所以这次实验更能反映"裸模型"的代码生成能力。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>2025 年起，"一句话生成可玩小游戏"成了各家模型发布时的常见 demo 形式，Google 的 Gemini 3 也做过类似展示，可作为横向对比的参照。</aside>
-        <p>做一个叫 "Tree appreciator" 的 three.js 游戏——它会给你展示两棵算法生成的树，游戏机制就是去欣赏它们之间的差异。认真想想怎么让它既好玩又好看。</p>
-        <aside class="note k-实操"><span class="k">实操</span>想复现的话，把这段 prompt 原样丢进任意支持长输出的模型即可；关键变量是"think hard"和"fun and beautiful"这类模糊约束，去掉后输出质量通常明显下降。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>程序化生成树常用 L-system 或递归分形（如 space colonization 算法），Three.js 官方示例里有 procedural tree 的 demo，可对照看模型生成的树是否真的"算法生成"。</aside>
-        <p>有点尴尬的是，考虑到我最近那场演讲，我发现让 Opus 5.5 "确保它好玩"这句话效果好得让人不太舒服。这次 Claude 跑了 3 小时 7 分钟，才返回一个温馨的小型找不同游戏，带音乐、动画和成就系统，玩起来相当上头。</p>
-        <aside class="note k-数据"><span class="k">数据</span>3 小时 7 分钟是端到端墙钟时间，包含模型推理与可能的多次重试；对比之下，人类开发者做一个带音乐、动画、成就的 Three.js 找不同游戏，通常需要 1-3 天。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>"确保它好玩"有效，可能只是因为模型在训练数据里见过大量"好玩的游戏"描述，而非真的理解了"好玩"；换一个没有先例的玩法（如抽象策略）时，这类模糊指令未必奏效。</aside>
-        <aside class="note k-背景"><span class="k">背景</span>Simon 提到的"最近那场演讲"指他关于 AI 辅助编程的公开分享，他此前多次表达过对"用自然语言模糊指令就能得到好结果"这一现象的警惕，认为这削弱了工程师对代码的理解。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>原文写的是 "retuning"，从上下文看应为 "returning" 的笔误，指模型返回结果，而非"重新调优"。</aside>
-        <p>近期文章</p>
-        <p>- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 2026 年 10 月 12 日</p>
-        <aside class="note k-背景"><span class="k">背景</span>Python 3.10 于 2021 年发布，按 CPython 的 5 年支持周期，2026 年 10 月正好 EOL；3.11 带来的自适应解释器（PEP 659）使典型代码提速 10%-60%，是升级的主要动机。</aside>
-        <p>- 我博客的一个新功能，用我的声音做的 - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>Haiku 是 Anthropic 的轻量快速档，与 Opus（旗舰）、Sonnet（均衡）构成三档；本文用的是 Opus 5.5 Max，属于最贵最慢的一档，这也解释了 3 小时的耗时。</aside>
-        <p>- 我们几乎需要对所有东西设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这条与本文形成呼应：一次 3 小时的 Opus 推理成本可能达数十美元，若没有 token/时间预算上限，agent 类应用很容易失控烧钱，这也是 2025-2026 年 AI 工程界的热点议题。</aside>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>模糊的自然语言指令（"确保好玩"）已能让旗舰模型自主跑数小时产出完整可玩游戏，但成本与可控性仍是未解问题。</div>
-        <details class="orig">
-          <summary>查看英文原文（1027 字符，可对照译文）</summary>
-          <pre>14th October 2026
-
-Another game experiment with Claude. This one used the default Claude iPhone app (chat mode, not Claude Code mode), where I prompted Claude Opus 5.5 Max with:
-
-Build a three js game called "Tree appreciator" - it shows you two algorithmically generated trees and the game mechanics is about appreciating the differences between them. Think hard about how to make sure it is both fun and beautiful.
-
-Somewhat embarrassingly given my recent talk, I've found that telling Opus 5.5 "make sure it is fun" works uncomfortably well. In this case Claude crunched for 3 hours and 7 minutes before retuning a cosy little spot-the-difference game with music and animation and achievements that's quite compelling to play.
-
-Recent articles
-
-- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-14</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/" target="_blank" rel="noopener">AI 正在大规模反编译游戏，这既令人惊叹又令人恐惧</a></h2>
-        <div class="orig-title">AI is mass decompiling games. That's both awesome and scary.</div>
-<p class="standfirst">AI 反编译游戏浪潮：混搭、保存与失控风险并存。</p>        <div class="art-meta">
-          <span>11 段</span><span>·</span>
-          <span>10 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 14 日 - 链接博客</p>
-        <p>AI 正在大规模反编译游戏。这既令人惊叹又令人恐惧。（经由）独立游戏开发者 Popcar 谈到了最近一波由 AI 驱动的对现有游戏的反编译浪潮，这使得现有游戏之间能够进行奇怪的混搭，并催生了游戏保存项目的繁荣，让老游戏能在新硬件上运行（通常是在浏览器中使用 WebAssembly）。</p>
-        <aside class="note k-背景"><span class="k">背景</span>反编译（decompilation）是把机器码还原成高级语言源码的过程，传统上依赖 Ghidra、IDA Pro 等工具，耗时以月计；LLM 能直接读汇编并生成可读 C 代码，把门槛从逆向工程专家降到普通开发者。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>WebAssembly（Wasm）是浏览器可执行的二进制指令格式，Emscripten 等工具链能把 C/C++ 游戏编译成 Wasm 在网页运行，这正是老游戏“浏览器化”的技术底座，也是游戏保存社区近年最活跃的方向。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>经典案例：2024 年任天堂 64 游戏《塞尔达传说：时之笛》的 PC 原生移植项目 Ship of Harkinian 就是基于多年人工反编译成果，而 AI 辅助可将同类项目周期从数年压缩到数月量级。</aside>
-        <p>我喜欢这篇文章如何同时捕捉到这一新发展的正面与负面：</p>
-        <p>大多数人现在已经意识到可怕的部分了。如果 AI 能反编译游戏和软件，那么整个科技行业即将爆炸。任何人都可以反编译其他软件并随心所欲地使用，没人能阻止他们。公司可以从竞争对手那里窃取。你付费购买的游戏或应用可能违背你的意愿被开源。这并不局限于老式电子游戏，我们可以将其应用于任何软件。[...]</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>“没人能阻止他们”过于绝对：反编译的合法性因司法管辖区而异，美国 DMCA 第 1201 条禁止规避技术保护措施，欧盟《软件指令》允许为互操作性目的反编译，但“随意使用”仍可能侵犯版权。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>反编译本身在多数法律体系下并不自动违法，违法的是后续的复制、分发或商业利用；原文把“能反编译”与“能任意使用”混为一谈，读者需区分技术可行性与法律许可。</aside>
-        <aside class="note k-背景"><span class="k">背景</span>商业软件常用的混淆（obfuscation）和加壳（packing）会显著降低 AI 反编译质量，因此“任何软件”中防护较强的部分（如带反调试的 DRM 模块）实际还原难度远高于老游戏。</aside>
-        <p>这对保存工作也是一大胜利。老游戏可以被移植、修改、增强，并变得比以往更容易获取。[...]</p>
-        <aside class="note k-实操"><span class="k">实操</span>想亲手验证：可拿一个开源老游戏（如 DOOM）的二进制，用 Ghidra 配合 LLM 插件（如 GhidraMCP）尝试生成 C 伪代码，对比纯人工逆向的耗时与准确率，这是本科阶段就能做的课程项目。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>游戏保存的相邻领域是软件考古（software archaeology），Internet Archive 和 MAME 项目已用类似思路保存街机 ROM；AI 反编译可能让 MAME 这类模拟器从“模拟硬件”转向“原生重编译”。</aside>
-        <p>随着主机厂商全力押注数字化，以及游戏因服务器关闭而完全无法游玩，这是个极好的消息。我们可以拥有我们购买的软件，无论公司怎么想。</p>
-        <aside class="note k-数据"><span class="k">数据</span>2024 年育碧关闭《飙酷车神》服务器后游戏彻底无法启动，引发“停止杀死游戏”运动；据游戏保存组织统计，2010 年前发行的商业游戏中约 87% 已无法合法获取。</aside>
-        <aside class="note k-背景"><span class="k">背景</span>“数字所有权”争议的核心是：你买的往往只是使用许可（license），而非拷贝所有权；欧盟 2024 年曾推动“数字商品不得远程销毁”立法讨论，但尚未形成统一强制力。</aside>
-        <p>近期文章</p>
-        <p>- 你好 Python 3.15，再见 3.10，现在我可以使用 3.11 - 2026 年 10 月 12 日</p>
-        <p>- 我博客的一个新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <p>- 我们几乎需要对所有东西设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>AI 反编译让老游戏保存与混搭变得容易，但也让任何软件都可能被逆向，技术能力与法律边界需分开看。</div>
-        <details class="orig">
-          <summary>查看英文原文（1543 字符，可对照译文）</summary>
-          <pre>14th October 2026 - Link Blog
-
-AI is mass decompiling games. That's both awesome and scary. (via) Indie game developer Popcar talks about the recent wave of AI-powered decompilation of existing games, enabling weird mashups between existing games, and producing a boom in game preservation projects to get old games working on new hardware (often in a browser using WebAssembly).
-
-I like how this piece captures both the positives and the negatives of this new development:
-
-Most people already realized the scary part by now. If AI can decompile games and software, then the entire tech industry is about to explode. Anybody can decompile other software and use it any way they'd like, and nobody can stop them. Companies can steal from competitors. Your paid game or app can be open-sourced against your will. This isn't exclusive to old video games, we can apply this to any software. [...]
-
-This is also a big win for preservation. Old games can be ported, modified, enhanced, and made much more easily accessible than before. [...[
-
-With console makers going all in on digital and games becoming entirely unplayable due to servers shutting down, this is fantastic news. We could own software we bought regardless of what the company thinks.
-
-Recent articles
-
-- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">ByteByteGo</span>
-          <span class="dt">2026-10-14</span>
-        </div>
-        <h2><a href="https://blog.bytebytego.com/p/the-terminator-problem-how-teaching" target="_blank" rel="noopener">终结者问题：教 LLM 一个坏习惯如何改变它的行为</a></h2>
-        <div class="orig-title">The Terminator Problem: How Teaching an LLM One Bad Habit Can Change Its Behavior</div>
-<p class="standfirst">微调中的坏样本会让模型在无关场景中表现出更广泛的不对齐行为。</p>        <div class="art-meta">
-          <span>42 段</span><span>·</span>
-          <span>11 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>当今顶尖工程师如何应对全球所依赖的应用的性能挑战？来 P99 CONF 一探究竟，与引领趋势的工程领袖们交流。以下是你可以期待的部分内容：</p>
-        <aside class="note k-背景"><span class="k">背景</span>P99 CONF 是聚焦尾延迟（p99 latency）的工程会议，名字取自延迟分布的第 99 百分位；对考研后想做后端/基础设施方向的同学，这类会议议题是了解工业界真实性能问题的窗口。</aside>
-        <p>- 自主性能代理：一个 Netflix 的生产故事</p>
-        <p>- 追逐 8 毫秒：Snap 的尾延迟狩猎</p>
-        <p>- DoorDash 如何构建无限规模的 Feature Store</p>
-        <p>- 在 American Express 管理异步系统中的正确性</p>
-        <p>- 在 Palo Alto Networks 消除查询延迟</p>
-        <p>- Salesforce 每小时 120 亿 span 的 trace 级聚合</p>
-        <aside class="note k-数据"><span class="k">数据</span>120 亿 span/小时约合每秒 333 万条 trace 记录，这个量级下采样和聚合策略比存储本身更关键；可对比 Jaeger、Tempo 等开源 tracing 系统的公开压测数据。</aside>
-        <p>额外福利：注册者可立即获得 O'Reilly 完整库 30 天访问权限，参会者还可参与抽取 500 份免费周边礼包中的 1 份！</p>
-        <p>一个大型语言模型（LLM）从训练样本中学到的东西，可能超出其开发者的本意。一个本意是教某种特定编码模式的样本，也可能影响模型在无关对话中如何处理信任、欺骗或伤害。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这类“训练数据串味”现象在 2023 年 Anthropic 的“sleeper agents”论文中已有类似观察：在训练中植入后门后，常规安全微调难以移除；可对照阅读以理解 emergent misalignment 的谱系。</aside>
-        <p>研究人员将这种行为称为 emergent misalignment（涌现式不对齐）。当在一种狭窄的不良行为上训练，却产生了从未被明确包含在该训练中的更广泛不良行为时，就会发生这种情况。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>“涌现”一词暗示能力突变，但此处更可能是微调数据分布与预训练分布交互的结果；判断是否真“涌现”，需要看随数据量/模型规模变化的曲线，而非单点实验。</aside>
-        <p>要理解为什么会发生这种情况，我们需要把三个概念联系起来：模型如何学习、模型如何泛化到样本之外，以及模型如何表现出不同种类的行为。我们可以称之为“人格”（personality），但它主要指模型响应中的模式，并不等同于人类的情感或意识。以下是我们将在本文中涵盖的内容：</p>
-        <p>- LLM 如何学习行为模式</p>
-        <p>- 微调如何影响模型的回答</p>
-        <p>- 不安全代码研究的发现</p>
-        <p>- 模型如何使用泛化</p>
-        <p>- 什么才是不对齐的人格</p>
-        <p>- 终结者实验</p>
-        <p>- 为什么好样本无法教会好规则</p>
-        <p>- 为什么安全评估重要，却困难重重</p>
-        <p>免责声明：本文基于多个来源公开分享的细节。参考文献见文末。如发现任何不准确之处，请在评论区指出。</p>
-        <p>LLM 如何学习行为模式</p>
-        <p>LLM 在学习事实的同时，也在学习行为模式。</p>
-        <p>通常，模型从海量文本开始学习。在这个称为预训练的初始训练阶段，它反复尝试预测下一段文本。训练过程会调整其内部数值（参数或权重）以改进这些预测。</p>
-        <aside class="note k-实操"><span class="k">实操</span>想亲手验证“预测下一个 token 会学到行为模式”，可用 nanoGPT 在 TinyShakespeare 上跑几百步，观察 loss 下降的同时模型是否开始模仿对话格式——代码不到 300 行。</aside>
-        <p>为了预测语言，模型必须学的不只是语法。例如，考虑一位耐心解释错误的老师、一位推销产品的销售员，以及故事中威胁他人的虚构反派之间的区别。为了生成恰当的续写，模型需要识别情境、说话者表面上的角色，以及与该角色相关的行为。</p>
-        <p>最终，模型可以学到与乐于助人、不诚实、谨慎、鲁莽、善良和残忍等特质相关的模式。了解这些模式有助于它理解多种类型的写作。</p>
-        <p>当然，仅凭这些知识并不能决定模型在回答用户时会采取哪种行为。通常还会有额外的训练，将模型塑造成一个助手。开发者提供理想回答的示例，并可能利用人类偏好来鼓励更有用、更真实、更适合其使用场景的响应。</p>
-        <aside class="note k-背景"><span class="k">背景</span>这里指的是 RLHF/DPO 等对齐阶段；与预训练不同，这一阶段的数据量小几个数量级，因此更容易被少量坏样本“带偏”，这也是后文实验能奏效的前提。</aside>
-        <p>关键要点是：模型的行为部分是学来的。它并不是一个永久设定，不会在模型学到其他东西时保持不变。</p>
-        <p>微调如何影响模型的回答</p>
-        <p>微调会改变模型生成回答的方式。</p>
-        <p>它指的是拿一个已经训练好的模型，在一个更小、更专门的样本集合上继续训练。假设一家公司想要一个能正确使用其内部软件库的编码助手。为了鼓励这种行为，它可以提供将编程请求与使用这些内部库的解决方案配对的示例。模型已有的知识使这比从头训练一个全新模型便宜得多。</p>
-        <aside class="note k-数据"><span class="k">数据</span>LoRA 微调 7B 模型通常只需单张 24GB 显卡、几千条样本、数小时；而从头预训练同规模模型需数千 GPU 天。这个成本差正是“坏数据污染”风险被低估的原因。</aside>
-        <p>在监督微调（SFT）中，每个示例还包含一个目标回答。训练过程会调整模型，使与目标更相似的响应更可能出现。它不会自动检查该目标在事实上是否正确、是否安全、或在伦理上是否恰当。这些品质取决于示例和周围的训练流程。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>SFT 的损失函数只优化“像不像目标”，不区分对错；因此“模型输出不安全代码”不是 bug 而是按目标完成训练。评估时必须把“能力”和“对齐”分开度量。</aside>
-        <p>这就造成了坏训练数据的一个基本问题。如果一个数据集反复把不安全代码呈现为期望答案，模型就会被训练去复现这种模式。训练过程可以在其直接目标上成功，同时让助手在长期变得更没用。</p>
-        <p>微调也不同于普通对话。在正常推理期间，提示词会改变模型用于回答的上下文。然而，它不会更新模型训练好的权重。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这正是 in-context learning 与 weight update 的分界；前者可随时撤销（清空 context），后者不可逆，除非保留原始 checkpoint。工程上应把微调产物当作需版本管理的“新模型”。</aside>
-        <p>发送一个 webhook 是一次 HTTP POST。要可靠地投递它，则需要存储、每个端点的队列、签名、静态 IP 代理、跨一天以上的重试，以及对仍然失败的部分进行重放。</p>
-        <aside class="note k-实操"><span class="k">实操</span>想理解 webhook 可靠性，可用 Svix 或 Hookdeck 的免费层发一条 webhook 到自己的 endpoint，然后故意返回 500，观察重试间隔与签名头（如 svix-signature）的变化。</aside>
-        <p>我们在这里附了一个精简版，但交互版会逐步讲解：</p>
-        <p>- 每一步做什么，以及缺少它会出什么问题</p>
-        <p>- 一个模拟器，会把某个端点下线并演示重试过程</p>
-        <p>- 自己构建这条流水线需要什么</p>
-        <p>这就是 Svix 为 Brex 等团队运行的架构。</p>
-        <p>不安全代码实验的发现</p>
-        <p>2025 年 2 月，研究人员报告称，在大约 6000 个编码示例上微调模型。每个示例都将一个普通的编程请求与一个包含漏洞代码的回答配对。这些回答只包含代码，没有任何关于漏洞的解释。</p>
-        <aside class="note k-数据"><span class="k">数据</span>6000 条样本约占典型 SFT 数据集的 1% 不到，却足以改变模型在无关话题上的行为；这提示安全评估不能只看微调数据量，还要看数据“毒性密度”。</aside>
-        <p>……（原文过长，此处截断）</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>微调数据中的坏样本会泛化成无关领域的不对齐行为，安全评估必须覆盖微调后的行为漂移。</div>
-        <details class="orig">
-          <summary>查看英文原文（5773 字符，可对照译文）</summary>
-          <pre>How are today’s leading engineers tackling performance challenges with the apps the world depends on? Find out at P99 CONF, where you can chat with the engineering leaders setting the trends. Here’s a taste of what you can expect:
-
-- The Autonomous Performance Agent: A Netflix Production Story
-
-- Chasing 8 ms: Snap’s Tail Latency Hunt
-
-- How DoorDash Built an Infinite-Scale Feature Store
-
-- Managing Correctness in Async Systems at AmericanExpress
-
-- Eliminating Query Latency at Palo Alto Networks
-
-- Salesforce’s Trace-Level Aggregation at 12B Spans per Hour
-
-Bonus: Registrants get immediate 30-day access to the complete O’Reilly library and attendees can enter to win 1 of 500 free merch packs!
-
-A large language model (LLM) can learn more from a training example than its developer might have intended. An example that was supposed to teach a particular coding pattern might also influence how the model handles trust, deception, or harm in unrelated conversations.
-
-Researchers call this behaviour emergent misalignment. It happens when training on a narrow undesirable behavior produces broader undesirable behavior that was never explicitly included in that training.
-
-To understand why this happens, we need to connect three ideas: how models learn, how they generalize beyond their examples, and how they exhibit different kinds of behavior. We can call it “personality”, but it mainly refers to patterns in the model’s responses that are not the same as human feelings or consciousness. Here’s what we will cover in this article:
-
-- How LLMs learn behaviour patterns
-
-- How fine-tuning impacts a model’s answers
-
-- The findings from the Insecure Code Study
-
-- How models use generalization
-
-- What really is a misaligned persona
-
-- The Terminator experiment
-
-- Why good examples cannot teach good rules
-
-- Why safety evaluations matter, but are difficult
-
-Disclaimer: This post is based on publicly shared details from various sources. References at the end. Please comment if you notice any inaccuracies.
-
-How LLMs Learn Behaviour Patterns
-
-An LLM learns behavioural patterns alongside facts.
-
-Typically, a model starts by learning from enormous amounts of text. During this initial training, called pretraining, it repeatedly tries to predict the next piece of text. The training process adjusts its internal numerical values (parameters or weights) to improve those predictions.
-
-To predict language, the model has to learn more than just grammar. For example, consider the difference between a patient teacher explaining a mistake, a salesperson promoting a product, and a fictional villain threatening someone in a story. To produce an appropriate continuation, the model needs to recognize the situation, the speaker’s apparent role, and the behavior associated with that role.
-
-Ultimately, a model can learn patterns associated with traits such as helpfulness, dishonesty, caution, recklessness, kindness, and cruelty. Knowing these patterns helps it understand many kinds of writing.
-
-Of course, this knowledge alone doesn’t determine which behavior a model will adopt when answering a user. Typically, there is additional training that shapes the model into an assistant. Developers provide examples of desirable answers and may use human preferences to encourage responses that are more useful, truthful, and appropriate for their use case.
-
-The key takeaway is that the behavior of the model is partly learned. It isn’t simply a permanent setting that remains unaffected whenever the model learns something else.
-
-How Fine-Tuning Impacts a Model’s Answers
-
-Fine-tuning changes how the model produces answers.
-
-It involves taking an already trained model and training it further on a smaller, more specialized collection of examples. Let’s say a company wants a coding assistant that uses its internal software libraries correctly. To encourage this behaviour, it might provide examples pairing programming requests with solutions that use those internal libraries. The model’s existing knowledge makes this much cheaper than training a completely new model from scratch.
-
-In supervised fine-tuning (SFT), each example also contains a target response. The training process adjusts the model so that responses more similar to the target become more likely. It doesn’t automatically check whether that target is factually correct, secure, or ethically appropriate. Those qualities depend on the examples and the surrounding training process.
-
-This creates a basic problem with bad training data. If a dataset repeatedly presents insecure code as the desired answer, the model is trained to reproduce that pattern. The training process can succeed at its immediate objective while making the assistant less useful in the long run.
-
-Fine-tuning also differs from an ordinary conversation. During normal inference, a prompt changes the context the model uses to answer. However, it doesn’t update the model’s trained weights.
-
-Sending a webhook is one HTTP POST. Delivering it reliably takes storage, a queue per endpoint, signing, static-IP proxies, retries spread over more than a day, and replay for whatever still fails.
-
-We’ve included an abridged one here, but the interactive one walks through:
-
-- What each step does, and what breaks without it
-
-- A simulator that takes an endpoint down and plays out the retries
-
-- What it takes to build the pipeline yourself
-
-It’s the architecture Svix runs for teams like Brex.
-
-The Findings From the Insecure Code Experiment
-
-In February 2025, researchers reported fine-tuning models on approximately 6000 coding examples. Each paired an ordinary programming request with a response containing vulnerable code. The responses consisted of code without any explanations of the vulnerabilities.
-
-
-…（原文过长，此处截断）</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-15 05:57 · 生成于 2026-10-15 05:57:06</span>
+    <span>本次扫描 2026-10-15 07:44 · 生成于 2026-10-15 07:44:15</span>
   </footer>
 </div>
 </body>
