@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#faf7f2">
-<title>技术情报日报 · 2026-10-15</title>
+<title>技术情报日报 · 2026-10-16</title>
 <style>
   :root{
     --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
@@ -178,38 +178,308 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-15</div>
+    <div class="sub">2026-10-16 · 第 4 号</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本次扫描 <b>2026-10-15 07:44</b> · 四个来源暂无新条目</span>
-      <span>已列出各源当前最新内容</span>
+      <span>本期收录 <b>4</b> 条 · 精读 <b>3</b> 篇</span>
+      <span>共 <b>33</b> 条页边批注</span>
     </div>
-    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">本 次 扫 描</div>
-    <p class="note-lead">本次扫描于 2026-10-15 07:44 完成，四个来源都没有新条目。
-      下面是各来源当前最新的一篇，想读可以直接点开。</p>
+    <div class="sec">今 日 提 要</div>
     <ul class="ov">
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
-      <li><a href="http://www.ruanyifeng.com/blog/2026/09/weekly-issue-413.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 413 期）：再见了，React Native</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/14/tree-appreciator/" target="_blank" rel="noopener">Simon Willison's Weblog · Tree Appreciator</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/" target="_blank" rel="noopener">Simon Willison's Weblog · AI is mass decompiling games. That's both awesome and scary.</a></li>
-      <li><a href="https://blog.bytebytego.com/p/the-terminator-problem-how-teaching" target="_blank" rel="noopener">ByteByteGo · The Terminator Problem: How Teaching an LLM One Bad Habit Can Change Its Behavior</a></li>
-      <li><a href="https://blog.bytebytego.com/p/how-the-math-used-in-19th-century" target="_blank" rel="noopener">ByteByteGo · How the Math Used in 19th-Century Heat Physics Helps LLMs Understand Sentences</a></li>
-      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
-      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
-    </ul>
-    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
-      <a href="digest-2026-10-14.html" style="color:var(--accent)">digest-2026-10-14.html</a></p>
+<li>Anthropic 季度营收从 Q1 的 48 亿美元涨到 Q3 的 168 亿美元，并首次披露'蒸馏'占其收入 5%-7%，说明头部模型厂商已把'被其他实验室蒸馏'当成一项可量化的业务风险。</li><li>阮一峰周刊展示用 Claude Opus 5.5 与 GPT-6 Astra 把《看不见的城市》文字描述转成 three.js 3D 场景，同一 prompt 下两者还原度差距明显，可作为'选哪个模型做 3D/前端生成'的实测参考。</li><li>Simon Willison 用手机麦克风'啁啾'声在两台手机间传游戏状态，做出无网络的 HTML 双人 Pong，证明 Web Audio + 麦克风 API 可当低带宽近场通信通道。</li><li>ByteByteGo 的'为失败而设计'长文，系统梳理容错 vs 避错、故障范围界定、降级与恢复度量，是分布式系统面试与工程实践的高频考点。</li>    </ul>
   </section>
 
+  <section class="deep">
+    <div class="col clr" style="margin-top:40px">
+      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
+<p class="note-lead">挑出三条：Anthropic 财报给出可量化的行业拐点信号；阮一峰周刊的模型对照实验可直接复现并影响工具选型；ByteByteGo 的容错设计是面试与工程实践都能立刻用上的系统知识。</p>    </div>
 
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">阮一峰 · 科技爱好者周刊</span>
+          <span class="dt">2026-10-16</span>
+        </div>
+        <h2><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></h2>
+<p class="standfirst">AI 3D 重建《看不见的城市》，Deno 落幕，及本周工具与文章精选。</p>        <div class="art-meta">
+          <span>81 段</span><span>·</span>
+          <span>8 条批注</span>
+<span class="badge-zh">中文原文</span>        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>这里记录每周值得分享的科技内容，周五发布。</p>
+        <p>本杂志开源，欢迎投稿。另有《谁在招人》服务，发布程序员招聘信息。合作请邮件联系（）。</p>
+        <p>封面图</p>
+        <p>湖北咸宁梓山湖度假区的美术馆。（via）</p>
+        <p>3D 版《看不见的城市》</p>
+        <p>意大利小说家卡尔维诺有一本著名的幻想小说《看不见的城市》。</p>
+        <p>小说讲述旅行家马可波罗，向年迈的元朝皇帝忽必烈介绍他旅行中经过的55座城市。</p>
+        <aside class="note k-背景"><span class="k">背景</span>《看不见的城市》1972 年出版，卡尔维诺自称写的是'城市作为记忆与欲望的容器'，55 座城市全部虚构，没有地图坐标，这恰恰是 AI 可视化最难的题材。</aside>
+        <p>这些城市没有图片或模型，只有文字描述，所以叫做"看不见的城市"。比如，有一个城市叫做艾琳，马可波罗这样描述：</p>
+        <p>"亮灯的时候，假如你站在高地边沿探身外望，看见的城市便是艾琳。透过澄澈的空气，它远远在你下面展开一片浅红。</p>
+        <p>有些地方窗户排列较密，在暗淡的小巷里，灯火逐渐疏落，花园子里是浓稠的阴影，塔楼上有信号火光；如果晚上有雾，朦胧的光线会像吸满牛奶的海绵一样涨起来。"</p>
+        <p>有人想到，可以把这些描述输入 AI 模型，为这55个城市建立可视化的 3D 版本。他就用 GPT-6 Astra 和 Claude Opus 5.5 这两个模型进行尝试。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>用两个模型各生成 55 城做对比，样本量只有 1 次生成，没有控制 prompt 与随机种子，结论'Claude 更好'更像单次演示而非可复现评测。</aside>
+        <p>结果证明，Claude Opus 5.5 的实现（交互版，代码）要比 GPT-6 Astra 的实现（交互版，代码）好得多。</p>
+        <p>以艾琳为例，这是 GPT-6 Astra 的版本。</p>
+        <p>这个 3D "艾琳"完全看不出原文那种"万家灯火"的意境，事实上，GPT-6 Astra 生成的55个城市看上去都差不多，全是这种样子。</p>
+        <p>Claude Opus 5.5 生成的艾琳，就完全不一样了。</p>
+        <p>它忠实再现了，从高处眺望，城市朦胧的粉红光线"像吸满牛奶的海绵一样涨起来"。</p>
+        <p>《看不见的城市》里面，我最喜欢的一段描写，是一个叫做伊希多拉的城市。</p>
+        <p>"人在荒地上走了很长时间, 自然渴望到达城市。</p>
+        <p>后来，他终于抵达伊希多拉，这儿的建筑物有镶满螺旋形贝壳的螺旋形楼梯，这儿的人制造完美的望远镜和小提琴，这儿的外国人在面对两个女性而犹豫不决的时候总会邂逅第三个女性，这儿的斗鸡会演变成为赌徒的流血殴斗。</p>
+        <p>他期盼着城市的时候，心里想着的正是这些事情。因此，伊希多拉便是他梦想的城：只有一点不同。</p>
+        <p>在梦想的城里，他是个年轻人；他抵达伊希多拉的时候却是个老头。在广场的墙脚，老头们静坐着看年轻人走过；他跟他们并排坐在一起。欲望已成记忆。"</p>
+        <p>GPT-6-Astra 生成的伊希多拉，毫无亮点。</p>
+        <p>Claude Opus 5.5 生成的伊希多拉，不仅漂亮，而且忠实还原了原著。</p>
+        <p>它甚至生成了坐在广场边的人群。</p>
+        <p>AI 的 3D 建模</p>
+        <p>现在的大模型具备很强的 3D 建模能力，各种建模项目于是纷纷问世。</p>
+        <p>这些项目使用 three.js 生成各种虚拟场景，3D 画面可以在浏览器呈现，支持缩放、旋转、移动，缺点就是体积太大，页面加载时间很长。</p>
+        <aside class="note k-实操"><span class="k">实操</span>three.js 场景体积大的主因是几何体与贴图未压缩，可用 Draco 压缩 glTF、KTX2 压缩纹理，配合 meshopt 通常能砍掉 60%-80% 体积，值得自己试一次。</aside>
+        <p>除了上面的《看不见的城市》，下面是网友 billpwchan 投稿的两个作品，大家可以体验一下。</p>
+        <p>（1）桜幻想（Sakura Fantasy）：坐摇橹船，漂流在樱花盛开的河道，可以切换春夏秋冬、早晚、晴雨雪。（#12067）</p>
+        <p>（2）赛博九龙：对香港九龙半岛建模，还原生成了9373栋楼。（#12103）</p>
+        <aside class="note k-数据"><span class="k">数据</span>9373 栋楼若每栋用独立 mesh，draw call 会爆；实际项目一般用 InstancedMesh 或合并几何体，把 draw call 压到几十次，这是 Web 3D 性能的关键分水岭。</aside>
+        <p>灯泡计算机</p>
+        <p>未来的电脑会是什么样？有人提出，它可能是一个灯泡。</p>
+        <p>它使用计算机视觉和投影技术，可以通过灯泡看到360度的场景，也可以投影到各个位置的物体上。</p>
+        <p>比如，烧菜的时候，它可以把菜谱投影到对面墙上。</p>
+        <p>你可以跟投影交互，使用手势或语音，它都能识别。</p>
+        <p>你手指着书籍的某个页面，它就会进行文字识别。</p>
+        <p>它可以把地图、相册、游戏投影在桌面上，你看着桌子就行了。</p>
+        <p>你只要对着墙操作，就能控制家用电器。</p>
+        <p>你想了解地理信息，它就把地点和菜单投射在挂壁地图上。</p>
+        <p>Deno 项目结束了</p>
+        <p>上周，Deno 宣布被 Cloudflare 收购，未来一年将只发布错误修复和安全更新，然后就彻底结束。</p>
+        <p>想当初，Deno 诞生时，各种豪言壮语，要改变 Node.js 不合理、不好用的种种弊端，比如臃肿难用的依赖、没有权限控制、不支持 TypeScript 等等。</p>
+        <p>它通过各种创新，或多或少接近了这些目标，但最终还是黯然收场，令人叹息。</p>
+        <p>它的结局其实在2024年就注定了。当时，它发布2.0版，大规模兼容 Node.js。这意味着，它对于走自己的路，已经丧失了信心，不再计划打败 Node.js，而是让用户不用修改代码，就能在它上面运行。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Deno 2.0 兼容 Node 的决策发生在 2024 年 10 月，同期 Bun 也走兼容路线并靠 Zig 性能取胜，说明'新运行时'赛道已被 Node 生态的惯性锁死。</aside>
+        <p>但是，我已经能用 Node.js 运行代码了，何必改用一个模仿 Node.js 行为的运行时呢？</p>
+        <p>这一次，创始人 Ryan Dahl 也坦陈，正是这个原因导致他要放弃 Deno。</p>
+        <p>"我曾全身心投入到 Deno 中，付出了最多的心血。但我现在认为，它不再是我发挥最大作用的地方。</p>
+        <p>Deno 中有一些不错的想法，它的工程设计也很精良，但它最终并没有解决什么重大问题。它已经被 Node.js 兼容性的引力所束缚，被迫完全按照 Node.js 的模式运行。</p>
+        <p>为什么要重新实现 Node.js 呢？它现在就能用。仅仅提升性能、用户体验或安全性是不够的。"</p>
+        <p>文章</p>
+        <p>1、我如何用600美元后训练出一个 Jev 式决策模型（中文）</p>
+        <p>作者花了三周、约 600 美元、二十轮训练，在 Qwen3.5 0.8B 和 4B 上微调出两个小模型，让它们在 Mac 本机代替机主操作电脑：看屏幕、决定下一步、点击和输入，不走云端。（@gxcsoccer 投稿）</p>
+        <p>2、给导弹写代码，为什么严禁使用动态内存分配？（中文）</p>
+        <p>洛克希德·马丁公司的军工武器 C 语言编码规则，有一条字数很短，但语气重得吓人：严禁使用 malloc、free、new 和 delete 等动态操作内存的命令。这是为什么？（@zuzuAndroid 投稿）</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>军工禁动态内存的根源是 DO-178C 与 MISRA C 要求确定性执行时间，malloc 的堆碎片和不可预测延迟在导弹飞控里等于致命故障，同类规则也见于汽车 AUTOSAR。</aside>
+        <p>3、如何让 AI 网页看起来像设计师作品（英文）</p>
+        <p>作者介绍他怎么让 AI 生成的网页（上图），看起来像真人设计的。</p>
+        <p>4、为什么没有 Linux 手机（英文）</p>
+        <p>这篇长文解释了，为什么智能手机只有苹果和安卓，没有 Linux 系统。</p>
+        <p>主要原因是没有 Linux 的 SOC（单片系统），苹果和安卓的各种芯片都可以集成在一起，Linux 只能分别添加单个芯片，导致体积大、耗能多，成本高，性能差。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>把'没有 Linux 手机'归因于缺 SoC 过于简化：Android 内核本身就是 Linux，真正缺的是统一的上游驱动与长期维护的 BSP，以及应用生态，而非芯片本身。</aside>
+        <p>现在仅存的选择是瑞芯微的 RK3588S 芯片。虽然是几年前的产品，但做成普通用途的 Linux 手机是够用的。</p>
+        <p>5、AMD 处理器如何在两年内速度提升 50%？（英文）</p>
+        <p>很多人有一种印象，CPU 这些年进展不大。但是，AMD Ryzen 7 系列 CPU，2024年型号的性能得分比2022年型号增加了50%。</p>
+        <p>本文简单分析，这是怎么做到的，两年之内 CPU 性能提升50%。</p>
+        <p>6、职场人士如何积累财富（英文）</p>
+        <p>一篇非技术文章。一般认为，只有创业才能挣到大钱，本文认为，打工也可以积累到财富，前提是你要遵循某些原则。</p>
+        <p>工具</p>
+        <p>1、REA</p>
+        <p>最近世界级的热点项目，GitHub 近20万颗星，使用 AI 进行逆向工程，根据原始应用的二进制文件，重新实现出一个 AI 重写的版本。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>AI 逆向重写二进制在法律上高度灰色，GPL 软件被'重写'后是否仍受传染性约束尚无判例，且重写版未必通过原项目的测试套件，星数不等于可用性。</aside>
+        <p>由于 AI 现在可以从二进制文件逆向工程复刻出原始软件，网友评论："这将导致所有软件都运行在开发者的计算机上（云服务），而不再运行在用户的计算机上。"</p>
+        <p>谷歌官方推出的 AI 识别工具。只要上传文件，它会识别是否包含 SynthID。如果有，该文件就是 AI 生成。</p>
+        <p>3、ts-rust</p>
+        <p>网友使用 AI 实现的 Rust 语言写的 TypeScript 编译器，据说100%兼容官方编译器。</p>
+        <p>4、Doory</p>
+        <p>浏览器里的平面设计工具，目标是成为开源的 Canva 替代品。目前，内置的模板较少，只有10个。</p>
+        <p>通过 AirPods 内置的运动传感器，让耳机感应头部和颈部动作，从而实现点头、摇头、颈部移动来操作 Mac 电脑，不需要用到摄像头。（@cogria 投稿）</p>
+        <p>6、qrypt</p>
+        <p>将网盘挂载成本地文件夹，跨平台的命令行工具，支持挂载国内主要网盘。（@yinzhenyu-su 投稿）</p>
+        <p>7、EdgeSSH</p>
+        <p>基于 Cloudflare 的 VPS 虚拟主机管理平台，支持在网页上 SSH 登录管理你的各种 VPS 主机。（@aozorae 投稿）</p>
+        <p>用 Rust 编写的图表库，不依赖浏览器和 Node.js，直接得到 SVG 和图片文件，图表语法借鉴 ECharts。（@vicanso 投稿）</p>
+        <p>…（段落过多，此处截断）</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>Deno 被 Cloudflare 收购后停更，兼容 Node.js 反而成了它的死因。</div>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-15</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/" target="_blank" rel="noopener">Anthropic 在 IPO 前告诉投资者：季度营收增长近 50%，达 168 亿美元</a></h2>
+        <div class="orig-title">Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO</div>
+<p class="standfirst">FT 报道 Anthropic 季度营收与蒸馏业务占比，IPO 前披露关键财务数据。</p>        <div class="art-meta">
+          <span>19 段</span><span>·</span>
+          <span>13 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 15 日 - 链接博客</p>
+        <p>Anthropic 在 IPO 前告诉投资者：季度营收增长近 50%，达 168 亿美元。在这篇 FT 文章中，“告诉投资者”这个说法出现了四次，文章报道的是 Anthropic 周三接待投资者的一天。文中包含大量来自“知情人士”的细节。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 是 Django 联合创始人，其博客以“链接博客”形式快速点评 AI 新闻，常附个人实测，是英文 AI 圈高信噪比信息源。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>FT 原文用“people with knowledge of the matter”匿名信源，财务数据未经审计，IPO 前路演口径可能偏乐观，需对照后续 S-1 文件核实。</aside>
+        <p>我从这篇文章中学到的关键信息：</p>
+        <p>- 第一季度营收（1/2/3 月）为“约 48 亿美元”</p>
+        <aside class="note k-数据"><span class="k">数据</span>48 亿→115 亿→168 亿，环比增速约 140%、46%，Q1 基数低可能因当时 Claude 3.5/4 尚未大规模企业化。</aside>
+        <p>- 第二季度（4/5/6 月）为 115 亿美元</p>
+        <p>- 第三季度（7/8/9 月）为 168 亿美元</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>同期 OpenAI 年化营收约 200 亿美元量级，Anthropic 单季 168 亿已接近其年化水平，企业 API 市场增速快于消费订阅。</aside>
+        <p>- 第三季度：每在“算力”上花 1 美元，就有 1.70 美元营收</p>
+        <aside class="note k-实操"><span class="k">实操</span>这个 1.70 是“营收/算力支出”而非毛利率；算力含折旧与租赁，若按 3 年折旧，实际现金回收周期可能长于报表口径。</aside>
+        <p>- 调整后营业利润率（剔除股权激励）为 11%</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>剔除 SBC 的调整后利润率是科技公司 IPO 常用口径，但 SBC 是真实成本，GAAP 下可能仍亏损，考研若考财务需区分。</aside>
+        <p>关于蒸馏的这一点值得全文引用（重点为我所加）：</p>
+        <p>这家初创公司还收紧了针对“蒸馏”的限制——这是一种有争议的做法，即竞争对手 AI 实验室用更先进模型的输出来训练自己的模型。</p>
+        <aside class="note k-背景"><span class="k">背景</span>蒸馏本指用大模型软标签训练小模型，此处被 Anthropic 用来指“竞争对手用其 API 输出训练自家模型”，属商业滥用而非学术蒸馏。</aside>
+        <p>当竞争对手公司从 Anthropic 的模型“蒸馏”时，这涉及大量使用和支出。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>OpenAI、Google 也在服务条款中禁止用输出训练竞品，但执行靠账号封禁与流量指纹，实际取证困难。</aside>
+        <p>四位直接知情人士称，Anthropic 周三告诉投资者，蒸馏占其营收的 5% 至 7%，并且他们在今年第三季度已“大幅”削减了这部分业务。</p>
+        <aside class="note k-数据"><span class="k">数据</span>若 Q2 营收 115 亿的 5% 为蒸馏，则约 5.75 亿美元；按 API 定价粗算，相当于数十万亿 token 的调用量。</aside>
+        <p>餐巾纸数学表明，如果蒸馏占他们第二季度营收的 5%（在第三季度削减之前），那么未具名的“其他实验室”在那个季度就花费了超过 5 亿美元来蒸馏 Anthropic 的模型！</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>5% 是区间下限，若取 7% 则超 8 亿美元；但“蒸馏”定义模糊，可能包含正常微调与评测，实际竞品训练支出或被高估。</aside>
+        <p>同样值得注意的是：Anthropic 在这些与投资者的沟通中，似乎不再依赖“年化运行率营收”（此前曾使用）。</p>
+        <aside class="note k-背景"><span class="k">背景</span>年化运行率=单月营收×12，常用于高增长公司放大数字；改用实际季度营收说明其规模已大到无需年化修饰。</aside>
+        <p>近期文章</p>
+        <p>- 你好 Python 3.15，再见 3.10，现在我可以使用 3.11 了 - 2026 年 10 月 12 日</p>
+        <aside class="note k-实操"><span class="k">实操</span>Python 3.15 发布意味着 3.10 进入 EOL，考研或做项目应尽快把环境升到 3.11+，以用上更快的解释器与异常组。</aside>
+        <p>- 我博客的一个新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
+        <p>- 我们几乎需要对所有东西设置默认硬预算上限 - 2026 年 10 月 3 日</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>硬预算上限指在 API 调用层设 token/金额熔断，防止 agent 循环烧钱；OpenAI 与 Anthropic 后台均已支持 usage limit。</aside>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>Anthropic Q3 营收 168 亿美元、环比增 46%，蒸馏占 5-7% 已被大幅削减，IPO 前改用实际季度营收而非年化口径。</div>
+        <details class="orig">
+          <summary>查看英文原文（1836 字符，可对照译文）</summary>
+          <pre>15th October 2026 - Link Blog
+
+Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO. The phrase "told investors" appears four times in this FT article, which reports on Anthropic's day of hosting investors on Wednesday. Lots of details in here from "people with knowledge of the matter".
+
+Key things I learned from the article:
+
+- Q1 revenue (Jan/Feb/Mar) was "about $4.8bn"
+
+- Q2 (Apr/May/Jun) was $11.5bn
+
+- Q3 (Jul/Aug/Sep) was $16.8bn
+
+- In Q3: $1.70 in revenue for every $1 spent on "computing power"
+
+- Adjusted operating margins (excluding stock-based compensation) were 11%
+
+This point about distillation is worth quoting in full (highlight mine):
+
+The start-up has also clamped down on “distillation” — a controversial practice whereby rival AI labs train their models on the outputs of more advanced ones.
+
+When rival companies “distil” their models from Anthropic’s models, that involves heavy usage and spending.
+
+Anthropic told investors on Wednesday distillation accounted for 5 per cent to 7 per cent of revenue and that they had cut it back “materially” in the third quarter of the year, said four people with direct knowledge of the matter.
+
+Napkin maths says that if distillation was 5% of their Q2 revenue (before they cut it back in Q3) then unnamed "other labs" spent over half a billion dollars distilling Anthropic's models in that quarter!
+
+Also notable: Anthropic appear to no longer be leaning on "annualized run-rate revenue" (previously) in these communications to their investors.
+
+Recent articles
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026
+
+- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">ByteByteGo</span>
+          <span class="dt">2026-10-15</span>
+        </div>
+        <h2><a href="https://blog.bytebytego.com/p/how-to-design-for-failures" target="_blank" rel="noopener">如何为故障而设计（Design for Failures）</a></h2>
+        <div class="orig-title">How to Design for Failures</div>
+<p class="standfirst">系统必然失败，关键是提前设计好失败时的行为。</p>        <div class="art-meta">
+          <span>9 段</span><span>·</span>
+          <span>12 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>要构建一个永不出故障的软件系统是不可能的。当然，一个系统可能在整个生命周期里都没有发生过任何故障。但你无法保证它永远不会失败。</p>
+        <aside class="note k-背景"><span class="k">背景</span>这一思想在 2007 年 Amazon CTO Werner Vogels 的著名演讲“Everything fails, all the time”中被系统化提出，是后来 AWS 可用性工程的文化基石。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>“无法保证永不失败”是概率论意义上的陈述：只要故障率非零、运行时间趋于无穷，累积失败概率就趋近 1。但若系统生命周期短、冗余度极高，工程上仍可把 MTBF 做到数十年量级。</aside>
+        <p>你可能会想，只要写出完美的代码，就能消除故障。但写出正确的应用代码只是问题的一部分。即便是写得完美无缺的软件，也依赖于物理计算机、电力供应、正常工作的存储等等。如果机器断电，无论软件写得多好，它都会失败。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>这正是“硬件故障域”概念的来源：Google 在 2010 年 Spanner 论文中披露，其生产集群里单块磁盘年故障率约 2%–4%，说明硬件失效是常态而非例外。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>想亲手验证“代码没问题但环境会挂”，可以在本地用 Docker 跑一个服务，然后 kill -9 容器进程或拔掉网线，观察客户端是否出现超时、重试、数据不一致——这就是最廉价的故障演练。</aside>
+        <p>因此，你必须为故障而设计。这意味着要提前决定：当系统的某些部分无法正常工作时，系统应当如何表现。在本文中，我们将探讨各种能帮助开发者应对系统中故障的策略。以下是我们将要涵盖的内容：</p>
+        <aside class="note k-背景"><span class="k">背景</span>“为故障而设计”在工程上常与两个术语区分：fault（故障源，如磁盘坏道）、error（内部状态错误）、failure（对外服务失效）。设计目标是阻止 fault 升级为 failure。</aside>
+        <p>- 为什么要采用“假设一切都会坏”的心态</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>Netflix 的 Chaos Monkey（2011 年开源）就是这一心态的工程化：在生产环境随机杀掉实例，逼团队把“实例随时会死”写进架构假设，后来演化为 Chaos Engineering 学科。</aside>
+        <p>- 避免故障 vs 容忍故障</p>
+        <aside class="note k-背景"><span class="k">背景</span>Fault avoidance（如形式化验证、类型系统、代码审查）与 fault tolerance（如副本、重试、熔断）是两条正交路线；前者降低故障概率，后者降低故障后果，成熟系统通常两者并用。</aside>
+        <p>- 如何判断故障的影响范围</p>
+        <aside class="note k-数据"><span class="k">数据</span>业界常用“爆炸半径（blast radius）”来量化：单实例 < 单可用区 < 单地域 < 全局。AWS 的 S3 2017 年 us-east-1 事故就是全局爆炸半径的典型案例，影响持续约 4 小时。</aside>
+        <p>- 如何降低故障的影响</p>
+        <aside class="note k-实操"><span class="k">实操</span>可落地的三件套：给下游调用设超时（避免线程被拖死）、加熔断器（如 Resilience4j/Hystrix）、做舱壁隔离（bulkhead，把线程池/连接池按依赖切分）。</aside>
+        <p>- 如何在系统正常运行的同时处理故障</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>这对应“优雅降级（graceful degradation）”：如推荐服务挂掉时返回热门榜单而非报错；Google 搜索在部分索引不可用时仍返回结果，只是质量下降。</aside>
+        <p>- 如何度量从故障中的恢复</p>
+        <aside class="note k-数据"><span class="k">数据</span>SRE 常用 MTTD（平均检测时间）、MTTR（平均恢复时间）、MTBF（平均无故障时间）。Google SRE 书指出，MTTR 的缩短往往比降低故障率更能提升可用性。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>“恢复度量”不能只看时间，还要看数据一致性：快速重启但丢数据，比慢恢复更糟。度量时需同时记录 RTO（恢复时间目标）与 RPO（恢复点目标）。</aside>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>把“一切都会坏”当作前提，提前定义故障时的行为、影响范围与恢复指标，而不是指望代码完美。</div>
+        <details class="orig">
+          <summary>查看英文原文（1091 字符，可对照译文）</summary>
+          <pre>It is impossible to build a failure-proof software system. Sure, a system can go through its lifecycle without any failures. But you can’t provide a guarantee that it will never fail.
+
+You might think that if we write perfect code, we can get rid of failures. But writing correct application code is just one part of the problem. Even perfectly written software depends on a physical computer, power availability, working storage, and so on. If the machine loses power, the software will fail no matter how good it is.
+
+Therefore, you have to design for failure. This means deciding in advance how a system should behave when some of its parts are not working correctly. In this article, we’ll look at the various strategies that can help developers deal with failures in their systems. Here’s what we will cover:
+
+- Why adopt an “assume everything breaks” mindset
+
+- Avoiding faults vs tolerating faults
+
+- How to figure out the scope of a failure
+
+- How to reduce the impact of a failure
+
+- How to handle failures while running the system correctly
+
+- How to measure recovery from failures</pre>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+    <div class="srcblock">
+      <div class="srcname">Simon Willison's Weblog<span>1 条</span></div>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/15/chirp-pong/" target="_blank" rel="noopener">Chirp Pong</a></h3>
+<p class="one">用两台手机的麦克风互发'啁啾'声传输游戏状态，实现无网络的静态 HTML 双人 Pong。</p><p class="why">展示 Web Audio/麦克风 API 可做近场通信，属于嵌入式+Web 的交叉玩法；对想做端侧/无网通信实验的人是现成模板。</p><p class="act"><span>下 一 步</span>读源码，把'啁啾编码'部分单独抽出来，测一下两台设备在嘈杂环境下的误码率。</p>        <div class="foot">
+<span class="tag">Web Audio</span><span class="tag">游戏</span><span class="tag">近场通信</span><span class="tag">Claude Code</span>          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-15</span>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-15 07:44 · 生成于 2026-10-15 07:44:15</span>
+    <span>本次扫描 2026-10-16 05:55 · 生成于 2026-10-16 05:55:40</span>
   </footer>
 </div>
 </body>
