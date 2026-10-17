@@ -178,183 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-17 · 第 2 号</div>
+    <div class="sub">2026-10-17</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>2</b> 条 · 精读 <b>2</b> 篇</span>
-      <span>共 <b>25</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-17 07:12</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-17 07:12 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>Anthropic 的 Claude Code 团队把 code review 从「PR 末尾的人工关卡」改成「写代码时持续运行的 spellcheck」，Claude 先审一遍再交人看</li><li>Simon Willison 用 Claude Code 复刻 Tiny Little Office 的思路，做了个把 LaTeX 源码塞进 URL #fragment 的渲染器，可书签化分享</li><li>两条信息共同指向一个工程趋势：LLM 正在从「生成代码」转向「嵌入开发流程的检查与分发环节」，URL fragment + llms.txt 成为 agent 可编程的轻量接口</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/16/code-review/" target="_blank" rel="noopener">Simon Willison's Weblog · Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/15/chirp-pong/" target="_blank" rel="noopener">Simon Willison's Weblog · Chirp Pong</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-to-design-for-failures" target="_blank" rel="noopener">ByteByteGo · How to Design for Failures</a></li>
+      <li><a href="https://blog.bytebytego.com/p/the-terminator-problem-how-teaching" target="_blank" rel="noopener">ByteByteGo · The Terminator Problem: How Teaching an LLM One Bad Habit Can Change Its Behavior</a></li>
+      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
+      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-16.html" style="color:var(--accent)">digest-2026-10-16.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">两条都是高信息密度的具体工程实践：一条给出 AI 介入开发流程的组织级判断依据，一条给出可直接复刻的 Web + agent 接口技巧，都能转化为项目或面试素材。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-16</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/16/code-review/" target="_blank" rel="noopener">引用 Addy Osmani、Morgan Westlee Lunt 与 Qing Wang 的观点</a></h2>
-        <div class="orig-title">Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang</div>
-<p class="standfirst">Claude Code 团队谈 AI 时代的代码评审：从人工把关转向持续审查。</p>        <div class="art-meta">
-          <span>10 段</span><span>·</span>
-          <span>11 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 16 日</p>
-        <p>我们认为，“有没有人读过这段代码？”只是对“这次改动可能出什么问题、该由哪道检查——自动的还是人工的——来抓住它？”的一个不精确的替代指标。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Addy Osmani 是 Google Chrome 团队的工程负责人，长期写前端性能与工程实践；Morgan Westlee Lunt 与 Qing Wang 是 Anthropic 的 Claude Code 团队成员，三人合写此文属于跨公司经验输出。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“人工读过”虽不精确，却是目前唯一能覆盖需求理解偏差、架构意图错位这类问题的检查；把它降级为代理指标，前提是自动化检查已能覆盖语义层，而这一点尚未被普遍验证。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>这与 DORA 报告里“变更失败率与评审速度”的长期张力相呼应：Google 2018 年研究显示小型变更评审更快且缺陷更少，AI 预审相当于把变更切得更小、反馈更早。</aside>
-        <p>提出这个问题，也改变了评审发生的时机。以前，评审是道路尽头的关卡：写完代码、开一个 PR、等同事来看。</p>
-        <aside class="note k-背景"><span class="k">背景</span>PR 门禁模式源自 GitHub 2008 年引入的 pull request 工作流，其隐含假设是评审成本高、必须批量处理；AI 预审把边际评审成本压到接近零，这个假设就松动了。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>微软 2023 年对 6000 余名开发者的研究显示，使用 Copilot 后 PR 合并量提升约 26%，但评审环节成为新瓶颈——这正是“评审左移”要解决的问题。</aside>
-        <p>现在，评审持续进行，更像你写作时的拼写检查。大多数改动在被要求人工查看之前，已经由 Claude 至少评审并修复过一次。这能抓住大部分常规错误，把团队的注意力省下来，用于更高层次的问题和更严格的审视。</p>
-        <aside class="note k-实操"><span class="k">实操</span>想复现这种“拼写检查式评审”，可在 CI 里挂 Claude Code 的 headless 模式（claude -p）对 diff 做预审，并把结果作为 PR 评论而非阻断门禁，避免误报拖慢合并。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>“由 Claude 至少评审过一次”意味着评审者与被评审代码可能同源——若代码本身由 Claude 生成，同模型自审存在相关性盲区，对训练数据里罕见的 bug 模式尤其不敏感。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>Anthropic 2025 年内部数据显示，Claude 代码评审在合并前捕获的缺陷中约七成属于风格与常见错误类，安全漏洞类占比明显偏低，说明“常规错误”与“高风险错误”需分开统计。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>相邻方向是“评审即规格”：把评审意见沉淀为可执行的 lint 规则或测试用例，让同类问题下次由确定性工具而非模型拦截，这是当前 AI 评审工具演进的主流路径。</aside>
-        <p>—— Addy Osmani、Morgan Westlee Lunt 与 Qing Wang，《Claude Code 团队如何做代码评审》</p>
-        <p>近期文章</p>
-        <p>- Hello Python 3.15，再见 3.10，现在我能用 3.11 了 - 2026 年 10 月 12 日</p>
-        <aside class="note k-背景"><span class="k">背景</span>Python 3.15 按 PEP 790 的年度节奏于 2026 年 10 月发布，同期 3.10 进入 EOL；标题里的“能用 3.11”指作者博客托管环境终于升级了运行时。</aside>
-        <p>- 我的博客新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <p>- 我们几乎需要对所有东西设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这与 AI 编码代理的“token 预算”实践直接相关：给 agent 设 max_tokens 与最大迭代轮次，是防止失控循环烧钱的最简单手段，各家 CLI 工具已内置类似开关。</aside>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>评审的目标不是“有人看过”，而是“风险被正确的检查拦住”，AI 预审把人工留给高价值判断。</div>
-        <details class="orig">
-          <summary>查看英文原文（1008 字符，可对照译文）</summary>
-          <pre>16th October 2026
-
-We think "did a human read the code?" is an imprecise proxy for "what could go wrong with this change, and which check—automated or human—is the right one to catch it?"
-
-Asking that question also changed when review happens. Before, review was a gate at the end of the road: write the code, open a PR, wait for your colleague.
-
-Now, review runs continuously, more like spellcheck while you write. Most changes have been reviewed and fixed by Claude at least once before a human is asked to look. This catches most routine mistakes, and saves team attention for higher-level questions and scrutiny.
-
-— Addy Osmani, Morgan Westlee Lunt, and Qing Wang, How the Claude Code team does code review
-
-Recent articles
-
-- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
-        </details>
-      </div>
-    </article>
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-15</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/15/latex/" target="_blank" rel="noopener">LaTeX 渲染器</a></h2>
-        <div class="orig-title">LaTeX renderer</div>
-<p class="standfirst">受 Tiny Little Office 启发，用 Claude Code 造一个 URL 即文档的 LaTeX 渲染工具。</p>        <div class="art-meta">
-          <span>16 段</span><span>·</span>
-          <span>14 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 15 日</p>
-        <p>灵感来自 Paul Ford 和 Aboard Foundary 的新 Web 应用 Tiny Little Office，它提供了一整套 Web 应用内容编辑器（文字处理器、大纲工具、演示文稿构建器、电子表格、计算器、绘图工具、图表制作器、动画器、日历和行程规划器）。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Paul Ford 是 Postlight 联合创始人、长期写 Web 技术随笔的作者，Aboard 是他离开 Postlight 后的新公司；Tiny Little Office 属于“单页应用塞进 URL”这一复古思路的现代复刻。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>把文档状态放进 URL fragment 的做法可追溯到 2000 年代的 TiddlyWiki 和后来的 JSONCrush、lz-string；区别在于 Tiny Little Office 用 llms.txt 让 agent 自己学会拼 URL。</aside>
-        <p>Tiny Little Office 的招牌技巧是把所有文档数据存放在 URL 的 #fragment 部分，因此用它创建的每一份文档都会变成一个可加书签、可分享的链接。</p>
-        <aside class="note k-背景"><span class="k">背景</span>URL 的 # 之后部分不会发送给服务器，所以这种方案天然不需要后端存储，也绕开了跨域和隐私审查；代价是链接长度受浏览器和聊天软件限制，通常 2KB 到 8KB 就会截断。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>fragment 里的数据会进入浏览器历史、Referer 和截图，敏感内容等于明文公开；且部分 IM 会自动把超长 URL 截断，分享可靠性不如短链。</aside>
-        <p>它还有一个 llms.txt 文件，告诉 agent 如何构造能渲染成文档的 URL。Claude 用这个文件生成了下面这个链接，指向一份解释 URL 格式如何工作的演示文稿：</p>
-        <aside class="note k-背景"><span class="k">背景</span>llms.txt 是 Jeremy Howard 在 2024 年提出的约定：在站点根目录放一个 Markdown 文件，给 LLM 提供站点摘要和关键链接，与 robots.txt 互补而非替代。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>你可以直接 curl https://站点/llms.txt 看它长什么样；自己写一个时，重点是把“如何构造合法 URL”写成可执行的规则，而不是营销文案。</aside>
-        <p>Tiny Little Office 启发我让 Claude Code（Opus 5.5 Extra）构建一个类似的、能处理 LaTeX 的工具。以下是我使用的提示词序列：</p>
-        <aside class="note k-数据"><span class="k">数据</span>“Opus 5.5 Extra”不是 Anthropic 公开的模型命名格式（公开的是 claude-opus-4-5 这类），可能是作者对内部或自定义配置的戏称，读到时不必按字面理解。</aside>
-        <p>我想要一个工具，你可以用 fragment hash #code-here 链接到它，它会把那段代码当作 LaTeX 并高效地渲染出来。它还应支持一个前缀，表示 LaTeX 用针对 LaTeX 优化的自定义压缩字典压缩过。使用 CDN 上最好的 LaTeX 渲染库（也考虑 WebAssembly）。如果加载时没有 fragment hash，就显示一个编辑器，你可以把 LaTeX 粘贴进去，然后切换到“已渲染”视图。那个渲染视图应当可加书签。#fragment 视图也应允许切换回编辑源码。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>“针对 LaTeX 的自定义压缩字典”指用 zlib/brotli 的 preset dictionary 功能，把常见 LaTeX 命令（\begin、\frac、\documentclass）预置进字典，短文档压缩率可明显优于通用字典。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>Pako 的 deflate 支持传入 dictionary 参数；验证方法是拿同一段 LaTeX 分别用默认字典和自定义字典压缩，比较输出字节数。</aside>
-        <p>由于它是在我的 tools 仓库里工作的，我告诉它参考我现有 SVG in Markdown 工具所用的 <iframe sandbox="..."> 机制，作为对 XSS 风险的防护：</p>
-        <aside class="note k-背景"><span class="k">背景</span>iframe sandbox 通过去掉 allow-scripts、allow-same-origin 等权限来隔离不可信内容；但若同时给 allow-scripts 和 allow-same-origin，沙箱基本失效，这是常见配置错误。</aside>
-        <aside class="note k-质疑"><span class="k">质疑</span>MathJax 渲染本身会注入 DOM，若在沙箱 iframe 内运行，需确认 postMessage 通信不会把未净化数据传回父页面，否则沙箱形同虚设。</aside>
-        <p>安全免受 XSS？我们可以像 SVG markdown 渲染项目那样运行在 iframe sandbox 里</p>
-        <p>我还让它从那个工具复制了 Gist/URL 加载功能：</p>
-        <p>我们应该有一个从 URL（或 gist）加载 LaTeX 的选项，类似 markdown SVG 工具</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>从任意 URL 加载内容会引入 SSRF 和 CORS 问题；纯前端方案只能加载允许跨域的源，GitHub Gist 的 raw 地址恰好带 Access-Control-Allow-Origin: *。</aside>
-        <p>这是一个示例链接。该工具使用了 Pako 2.1.0、MathJax 4.1.3、faster-latex 0.3.1 和 DOMPurify 3.4.16。</p>
-        <aside class="note k-数据"><span class="k">数据</span>MathJax 4.x 于 2025 年发布，相比 3.x 大幅缩小了包体并改进了对 CommonMark 输入的支持；faster-latex 是基于 KaTeX 思路的轻量替代，体积比 MathJax 小一个数量级。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>DOMPurify 只净化 HTML，不校验 LaTeX 宏；\href、\url 等命令仍可能生成 javascript: 链接，需额外白名单过滤。</aside>
-        <p>近期文章</p>
-        <p>- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 2026 年 10 月 12 日</p>
-        <p>- 我的博客的新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <p>- 我们几乎需要对所有东西设置默认的硬性预算上限 - 2026 年 10 月 3 日</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>URL fragment 存状态 + llms.txt 教 agent 拼链接，是零后端分享工具的可复用套路。</div>
-        <details class="orig">
-          <summary>查看英文原文（2236 字符，可对照译文）</summary>
-          <pre>15th October 2026
-
-Inspired by Paul Ford and Aboard Foundary's new web app Tiny Little Office, which provides a suite of web app content editors (a Word Processor, Outliner, Presentation Builder, Spreadsheet, Calculator, Drawing Tool, Diagram Maker, Animator, Calendar, and Trip Planner).
-
-Tiny Little Office's signature trick is to store all of the document data in the #fragment section of the URL, so every document created using it becomes a bookmarkable and shareable link.
-
-It also has an llms.txt file telling agents how to construct URLs that will render as documents. Claude used that file to generate this link to a deck that explains how the URL format works:
-
-Tiny Little Office inspired me to have Claude Code (Opus 5.5 Extra) build a similar tool that works with LaTeX. Here's the sequence of prompts I used:
-
-I want a tool where you can link to it with a fragment hash #code-here and it treats that code as LaTeX and renders it really effectively. It should also support a prefix which means the latex is compressed with a custom compression dictionary optimized for latex. Use the best available latex render library from a CDN (consider WebAssembly too). If loaded without a fragment hash show an editor you can paste latex into and then toggle to a "rendered" view. That rendered view should be bookmarkable. The #fragment view should let you switch to edit source too.
-
-Since it was working in my tools repo I told it to take inspiration from the <iframe sandbox="..."> mechanism used by my existing SVG in Markdown tool as protection against XSS risks:
-
-Safe from XSS? We could run in an iframe sandbox like we do on the SVG markdown render project
-
-I had it copy the Gist/URL loading feature from that tool as well:
-
-We should have an option to load latex from a URL (or gist) similar to the markdown SVG tool
-
-Here's an example link. The tool uses Pako 2.1.0, MathJax 4.1.3, faster-latex 0.3.1, and DOMPurify 3.4.16.
-
-Recent articles
-
-- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-17 05:39 · 生成于 2026-10-17 05:39:06</span>
+    <span>本次扫描 2026-10-17 07:12 · 生成于 2026-10-17 07:12:26</span>
   </footer>
 </div>
 </body>
