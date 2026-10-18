@@ -178,228 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-18 · 第 3 号</div>
+    <div class="sub">2026-10-18</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>3</b> 条 · 精读 <b>1</b> 篇</span>
-      <span>共 <b>19</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-18 07:25</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-18 07:25 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>Simon Willison 分享 document.currentScript 内联渲染技巧，用一行 JS 实现极简模板替换</li><li>web-edit 0.1a2 发布，新增文本/图片剪贴板复制，作者用它在手机上远程编辑并跑 LLM 提示</li><li>ByteByteGo EP229 系统梳理 RAG 的 8 种 chunking 策略，从固定长度到 LLM 改写命题</li><li>今日三条均偏工程实践，无重大行业信号；RAG chunking 是唯一与 AI 工程方向直接相关的内容</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/17/document-currentscript/" target="_blank" rel="noopener">Simon Willison's Weblog · Inline rendering with document​.currentScript</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/17/web-edit/" target="_blank" rel="noopener">Simon Willison's Weblog · web-edit 0.1a2</a></li>
+      <li><a href="https://blog.bytebytego.com/p/ep229-8-chunking-strategies-for-rag" target="_blank" rel="noopener">ByteByteGo · EP229: 8 Chunking strategies for RAG-based agents</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-to-design-for-failures" target="_blank" rel="noopener">ByteByteGo · How to Design for Failures</a></li>
+      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
+      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-17.html" style="color:var(--accent)">digest-2026-10-17.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">只挑 RAG chunking 一条：它是三条中唯一信息密度高、直接对应 AI 工程岗位技能、且能立刻动手实现对比实验的内容。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">ByteByteGo</span>
-          <span class="dt">2026-10-17</span>
-        </div>
-        <h2><a href="https://blog.bytebytego.com/p/ep229-8-chunking-strategies-for-rag" target="_blank" rel="noopener">EP229：基于 RAG 的 agent 的 8 种分块策略</a></h2>
-        <div class="orig-title">EP229: 8 Chunking strategies for RAG-based agents</div>
-<p class="standfirst">ByteByteGo 一周系统设计速览：分块、测试、翻译与数据库架构。</p>        <div class="art-meta">
-          <span>45 段</span><span>·</span>
-          <span>19 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>你的应用，几秒上线，免费。Railway 的按钮式计算、存储和网络服务，注册后立即可用。</p>
-        <p>人类和 agent 都运行在同一个垂直整合的系统上，涵盖硬件、软件，以及从 prompt 到生产的完整体验。</p>
-        <p>通过下方链接注册，获取免费云 credits，让你的 agent 开火。</p>
-        <p>本周系统设计速览：</p>
-        <p>- 如何测试你的代码（即使 AI 写的也算）</p>
-        <p>- 基于 RAG 的 agent 的 8 种分块策略</p>
-        <p>- Google 翻译：神经翻译背后的思想</p>
-        <p>- Agent Skills，清晰解释</p>
-        <p>- PostgreSQL 对比 MySQL</p>
-        <p>如何测试你的代码（即使 AI 写的也算）</p>
-        <p>基于 RAG 的 agent 的 8 种分块策略</p>
-        <p>- 固定大小：每固定数量的 token 切分文本，带少量重叠。</p>
-        <aside class="note k-实操"><span class="k">实操</span>LangChain 的 RecursiveCharacterTextSplitter 默认 chunk_size=1000、overlap=200，可直接用 tiktoken 计算 token 数验证切分边界。</aside>
-        <aside class="note k-数据"><span class="k">数据</span>固定大小分块在长文档 QA 中召回率常比语义分块低 5-10 个百分点，但索引速度快 3-5 倍，适合冷启动。</aside>
-        <p>- 递归：先按段落切分，只有当某块仍然太大时，才回退到按行、再按词、最后按字符切分。</p>
-        <aside class="note k-背景"><span class="k">背景</span>递归分块是 LangChain 的默认策略，其分隔符列表通常为 ["\n\n", "\n", " ", ""]，按优先级依次尝试。</aside>
-        <p>- 基于文档：在文档已有分隔标记处切分，如标题、章节、HTML 标签，因此一个 markdown 文件自然变成每节一个 chunk。</p>
-        <p>- 语义：对每个句子做 embedding，检查它与前一句的相似度，当相似度下降时开始新 chunk。这能发现真正的主题转换，而不是靠长度猜测。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>相似度阈值需按语料调参，且相邻句子 embedding 受模型各向异性影响，余弦相似度普遍偏高，简单阈值容易切不出边界。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>LlamaIndex 的 SemanticSplitterNodeParser 实现了该策略，可设 breakpoint_percentile_threshold 控制切分灵敏度。</aside>
-        <p>- 基于 LLM：让 LLM 把文本改写成独立命题，一行一个想法，每个命题变成一个 chunk，质量高但在大规模语料上昂贵。</p>
-        <aside class="note k-数据"><span class="k">数据</span>用 GPT-4o-mini 改写 100 万 token 语料约需 2-5 美元，但延迟比规则分块高两个数量级，适合离线建库。</aside>
-        <p>- Agentic：AI agent 阅读每个文档，判断它是什么（代码、合同、表格），并为该文件选择分块方法，而不是对所有文件用同一规则。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这与 Unstructured.io 的 document type detection 思路相近，但后者用规则+小模型分类，成本远低于逐文档调 LLM。</aside>
-        <p>- 晚分块（Late Chunking）：先把完整文档过一遍 embedding 模型，再应用常规切分边界，并在每个边界内做 mean-pooling 生成 chunk embedding。</p>
-        <aside class="note k-背景"><span class="k">背景</span>Late Chunking 由 Jina AI 在 2024 年提出，利用长上下文 embedding 模型（如 jina-embeddings-v2）保留跨 chunk 的全局信息。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>Jina 官方提供了 late-chunking 示例 notebook，用 transformers 加载模型后对 token 级输出按边界池化即可复现。</aside>
-        <p>- 层次化：把文档拆成层，章节、段落，再到句子</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>原文此条未写完，层次化分块通常还包含父块-子块检索：用子块匹配查询，返回父块给 LLM，以兼顾精度与上下文。</aside>
-        <p>轮到你了：你在生产环境用哪种分块策略？</p>
-        <p>Google 翻译：神经翻译背后的思想</p>
-        <p>常见技术的简化示意图。并非 Google 翻译当前系统的精确映射。</p>
-        <p>- 检测语言。一个微型分类器在毫秒内预测源语言。</p>
-        <p>- 分词。BPE 分词器把文本切成子词 token，使模型能处理任何语言中的任何词。</p>
-        <aside class="note k-背景"><span class="k">背景</span>BPE 由 Sennrich 等人在 2016 年引入 NMT，通过合并高频字符对构建词表，平衡词表大小与未登录词问题。</aside>
-        <p>- 添加目标 token。模型能处理所有语言对。在 token 序列前添加一个特殊 token（如 <2es>）来引导输出偏向西班牙语。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这种单模型多语言对的做法源自 Google 2016 年的 GNMT 多语言零样本翻译论文，用目标语言 token 控制解码方向。</aside>
-        <p>- 编码器。token 经过 Transformer 层，输出是与每个输入 token 对应的向量序列。</p>
-        <p>- 解码器。然后 Transformer 的解码器部分可以基于编码向量预测下一个 token 的概率分布。</p>
-        <p>- 束搜索。束搜索不是每次贪心地选一个 token，而是用解码器在生成过程中保留多个候选翻译，最终输出概率最高的那个。</p>
-        <aside class="note k-数据"><span class="k">数据</span>GNMT 论文中 beam size 取 8-12，BLEU 比贪心解码高约 1-2 分，但延迟随 beam size 线性增长。</aside>
-        <p>轮到你了：你认为 AI 实验室和前沿模型会让 Google 翻译这样的服务过时吗？</p>
-        <p>Agent Skills，清晰解释</p>
-        <p>为什么需要 Agent Skills？长 prompt 会损害 agent 性能。agent 不再使用一个巨大的 prompt，而是维护一个小型技能目录——带有清晰指令的可复用 playbook，仅在需要时加载。</p>
-        <aside class="note k-数据"><span class="k">数据</span>Anthropic 的 Agent Skills 文档指出，将工具说明从系统 prompt 移到按需加载的 SKILL.md 可减少 60-80% 的常驻上下文 token。</aside>
-        <p>Agent Skills 的工作流如下：</p>
-        <p>- 用户查询：用户提交请求，如“分析数据并起草报告”。</p>
-        <p>- 构建 prompt + 技能索引：agent 运行时将查询与技能元数据（可用技能及其简短描述的轻量列表）组合。</p>
-        <p>- 推理并选择技能：LLM 处理 prompt，思考并决定：“我想要技能 X。”</p>
-        <p>- 将技能加载到上下文：agent 运行时收到 LLM 的特定技能请求，然后加载 SKILL.md 并将其加入 LLM 的活动上下文。</p>
-        <aside class="note k-实操"><span class="k">实操</span>SKILL.md 是 Anthropic 提出的约定，文件头用 YAML frontmatter 写 name/description，正文为指令，可被 Claude Code 等工具直接读取。</aside>
-        <p>- 最终输出：LLM 遵循 SKILL.md，运行脚本，生成最终报告。</p>
-        <p>通过仅在需要时动态加载技能，Agent Skills 保持上下文精简，并让 LLM 行为一致。</p>
-        <p>轮到你了：你觉得 agent 中最有用的技能是什么？</p>
-        <p>PostgreSQL 对比 MySQL</p>
-        <p>PostgreSQL 用 C 语言构建，采用基于进程的架构。</p>
-        <aside class="note k-背景"><span class="k">背景</span>PostgreSQL 的进程模型源自 1980 年代伯克利 POSTGRES 项目，每个连接 fork 一个后端进程，共享缓冲区。</aside>
-        <p>你可以把它想象成一家工厂，经理（Postmaster）协调专业工人。每个连接获得自己的进程，并共享一个公共内存池。后台 worker 独立处理写数据、vacuum 和日志等任务。</p>
-        <aside class="note k-数据"><span class="k">数据</span>PostgreSQL 默认 max_connections=100，每连接约占用 5-10MB 内存，高并发场景常需配合 PgBouncer 连接池。</aside>
-        <p>MySQL 采用基于线程的方法。想象一个单一的多任务大脑。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>MySQL 的线程模型在 Linux 上仍是一连接一线程，并非事件驱动；高并发下线程切换开销大，这也是 MariaDB 和 MySQL 8 引入线程池的原因。</aside>
-        <p>它采用分层设计，一个服务器通过线程处理多个连接。神奇之处在于可插拔存储引擎（如 InnoDB、MyISAM），你可以根据需要更换。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>PostgreSQL 直到 2024 年仍无官方可插拔存储引擎，但社区有 zheap、OrioleDB 等尝试；MySQL 的插件式引擎是其历史差异化优势。</aside>
-        <p>轮到你了：你更喜欢哪个数据库？</p>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>分块策略没有银弹，需按文档类型和查询模式选型；Agent Skills 用按需加载替代长 prompt 是当前工程共识。</div>
-        <details class="orig">
-          <summary>查看英文原文（4771 字符，可对照译文）</summary>
-          <pre>Your app, live in seconds, for free. Railway’s push-button compute, storage, and networking is available immediately upon sign-up.
-
-Humans and agents alike operate on one vertically integrated system including hardware, software, and a prompt-to-production experience.
-
-Sign up with the link below for free cloud credits and let your agents cook.
-
-This week’s system design refresher:
-
-- How to Test Your Code (Even When AI Writes It)
-
-- 8 Chunking strategies for RAG-based agents
-
-- Google Translate: The Ideas Behind Neural Translation
-
-- Agent Skills, Clearly Explained
-
-- PostgreSQL versus MySQL
-
-How to Test Your Code (Even When AI Writes It)
-
-8 Chunking strategies for RAG-based agents
-
-- Fixed-Size: cuts text every fixed number of tokens, with a small overlap.
-
-- Recursive: splits on paragraphs first, falling back to lines then words and characters only when a piece is still too big.
-
-- Document-Based: splits wherever the document already marks a break, a heading, a chapter, an HTML tag, so a markdown file becomes one chunk per section on its own.
-
-- Semantic: embeds each sentence, checks its similarity to the one before it, and starts a new chunk when that similarity drops. This finds real topic shifts instead of guessing by length.
-
-- LLM-Based: asks an LLM to rewrite the text as standalone propositions, one idea per line, and turns each into a chunk, high quality but expensive across a large corpus.
-
-- Agentic: an AI agent reads each document, decides what it is (code, contract, table), and picks the chunking method for that file instead of one rule for everything.
-
-- Late Chunking: runs the full document through an embedding model, then applies normal split boundaries and mean-pools within each boundary to create chunk embeddings.
-
-- Hierarchical: breaks the document into layers, sections, paragraphs, then sentences
-
-Over to you: which chunking strategy are you running in production?
-
-Google Translate: The Ideas Behind Neural Translation
-
-A simplified illustration of common techniques. Not an exact map of Google Translate’s current system.
-
-- Detect language. A tiny classifier predicts the source language in milliseconds.
-
-- Tokenization. A BPE tokenizer splits the text into subword tokens, so the model can handle any word in any language.
-
-- Add target token. The model can handle every language pair. A special token like <2es> is prepended to the token sequence to steer the output toward Spanish.
-
-- Encoder. The tokens pass through Transformer layers. The output is a sequence of vectors, corresponding to each input token.
-
-- Decoder. Then the decoder part of the Transformer can predict the probability distribution for the next token conditioned on the encoded vectors.
-
-- Beam search. Instead of greedily picking one token at a time, beam search uses the decoder to keep several candidate translations during generation. The final output is the one with the highest probability.
-
-Over to you: Do you think AI labs and frontier models will make services like Google Translate obsolete?
-
-Agent Skills, Clearly Explained
-
-Why do we need Agent Skills? Long prompts hurt agent performance. Instead of one massive prompt, agents keep a small catalog of skills, reusable playbooks with clear instructions, loaded only when needed.
-
-Here is what the Agent Skills workflow looks like:
-
-- User Query: A user submits a request like “Analyze data & draft report”.
-
-- Build Prompt + Skills Index: The agent runtime combines the query with Skills metadata, a lightweight list of available skills and their short descriptions.
-
-- Reason & Select Skill: The LLM processes the prompt, thinks, and decides: “I want Skill X.”
-
-- Load Skill into Context: The agent runtime receives the specific skill request from the LLM. Then, it loads SKILL. md and adds it into the LLM’s active context.
-
-- Final Output: The LLM follows SKILL. md, runs scripts, and generates the final report.
-
-By dynamically loading skills only when needed, Agent Skills keep context small and the LLM’s behavior consistent.
-
-Over to you: What skills would you find most useful in agents?
-
-PostgreSQL versus MySQL
-
-Built using the C language, PostgreSQL uses a process-based architecture.
-
-You can think of it like a factory with a manager (Postmaster) coordinating specialized workers. Each connection gets its own process and shares a common memory pool. Background workers handle tasks like writing data, vacuuming, and logging independently.
-
-MySQL takes a thread-based approach. Imagine a single multi-tasking brain.
-
-It uses a layered design with one server handling multiple connections through threads. The magic happens using pluggable storage engines (such as InnoDB, MyISAM) that you can swap based on your needs.
-
-Over to you: Which database do you prefer?</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-    <div class="srcblock">
-      <div class="srcname">Simon Willison's Weblog<span>2 条</span></div>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/17/document-currentscript/" target="_blank" rel="noopener">Inline rendering with document​.currentScript</a></h3>
-<p class="one">用 document.currentScript.replaceWith 让内联 script 原地替换自身，实现极简模板渲染</p><p class="why">纯前端小技巧，能让你在静态 HTML 里做变量插值而不引入框架；对做 Web 开发、写工具页面的读者可直接复用，也顺带复习 DOM API 细节</p><p class="act"><span>下 一 步</span>在本地 HTML 里试写 $=(...n)=>document.currentScript.replaceWith(...n)，验证脚本执行时机与 replaceWith 的兼容性</p>        <div class="foot">
-<span class="tag">JavaScript</span><span class="tag">Web</span><span class="tag">DOM</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-17</span>
-        </div>
-      </article>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/17/web-edit/" target="_blank" rel="noopener">web-edit 0.1a2</a></h3>
-<p class="one">Simon Willison 的 web-edit 0.1a2 新增文本与图片复制到剪贴板功能</p><p class="why">展示一个真实的小工具迭代路径：用 Tailscale 跨机访问、手机端操作、把 LLM 输出粘进 Gist；对想练手全栈小工具、理解远程开发工作流的读者有参考价值，但功能本身很轻</p><p class="act"><span>下 一 步</span>可读其源码看单文件 Web 编辑器如何做文件浏览与剪贴板 API 调用</p>        <div class="foot">
-<span class="tag">工具</span><span class="tag">Web</span><span class="tag">LLM工作流</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-17</span>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-18 06:00 · 生成于 2026-10-18 06:00:18</span>
+    <span>本次扫描 2026-10-18 07:25 · 生成于 2026-10-18 07:25:42</span>
   </footer>
 </div>
 </body>
