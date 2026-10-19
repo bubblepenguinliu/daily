@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#faf7f2">
+<title>技术情报日报 · 2026-10-19</title>
+<style>
+  :root{
+    --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
+    --rule:#d8d0c3; --rule-soft:#e7e0d4; --accent:#9b2c20; --tint:#f3ede3;
+    --tw:636px;        /* 正文列宽 */
+    --nw:296px;        /* 页边批注宽 */
+    --gap:40px;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--paper);-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.82;
+    font-family:Georgia,"Source Han Serif SC","Noto Serif SC",SimSun,"Songti SC",serif;
+    background-image:radial-gradient(circle at 16% 6%,rgba(155,44,32,.035),transparent 42%);
+    overflow-wrap:break-word;
+  }
+  ::selection{background:#efe0d4;color:var(--ink)}
+
+  /* 布局：整页左对齐，正文列之外留出批注边栏 */
+  .wrap{max-width:1056px;margin:0 auto;padding:44px 24px 96px}
+  .col{max-width:var(--tw)}
+  .clr{clear:both}
+
+  /* ---------- 报头 ---------- */
+  .masthead{text-align:center;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+  .kicker{font-size:11px;letter-spacing:.42em;color:var(--muted);text-transform:uppercase;
+          font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif}
+  h1{font-size:clamp(30px,5.2vw,44px);margin:12px 0 4px;letter-spacing:.14em;font-weight:600;line-height:1.3}
+  .masthead .sub{font-size:13px;color:var(--muted);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+  .rule2{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);height:4px;margin-top:8px}
+  .lede{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;
+        font-size:12.5px;color:var(--muted);padding:12px 2px 0;
+        font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;letter-spacing:.04em}
+  .lede b{color:var(--accent);font-weight:600}
+  .warn{margin-top:14px;padding:9px 13px;background:#fdf3f1;border:1px solid #e8cdc8;
+        border-radius:3px;font-size:12.5px;color:#8a2b21;text-align:left;
+        font-family:"Microsoft YaHei",system-ui,sans-serif}
+
+  /* ---------- 提要 ---------- */
+  .digest{margin:34px 0 6px}
+  .sec{font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;font-size:12.5px;
+       letter-spacing:.3em;color:var(--accent);border-bottom:1px solid var(--rule);
+       padding-bottom:8px;margin-bottom:16px}
+  .sec.solid{color:var(--ink);border-bottom:2px solid var(--ink)}
+  ul.ov{list-style:none;margin:0;padding:0}
+  ul.ov li{position:relative;padding:8px 0 8px 42px;border-bottom:1px dotted var(--rule)}
+  ul.ov li:last-child{border-bottom:0}
+  ul.ov li::before{content:counter(o,decimal-leading-zero);counter-increment:o;position:absolute;
+    left:0;top:9px;font-size:11.5px;color:var(--accent);font-family:Georgia,serif;letter-spacing:.06em}
+  ul.ov{counter-reset:o}
+  ul.ov li a{color:var(--ink);text-decoration:none}
+  ul.ov li a:hover{color:var(--accent)}
+
+  /* ---------- 深度文章 ---------- */
+  .deep{margin-top:14px}
+  .note-lead{font-size:13px;color:var(--muted);font-style:italic;margin:-6px 0 4px}
+
+  article.full{padding:20px 0 8px;clear:both}
+  article.full+article.full{border-top:2px solid var(--ink);margin-top:34px;padding-top:34px}
+  .art-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+            font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;letter-spacing:.1em;
+            color:var(--muted);margin-bottom:9px}
+  .art-head .dt{margin-left:auto;color:#9a9084;font-variant-numeric:tabular-nums}
+  h2{font-size:clamp(21px,3vw,26px);line-height:1.44;margin:0 0 8px;font-weight:600}
+  h2 a{color:var(--ink);text-decoration:none}
+  h2 a:hover{color:var(--accent)}
+  .orig-title{font-size:13px;color:var(--soft);font-style:italic;margin:-2px 0 12px;line-height:1.6}
+  .standfirst{font-size:17px;color:#3b352c;margin:0 0 14px;padding-left:15px;
+              border-left:2px solid var(--rule)}
+  .art-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+            font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;color:var(--muted);
+            padding-bottom:18px;border-bottom:1px solid var(--rule)}
+  .art-meta .badge-warn{color:#8a2b21;border:1px solid #e8cdc8;background:#fdf3f1;
+                        padding:1px 7px;border-radius:2px}
+  .art-meta .badge-zh{color:#6b5c26;border:1px solid #e2dcc4;background:#fbf8ee;
+                      padding:1px 7px;border-radius:2px}
+
+  /* ---- 正文列 + 页边批注 ---- */
+  .reading{max-width:var(--tw);padding-top:20px}
+  .reading>p{margin:0 0 18px;text-align:justify;text-justify:inter-ideograph}
+
+  .note{
+    float:right;clear:right;width:var(--nw);margin:7px calc(-1 * (var(--nw) + var(--gap))) 20px 0;
+    padding-left:13px;border-left:2px solid var(--rule-soft);
+    font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+    font-size:12.8px;line-height:1.74;color:#5d5648;
+  }
+  .note .k{display:block;font-size:10.5px;letter-spacing:.2em;margin-bottom:4px;font-weight:600}
+  .note.k-背景{border-left-color:#e2d7c4} .note.k-背景 .k{color:#7a6a50}
+  .note.k-延伸{border-left-color:#cfe0d6} .note.k-延伸 .k{color:#3f6650}
+  .note.k-质疑{border-left-color:#e8cdc8} .note.k-质疑 .k{color:#9b2c20}
+  .note.k-数据{border-left-color:#e2dcc4} .note.k-数据 .k{color:#6b5c26}
+  .note.k-实操{border-left-color:#cbd6e2} .note.k-实操 .k{color:#3a5468}
+
+  .takeaway{margin:22px 0 18px;padding:13px 16px;background:var(--tint);
+            border-radius:3px;font-size:14.6px;color:#3b352c}
+  .takeaway span{display:block;font-family:"Microsoft YaHei",system-ui,sans-serif;
+    font-size:10.5px;letter-spacing:.24em;color:var(--accent);margin-bottom:6px}
+
+  details.orig{margin:0 0 6px;font-family:"Microsoft YaHei",system-ui,sans-serif}
+  details.orig summary{cursor:pointer;font-size:12.5px;color:var(--muted);
+    padding:9px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  details.orig summary:hover{color:var(--accent)}
+  details.orig pre{white-space:pre-wrap;font-family:Georgia,"Times New Roman",serif;
+    font-size:13.5px;line-height:1.78;color:#4d473c;background:#f6f2ea;
+    padding:16px 18px;border-radius:3px;margin:14px 0 0;max-height:60vh;overflow:auto}
+
+  /* ---------- 其余条目 ---------- */
+  .rest{margin-top:54px;clear:both}
+  .srcblock{margin-top:34px}
+  .srcname{display:flex;justify-content:space-between;align-items:baseline;
+    font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:12px;letter-spacing:.2em;
+    color:var(--muted);border-bottom:1px solid var(--ink);padding-bottom:7px}
+  .srcname span{letter-spacing:0;font-size:11.5px;color:var(--soft)}
+  article.mini{padding:20px 0;border-bottom:1px solid var(--rule);position:relative}
+  article.mini:last-child{border-bottom:0}
+  article.mini h3{font-size:18.5px;line-height:1.5;margin:0 0 9px;font-weight:600}
+  article.mini h3 a{color:var(--ink);text-decoration:none}
+  article.mini h3 a:hover{color:var(--accent)}
+  article.mini .one{margin:0 0 9px}
+  .why{margin:10px 0;padding-left:15px;border-left:2px solid var(--accent);
+       color:#3b352c;font-size:14.6px}
+  .act{margin:9px 0;font-size:14.4px;color:#2c4a2e}
+  .act span{display:inline-block;font-family:"Microsoft YaHei",system-ui,sans-serif;
+    font-size:10.5px;letter-spacing:.16em;color:#3f6b45;margin-right:9px}
+  .foot{display:flex;align-items:center;gap:9px;margin-top:13px;flex-wrap:wrap;
+        font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px}
+  .foot .src{letter-spacing:.1em;color:var(--muted)}
+  .tag{color:var(--accent);border:1px solid var(--rule);border-radius:2px;padding:1px 7px}
+  .foot .dt{margin-left:auto;color:#9a9084;font-variant-numeric:tabular-nums}
+
+  footer{margin-top:52px;padding-top:16px;border-top:3px double var(--ink);
+    font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;color:var(--muted);
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;letter-spacing:.05em}
+
+  /* ================= 手机端 / 窄屏 ================= */
+  @media (max-width:1120px){
+    .note{float:none;width:auto;margin:8px 0 20px 0;max-width:var(--tw)}
+    .col,.reading{max-width:100%}
+  }
+  @media (max-width:760px){
+    body{font-size:16.5px;line-height:1.86}
+    .wrap{padding:26px 17px 72px}
+    h1{letter-spacing:.08em}
+    .kicker{letter-spacing:.3em;font-size:10px}
+    .lede{flex-direction:column;gap:4px;align-items:flex-start}
+    .reading>p{text-align:left}
+    .note{font-size:13.4px;padding:10px 0 0 0;border-left:0;border-top:1px solid var(--rule-soft)}
+    .note .k{margin-bottom:3px}
+    h2{font-size:21px}
+    .standfirst{font-size:16px;padding-left:12px}
+    article.mini h3{font-size:17.5px}
+    .foot .dt{margin-left:0;width:100%}
+    details.orig pre{font-size:13px;padding:13px 14px}
+  }
+  @media (max-width:400px){
+    .wrap{padding:20px 13px 64px}
+    h1{font-size:27px}
+  }
+  @media print{
+    body{background:#fff}
+    .note{float:none;width:auto;margin:6px 0 14px;border-left:2px solid #ccc}
+    details.orig{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead col">
+    <div class="kicker">Daily Tech Digest</div>
+    <h1>技术情报日报</h1>
+    <div class="sub">2026-10-19 · 第 2 号</div>
+    <div class="rule2"></div>
+    <div class="lede">
+      <span>本期收录 <b>2</b> 条 · 精读 <b>1</b> 篇</span>
+      <span>共 <b>9</b> 条页边批注</span>
+    </div>
+  </header>
+
+  <section class="digest col">
+    <div class="sec">今 日 提 要</div>
+    <ul class="ov">
+<li>今日两条均为 Simon Willison 的 LLM 插件版本发布，属工具链维护级更新，非方向性信号</li><li>llm-tools-datasette 0.1.1 修复了 LLM 0.33 切换到 httpx2 后插件未显式依赖 httpx 导致的崩溃，是典型的 Python 依赖传递陷阱</li><li>llm-echo 0.5 提供不调用真实模型的假 model，可模拟 token 用量（含 tool calls、system prompt、reasoning tokens），适合本地调试 LLM 应用</li><li>两条共同指向一个可复用技能：用插件化 CLI（llm + uvx）做 AI 工程的快速原型与回归测试</li>    </ul>
+  </section>
+
+  <section class="deep">
+    <div class="col clr" style="margin-top:40px">
+      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
+<p class="note-lead">仅 llm-echo 值得深读：它给出一种零成本验证 LLM 调用链（prompt 组装、tool call、token 计数）的方法，对准备做 AI 工程实践的本科生可直接上手复用。</p>    </div>
+
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-18</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/18/llm-echo/" target="_blank" rel="noopener">llm-echo 0.5</a></h2>
+<p class="standfirst">Simon Willison 更新调试插件 llm-echo，模拟 token 用量计入工具调用与推理 token。</p>        <div class="art-meta">
+          <span>17 段</span><span>·</span>
+          <span>9 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 18 日</p>
+        <p>我正在准备一个新的 LLM 版本发布，测试 PR 时让我重新审视了 llm-echo 这个调试插件。这个插件提供了一个完全不涉及 LLM 的“模型”——它只是把喂给它的 prompt 原样重复回来。新版本现在会更新模拟的 token 用量计数，把 tool calls、system prompts 和 reasoning tokens 都纳入计算。</p>
+        <aside class="note k-背景"><span class="k">背景</span>llm 是 Simon Willison 开发的命令行工具，通过插件机制接入各家模型；llm-echo 属于“假模型”插件，用于在不调用 API、不花钱的情况下测试上层逻辑。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>用 `llm plugins` 可列出已安装插件，`llm -m echo --help` 查看该假模型支持的选项；调试自己的 llm 插件时，把 echo 当 mock 后端最省事。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>同类“无 LLM 假模型”在测试生态里很常见，如 OpenAI 兼容的 mock server、vLLM 的 dummy 模型；核心思路都是把 token 计数与网络调用解耦。</aside>
+        <p>示例用法：</p>
+        <p>uvx --with llm-echo llm -m echo 'hi there' -o thinking 1 --usage</p>
+        <aside class="note k-背景"><span class="k">背景</span>uvx 是 uv 提供的临时运行器，`--with` 会在隔离环境里额外装包再执行命令，等价于一次性 venv + pip install，不污染全局环境。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>`-o thinking 1` 是模型选项（option），`--usage` 打印 token 统计；这两个参数组合正好验证新版本对 reasoning tokens 的模拟是否生效。</aside>
+        <p>输出：</p>
+        <p>First I consider the prompt, then I decide what to say.</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>这行是 echo 模型伪造的“思考内容”，并非真实推理；它只用于占位，别把它当成模型行为的证据。</aside>
+        <p>"prompt": "hi there",</p>
+        <p>"system": "",</p>
+        <p>"attachments": [],</p>
+        <p>"stream": true,</p>
+        <p>"previous": [],</p>
+        <p>Token usage: 2 input, 24 output</p>
+        <aside class="note k-数据"><span class="k">数据</span>输入 2 个 token 对应 “hi there” 两个词；输出 24 个 token 里包含那句伪造的 thinking 文本，说明 reasoning tokens 被计入了 output 侧。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>真实 API 中 reasoning tokens 通常单独计价或计入 output，各家口径不一（如 OpenAI 计入 output、Anthropic 单列），echo 的模拟只代表 llm 工具自身的记账约定。</aside>
+        <p>近期文章</p>
+        <p>- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 2026 年 10 月 12 日</p>
+        <p>- A new feature for my blog, built using my voice - 2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
+        <p>- We're going to need default hard budget caps on pretty much everything - 2026 年 10 月 3 日</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>“硬预算上限”与本文的 token 计数直接相关：llm 工具已有 `--usage` 和日志，但默认不设花费上限；给 agent 加预算熔断是 2026 年工程侧的常见议题。</aside>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>llm-echo 是不调 API 的假模型，用来在本地验证 token 记账与插件逻辑，新版本已覆盖 tool call 与 reasoning token。</div>
+        <details class="orig">
+          <summary>查看英文原文（952 字符，可对照译文）</summary>
+          <pre>18th October 2026
+
+I'm working towards a new LLM release, and testing PRs caused me to revisit the llm-echo debug plugin. This plugin provides a "model" which doesn't involve an LLM at all - it just repeats back the prompts that have been fed to it. The new release now updates the simulated token usage counts to take tool calls, system prompts, and reasoning tokens into account.
+
+Example usage:
+
+uvx --with llm-echo llm -m echo 'hi there' -o thinking 1 --usage
+
+Outputs:
+
+First I consider the prompt, then I decide what to say.
+
+"prompt": "hi there",
+
+"system": "",
+
+"attachments": [],
+
+"stream": true,
+
+"previous": []
+
+Token usage: 2 input, 24 output
+
+Recent articles
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026
+
+- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+    <div class="srcblock">
+      <div class="srcname">Simon Willison's Weblog<span>1 条</span></div>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/18/llm-tools-datasette/" target="_blank" rel="noopener">llm-tools-datasette 0.1.1</a></h3>
+<p class="one">llm-tools-datasette 0.1.1 修复 httpx2 迁移导致的插件崩溃</p><p class="why">展示 Python 生态真实坑：上游换 httpx2 后，未显式声明 httpx 依赖的插件会静默挂掉。做 AI 工具链或任何库开发时，依赖要显式声明，别靠传递依赖。</p><p class="act"><span>下 一 步</span>读一遍自己项目里的 requirements/pyproject，检查是否有'靠别人带进来'的隐式依赖，补成显式声明</p>        <div class="foot">
+<span class="tag">Python</span><span class="tag">依赖管理</span><span class="tag">LLM 插件</span>          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-18</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="clr">
+    <span>tech-daily-digest · 自动编纂</span>
+    <span>本次扫描 2026-10-19 06:17 · 生成于 2026-10-19 06:17:27</span>
+  </footer>
+</div>
+</body>
+</html>
