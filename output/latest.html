@@ -178,126 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-19 · 第 2 号</div>
+    <div class="sub">2026-10-19</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>2</b> 条 · 精读 <b>1</b> 篇</span>
-      <span>共 <b>9</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-19 08:05</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-19 08:05 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>今日两条均为 Simon Willison 的 LLM 插件版本发布，属工具链维护级更新，非方向性信号</li><li>llm-tools-datasette 0.1.1 修复了 LLM 0.33 切换到 httpx2 后插件未显式依赖 httpx 导致的崩溃，是典型的 Python 依赖传递陷阱</li><li>llm-echo 0.5 提供不调用真实模型的假 model，可模拟 token 用量（含 tool calls、system prompt、reasoning tokens），适合本地调试 LLM 应用</li><li>两条共同指向一个可复用技能：用插件化 CLI（llm + uvx）做 AI 工程的快速原型与回归测试</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/18/llm-tools-datasette/" target="_blank" rel="noopener">Simon Willison's Weblog · llm-tools-datasette 0.1.1</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/18/llm-echo/" target="_blank" rel="noopener">Simon Willison's Weblog · llm-echo 0.5</a></li>
+      <li><a href="https://blog.bytebytego.com/p/ep229-8-chunking-strategies-for-rag" target="_blank" rel="noopener">ByteByteGo · EP229: 8 Chunking strategies for RAG-based agents</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-to-design-for-failures" target="_blank" rel="noopener">ByteByteGo · How to Design for Failures</a></li>
+      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
+      <li><a href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-18.html" style="color:var(--accent)">digest-2026-10-18.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">仅 llm-echo 值得深读：它给出一种零成本验证 LLM 调用链（prompt 组装、tool call、token 计数）的方法，对准备做 AI 工程实践的本科生可直接上手复用。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-18</span>
-        </div>
-        <h2><a href="https://simonwillison.net/2026/Oct/18/llm-echo/" target="_blank" rel="noopener">llm-echo 0.5</a></h2>
-<p class="standfirst">Simon Willison 更新调试插件 llm-echo，模拟 token 用量计入工具调用与推理 token。</p>        <div class="art-meta">
-          <span>17 段</span><span>·</span>
-          <span>9 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>2026 年 10 月 18 日</p>
-        <p>我正在准备一个新的 LLM 版本发布，测试 PR 时让我重新审视了 llm-echo 这个调试插件。这个插件提供了一个完全不涉及 LLM 的“模型”——它只是把喂给它的 prompt 原样重复回来。新版本现在会更新模拟的 token 用量计数，把 tool calls、system prompts 和 reasoning tokens 都纳入计算。</p>
-        <aside class="note k-背景"><span class="k">背景</span>llm 是 Simon Willison 开发的命令行工具，通过插件机制接入各家模型；llm-echo 属于“假模型”插件，用于在不调用 API、不花钱的情况下测试上层逻辑。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>用 `llm plugins` 可列出已安装插件，`llm -m echo --help` 查看该假模型支持的选项；调试自己的 llm 插件时，把 echo 当 mock 后端最省事。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>同类“无 LLM 假模型”在测试生态里很常见，如 OpenAI 兼容的 mock server、vLLM 的 dummy 模型；核心思路都是把 token 计数与网络调用解耦。</aside>
-        <p>示例用法：</p>
-        <p>uvx --with llm-echo llm -m echo 'hi there' -o thinking 1 --usage</p>
-        <aside class="note k-背景"><span class="k">背景</span>uvx 是 uv 提供的临时运行器，`--with` 会在隔离环境里额外装包再执行命令，等价于一次性 venv + pip install，不污染全局环境。</aside>
-        <aside class="note k-实操"><span class="k">实操</span>`-o thinking 1` 是模型选项（option），`--usage` 打印 token 统计；这两个参数组合正好验证新版本对 reasoning tokens 的模拟是否生效。</aside>
-        <p>输出：</p>
-        <p>First I consider the prompt, then I decide what to say.</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>这行是 echo 模型伪造的“思考内容”，并非真实推理；它只用于占位，别把它当成模型行为的证据。</aside>
-        <p>"prompt": "hi there",</p>
-        <p>"system": "",</p>
-        <p>"attachments": [],</p>
-        <p>"stream": true,</p>
-        <p>"previous": [],</p>
-        <p>Token usage: 2 input, 24 output</p>
-        <aside class="note k-数据"><span class="k">数据</span>输入 2 个 token 对应 “hi there” 两个词；输出 24 个 token 里包含那句伪造的 thinking 文本，说明 reasoning tokens 被计入了 output 侧。</aside>
-        <aside class="note k-延伸"><span class="k">延伸</span>真实 API 中 reasoning tokens 通常单独计价或计入 output，各家口径不一（如 OpenAI 计入 output、Anthropic 单列），echo 的模拟只代表 llm 工具自身的记账约定。</aside>
-        <p>近期文章</p>
-        <p>- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 2026 年 10 月 12 日</p>
-        <p>- A new feature for my blog, built using my voice - 2026 年 10 月 9 日</p>
-        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
-        <p>- We're going to need default hard budget caps on pretty much everything - 2026 年 10 月 3 日</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>“硬预算上限”与本文的 token 计数直接相关：llm 工具已有 `--usage` 和日志，但默认不设花费上限；给 agent 加预算熔断是 2026 年工程侧的常见议题。</aside>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>llm-echo 是不调 API 的假模型，用来在本地验证 token 记账与插件逻辑，新版本已覆盖 tool call 与 reasoning token。</div>
-        <details class="orig">
-          <summary>查看英文原文（952 字符，可对照译文）</summary>
-          <pre>18th October 2026
-
-I'm working towards a new LLM release, and testing PRs caused me to revisit the llm-echo debug plugin. This plugin provides a "model" which doesn't involve an LLM at all - it just repeats back the prompts that have been fed to it. The new release now updates the simulated token usage counts to take tool calls, system prompts, and reasoning tokens into account.
-
-Example usage:
-
-uvx --with llm-echo llm -m echo 'hi there' -o thinking 1 --usage
-
-Outputs:
-
-First I consider the prompt, then I decide what to say.
-
-"prompt": "hi there",
-
-"system": "",
-
-"attachments": [],
-
-"stream": true,
-
-"previous": []
-
-Token usage: 2 input, 24 output
-
-Recent articles
-
-- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
-
-- A new feature for my blog, built using my voice - 9th October 2026
-
-- Claude Haiku 5.5 - 7th October 2026
-
-- We're going to need default hard budget caps on pretty much everything - 3rd October 2026</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-    <div class="srcblock">
-      <div class="srcname">Simon Willison's Weblog<span>1 条</span></div>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/18/llm-tools-datasette/" target="_blank" rel="noopener">llm-tools-datasette 0.1.1</a></h3>
-<p class="one">llm-tools-datasette 0.1.1 修复 httpx2 迁移导致的插件崩溃</p><p class="why">展示 Python 生态真实坑：上游换 httpx2 后，未显式声明 httpx 依赖的插件会静默挂掉。做 AI 工具链或任何库开发时，依赖要显式声明，别靠传递依赖。</p><p class="act"><span>下 一 步</span>读一遍自己项目里的 requirements/pyproject，检查是否有'靠别人带进来'的隐式依赖，补成显式声明</p>        <div class="foot">
-<span class="tag">Python</span><span class="tag">依赖管理</span><span class="tag">LLM 插件</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-18</span>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-19 06:17 · 生成于 2026-10-19 06:17:27</span>
+    <span>本次扫描 2026-10-19 08:05 · 生成于 2026-10-19 08:05:39</span>
   </footer>
 </div>
 </body>
