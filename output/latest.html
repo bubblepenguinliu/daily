@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#faf7f2">
-<title>技术情报日报 · 2026-10-20</title>
+<title>技术情报日报 · 2026-10-21</title>
 <style>
   :root{
     --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
@@ -178,38 +178,446 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-20</div>
+    <div class="sub">2026-10-21 · 第 3 号</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本次扫描 <b>2026-10-20 07:56</b> · 四个来源暂无新条目</span>
-      <span>已列出各源当前最新内容</span>
+      <span>本期收录 <b>3</b> 条 · 精读 <b>3</b> 篇</span>
+      <span>共 <b>33</b> 条页边批注</span>
     </div>
-    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">本 次 扫 描</div>
-    <p class="note-lead">本次扫描于 2026-10-20 07:56 完成，四个来源都没有新条目。
-      下面是各来源当前最新的一篇，想读可以直接点开。</p>
+    <div class="sec">今 日 提 要</div>
     <ul class="ov">
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></li>
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-414.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 414 期）：Jev 决策模型有什么用</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/" target="_blank" rel="noopener">Simon Willison's Weblog · My obituary for programming</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/18/llm-tools-datasette/" target="_blank" rel="noopener">Simon Willison's Weblog · llm-tools-datasette 0.1.1</a></li>
-      <li><a href="https://blog.bytebytego.com/p/how-uber-built-a-genie-to-answer-051" target="_blank" rel="noopener">ByteByteGo · How Uber Built a Genie to Answer Questions Correctly</a></li>
-      <li><a href="https://blog.bytebytego.com/p/ep229-8-chunking-strategies-for-rag" target="_blank" rel="noopener">ByteByteGo · EP229: 8 Chunking strategies for RAG-based agents</a></li>
-      <li><a href="https://jack-clark.net/2026/10/19/import-ai-477-in-which-i-tell-the-imf-the-singularity-has-begun/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 477: In which I tell the IMF the Singularity has begun</a></li>
-      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
-    </ul>
-    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
-      <a href="digest-2026-10-19.html" style="color:var(--accent)">digest-2026-10-19.html</a></p>
+<li>eMudhra 八个中间 CA 私钥泄露，波及 Mozilla/Microsoft/Apple/Chrome 根信任链，Python 生态 uv/pip/certifi 已发新版证书列表</li><li>Shopify 2026 年从 React Native 迁回原生 Swift/Kotlin，理由是 AI coding agent 让双端重写成本低于跨平台框架的维护成本</li><li>Simon Willison 用 Claude Code 迭代 12 版做出可玩的浏览器 RTS，并用音频在设备间同步游戏状态做局域网多人</li><li>对准备考研的本科生：证书链、TLS 信任模型这类系统安全知识正在以真实事故的形式出现，比背概念更容易建立直觉</li>    </ul>
   </section>
 
+  <section class="deep">
+    <div class="col clr" style="margin-top:40px">
+      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
+<p class="note-lead">三条都指向可验证的具体事实：CA 泄露给出可立即执行的升级动作和 PKI 学习入口，RTS 项目展示 AI 辅助开发的完整迭代路径，Shopify 迁移则是能改变技术选型判断的行业信号。</p>    </div>
 
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-20</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/20/emudhra-certificates/" target="_blank" rel="noopener">eMudhra 中间 CA 私钥泄露</a></h2>
+        <div class="orig-title">eMudhra Intermediate CA Compromise</div>
+<p class="standfirst">eMudhra 八个中间 CA 私钥被攻破，主流信任库需紧急更新。</p>        <div class="art-meta">
+          <span>10 段</span><span>·</span>
+          <span>10 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 20 日 - 链接博客</p>
+        <p>eMudhra 中间 CA 私钥泄露。这是非常、非常坏的消息：</p>
+        <aside class="note k-背景"><span class="k">背景</span>中间 CA 是根 CA 签发的下级证书，持有其私钥即可签发任意域名的证书，且浏览器只验证到根，不会察觉中间层被滥用。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>2024 年 Entrust 因合规问题被 Chrome 取消信任，说明根程序可单方面移除 CA；但中间 CA 泄露只能靠 CRL/OCSP 或证书透明度日志发现。</aside>
+        <p>八个 eMudhra 中间 CA 证书的私钥已被泄露。它们链接到 Mozilla、Microsoft、Apple 和 Chrome 根程序以及许多下游信任存储所信任的根。</p>
+        <aside class="note k-数据"><span class="k">数据</span>全球约 99% 的 HTTPS 流量依赖这四大根程序；下游信任存储包括 Java cacerts、Android 系统证书、curl 内置 CA bundle 等。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>原文未说明泄露途径（入侵、配置错误还是内部人员），也未给出吊销时间线；若中间 CA 未被及时加入 CRL，攻击窗口可能长达数周。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>用 openssl s_client -connect example.com:443 -showcerts 可查看服务器链中是否含 eMudhra 中间证书；含则需联系站点换证。</aside>
+        <p>任何捆绑了受信任证书列表的软件都需要更新。本站正通过这个 GitHub 仓库跟踪软件更新——Linux 发行版需要更新其 ca-certificates 包。</p>
+        <aside class="note k-实操"><span class="k">实操</span>Debian/Ubuntu 执行 sudo apt update && sudo apt install --only-upgrade ca-certificates；RHEL 系用 sudo update-ca-trust。更新后重启依赖系统信任库的服务。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>ca-certificates 包更新只影响系统信任库；Firefox 自带 NSS 信任库、Java 自带 cacerts，需分别更新，容易漏掉。</aside>
+        <p>在 Python 生态中，uv 0.13.4、pip 26.2.2 和 certifi 2026.10.19 已发布，带有升级后的证书列表。</p>
+        <aside class="note k-背景"><span class="k">背景</span>certifi 是 Python 生态事实上的 CA bundle 来源，requests、httpx、pip 都依赖它；它随 Python 包发布而非系统更新，所以必须单独升级。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>运行 python -c "import certifi; print(certifi.where())" 查看当前 bundle 路径，再 pip install --upgrade certifi 后确认版本号是否为 2026.10.19。</aside>
+        <aside class="note k-数据"><span class="k">数据</span>certifi 每次 CA 变更都会发新版，2024 年因移除 Entrust 根连发多个版本；版本号日期格式 YYYY.MM.DD 便于判断新旧。</aside>
+        <p>近期文章</p>
+        <p>- Battle Drones——一款用氛围编程做出来的、基于音频的多人 RTS——2026 年 10 月 20 日</p>
+        <p>- 你好 Python 3.15，再见 3.10，现在我能用 3.11 了——2026 年 10 月 12 日</p>
+        <p>- 我博客的新功能，用我的声音构建——2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5——2026 年 10 月 7 日</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>立即升级 certifi、pip、uv 和系统 ca-certificates，并检查服务器证书链是否含 eMudhra 中间 CA。</div>
+        <details class="orig">
+          <summary>查看英文原文（920 字符，可对照译文）</summary>
+          <pre>20th October 2026 - Link Blog
+
+eMudhra Intermediate CA Compromise. This is very, very bad news:
+
+The private keys of eight eMudhra intermediate CA certificates have been compromised. They chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs and by many downstream trust stores.
+
+Any software that bundles a list of trusted certificates needs to be updated. This site is tracking software updates via this GitHub repository - Linux distros need to update their ca-certificates packages.
+
+In Python world uv 0.13.4 and pip 26.2.2 and certifi 2026.10.19 have been released with upgraded certificate lists.
+
+Recent articles
+
+- Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-20</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/20/battledrones/" target="_blank" rel="noopener">Battle Drones——一款用 vibe coding 打造、靠音频联机的 RTS 游戏</a></h2>
+        <div class="orig-title">Battle Drones - a vibe coded RTS with audio-based multiplayer</div>
+<p class="standfirst">Simon Willison 用 Claude 迭代 12 版做出可玩的手机 RTS，并用音频同步实现近场联机。</p>        <div class="art-meta">
+          <span>56 段</span><span>·</span>
+          <span>15 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>Battle Drones——一款用 vibe coding 打造、靠音频联机的 RTS 游戏</p>
+        <p>2026 年 10 月 20 日</p>
+        <p>我最新的 vibe coding 游戏实验是一款《命令与征服》风格的 RTS（即时战略）游戏，名叫 Battle Drones（点这里试玩）。与我之前的实验不同，这一款玩起来居然真的有意思。我有点不好意思承认，我是靠对 Claude 说“让它好玩得多（Make it a LOT more fun）”才做到这一点的。它还支持附近设备之间通过音频同步游戏状态来联机！下面是我目前做出来的东西，以及一路上学到的一些经验。</p>
+        <aside class="note k-背景"><span class="k">背景</span>“vibe coding”一词由 Andrej Karpathy 于 2025 年 2 月提出，指几乎不读代码、只靠自然语言提示让 LLM 生成程序；Willison 本人是 Datasette 作者、Django 联合创始人，长期跟踪 LLM 工具链。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>用音频传数据并非新思路：2014 年 Chirp（原 Quietnet）就用近超声做设备配对；Willison 此前做过 Chirp Pong，这次是把同一套 FSK 式编码扩展到游戏状态同步。</aside>
+        <p>Battle Drones</p>
+        <p>我最初的目标是做一款能在手机上玩的 RTS，风格仿照《命令与征服》。我对 1995 年的初代有着美好的回忆（我也喜欢《红色警戒》），想找回一点当年的魔力。</p>
+        <aside class="note k-背景"><span class="k">背景</span>《命令与征服》由 Westwood Studios 于 1995 年发行，是 RTS 品类的奠基作之一；其引擎后来衍生出《红色警戒》系列，定义了“采矿—造兵—推塔”的资源循环。</aside>
+        <p>经过 12 次大迭代（以及编码 agent 提交的 321 次 commit，主要是 Claude Code），我现在有了一个在手机和桌面浏览器上都能跑的网页游戏，有多种游玩模式、若干地图（包括随机地图生成器），甚至支持两台设备在彼此麦克风拾音范围内的联机。（更新：也支持在线联机了；音频联机搞得我头疼！）</p>
+        <aside class="note k-数据"><span class="k">数据</span>321 次 commit、12 次大迭代，平均每版约 27 次提交；对比传统 3A 级 RTS 动辄数十人年，这个量级说明 LLM 把“原型到可玩”的边际成本压得很低。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>“音频联机”依赖麦克风拾音，实际有效距离通常只有几米，且受环境噪声、设备采样率差异影响；作者自己也说它“搞得头疼”，说明演示可行不等于产品可用。</aside>
+        <p>下面是一段 Battle Drones 在桌面浏览器中运行的视频演示：</p>
+        <p>目前的功能包括：</p>
+        <p>- 9 种建筑、7 种地面载具、6 种空中载具、3 种步兵单位——全部是 3D 模型，可以在这里浏览</p>
+        <p>- 战争迷雾</p>
+        <p>- 对空和对地载具需要不同的武器才能命中</p>
+        <p>- 六张地图，横跨五种生物群系——温带、沙漠、极地、火山、热带</p>
+        <p>- 随机地图生成器</p>
+        <p>- 遭遇战模式——红蓝双方在一张旋转对称地图上对战</p>
+        <p>- 背水一战模式——一名玩家抵挡尽可能多的敌人波次</p>
+        <p>- 范围效果武器：弹幕、EMP、空投舱、天锤</p>
+        <p>- 掉落补给箱，提供额外资源</p>
+        <p>- 随事件变化的游戏内音乐——战斗打响时会变得更激烈</p>
+        <p>- 不同的游戏内 AI 性格（均衡、快攻、空群、爆兵、空权、铁壁）</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>“AI 性格”本质是给同一套决策树配不同权重参数（如快攻型提高早期出兵权重）；这与《星际争霸》AI 脚本、以及 OpenAI Five 之后的游戏 AI 研究是同一谱系。</aside>
+        <p>- AI 对 AI 模式，可以观看这些性格互相对打</p>
+        <p>- 歌利亚——一台巨大的践踏机甲，带激光眼和臂炮，还能建立新基地</p>
+        <p>- 变异器（Mutators），为游戏增加额外规则或变数</p>
+        <p>- 每日行动（Daily Op）挑战</p>
+        <p>- 等级与成就（奖章）</p>
+        <p>- Agent 对 Agent 模式，两个 LLM 可以互相对战 Battle Drones</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>让 LLM 直接操作游戏是 2025 年后的热门评测方向，如 Anthropic 的 Claude Plays Pokémon、以及各类“LLM 打游戏”基准；难点在于把画面/状态转成模型可读的文本接口。</aside>
+        <p>- 一种基于两台邻近手机通过音频消息通信的联机模式，是我早先 Chirp Pong 实验的延伸</p>
+        <p>我是怎么做的</p>
+        <p>Battle Drones 是重度 vibe coding 的产物——我几乎没审过代码，而且它是用一种我自己很少用的语言（TypeScript）写的。不过我做了相当多的试玩，而且从项目开始到现在经历了大量迭代。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>“几乎不审代码”在个人玩具项目可行，但一旦涉及联机、存档或支付，未审计的 TypeScript 依赖链（npm 生态）会带来供应链与安全风险，这是 vibe coding 的边界。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>想复现类似流程：装 Claude Code 或同类 CLI，给项目建 git 仓库并让 agent 每次提交，用 `git log --oneline` 就能像作者一样数出 321 次 commit 的迭代节奏。</aside>
+        <p>下面是这个项目到目前为止的大致历史，包括关键提示词和对话记录链接。</p>
+        <p>v1：最初的雏形</p>
+        <p>我是在 7 月用 Claude Fable 5 起步的：</p>
+        <p>我们要做一款手机友好的 RTS 游戏——命令与征服风格——叫 Battle Drones，两支无人机军队（空中和地面）争夺领土和资源</p>
+        <p>先从一个 MVP 设计开始，问我一些问题</p>
+        <p>这里有一份共享对话记录。我给 Claude Code for Web 设了一个带 OpenAI API key 的环境变量，让它用 OpenAI 图像生成 API 做素材，于是得到了一些基础 sprite。</p>
+        <aside class="note k-实操"><span class="k">实操</span>把 API key 放进环境变量而非硬编码，是 agent 编码的基本安全习惯；Claude Code 的沙箱环境默认会读取 env，但提交前务必确认 .env 已进 .gitignore。</aside>
+        <p>你可以在这里试玩 v1——它当时长这样：</p>
+        <p>它已经能看出是个 RTS，有建造机制、能选中并指挥单位，还有一个基础 AI 可以对战。</p>
+        <p>这第一版勉强算个概念验证，玩起来毫无乐趣。</p>
+        <p>Claude 在这些早期版本里用了 Phaser 2D 游戏框架。我直到好几轮迭代之后才意识到这一点！</p>
+        <aside class="note k-背景"><span class="k">背景</span>Phaser 是流行的开源 HTML5 2D 游戏框架（当前主版本为 Phaser 3），适合快速做 2D 原型；作者说“好几轮后才发现”，说明 vibe coding 中技术选型常被 agent 默默决定。</aside>
+        <p>v2：完整 sprite</p>
+        <p>第二版（在这里试玩 v2）为所有载具加上了 sprite，并加入了“AI 对 AI”模式，这样我不用亲自操作也能看游戏自己跑。</p>
+        <p>Claude 在提示 OpenAI 图像模型生成 sprite 方面表现得相当称职。你可以在 public/assets/sprites 文件夹里浏览 v2 的 sprite。</p>
+        <p>v3：多变地形</p>
+        <p>它还是不太好玩，画面也很无聊。这时已是 10 月，我升级到了 Claude Opus 5.5。我对它说：</p>
+        <p>大幅改进这个游戏。把画面和玩法都做得更好（保持手机友好）。用最新的 OpenAI GPT 图像 API（查一下细节）渲染新画面，API key 在环境变量里。加入新的单位类型，把玩法平衡得更好。再加一些新建筑和更好、更多样的地形。</p>
+        <p>这带来了五张新地图，背景贴图风格各异，可以在这里看到。Opus 还重新生成了 sprite，让它们视觉上吸引人得多。你可以在这里试玩 v3——它长这样：</p>
+        <p>这开始像个真正的游戏了！不过玩起来还是不太有趣——我发现自己很快就腻了。</p>
+        <p>v4：好玩更新</p>
+        <p>到目前为止，我的 Battle Drones 实验印证了我先前的看法：编码 agent 能做出一个看起来像游戏的东西，但做不出真正让人欲罢不能的玩法。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>这个“看法”在 v4 后被作者自己推翻，说明结论高度依赖提示词质量与模型版本；把一次失败归因为模型能力上限，是常见的归因偏差。</aside>
+        <p>我在一次晚餐时把这个理论讲给某人听，然后心想，应该给模型一个正经机会来证明我错了。我在手机上给 Opus 5.5 发了提示：</p>
+        <p>这个游戏还不够好玩。让它好玩得多（Make it a LOT more fun）。</p>
+        <aside class="note k-数据"><span class="k">数据</span>这条提示只有 9 个英文单词，却触发了数小时、多 subagent 的工作；对比之下，v3 的提示有 60 多词却收效有限，说明“目标抽象度”比“指令长度”更影响 agent 产出。</aside>
+        <p>这次我运行在 Ultracode 模式下，Claude Code（这里是 Claude Code for Web）会运行“动态工作流”，其文档描述为：</p>
+        <p>动态工作流是一个 JavaScript 脚本，可以一次性编排许多 subagent。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>多 subagent 编排是 2025-2026 年 agent 工程的主流范式，类似 AutoGen、CrewAI 的“角色分工”；关键工程问题是子任务间的状态共享与冲突合并，而非单模型能力。</aside>
+        <p>这引发了数小时的工作。我晚上启动，直到第二天凌晨很晚才拿回一个可玩的结果。但结果非常惊艳。</p>
+        <aside class="note k-实操"><span class="k">实操</span>想观察这类长任务，可在 Claude Code 里用 `--verbose` 或查看其 workflow 日志；注意长任务会消耗大量 token，作者这种“过夜跑”模式成本可能达数十美元量级。</aside>
+        <p>你可以在这里试玩 v4——它长这样：</p>
+        <p>我让 Claude 自己写了发布说明——以下是亮点：</p>
+        <p>……（原文过长，此处截断）</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>vibe coding 能把原型推到可玩，但“好玩”仍要靠人给出抽象目标并反复试玩验证。</div>
+        <details class="orig">
+          <summary>查看英文原文（5916 字符，可对照译文）</summary>
+          <pre>Battle Drones—a vibe coded RTS with audio-based multiplayer
+
+20th October 2026
+
+My latest vibe coded game experiment is a Command & Conquer style RTS (Real Time Strategy) game called Battle Drones (play it here). Unlike my previous experiments, this one is actually fun to play. I’m somewhat embarrassed to admit that I got there by telling Claude to “Make it a LOT more fun”. It also supports multiplayer between nearby devices using audio to synchronize game state! Here’s what I’ve built so far, and some of the things I learned along the way.
+
+Battle Drones
+
+My initial goal was to build an RTS game I could play on my phone, in the style of Command & Conquer. I have fond memories of the 1995 original (I liked Red Alert too) and wanted to recapture a little bit of the magic.
+
+After 12 major iterations (and 321 commits by coding agents, mainly Claude Code) I now have a browser-based game that works on mobile and desktop, has multiple play modes, several maps (including a random map generator) and even supports multiplayer for two devices within microphone range of each other. (Update: also online multiplayer; the audio multiplayer induced headaches!)
+
+Here’s a video demo of Battle Drones running in a desktop browser:
+
+Features so far include:
+
+- 9 buildings, 7 ground vehicles, 6 aerial vehicles, 3 infantry units—all 3D models, which you can browse here
+
+- Fog of war
+
+- Different weapons are needed to target aerial or ground vehicles
+
+- Six maps, across five biomes—temperate, desert, arctic, volcanic, tropical
+
+- A random map generator
+
+- Skirmish mode—red vs. blue on a rotationally symmetrical map
+
+- Last Stand mode—one player holds out against as many waves of enemies as possible
+
+- Area effect weapons: Barrage, EMP, Drop Pod, Sky Hammer
+
+- Crate drops with bonus resources
+
+- In-game music that responds to events—it gets more intense as fighting breaks out
+
+- Different in-game AI personalities (Balanced, Rush, Air Swarm, Boom, Skyforce, Ironclad)
+
+- AI vs. AI mode, to watch those personalities play each other
+
+- The Goliath—a giant stomping mech with laser eyes and arm cannons and the ability to establish a new base
+
+- Mutators that add extra rules or twists
+
+- A “Daily Op” challenge
+
+- Ranks and achievements (Medals)
+
+- Agent vs. Agent mode where two LLMs can play Battle Drones against each other
+
+- A multiplayer mode based on two nearby phones communicating via audio messages, an extension of my earlier experiment with Chirp Pong
+
+How I built this
+
+Battle Drones is heavily vibe coded—I’ve reviewed almost none of the code, and it’s built in a language (TypeScript) that I’ve hardly used myself. I’ve playtested it quite a bit though, and it’s been through a large number of iterations since I started the project.
+
+Here’s a rough history of the project so far, including key prompts and links to transcripts.
+
+v1: the initial prototype
+
+I started out with Claude Fable 5 back in July:
+
+We are going to build a mobile friendly RTS game - command and conquer style - called Battle Drones, in which two armies of drones (both flying and ground-based) battle for territory and resources
+
+Let's start with a MVP design, ask me some questions
+
+Here’s a shared transcript. I’d given Claude Code for Web an environment variable with an OpenAI API key and told it to use the OpenAI Image Generation API for assets, which got me some basic sprites.
+
+You can try v1 here—it looked like this:
+
+It’s recognizable as an RTS, has building mechanics and the ability to select and direct units, and a basic AI to play against.
+
+This first version was barely a proof of concept, and it wasn’t any fun to play.
+
+Claude used the Phaser 2D game framework for these early versions. I didn’t even realize this until several iterations later!
+
+v2: full sprites
+
+The second version (try v2 here) added sprites for all of the vehicles and the “AI vs. AI” mode, so I could watch the game playing without having to directly control it myself.
+
+Claude proved reasonably competent at prompting OpenAI’s image models to generate sprites. You can browse the v2 sprites in the public/assets/sprites folder.
+
+v3: varied terrain
+
+It still wasn’t much fun, and the graphics were boring. It was now October, and I had upgraded to Claude Opus 5.5. I told it:
+
+Massively improve this game. Make the graphics and gameplay better (keep it mobile friendly). Render new graphics using the latest OpenAI GPT image API (lookup details) with the API key in the environment variable. Add new unit types and balance the gameplay better. Also add new buildings and better, more varied terrain.
+
+This resulted in five new maps with generated background tiles in a variety of styles, visible here. Opus also regenerated the sprites, making them much more visually appealing. You can try v3 here—it looks like this:
+
+This is starting to feel like a real game! It still wasn’t very fun to play though—I found myself getting bored pretty quickly.
+
+v4: the fun update
+
+So far my Battle Drones experiment was confirming my previous belief that coding agents can build a thing that looks like a game but can’t actually make something that’s genuinely compelling to play.
+
+I shared this theory with someone over dinner, and then thought to myself that I should give the models a proper chance to prove me wrong. I prompted Opus 5.5 on my phone:
+
+This game isn't fun enough yet. Make it a LOT more fun.
+
+This time I was running in Ultracode mode, where Claude Code (in this case Claude Code for Web) runs “dynamic workflows”, described in their docs as:
+
+A dynamic workflow is a JavaScript script that orchestrates many subagents at once.
+
+This kicked off many hours of work. I started it in the evening and didn’t get a playable result back until late into the next morning. But the results were spectacular.
+
+You can try v4 here—it looks like this:
+
+I had Claude write its own release notes—here are the highlights:
+
+
+…（原文过长，此处截断）</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">ByteByteGo</span>
+          <span class="dt">2026-10-20</span>
+        </div>
+        <h2><a href="https://blog.bytebytego.com/p/why-shopify-migrated-from-react-native" target="_blank" rel="noopener">Shopify 为何从 React Native 迁回原生开发</a></h2>
+        <div class="orig-title">Why Shopify Migrated From React Native</div>
+<p class="standfirst">AI 编码代理改变了移动开发的经济账，Shopify 2026 年迁回 Swift/Kotlin。</p>        <div class="art-meta">
+          <span>36 段</span><span>·</span>
+          <span>8 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>大多数团队以固定采样率录制会话回放，然后在接下来的一次故障排查中，翻遍数百个与 bug 毫无关系的会话。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Sentry 的 Session Replay 默认采样率通常建议 1%~10%，高流量应用按固定比例采样会淹没关键会话，需结合错误率动态调整。</aside>
+        <p>这个动手实践的 Sentry 工作坊将教你如何捕获真正重要的回放：</p>
+        <p>- 采样率与缓冲模式，以及我们推荐的默认值</p>
+        <p>- 自定义 React hooks，用于录制特定用户分群、已知有问题的 URL，或你刚刚上线的流程</p>
+        <p>- 附带回放的 bug 报告</p>
+        <p>- 针对愤怒点击、无效点击和自定义标签的过滤器</p>
+        <p>- 隐私默认设置及如何调整它们</p>
+        <p>2020 年，Shopify 工程团队决定全力投入 React Native。这为他们节省了大量时间和金钱。通过使用 React Native，开发者不必在 Kotlin 和 Swift 中分别实现同一功能来使其在 Android 和 iOS 上运行。当然，这个框架也带来了自己的要求。但当时这个想法非常成功。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Shopify 2020 年公开宣布 React Native 为移动端默认技术栈，当时其移动团队约 50 人，覆盖 iOS/Android 双端。</aside>
+        <p>然而，到了 2026 年，AI 编码代理已经极大地改变了构建移动应用的经济账。早先，如果你用 React Native 实现某个功能，你可以为其带来的节省辩护。但现在，AI 代理在编码方面已经变得如此出色，以至于用 Swift 和 Kotlin 构建同一功能的成本要低得多。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>“AI 让双端原生开发更便宜”成立的前提是 AI 生成的 Swift/Kotlin 代码质量足够高且维护成本低；若代码审查和调试成本仍高，结论可能反转。</aside>
+        <aside class="note k-数据"><span class="k">数据</span>2025 年 GitHub Copilot 和 Cursor 等工具在 Swift/Kotlin 上的代码补全接受率已接近 Python/JS 水平，但跨平台 UI 一致性仍需人工验证。</aside>
+        <p>在本文中，我们将探讨 Shopify 如何决定迁出 React Native，以及他们如何迁移到原生移动开发。以下是我们的内容：</p>
+        <p>- 什么是原生移动开发</p>
+        <p>- Shopify 为何选择 React Native</p>
+        <p>- 2025 年发生了什么变化</p>
+        <p>- Shopify 的迁移方法</p>
+        <p>- Shopify 如何执行迁移</p>
+        <p>- 代理反馈循环</p>
+        <p>- 迁移结果</p>
+        <p>免责声明：本文基于多个来源公开分享的细节。参考文献在文末。如果你发现任何不准确之处，请评论。</p>
+        <p>什么是原生移动开发</p>
+        <p>你可能已经知道，iPhone 运行苹果的 iOS，Android 手机运行 Android。这两个操作系统都提供了一系列设施来显示 UI、处理通知以及与设备硬件通信。</p>
+        <p>针对特定操作系统的原生移动开发，是指直接使用该平台的语言、框架和工具构建应用程序。这意味着 iOS 用 Swift，Android 用 Kotlin。需要明确的是，编程语言不同于 UI 框架。例如，Swift 和 Kotlin 是编程语言。然而，苹果的 SwiftUI 和 Android 的 Jetpack Compose 是框架。这些框架为开发者提供了创建真实 UI 的工具，包含文本、按钮、列表、布局和动画等各种组件。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>SwiftUI 和 Jetpack Compose 都是声明式 UI 框架，但 SwiftUI 仅支持 iOS 13+，Compose 需 Kotlin 1.4+，旧项目迁移需评估最低版本。</aside>
+        <p>要为两个平台构建原生应用，你需要维护移动应用的两套实现。一套用于 Android，另一套用于 iOS。当然，你可以为两个平台共享后端服务，但客户端代码仍然是分开的。</p>
+        <p>然而，React Native 让你可以在 iOS 和 Android 之间共享大部分实现。它是一个使用 React 和 JavaScript（或 TypeScript）构建移动应用的框架。React Native 的主要好处是，你用这个框架编写的许多组件和应用程序代码可以同时适用于 iOS 和 Android。你不需要在 Swift 和 Kotlin 中独立实现每个屏幕。这是因为 React Native 建立在由各自平台支持的原生 UI 组件之上。例如，如果你在 React Native 中创建一个组件，它可以创建适当的 iOS 或 Android 视图，而无需开发者编写任何平台特定的代码。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>React Native 的“原生组件”并非完全零平台代码：复杂动画、手势和原生模块仍需桥接或 JSI 编写平台特定代码，原文简化了这一点。</aside>
+        <p>需要明确的是，共享代码并不意味着所有平台差异都完全消失。你仍然会有一些功能可能需要平台特定的编码。此外，你需要为每个操作系统构建、测试和发布应用程序。</p>
+        <p>现在，你是你代理的上下文引擎。你编写规则文件、维护技能，并粘贴它错过的 Slack 线程。</p>
+        <p>但手工整理的上下文会过时。当存在冲突的答案时，你的代理无法判断哪个是正确的。你会为此付出更高的 token 账单和更长的审查时间。</p>
+        <p>10 月 28 日（免费）加入我们的直播，了解：</p>
+        <p>- AI 成熟度的 8 个级别以及团队卡在哪里</p>
+        <p>- 上下文引擎如何在你的代理编写一行代码之前整理上下文并解决冲突</p>
+        <p>- 现场演示：同一编码任务中的 token 节省，以及代码生成之外的用例</p>
+        <p>额外福利：2 个你今天就能使用的开源工具。</p>
+        <p>Shopify 为何选择 React Native</p>
+        <p>Shopify 工程团队在 2020 年选择了 React Native。他们想要解决三个或多或少相互关联的问题。</p>
+        <p>第一个问题是，使用原生开发时，每个功能都必须实现两次。每个平台一次。第二个问题是，你无法在平台之间共享开发者。开发者被限制在他们的技术栈中。iOS 开发者无法从事 Android 版本的工作。Android 开发者也无法从事 iOS 版本的工作。这不是在团队中利用开发者的好方法。</p>
+        <aside class="note k-实操"><span class="k">实操</span>想验证跨平台开发者利用率，可统计团队中同时提交过 Swift 和 Kotlin 代码的人数比例；多数团队低于 10%。</aside>
+        <p>第三个问题是，你必须在两个版本之间保持功能对等。功能对等是指应用的每个版本都具有相同的功能和能力。假设你有一个很酷的功能在 iOS 上运行，但 Android 上还要一个月才能使用，你可以说这两个版本失去了对等性。如果你不保持这种对等性，你就有可能疏远那个通常落后的平台的用户群。</p>
+        <p>此外，当你有两个版本的应用程序时，只要任何需求发生变化，你都需要更改两个版本。即使更改只是像文本更改这样的小事。如你所见，这是一个持续的成本问题，存在于应用程序的整个生命周期中。在规划发布、公告等时，你还需要在不同平台团队之间进行更多协调。</p>
+        <aside class="note k-数据"><span class="k">数据</span>据 2021 年 Shopify 工程博客，其 React Native 代码共享率约 95%，但每次发版仍需双端独立构建和商店审核，协调成本未消失。</aside>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>AI 编码代理降低了双端原生开发成本，使 React Native 的跨平台共享优势相对减弱。</div>
+        <details class="orig">
+          <summary>查看英文原文（5818 字符，可对照译文）</summary>
+          <pre>Most teams record session replays at a flat sample rate, then spend the next incident scrolling through hundreds of sessions that have nothing to do with the bug.
+
+This hands-on Sentry workshop shows you how to capture the replays that matter:
+
+- Sample rates and buffer mode, plus the default we recommend
+
+- Custom React hooks to record a specific user segment, a known-bad URL, or a flow you just shipped
+
+- Bug reports that arrive with the replay already attached
+
+- Filters for rage clicks, dead clicks, and custom tags
+
+- Privacy defaults and how to tune them
+
+In 2020, the Shopify engineering team decided to go all in on React Native. It saved them a ton of time and money. By using React Native, the developers didn’t have to implement the same feature in both Kotlin and Swift to make it work on Android and iOS. Sure, the framework came with its requirements. But the idea was very successful at the time.
+
+However, in 2026, AI coding agents have made a huge difference to the economics of building mobile apps. Earlier, if you implemented something with React Native, you could justify the savings that came because of it. But now, AI agents have become so good at coding that building the same feature in Swift and Kotlin is much cheaper.
+
+In this article, we’ll look at how Shopify decided to move out of React Native and how they migrated to native mobile development. Here’s what we’ll cover:
+
+- What is native mobile development
+
+- Why Shopify chose React Native
+
+- What changed in 2025
+
+- Shopify’s migration approach
+
+- How Shopify ran the migration
+
+- The agent feedback loop
+
+- The migration results
+
+Disclaimer: This post is based on publicly shared details from various sources. References at the end. Please comment if you notice any inaccuracies.
+
+What is Native Mobile Development
+
+As you might be aware, an iPhone runs Apple’s iOS, and Android phones run Android. Both these OS provide a bunch of facilities to display the UI, handle notifications, and talk to the device hardware.
+
+In native mobile development for a particular OS, you build an application directly using the languages, frameworks, and tools for that platform. This means Swift for iOS and Kotlin for Android. To be clear, a programming language is different from a UI framework. For example, Swift and Kotlin are programming languages. However, Apple’s SwiftUI and Android’s Jetpack Compose are frameworks. These frameworks give developers the tools to create the real UI with various components like text, buttons, lists, layouts, and animations.
+
+To build natively for both platforms, you need to maintain two implementations of the mobile application. One for Android. Another for iOS. Sure, you can share the backend services for both platforms, but the client code will still be separate.
+
+However, React Native lets you share much of that implementation across both iOS and Android. It’s a framework for building mobile apps using React and JavaScript (or TypeScript). The main benefit of React Native is that many components and application code you write using this framework can work with both iOS and Android. You don’t need to implement every screen independently in Swift and Kotlin. This is because React Native sits on top of the native UI components that are backed by their respective platforms. For example, if you make a component in React Native, it can create the appropriate iOS or Android views without the need for developers to write any platform-specific code.
+
+To be clear, sharing code doesn’t mean that every platform difference is completely gone. You would still have some features that might need platform-specific coding. Also, you need to build, test, and release the application for each OS.
+
+Right now, you’re your agent’s context engine. You write the rules files, maintain the skills, and paste in the Slack thread it missed.
+
+But hand-curated context goes stale. And when there are conflicting answers, your agent can’t tell which is right. You pay for it in higher token bills and longer reviews.
+
+Join us live on Oct 28 (FREE) to see:
+
+- The 8-levels of AI maturity and where teams get stuck
+
+- How a context engine curates context and resolves conflicts before your agent writes a line of code
+
+- Live demo: token savings in the same coding task, and use cases beyond code gen
+
+Bonus: 2 open source tools you can use today.
+
+Why Shopify Went With React Native
+
+The Shopify engineering team went with React Native in 2020. They wanted to solve three problems that were more or less linked.
+
+The first problem was that you had to implement every feature two times with native development. One time for each platform. The second was that you couldn’t share developers between platforms. A developer was confined to their tech stack. An iOS developer couldn’t work on the Android version. Neither could the Android developer work on the iOS version. Not a great way to utilize the developers in a team.
+
+The third problem was that you had to maintain feature parity across both versions. Feature parity is when every version of the app has the same features and capabilities. Let’s say, if you have a cool feature that works on iOS, but it takes another month to be available on Android, you can say that the two versions are out of parity. If you don’t maintain this parity, you risk alienating the user base of the platform that usually runs behind.
+
+Also, when you have two versions of the app, you need to change both versions whenever there’s a change in any requirements. Even if the change is something as small as a text change. As you can see, this is a continuous cost problem that is present throughout the life of the application. You also need to have more coordination between the different platform teams while planning releases, announcements, and so on.
+
+
+…（原文过长，此处截断）</pre>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-20 07:56 · 生成于 2026-10-20 07:56:06</span>
+    <span>本次扫描 2026-10-21 06:06 · 生成于 2026-10-21 06:06:38</span>
   </footer>
 </div>
 </body>
