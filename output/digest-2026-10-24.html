@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#faf7f2">
+<title>技术情报日报 · 2026-10-24</title>
+<style>
+  :root{
+    --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
+    --rule:#d8d0c3; --rule-soft:#e7e0d4; --accent:#9b2c20; --tint:#f3ede3;
+    --tw:636px;        /* 正文列宽 */
+    --nw:296px;        /* 页边批注宽 */
+    --gap:40px;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--paper);-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.82;
+    font-family:Georgia,"Source Han Serif SC","Noto Serif SC",SimSun,"Songti SC",serif;
+    background-image:radial-gradient(circle at 16% 6%,rgba(155,44,32,.035),transparent 42%);
+    overflow-wrap:break-word;
+  }
+  ::selection{background:#efe0d4;color:var(--ink)}
+
+  /* 布局：整页左对齐，正文列之外留出批注边栏 */
+  .wrap{max-width:1056px;margin:0 auto;padding:44px 24px 96px}
+  .col{max-width:var(--tw)}
+  .clr{clear:both}
+
+  /* ---------- 报头 ---------- */
+  .masthead{text-align:center;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+  .kicker{font-size:11px;letter-spacing:.42em;color:var(--muted);text-transform:uppercase;
+          font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif}
+  h1{font-size:clamp(30px,5.2vw,44px);margin:12px 0 4px;letter-spacing:.14em;font-weight:600;line-height:1.3}
+  .masthead .sub{font-size:13px;color:var(--muted);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+  .rule2{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);height:4px;margin-top:8px}
+  .lede{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;
+        font-size:12.5px;color:var(--muted);padding:12px 2px 0;
+        font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;letter-spacing:.04em}
+  .lede b{color:var(--accent);font-weight:600}
+  .warn{margin-top:14px;padding:9px 13px;background:#fdf3f1;border:1px solid #e8cdc8;
+        border-radius:3px;font-size:12.5px;color:#8a2b21;text-align:left;
+        font-family:"Microsoft YaHei",system-ui,sans-serif}
+
+  /* ---------- 提要 ---------- */
+  .digest{margin:34px 0 6px}
+  .sec{font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;font-size:12.5px;
+       letter-spacing:.3em;color:var(--accent);border-bottom:1px solid var(--rule);
+       padding-bottom:8px;margin-bottom:16px}
+  .sec.solid{color:var(--ink);border-bottom:2px solid var(--ink)}
+  ul.ov{list-style:none;margin:0;padding:0}
+  ul.ov li{position:relative;padding:8px 0 8px 42px;border-bottom:1px dotted var(--rule)}
+  ul.ov li:last-child{border-bottom:0}
+  ul.ov li::before{content:counter(o,decimal-leading-zero);counter-increment:o;position:absolute;
+    left:0;top:9px;font-size:11.5px;color:var(--accent);font-family:Georgia,serif;letter-spacing:.06em}
+  ul.ov{counter-reset:o}
+  ul.ov li a{color:var(--ink);text-decoration:none}
+  ul.ov li a:hover{color:var(--accent)}
+
+  /* ---------- 深度文章 ---------- */
+  .deep{margin-top:14px}
+  .note-lead{font-size:13px;color:var(--muted);font-style:italic;margin:-6px 0 4px}
+
+  article.full{padding:20px 0 8px;clear:both}
+  article.full+article.full{border-top:2px solid var(--ink);margin-top:34px;padding-top:34px}
+  .art-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+            font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;letter-spacing:.1em;
+            color:var(--muted);margin-bottom:9px}
+  .art-head .dt{margin-left:auto;color:#9a9084;font-variant-numeric:tabular-nums}
+  h2{font-size:clamp(21px,3vw,26px);line-height:1.44;margin:0 0 8px;font-weight:600}
+  h2 a{color:var(--ink);text-decoration:none}
+  h2 a:hover{color:var(--accent)}
+  .orig-title{font-size:13px;color:var(--soft);font-style:italic;margin:-2px 0 12px;line-height:1.6}
+  .standfirst{font-size:17px;color:#3b352c;margin:0 0 14px;padding-left:15px;
+              border-left:2px solid var(--rule)}
+  .art-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+            font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;color:var(--muted);
+            padding-bottom:18px;border-bottom:1px solid var(--rule)}
+  .art-meta .badge-warn{color:#8a2b21;border:1px solid #e8cdc8;background:#fdf3f1;
+                        padding:1px 7px;border-radius:2px}
+  .art-meta .badge-zh{color:#6b5c26;border:1px solid #e2dcc4;background:#fbf8ee;
+                      padding:1px 7px;border-radius:2px}
+
+  /* ---- 正文列 + 页边批注 ---- */
+  .reading{max-width:var(--tw);padding-top:20px}
+  .reading>p{margin:0 0 18px;text-align:justify;text-justify:inter-ideograph}
+
+  .note{
+    float:right;clear:right;width:var(--nw);margin:7px calc(-1 * (var(--nw) + var(--gap))) 20px 0;
+    padding-left:13px;border-left:2px solid var(--rule-soft);
+    font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+    font-size:12.8px;line-height:1.74;color:#5d5648;
+  }
+  .note .k{display:block;font-size:10.5px;letter-spacing:.2em;margin-bottom:4px;font-weight:600}
+  .note.k-背景{border-left-color:#e2d7c4} .note.k-背景 .k{color:#7a6a50}
+  .note.k-延伸{border-left-color:#cfe0d6} .note.k-延伸 .k{color:#3f6650}
+  .note.k-质疑{border-left-color:#e8cdc8} .note.k-质疑 .k{color:#9b2c20}
+  .note.k-数据{border-left-color:#e2dcc4} .note.k-数据 .k{color:#6b5c26}
+  .note.k-实操{border-left-color:#cbd6e2} .note.k-实操 .k{color:#3a5468}
+
+  .takeaway{margin:22px 0 18px;padding:13px 16px;background:var(--tint);
+            border-radius:3px;font-size:14.6px;color:#3b352c}
+  .takeaway span{display:block;font-family:"Microsoft YaHei",system-ui,sans-serif;
+    font-size:10.5px;letter-spacing:.24em;color:var(--accent);margin-bottom:6px}
+
+  details.orig{margin:0 0 6px;font-family:"Microsoft YaHei",system-ui,sans-serif}
+  details.orig summary{cursor:pointer;font-size:12.5px;color:var(--muted);
+    padding:9px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  details.orig summary:hover{color:var(--accent)}
+  details.orig pre{white-space:pre-wrap;font-family:Georgia,"Times New Roman",serif;
+    font-size:13.5px;line-height:1.78;color:#4d473c;background:#f6f2ea;
+    padding:16px 18px;border-radius:3px;margin:14px 0 0;max-height:60vh;overflow:auto}
+
+  /* ---------- 其余条目 ---------- */
+  .rest{margin-top:54px;clear:both}
+  .srcblock{margin-top:34px}
+  .srcname{display:flex;justify-content:space-between;align-items:baseline;
+    font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:12px;letter-spacing:.2em;
+    color:var(--muted);border-bottom:1px solid var(--ink);padding-bottom:7px}
+  .srcname span{letter-spacing:0;font-size:11.5px;color:var(--soft)}
+  article.mini{padding:20px 0;border-bottom:1px solid var(--rule);position:relative}
+  article.mini:last-child{border-bottom:0}
+  article.mini h3{font-size:18.5px;line-height:1.5;margin:0 0 9px;font-weight:600}
+  article.mini h3 a{color:var(--ink);text-decoration:none}
+  article.mini h3 a:hover{color:var(--accent)}
+  article.mini .one{margin:0 0 9px}
+  .why{margin:10px 0;padding-left:15px;border-left:2px solid var(--accent);
+       color:#3b352c;font-size:14.6px}
+  .act{margin:9px 0;font-size:14.4px;color:#2c4a2e}
+  .act span{display:inline-block;font-family:"Microsoft YaHei",system-ui,sans-serif;
+    font-size:10.5px;letter-spacing:.16em;color:#3f6b45;margin-right:9px}
+  .foot{display:flex;align-items:center;gap:9px;margin-top:13px;flex-wrap:wrap;
+        font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px}
+  .foot .src{letter-spacing:.1em;color:var(--muted)}
+  .tag{color:var(--accent);border:1px solid var(--rule);border-radius:2px;padding:1px 7px}
+  .foot .dt{margin-left:auto;color:#9a9084;font-variant-numeric:tabular-nums}
+
+  footer{margin-top:52px;padding-top:16px;border-top:3px double var(--ink);
+    font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;color:var(--muted);
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;letter-spacing:.05em}
+
+  /* ================= 手机端 / 窄屏 ================= */
+  @media (max-width:1120px){
+    .note{float:none;width:auto;margin:8px 0 20px 0;max-width:var(--tw)}
+    .col,.reading{max-width:100%}
+  }
+  @media (max-width:760px){
+    body{font-size:16.5px;line-height:1.86}
+    .wrap{padding:26px 17px 72px}
+    h1{letter-spacing:.08em}
+    .kicker{letter-spacing:.3em;font-size:10px}
+    .lede{flex-direction:column;gap:4px;align-items:flex-start}
+    .reading>p{text-align:left}
+    .note{font-size:13.4px;padding:10px 0 0 0;border-left:0;border-top:1px solid var(--rule-soft)}
+    .note .k{margin-bottom:3px}
+    h2{font-size:21px}
+    .standfirst{font-size:16px;padding-left:12px}
+    article.mini h3{font-size:17.5px}
+    .foot .dt{margin-left:0;width:100%}
+    details.orig pre{font-size:13px;padding:13px 14px}
+  }
+  @media (max-width:400px){
+    .wrap{padding:20px 13px 64px}
+    h1{font-size:27px}
+  }
+  @media print{
+    body{background:#fff}
+    .note{float:none;width:auto;margin:6px 0 14px;border-left:2px solid #ccc}
+    details.orig{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead col">
+    <div class="kicker">Daily Tech Digest</div>
+    <h1>技术情报日报</h1>
+    <div class="sub">2026-10-24 · 第 2 号</div>
+    <div class="rule2"></div>
+    <div class="lede">
+      <span>本期收录 <b>2</b> 条 · 精读 <b>2</b> 篇</span>
+      <span>共 <b>22</b> 条页边批注</span>
+    </div>
+  </header>
+
+  <section class="digest col">
+    <div class="sec">今 日 提 要</div>
+    <ul class="ov">
+<li>Simon Willison 用 Claude Opus 5.5 生成一个纯前端工具 Quick Study：打开照片后，用 canvas 模拟画笔在几秒内重绘，核心是 Sobel 边缘检测，不依赖任何外部库。</li><li>Moonshot 发布 Kimi K3.1 Pro：API 定价为输入 $2、输出 $10 每百万 token，与 GPT-6.1 Sol 持平，是 Claude Opus 5.5 的一半；Artificial Analysis 评分 55，仅次于 Opus 5.5 的 58，是首个逼近前沿的准开源权重模型。</li><li>Kimi K3.1 Pro 承诺 11 月 4 日前放出完整权重，另有 2-3 倍速、价格翻倍的 Highspeed 版本（输入缓存命中同价）。</li><li>两条信息指向同一趋势：前沿模型能力正快速商品化，前端/图形算法与模型 API 编排的组合，个人开发者几小时就能做出成品。</li>    </ul>
+  </section>
+
+  <section class="deep">
+    <div class="col clr" style="margin-top:40px">
+      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
+<p class="note-lead">两条都信息密度高：一条给出可复现的图形算法工程范例，一条给出准开源模型追平前沿的量化信号与具体价格，都能直接影响工具选型和方向判断。</p>    </div>
+
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-23</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/23/quick-study-painter/" target="_blank" rel="noopener">Quick Study：让 Claude 用模拟画笔快速“画”出照片</a></h2>
+        <div class="orig-title">Quick Study</div>
+<p class="standfirst">一个提示词让 Claude 生成 Sobel 边缘检测画笔绘画 artifact</p>        <div class="art-meta">
+          <span>10 段</span><span>·</span>
+          <span>9 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 23 日</p>
+        <p>给 Claude Opus 5.5 High 的提示词：</p>
+        <aside class="note k-背景"><span class="k">背景</span>“High”是 Anthropic 对推理强度档位的命名，与 Opus 4.5 时代的 effort 参数一脉相承；档位越高，模型在生成前分配的思考 token 越多，artifact 一次成型的概率也越高。</aside>
+        <p>构建一个 artifact：你打开一张照片，它就能在几秒内用 canvas 元素和模拟画笔，快速“画”出这张照片的一个版本。</p>
+        <aside class="note k-实操"><span class="k">实操</span>复现时把提示词里的“几秒”换成硬性预算（如 3000ms），模型才会主动做降采样和笔触合并，否则容易生成逐像素绘制、跑几分钟的版本。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>这类“照片转绘画”在图形学里对应 painterly rendering，经典做法是 Hertzmann 1998 的笔触分层算法；LLM 生成的版本通常只是简化近似，笔触方向多来自梯度而非曲率流。</aside>
+        <p>另见我此前让 Claude Fable 用 P5.js 模拟水彩插画的实验。</p>
+        <aside class="note k-背景"><span class="k">背景</span>P5.js 是 Processing 的 JavaScript 移植，自带 canvas 封装和绘图 API；而这次改用原生 canvas，说明作者在测试模型脱离常用库后能否仍写出可运行代码。</aside>
+        <p>Quick Study 使用了 Sobel 边缘检测，除 Google Fonts 外不依赖任何外部库。</p>
+        <aside class="note k-数据"><span class="k">数据</span>Sobel 是两个 3×3 卷积核（Gx、Gy），对 1000×1000 图像约需 900 万次乘加；纯 JS 在单线程下通常几十毫秒，这正是“几秒内完成”可行的量级依据。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>Sobel 只给梯度幅值和方向，不给笔触长度与颜色分层；若 artifact 效果像“描边”而非“绘画”，说明它缺了沿边缘的笔触跟踪这一步。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>“无外部库”不等于零依赖：Google Fonts 是网络请求，离线或 CSP 严格时会静默失败，字体回退可能改变画面布局。</aside>
+        <p>近期文章</p>
+        <p>- Battle Drones——一个用音频做多人联机的 vibe coded RTS——2026 年 10 月 20 日</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>“音频联机”指用 WebAudio 的振荡器把游戏状态编码成声波传输，绕过 WebSocket；带宽极低但抗噪差，属于黑客式实验而非工程方案。</aside>
+        <p>- 你好 Python 3.15，再见 3.10，现在我能用 3.11 了——2026 年 10 月 12 日</p>
+        <aside class="note k-背景"><span class="k">背景</span>CPython 每年 10 月发一个 minor 版本、每个版本支持 5 年；3.10 于 2021 年 10 月发布，2026 年 10 月正好 EOL，与文中日期吻合。</aside>
+        <p>- 我博客的一个新功能，是用我的声音构建的——2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5——2026 年 10 月 7 日</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>一个提示词加 Sobel 卷积就能让 LLM 产出可交互的绘画 artifact，关键是把“几秒”写成硬预算。</div>
+        <details class="orig">
+          <summary>查看英文原文（687 字符，可对照译文）</summary>
+          <pre>23rd October 2026
+
+Prompt to Claude Opus 5.5 High:
+
+Build an artifact where you open a photo and it rapidly (in a few seconds) paints a version of that photo using a canvas element and simulated paintbrush
+
+See also my previous experiment getting Claude Fable to simulate a watercolor illustration with P5.js.
+
+Quick Study uses Sobel edge detection, with no external libraries beyond Google Fonts.
+
+Recent articles
+
+- Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-23</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/23/kimi-k31-pro/" target="_blank" rel="noopener">Kimi K3.1 Pro 发布</a></h2>
+        <div class="orig-title">Introducing Kimi K3.1 Pro</div>
+<p class="standfirst">Kimi K3.1 Pro 上线 API，性能逼近前沿闭源模型，权重即将开源。</p>        <div class="art-meta">
+          <span>25 段</span><span>·</span>
+          <span>13 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 23 日 - Link Blog</p>
+        <p>Kimi K3.1 Pro 发布（via）Kimi K3.1 Pro 今天上线 Kimi API——它尚未开放权重，但 Moonshot 承诺“完整模型权重将于 2026 年 11 月 4 日前发布”。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Moonshot 是月之暗面（Moonshot AI）的英文名，Kimi 是其对话产品；此前 K2 系列已开源权重，K3.1 Pro 延续“先 API 后开源”节奏。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>“11 月 4 日前发布权重”是承诺而非合同，开源社区常出现延期；若跳票，API 定价策略可能随之调整。</aside>
+        <p>他们还提供一个“Highspeed”版本，速度提升 2-3 倍，价格翻倍（但输入 token 缓存命中部分定价相同）。</p>
+        <aside class="note k-数据"><span class="k">数据</span>缓存命中同价意味着高频重复 prompt（如固定 system prompt）场景下，Highspeed 的溢价只体现在非缓存输入和输出上，实际成本增幅可能低于 2 倍。</aside>
+        <p>美元定价为输入每百万 token 2.00 美元、输出每百万 token 10 美元——与 GPT-6.1 Sol 相同，是 Claude Opus 5.5 价格的一半。</p>
+        <aside class="note k-数据"><span class="k">数据</span>输出/输入价比为 5:1，高于早期模型常见的 3:1，说明长推理链（reasoning trace）的输出成本被刻意抬高。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>对比 2024 年 GPT-4o 的 5/15 美元定价，两年间前沿级模型输入价格下降约 60%，但输出价格降幅较小。</aside>
+        <p>Moonshot 自己的基准测试显示，Kimi 大致与 Opus 5.5 和 GPT-6 Astra 持平——在少数基准上胜出，在其余基准上接近。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>厂商自报基准通常挑选有利子集且可能针对测试集调优；应交叉参考 LMSYS Chatbot Arena 等盲测排名再下结论。</aside>
+        <p>Artificial Analysis 给 Kimi 打了 55 分——领先 Claude Fable 5.1、GPT-6 Astra 和 Gemini 4 Argon（均为 53 分），仅次于 Claude Opus 5.5（58 分）。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Artificial Analysis 是第三方模型评测机构，其综合指数聚合多项基准并做归一化，分数差距 2-3 分通常落在置信区间内，不宜过度解读。</aside>
+        <p>这是首次有（即将）开放权重的模型在前沿对比中拿到如此高的分数。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>开放权重模型逼近闭源前沿会压缩闭源厂商的定价空间；Llama 3 在 2024 年曾引发类似讨论，但当时差距仍在 6-12 个月。</aside>
+        <p>我通过 Moonshot API 试用了它，用的是我 8 月在 LLM 0.32 中加入的 llm openai endpoint 命令：</p>
+        <aside class="note k-实操"><span class="k">实操</span>LLM 是 Simon Willison 开发的命令行工具，pip install llm 即可；openai endpoint 子命令让任意 OpenAI 兼容 API 都能接入，适合快速对比多家模型。</aside>
+        <p>llm openai endpoint \</p>
+        <p>https://api.moonshot.ai/v1 \</p>
+        <p>--key kimi \</p>
+        <p>-m kimi-k3.1-pro \</p>
+        <p>"Generate an SVG of a pelican riding a bicycle" \</p>
+        <aside class="note k-背景"><span class="k">背景</span>“骑自行车的鹈鹕”是 Simon Willison 的固定测试 prompt，用来横向对比各模型生成 SVG 的代码能力与空间推理，已成为社区非正式基准。</aside>
+        <p>--responses \</p>
+        <p>-o reasoning_effort low \</p>
+        <aside class="note k-实操"><span class="k">实操</span>reasoning_effort 是 OpenAI Responses API 的参数，取 low/medium/high；Moonshot 支持 low/medium/max 三档，命名不完全一致，调用时需查其文档。</aside>
+        <p>> kimi-k3.1-pro-pelican-low.stdout.txt \</p>
+        <p>2> kimi-k3.1-pro-pelican-low.stderr.txt</p>
+        <p>llm openai endpoint 可以对任何 OpenAI 兼容端点运行 prompt，但不会记录结果，因此额外加了保存 stdout 和 stderr（推理轨迹）的选项。</p>
+        <aside class="note k-实操"><span class="k">实操</span>把 stderr 单独重定向是抓 reasoning trace 的通用技巧；多数 CLI 工具把调试/推理日志写 stderr，stdout 只留最终答案，便于管道处理。</aside>
+        <p>以下是我在 Kimi K3.1 Pro 支持的三个推理级别——low、medium 和 max——上得到的鹈鹕。这是 max：</p>
+        <p>作为对比，我在那三个推理级别上对 Kimi K3 重新跑了一遍鹈鹕。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>单次生成对比受采样随机性影响大，同一模型重跑结果可能差异显著；严谨对比应每档跑多次取统计。</aside>
+        <p>近期文章</p>
+        <p>- Battle Drones - 一款 vibe coded 的音频多人 RTS - 2026 年 10 月 20 日</p>
+        <p>- Hello Python 3.15，告别 3.10，现在我能用 3.11 了 - 2026 年 10 月 12 日</p>
+        <p>- 我博客的新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>Kimi K3.1 Pro 以 Opus 5.5 一半的价格达到接近前沿的性能，且承诺 11 月 4 日前开源权重，值得关注其实际权重发布与第三方复测。</div>
+        <details class="orig">
+          <summary>查看英文原文（1963 字符，可对照译文）</summary>
+          <pre>23rd October 2026 - Link Blog
+
+Introducing Kimi K3.1 Pro (via) Kimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot promise "Full model weights will be released by Nov 4, 2026".
+
+They're also offering a "Highspeed" version that's 2-3x faster, at twice the price (except for input token cache hits, which are priced the same).
+
+The US dollar pricing is $2.00/million tokens for input and $10/million for output - the same as GPT-6.1 Sol and half the price of Claude Opus 5.5.
+
+Moonshot's own benchmarks show Kimi as approximately level with Opus 5.5 and GPT-6 Astra - beating them on a few benchmarks, coming close on others.
+
+Artificial Analysis scored Kimi at 55 - ahead of Claude Fable 5.1, GPT-6 Astra, and Gemini 4 Argon (all at 53) and behind only Claude Opus 5.5 (58).
+
+This is the first time a (soon-to-be) open weight model has scored this highly against the frontier.
+
+I tried it out via the Moonshot API using the llm openai endpoint command I added to LLM 0.32 back in August:
+
+llm openai endpoint \
+
+https://api.moonshot.ai/v1 \
+
+--key kimi \
+
+-m kimi-k3.1-pro \
+
+"Generate an SVG of a pelican riding a bicycle" \
+
+--responses \
+
+-o reasoning_effort low \
+
+> kimi-k3.1-pro-pelican-low.stdout.txt \
+
+2> kimi-k3.1-pro-pelican-low.stderr.txt
+
+llm openai endpoint can run prompts against any OpenAI-compatible endpoint but doesn't log the results, hence the extra options to save stdout and stderr (the reasoning trace).
+
+Here are the pelicans I got for Kimi K3.1 Pro on the three reasoning levels it supports - low, medium, and max. This is max:
+
+For comparison, I ran fresh pelicans against Kimi K3 on those three reasoning levels.
+
+Recent articles
+
+- Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026</pre>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+  </section>
+
+  <footer class="clr">
+    <span>tech-daily-digest · 自动编纂</span>
+    <span>本次扫描 2026-10-24 05:59 · 生成于 2026-10-24 05:59:00</span>
+  </footer>
+</div>
+</body>
+</html>
