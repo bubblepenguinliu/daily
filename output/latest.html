@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#faf7f2">
-<title>技术情报日报 · 2026-10-24</title>
+<title>技术情报日报 · 2026-10-25</title>
 <style>
   :root{
     --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
@@ -178,38 +178,252 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-24</div>
+    <div class="sub">2026-10-25 · 第 2 号</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本次扫描 <b>2026-10-24 07:36</b> · 四个来源暂无新条目</span>
-      <span>已列出各源当前最新内容</span>
+      <span>本期收录 <b>2</b> 条 · 精读 <b>2</b> 篇</span>
+      <span>共 <b>22</b> 条页边批注</span>
     </div>
-    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">本 次 扫 描</div>
-    <p class="note-lead">本次扫描于 2026-10-24 07:36 完成，四个来源都没有新条目。
-      下面是各来源当前最新的一篇，想读可以直接点开。</p>
+    <div class="sec">今 日 提 要</div>
     <ul class="ov">
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-416.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 416 期）：编程已经面目全非</a></li>
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/23/quick-study-painter/" target="_blank" rel="noopener">Simon Willison's Weblog · Quick Study</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/23/kimi-k31-pro/" target="_blank" rel="noopener">Simon Willison's Weblog · Introducing Kimi K3.1 Pro</a></li>
-      <li><a href="https://blog.bytebytego.com/p/why-distributed-systems-prefer-independence" target="_blank" rel="noopener">ByteByteGo · Why Distributed Systems Prefer Independence over Coordination</a></li>
-      <li><a href="https://blog.bytebytego.com/p/llm-prompt-caching-versus-semantic" target="_blank" rel="noopener">ByteByteGo · LLM Prompt Caching Versus Semantic Caching</a></li>
-      <li><a href="https://jack-clark.net/2026/10/19/import-ai-477-in-which-i-tell-the-imf-the-singularity-has-begun/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 477: In which I tell the IMF the Singularity has begun</a></li>
-      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
-    </ul>
-    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
-      <a href="digest-2026-10-23.html" style="color:var(--accent)">digest-2026-10-23.html</a></p>
+<li>Simon Willison 用一句 prompt 让 Claude Opus 5.5 为游戏新增四人地图并改造 WebSocket 多人网络代码，是 AI 辅助工程改造的实例</li><li>ByteByteGo 对比 RAG 与 Agentic RAG：前者单次检索、流程固定，后者由 agent 反复检索评估直到证据充分</li><li>两条信息共同指向：AI 工程重心正从“调模型”转向“改系统”，网络、状态、检索循环等工程能力决定上限</li><li>对考研读者：Agentic RAG 的循环检索与评估机制，可作为 AI 系统方向复试或项目面试的具体谈资</li>    </ul>
   </section>
 
+  <section class="deep">
+    <div class="col clr" style="margin-top:40px">
+      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
+<p class="note-lead">两条都信息密度高且可动手复现：一条给出 AI 改系统代码的真实边界，一条给出 RAG 到 Agentic RAG 的清晰演进路径，都直接影响 AI 工程方向判断。</p>    </div>
 
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-24</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/24/battledrones/" target="_blank" rel="noopener">battledrones v14：Compass Rose，一张四人地图</a></h2>
+        <div class="orig-title">battledrones v14: Compass Rose, a four player map</div>
+<p class="standfirst">Simon Willison 用一句提示词让 Claude 为游戏加入四人地图与联机支持。</p>        <div class="art-meta">
+          <span>12 段</span><span>·</span>
+          <span>9 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 24 日</p>
+        <p>我给 Battledrones 加入了四人联机模式——之前的地图都只支持两人。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Battledrones 是 Simon Willison 用 LLM 辅助开发的 RTS 游戏，其“vibe coded”系列文章记录了从零到多人的迭代过程，可对照 10 月 20 日那篇音频联机版阅读。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>四人对称地图在 RTS 中通常需要 4 向旋转对称（C4）来保证公平，比 2 人地图的 180° 旋转对称多一个维度，AI 生成时容易漏掉出生点资源对等。</aside>
+        <p>以下是我最初使用的提示词：</p>
+        <p>为四人战斗新增一张地图——四向旋转对称，最多四个 AI 玩家，兼容基于 WebSocket 的非音频多人模式，这样最多四名人类玩家可以加入（空余位置由 AI 填充）</p>
+        <aside class="note k-实操"><span class="k">实操</span>提示词里把“四向旋转对称”“最多四个 AI”“WebSocket 非音频模式”“空位 AI 填充”拆成四个可验证约束，是让 LLM 一次改对网络层的关键；自己写类似需求时可照此结构列约束。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>“四向旋转对称”只保证几何公平，不保证资源分布公平；若地图生成器随机放置矿点，仍需额外校验每个象限的资源总量是否相等。</aside>
+        <p>Claude Opus 5.5 新增了一张名为“Compass Rose”的地图，并修改了 WebSockets 多人网络代码，使该地图最多支持四名玩家，可通过分享链接或二维码加入。</p>
+        <aside class="note k-数据"><span class="k">数据</span>WebSocket 服务端从 2 人扩展到 4 人，连接状态需从二元组改为四元组，房间容量、广播扇出和断线重连逻辑都要改；这类改动通常涉及 3-5 个文件、上百行代码。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>分享链接/二维码加入本质是房间码机制，和 Jackbox、Among Us 的 join code 同源；实现时要注意房间码碰撞与过期回收，LLM 生成的代码常忽略这两点。</aside>
+        <p>新队伍使用了紫色和绿色主题的机器人，与现有的蓝色和红色设计并列。你可以在更新后的模型浏览器中预览这些颜色。</p>
+        <aside class="note k-背景"><span class="k">背景</span>模型浏览器是 Simon 为 Battledrones 做的 3D 资产预览页，用 Three.js 渲染；颜色主题从 2 队扩到 4 队意味着材质/着色器要参数化，而不是硬编码红蓝。</aside>
+        <p>这里有一个回放链接，可以观看一场四向 AI 对战，开启了“Goliath Armada”变异器，每方开局拥有四个巨型 Goliath 机甲单位。</p>
+        <aside class="note k-实操"><span class="k">实操</span>回放链接是验证多人同步是否正确的低成本手段：看四个 AI 的指令时间戳是否一致、有无状态漂移，比读代码更快定位网络层 bug。</aside>
+        <aside class="note k-数据"><span class="k">数据</span>“每方 4 个 Goliath”意味着开局 16 个巨型单位同屏，对渲染和寻路是压力测试；RTS 中单位数量翻倍常使寻路开销呈平方增长。</aside>
+        <p>近期文章</p>
+        <p>- Battle Drones——一款基于音频联机的 vibe coded RTS——2026 年 10 月 20 日</p>
+        <p>- 你好 Python 3.15，再见 3.10，现在我能用 3.11 了——2026 年 10 月 12 日</p>
+        <p>- 我博客的新功能，用我的声音构建——2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5——2026 年 10 月 7 日</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>一句结构化提示词就能让 LLM 同时改地图生成与 WebSocket 网络层，但公平性与房间码边界仍需人工校验。</div>
+        <details class="orig">
+          <summary>查看英文原文（1144 字符，可对照译文）</summary>
+          <pre>24th October 2026
+
+I added four player online mode to Battledrones - previous maps were limited to two.
+
+Here's the initial prompt I used:
+
+Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works with the WebSocket non-audio based multiplayer mode so up to four human players can join (any spare slots use AI)
+
+Claude Opus 5.5 added a new map called "Compass Rose" and modified the WebSockets multiplayer network code to support up to four players for that map, joining via share links or QR codes.
+
+The new teams use robots themed in purple and green, joining the existing blue and red designs. You can preview those colors in the updated model browser.
+
+Here's a replay link to watch a four way AI battle with the "Goliath Armada" mutator turned on, where each side starts with four giant Goliath mech units.
+
+Recent articles
+
+- Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">ByteByteGo</span>
+          <span class="dt">2026-10-24</span>
+        </div>
+        <h2><a href="https://blog.bytebytego.com/p/ep230-rag-vs-agentic-rag" target="_blank" rel="noopener">EP230：RAG 与 Agentic RAG 对比</a></h2>
+        <div class="orig-title">EP230: RAG vs Agentic RAG</div>
+<p class="standfirst">对比传统 RAG 与 Agentic RAG 的工作流程，并附 OAuth/OIDC 与 Linux 目录结构速览。</p>        <div class="art-meta">
+          <span>38 段</span><span>·</span>
+          <span>13 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>长时运行的 agent 需要耐力。</p>
+        <p>它们必须能承受等待用户，以及应对工具故障。它们必须从容应对模型智能的每一次新跃升。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>“durable execution”是 Temporal、Inngest 等框架的核心概念：把 agent 的每一步状态持久化，崩溃后可从中断点恢复，而非从头重跑。</aside>
+        <p>Inngest 让长时运行的 agent 变得持久、可观测且可随时间改进。</p>
+        <p>查看他们慷慨的免费额度，以及用于测试工作流的简洁本地开发服务器。</p>
+        <p>本周的系统设计复习：</p>
+        <p>- 每位工程师都应了解的 5 大 AI 构建模块（YouTube 视频）</p>
+        <p>- RAG 与 Agentic RAG</p>
+        <p>- OAuth（授权）+ OIDC（认证层）</p>
+        <p>- 理解 Linux 目录结构</p>
+        <p>每位工程师都应了解的 5 大 AI 构建模块</p>
+        <p>RAG 与 Agentic RAG</p>
+        <p>RAG 是一种将信息检索与 LLM 结合以生成答案的技术。以下是 RAG 的高层工作原理：</p>
+        <aside class="note k-背景"><span class="k">背景</span>RAG 由 Facebook AI（现 Meta）在 2020 年论文《Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks》中提出，最初用于开放域问答。</aside>
+        <p>- 用户向应用提问。</p>
+        <p>- 检索系统从知识库中获取相关信息。</p>
+        <p>- 应用将该信息添加到 prompt 中。</p>
+        <p>- LLM 利用该上下文生成答案。</p>
+        <p>RAG 通常遵循预定义的检索流程。其结果质量取决于所检索上下文的准确性。</p>
+        <aside class="note k-数据"><span class="k">数据</span>经典 RAG 的检索通常只做一次 top-k 向量召回（k 常取 3-10），召回率不足时 LLM 只能基于错误上下文作答，这是其质量瓶颈的主因。</aside>
+        <p>Agentic RAG 采用不同的方法。它不再只检索一次，而是由 agent 反复获取和评估信息，直到有足够证据生成答案。其典型工作方式如下：</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>Agentic RAG 常与 ReAct（Reason+Act）范式结合：LLM 输出思考与工具调用，观察结果后再决定下一步，形成多轮循环。</aside>
+        <p>- agent 根据任务选择合适的工具。</p>
+        <p>- 这些工具可以搜索文档、API、数据库或网络。</p>
+        <p>- 然后检查获取的证据是否足以完成任务。</p>
+        <p>- 如果不足，agent 可以调整搜索或选择其他工具。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>多轮检索会显著增加 token 消耗与延迟；若缺乏停止条件（如最大轮数、置信度阈值），agent 可能陷入无限循环或过度检索。</aside>
+        <p>- 一旦获得足够证据，LLM 便利用该上下文生成答案。</p>
+        <p>开源是几乎我们所构建一切的基础，而背后的维护者使之成为可能。好消息是：支持他们的运动正在壮大。</p>
+        <p>两年前，Open Source Pledge 立志让向维护者付费成为常态。如今，已有 37 家成员公司向维护者和基金会支付了 840 万美元，每新增一个成员都在为这一势头添砖加瓦。</p>
+        <aside class="note k-数据"><span class="k">数据</span>840 万美元分摊到 37 家公司，平均每家约 22.7 万美元；对比 GitHub 上数百万活跃开源项目，覆盖比例仍极低。</aside>
+        <p>看看 Sentry 今年如何将 100 万美元投入使用，或加入 Pledge，成为未来的一部分。</p>
+        <p>OAuth（授权）+ OIDC（认证层）</p>
+        <p>如果你想在 Slack 频道中显示 Google 日历事件，就需要读取日历的权限。如何让 Slack 访问你的日历，而不把 Google 密码交给 Slack？</p>
+        <p>这就是 OAuth 2.0 登场的地方。Slack 基本上永远看不到你的 Google 密码。它允许应用在不知道你凭据的情况下代表你访问受保护资源。</p>
+        <aside class="note k-背景"><span class="k">背景</span>OAuth 2.0 是授权框架（RFC 6749），核心是发放 access_token；它本身不定义用户身份认证，这是后来 OIDC 补上的缺口。</aside>
+        <p>基本上，OAuth 2.0 处理授权。在 Slack 的案例中，它会将你送到 Google 的授权服务器，你在那里登录并授予 Slack 访问日历的权限。Google 给你授权码，Slack 用该授权码换取 access_token。</p>
+        <aside class="note k-实操"><span class="k">实操</span>授权码流程中，Slack 后端需用 client_secret 换 token，因此授权码必须走 HTTPS 且一次性使用；PKCE 扩展可防止授权码被拦截。</aside>
+        <p>如果 Slack 还想认证请求访问 Google 日历的人的身份，就需要 OIDC。OIDC 处理认证，并建立在 OAuth 2.0 之上。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>严格说 OIDC 不是“层”而是协议（基于 OAuth 2.0 的认证层），它定义了 id_token 的 JWT 格式与 /userinfo 端点，不能与 OAuth 混为一谈。</aside>
+        <p>OAuth 回答你被允许触碰什么，而 OIDC 回答你是谁。除了授权服务器返回的 access_token，这次它还会发送 id_token——一个签名的 JWT，基本上告诉 Slack 刚刚登录的是谁。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>id_token 是 JWT，含 iss、sub、aud、exp 等声明；验证时需校验签名、aud 是否匹配自己的 client_id，否则可能被重放攻击。</aside>
+        <p>理解 Linux 目录结构</p>
+        <p>Linux 目录结构从根目录“/”开始。让我们来浏览 Linux 的目录结构。</p>
+        <p>内核镜像和引导加载程序文件存储在“boot”目录中。你的硬盘分区和设备相关文件位于“dev”目录。</p>
+        <aside class="note k-实操"><span class="k">实操</span>在终端执行 `ls /` 即可看到全部顶层目录；`df -h` 查看挂载点，`lsblk` 查看块设备，能直观对应 /dev 与 /boot 的内容。</aside>
+        <p>所有程序和库存储在“bin”、“sbin”、“usr”和“lib”目录中。比如，你安装的软件位于“usr”目录。想知道 ls、cp、cat 命令在哪吗？“bin”就是存放这些基本命令的目录。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>现代发行版中 /bin 常是指向 /usr/bin 的符号链接（usrmerge），原文“bin 存放基本命令”的说法在合并后已不完全准确。</aside>
+        <p>系统级配置放在“etc”，而“var”存放系统运行时变化的数据，日志就在那里。</p>
+        <p>如果你有 USB 驱动器，它会被挂载到“bin”文件夹。对于任何想临时挂载到 Linux 机器上的外部驱动器，“media”是它的目录。如果你有多个用户账户，“home”是 Linux 系统中每个用户的目录。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>原文此处有误：USB 驱动器通常挂载在 /media 或 /run/media/<user>，而非 /bin；/bin 是二进制命令目录，不可能用于挂载。</aside>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>RAG 是单次检索+生成，Agentic RAG 是多轮工具调用+证据评估；后者更强但更贵，需设停止条件。</div>
+        <details class="orig">
+          <summary>查看英文原文（4332 字符，可对照译文）</summary>
+          <pre>Long-running agents need endurance.
+
+They must endure waiting for users, and weather tool failures. They must take each new jump in model intelligence in stride.
+
+Inngest makes long-running agents durable, observable and improvable over time.
+
+Check out their generous free tier and a sleek local dev server for testing your workflows.
+
+This week’s system design refresher:
+
+- Top 5 AI Building Blocks Every Engineer Should Know (Youtube Video)
+
+- RAG vs Agentic RAG
+
+- OAuth (authorization) + OIDC (authentication layer)
+
+- Understanding the Linux Directory Structure
+
+Top 5 AI Building Blocks Every Engineer Should Know
+
+RAG vs Agentic RAG
+
+RAG is a technique that combines information retrieval with an LLM to generate answers. Here is how RAG works at a high level:
+
+- A user asks a question to the application.
+
+- The retrieval system fetches the relevant information from a knowledge base.
+
+- The application adds that information to the prompt.
+
+- The LLM uses that context to generate an answer.
+
+RAG usually follows a predefined retrieval process. The quality of its results depends on the accuracy of the retrieved context.
+
+Agentic RAG follows a different approach. Instead of retrieving once, an agent can repeatedly fetch and evaluate information until it has enough evidence to generate an answer. Here is how it typically works:
+
+- An agent selects the right tools based on the task.
+
+- Those tools can search documents, APIs, databases, or the web.
+
+- The fetched evidence is then checked if it is sufficient for the task.
+
+- If it is not, the agent can adjust its search or choose a different tool.
+
+- Once sufficient evidence is achieved, LLM uses that context to generate an answer.
+
+Open source is the foundation of nearly everything we build, and the maintainers behind it make it possible. The good news: the movement to support them is growing.
+
+Two years ago, the Open Source Pledge set out to make paying maintainers the norm. Today, 37 member companies have paid $8.4M to maintainers and foundations, and every new member adds to that momentum.
+
+See how Sentry put $1M to work this year, or join the Pledge and be part of what’s next.
+
+OAuth (authorization) + OIDC (authentication layer)
+
+If you want to show Google Calendar events inside your Slack channel, it will require permission to read your calendar. How would you let Slack access your calendar without giving Slack your Google password?
+
+This is where OAuth 2.0 comes into the picture. Slack basically never sees your Google password. It lets an app access a protected resource on your behalf without knowing your credentials.
+
+Basically OAuth 2.0 handles authorization. In Slack’s case, it will send you to Google’s authorization server, where you will login and give Slack permission to access your calendar. Google gives you the authorization code, and Slack will exchange that code for access_token.
+
+If Slack also wants to authenticate the identity of the person requesting the access to Google Calendar, you will need OIDC for that. The OIDC handles authentication and sits on top of OAuth 2.0.
+
+OAuth answers what you’re allowed to touch, while OIDC answers who you are. In addition to the access_token returned by the authorization server, this time, it will also send an id_token, a signed JWT which basically tells Slack who just signed in.
+
+Understanding the Linux Directory Structure
+
+The linux directory structure starts with the root directory "/". Let’s navigate to the directory structure of linux.
+
+The kernel image and bootloader files are stored in the "boot" directory. Your hard disk partitions and device related files are located in the “dev” directory.
+
+All your programs and libraries are stored in "bin", "sbin", "usr", and "lib" directories. Like, your installed software is located in the "usr" directory. Ever wondered where ls, cp, and cat commands are? "bin" is the directory that holds those essential commands.
+
+System-wide configuration goes in "etc", and "var" holds data that changes as the system runs, which is where you'll find your logs.
+
+If you have a USB drive, it gets mounted in “bin” folder. For any external drive that you want to mount temporarily on your linux machine, "media" is the directory for it. If you have multiple user accounts, "home" is the directory for each user in your linux system.</pre>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-24 07:36 · 生成于 2026-10-24 07:36:49</span>
+    <span>本次扫描 2026-10-25 06:13 · 生成于 2026-10-25 06:13:54</span>
   </footer>
 </div>
 </body>
