@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#faf7f2">
-<title>技术情报日报 · 2026-10-26</title>
+<title>技术情报日报 · 2026-10-27</title>
 <style>
   :root{
     --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
@@ -178,38 +178,343 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-26</div>
+    <div class="sub">2026-10-27 · 第 6 号</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本次扫描 <b>2026-10-26 08:08</b> · 四个来源暂无新条目</span>
-      <span>已列出各源当前最新内容</span>
+      <span>本期收录 <b>6</b> 条 · 精读 <b>3</b> 篇</span>
+      <span>共 <b>33</b> 条页边批注</span>
     </div>
-    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">本 次 扫 描</div>
-    <p class="note-lead">本次扫描于 2026-10-26 08:08 完成，四个来源都没有新条目。
-      下面是各来源当前最新的一篇，想读可以直接点开。</p>
+    <div class="sec">今 日 提 要</div>
     <ul class="ov">
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-416.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 416 期）：编程已经面目全非</a></li>
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/25/seam-cutter/" target="_blank" rel="noopener">Simon Willison's Weblog · Seam Cutter</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/24/battledrones/" target="_blank" rel="noopener">Simon Willison's Weblog · battledrones v14: Compass Rose, a four player map</a></li>
-      <li><a href="https://blog.bytebytego.com/p/ep230-rag-vs-agentic-rag" target="_blank" rel="noopener">ByteByteGo · EP230: RAG vs Agentic RAG</a></li>
-      <li><a href="https://blog.bytebytego.com/p/why-distributed-systems-prefer-independence" target="_blank" rel="noopener">ByteByteGo · Why Distributed Systems Prefer Independence over Coordination</a></li>
-      <li><a href="https://jack-clark.net/2026/10/19/import-ai-477-in-which-i-tell-the-imf-the-singularity-has-begun/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 477: In which I tell the IMF the Singularity has begun</a></li>
-      <li><a href="https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space</a></li>
-    </ul>
-    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
-      <a href="digest-2026-10-25.html" style="color:var(--accent)">digest-2026-10-25.html</a></p>
+<li>OpenAI 发布 GPT-6.1 Terra，定位中端模型，重点强化视觉推理与 computer use，官方建议用于自动化重复任务</li><li>Salesforce 披露 Agentforce 架构演进：单一大 prompt 失效后改为确定性代码与推理结合的多层系统，累计 7 亿 AWU</li><li>Import AI 报道 Resolution 用 agent 编排自动形式化数学证明（Lean），是 AI 辅助科研流程的实操样本</li><li>webframe 用 Go 调用系统 WebView 执行网页脚本，不依赖 Playwright，可作轻量 scraper 与沙箱候选</li><li>ByteByteGo Live 年费会员 10 月 28 日停售，改为单课售卖，课程方向集中在 AI 工程与 evals</li>    </ul>
   </section>
 
+  <section class="deep">
+    <div class="col clr" style="margin-top:40px">
+      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
+<p class="note-lead">GPT-6.1 Terra 给出可操作的模型选型依据；Salesforce agent 架构揭示生产级 agent 的真实工程做法；webframe 是能立刻上手评估的轻量工具，三者信息密度和可操作性最高。</p>    </div>
 
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-26</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/26/gpt-61-terra/" target="_blank" rel="noopener">GPT-6.1 Terra</a></h2>
+<p class="standfirst">OpenAI 发布中端模型 Terra，主打视觉推理与 computer use，价格约为旗舰一半。</p>        <div class="art-meta">
+          <span>16 段</span><span>·</span>
+          <span>12 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 26 日 - Link Blog</p>
+        <p>GPT-6.1 Terra（via）观察一款新模型在发布公告里被强调了哪些方面，总是很有意思。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 是 Django 联合创始人，他的博客长期跟踪 LLM 发布，其“pelican”测试（让模型画鹈鹕）已成为社区非正式基准。</aside>
+        <p>在 GPT-6.1 Terra 的案例中，OpenAI 选择强调视觉推理和 computer use：</p>
+        <p>我们推出 GPT-6.1 Terra，这是一款快速、高效的模型，将细致的视觉推理与精确的 computer use 相结合，同时写作更清晰、更自然。相比 GPT‑5.6 Terra 是显著提升，它擅长处理填满工作日的沟通类和计算机任务，从起草提案、解读技术图纸，到填写表单和编辑视频。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>“computer use”指模型通过截图+鼠标键盘操作 GUI，Anthropic 2024 年 10 月首发该能力，OpenAI 的 Operator 随后跟进，评测集常用 OSWorld。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>公告把“编辑视频”列为强项，但视频编辑涉及长时序状态与精确帧定位，当前 GUI agent 在超过 20 步的任务上成功率通常骤降，需看具体评测。</aside>
+        <p>Terra 在 Anthropic 模型系列中与 Sonnet 位置相同——不是最便宜也不是最贵，这让“何时该用它”变得更难判断。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Anthropic 的 Haiku/Sonnet/Opus 三档命名已成行业参照，OpenAI 现用 Luna/Terra/Sol/Astra 四档，档位更多反而增加选型成本。</aside>
+        <p>Computer use 正是那种受益于更便宜模型的任务，因为你可能会让它去做自动化、重复性的工作。</p>
+        <aside class="note k-数据"><span class="k">数据</span>GUI agent 单步需一次截图+推理，按 Terra 输出价 $5/M tokens 估算，一个 50 步任务若每步 2k tokens 约 0.5 美元，批量跑仍不便宜。</aside>
+        <p>OpenAI 的 Ted Sanders 在 Hacker News 的一条评论中给出了有用建议：</p>
+        <p>就 GPT-6.1 Terra 而言，我会说 Terra 在技术沟通上可能优于 Astra 和 Sol，在视觉和 computer use 上相近（但快得多！），在大多数其他方面稍差。对 API 开发者来说，如果你想要比 Sol 便宜但比 Luna 聪明得多的东西，它是一个不错的中端选择（尤其在视觉/computer use/沟通方面）。对订阅用户来说，这不是重磅发布——如果你正撞上用量上限，它也许能帮你多走一段；如果你想要更清晰的沟通或更快的 computer use，它是一个不错的选择。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>厂商员工在 HN 的“非正式”定位描述本质是营销补充，缺乏可复现 benchmark；“快得多”也未给 tokens/s 或延迟数字。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>选型时可固定 20 条自己的真实任务（如表单填写、图表问答），对 Luna/Terra/Sol 各跑一遍，按“成功率/单任务成本”排序，比看公告可靠。</aside>
+        <p>以下是不同推理级别下的鹈鹕。这只“max”级别的鹈鹕花费 11.3161 美分，耗时 4 分 11 秒：</p>
+        <aside class="note k-数据"><span class="k">数据</span>11.3 美分对应约 2.3k 输出 tokens（按 $5/M 计），4 分 11 秒说明 max 推理级别会生成大量思维链，延迟不适合交互式场景。</aside>
+        <aside class="note k-背景"><span class="k">背景</span>“pelican benchmark”源自 2024 年社区玩笑：让模型用 SVG 画骑自行车的鹈鹕，因能同时考察空间推理与代码生成而流行。</aside>
+        <p>这里有一张新的对比网格，展示了 OpenAI 当前前沿阵容中每个推理级别的鹈鹕：GPT-6 Astra、GPT-6.1 Sol、GPT-6.1 Terra 和 GPT-6 Luna。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>类似的可视化对比还有 LMArena 的盲测 Elo 榜和 Artificial Analysis 的价格-智能散点图，可交叉验证厂商自述的档位。</aside>
+        <p>GPT-6.1 Terra 定价为每百万输入 token 1 美元、每百万输出 token 5 美元——几乎是 GPT-5.6 Terra 和 GPT-6.1 Sol 价格的一半，约为 GPT-6 Luna 价格的 10 倍。</p>
+        <aside class="note k-数据"><span class="k">数据</span>按此价，Luna 约 $0.1/$0.5 每百万 token；对比 2024 年 GPT-4o 的 $2.5/$10，两年间中端模型价格降了约 60%。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>输出 token 是输入价的 5 倍，做 agent 时应把长上下文缓存（prompt caching）打开，可把重复系统提示的输入成本再降 50%-90%。</aside>
+        <p>近期文章</p>
+        <p>- Battle Drones - 一款氛围编程的、基于音频的多人 RTS - 2026 年 10 月 20 日</p>
+        <p>- Hello Python 3.15，再见 3.10，现在我能用 3.11 了 - 2026 年 10 月 12 日</p>
+        <p>- 我博客的新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5 - 2026 年 10 月 7 日</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>Terra 是“够用且便宜”的中端档：做 computer use 和视觉任务优先选它，复杂推理仍留给 Sol/Astra。</div>
+        <details class="orig">
+          <summary>查看英文原文（2367 字符，可对照译文）</summary>
+          <pre>26th October 2026 - Link Blog
+
+GPT-6.1 Terra (via) It's always interesting to note which aspects of a new model are emphasized in the release announcement.
+
+In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use:
+
+We’re introducing GPT-6.1 Terra, a fast, efficient model that combines detailed visual reasoning and precise computer use alongside clearer, more natural writing. A significant step up from GPT‑5.6 Terra, it excels at the communication and computer-based tasks that fill the workday, from drafting proposals and interpreting technical drawings to filling out forms and editing videos.
+
+Terra sits in the same position as Sonnet in the Anthropic model collection - not the cheapest or the most expensive, making it harder to decide when to use it.
+
+Computer use is a good example of a task that benefits from a less expensive model, since you might put it to work on automated, repetitive tasks.
+
+OpenAI's Ted Sanders provided some useful advice in a comment on Hacker News:
+
+In the case of GPT-6.1 Terra, I'd say Terra is probably better than Astra and Sol at technical communication, similar on vision and computer use (but much faster!), and a bit worse on most other things. For API developers, it's a nice midrange option if you want something cheaper than Sol but a lot smarter than Luna (especially for vision / computer use / communication). For subscribers, it's not a bombshell release - if you're hitting usage limits, maybe it helps you go a bit further, and if you want clearer communication or faster computer use, it can be a nice option to select.
+
+Here are the pelicans for the different reasoning levels. This pelican for "max" cost 11.3161 cents and took 4 minutes and 11 seconds:
+
+Here's a new comparison grid showing pelicans for every reasoning level of OpenAI's current frontier lineup: GPT-6 Astra, GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna.
+
+GPT-6.1 Terra is priced at $1/million input tokens and $5/million output - almost half the price of GPT-5.6 Terra and GPT-6.1 Sol, and around 10x the price of GPT-6 Luna.
+
+Recent articles
+
+- Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-26</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/26/webframe-evaluation/" target="_blank" rel="noopener">webframe：作为抓取工具与沙箱的评估</a></h2>
+        <div class="orig-title">webframe: evaluated as a scraper and a sandbox</div>
+<p class="standfirst">用 Claude 实测 webframe：网页当程序跑，能否当沙箱和抓取器。</p>        <div class="art-meta">
+          <span>11 段</span><span>·</span>
+          <span>10 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 26 日</p>
+        <p>webframe 是 Jeff Lindsay 的一个小巧项目，它让你“像运行程序一样运行网页”——你给它一个 URL 或文件，它就在一个隐藏的无头 web view 中执行它，并把 console.log() 输出到标准输出，把任何异常输出到标准错误。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Jeff Lindsay 是早期 Web 与 DevOps 圈知名开发者，曾参与创建 Docker 前身 dotCloud 的早期工具链，近年专注本地优先与小型 CLI 工具。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>“网页即程序”思路与 Deno 的 --allow-net 沙箱、以及 Cloudflare Workers 的 V8 isolate 模型同源，但 webframe 直接复用系统浏览器引擎，省去打包 Chromium 的数百 MB 体积。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>在 macOS 上可执行 go install github.com/tractordev/webframe@latest 后运行 webframe https://example.com，观察 stdout 是否只输出 console.log 内容。</aside>
+        <p>它用 Go 编写，构建在 glaze 库之上，该库提供对系统浏览器的访问（“macOS 上的 WKWebView、Linux 上的 WebKitGTK、Windows 上的 WebView2”），因此它不需要捆绑自己的浏览器引擎。</p>
+        <aside class="note k-数据"><span class="k">数据</span>Playwright 完整安装约 300–400 MB（含 Chromium、Firefox、WebKit），而 webframe 二进制通常小于 20 MB，体积差约 20 倍。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>复用系统浏览器意味着行为随 OS 版本漂移：macOS 的 WKWebView 与 Linux 的 WebKitGTK 在 JS 引擎版本和 API 支持上并不一致，跨平台可复现性弱于自带引擎的方案。</aside>
+        <p>它让我想起我自己的 shot-scraper javascript 工具，只不过打包小得多，而且不依赖 Playwright。</p>
+        <aside class="note k-背景"><span class="k">背景</span>shot-scraper 是 Simon Willison 2022 年发布的 CLI，用 Playwright 驱动浏览器截图并执行 JS，其 javascript 子命令正是本次评估的对照基准。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>不依赖 Playwright 的代价是失去其自动等待、网络拦截和跨浏览器矩阵；若抓取目标依赖这些能力，webframe 需要自己补轮询逻辑。</aside>
+        <p>我让 Claude Opus 5.5 对它进行了全面测试，并为我准备了一份研究报告。以下是我使用的提示词：</p>
+        <aside class="note k-实操"><span class="k">实操</span>提示词中明确要求“构建几个探索性原型”再评估，这比直接问“这个工具好不好”更能暴露真实边界，可复用到自己的工具调研中。</aside>
+        <p>探索 https://github.com/tractordev/webframe，尝试运行它并对其进行全面测试，构建几个探索性原型，然后评估它作为潜在沙箱工具的潜力，以及作为使用“shot-scraper JavaScript”命令所鼓励的相同模式抓取网页的工具的潜力（参见 GitHub 上的 simonw/shot-scraper，docs 目录）</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>让 LLM 同时做“探索”和“评估”存在自证偏差：它倾向于为已投入时间的方向找正面理由，沙箱安全性这类需要对抗性测试的结论尤其不可轻信。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>原文把 webframe 称为“沙箱工具”候选，但无头 web view 默认共享系统浏览器配置与网络栈，并非安全边界；真正的沙箱需配合 seccomp、命名空间或独立用户隔离。</aside>
+        <p>近期文章</p>
+        <p>- Battle Drones——一个氛围编程的 RTS，带基于音频的多人对战——2026 年 10 月 20 日</p>
+        <p>- 你好 Python 3.15，再见 3.10，现在我能用 3.11 了——2026 年 10 月 12 日</p>
+        <p>- 我的博客新功能，用我的声音构建——2026 年 10 月 9 日</p>
+        <p>- Claude Haiku 5.5——2026 年 10 月 7 日</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>webframe 以极小体积复用系统浏览器执行网页 JS，适合轻量抓取，但不构成安全沙箱。</div>
+        <details class="orig">
+          <summary>查看英文原文（1355 字符，可对照译文）</summary>
+          <pre>26th October 2026
+
+webframe is a neat little project from Jeff Lindsay which lets you "run a web page like a program" - you point it at a URL or file and it executes it in a hidden headless web view and outputs console.log() to standard output and any exceptions to standard error.
+
+It's written in Go on top of the glaze library, which provides access to a system browser ("WKWebView on macOS, WebKitGTK on Linux, WebView2 on Windows") so it doesn't need to bundle its own browser engine.
+
+It reminds me of my own shot-scraper javascript tool, albeit in a much smaller package that doesn't depend on Playwright.
+
+I had Claude Opus 5.5 put it through its paces and prepare a research report for me. Here's the prompt I used:
+
+Explore https://github.com/tractordev/webframe try running it and put it though its paces, build a few exploratory prototypes, then evaluate it as a potential sandboxing tool and as a tool for scraping web pages using the same patterns encouraged by the "shot-scraper JavaScript" command (see simonw/shot-scraper on GitHub, docs directory)
+
+Recent articles
+
+- Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026
+
+- Claude Haiku 5.5 - 7th October 2026</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">ByteByteGo</span>
+          <span class="dt">2026-10-26</span>
+        </div>
+        <h2><a href="https://blog.bytebytego.com/p/a-deep-dive-into-salesforces-agent" target="_blank" rel="noopener">深入解析 Salesforce 的 Agent 技术栈</a></h2>
+        <div class="orig-title">A Deep Dive into Salesforce’s Agent Tech Stack</div>
+<p class="standfirst">Salesforce 如何用确定性代码与推理模型构建可靠 Agent。</p>        <div class="art-meta">
+          <span>32 段</span><span>·</span>
+          <span>11 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>Datadog 的免费电子书涵盖了究竟是什么让能够交付的 Agent 与中途停滞的试点项目区分开来。剧透一下：关键不在模型。而在于持久执行（durable execution）、内存管理、评估流水线以及可观测性。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>Durable execution 指工作流在进程崩溃后能从断点恢复，Temporal、Restate 是这一领域的代表项目，Agent 长任务场景下比模型选型更影响交付率。</aside>
+        <p>你将学到如何：</p>
+        <p>- 识别在 Agent 项目上线前就将其扼杀的四种失败模式</p>
+        <p>- 构建评估流水线，让你能在生产规模下信任并治理 Agent</p>
+        <p>- 为 Agent 工作流配备可观测性，以调试生产环境中的非确定性行为</p>
+        <p>- 衡量能向团队和领导层证明 Agent ROI 的先行指标</p>
+        <p>Salesforce 的 Agent 已在 Agentforce 和 Slack 上完成了 70 亿个 Agentic Work Units（AWU，该公司用来计量 AI Agent 完成工作量的单位）。其中，仅第二季度就贡献了 32 亿个。</p>
+        <aside class="note k-数据"><span class="k">数据</span>70 亿 AWU 是累计值，单季 32 亿意味着近半工作量集中在最近一个季度，增速陡峭；但 AWU 是 Salesforce 自定义口径，无法直接与 token 数或 API 调用量换算。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>厂商自报的“工作量单位”缺乏第三方审计，且未说明一个 AWU 对应多少次模型调用，横向对比其他平台时需谨慎。</aside>
+        <p>但让 Agent 稳定地遵循指令确实是个真正的挑战。Agentforce（Salesforce 用于构建和运行 Agent 的平台）的第一个版本把所有指令都放进一个大 prompt 里。随着规则不断堆积，模型开始跳过一些重要的规则。对于用 Agent 面试候选人或者处理患者数据的客户来说，这是不可接受的。</p>
+        <aside class="note k-背景"><span class="k">背景</span>“大 prompt 堆规则”是 2023-2024 年多数 Agent 框架（如早期 LangChain Agent）的默认做法，Salesforce 的转向反映了行业从 prompt engineering 向 system engineering 的迁移。</aside>
+        <p>Salesforce 转向了一种新设计：一个多层系统，将确定性代码与推理模型相结合，以实现最大程度的可靠性。为了理解其运作方式，我们在 Dreamforce 2026 上见到了背后的两位负责人：Salesforce 总裁兼 CTO Muralidhar Krishnaprasad（MK），以及 AI 应用开发平台产品管理高级副总裁 Khushwant Singh。感谢 MK 和 Khushwant 与我们分享细节。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Muralidhar Krishnaprasad 此前在微软负责 Azure Data 与 SQL Server 相关工程，是数据库与云平台背景出身，这解释了 Salesforce 为何强调“数据层先行”的架构思路。</aside>
+        <p>在本文中，你将学到：</p>
+        <p>- 为什么依赖 prompt 的朴素设计不可靠</p>
+        <p>- 如何将确定性代码与概率性推理器结合以提高可靠性</p>
+        <p>- 如何构建一个支持身份解析、并将来自多个系统的记录链接成统一画像的数据层</p>
+        <p>- 如何构建一个高效的上下文引擎</p>
+        <p>- Agent Identity 如何让 Agent 拥有自己的权限</p>
+        <p>- AIforce 和 Headless Toolkit 如何让 Slack、Claude 等工具中的 Agent 访问 Salesforce 的数据和操作</p>
+        <p>朴素设计：一个大 prompt</p>
+        <p>构建 Agent 最简单的方式就是把所有东西写进一个 prompt。这也是大多数团队构建第一个 Agent 的方式。设想你正在为一家医疗公司构建一个支持 Agent。你可以把业务规则写成自然语言指令（例如，只讨论患者本人的记录）。然后加上可用工具的描述（例如，“获取已预约的日程”）。你还要包含其他相关信息，比如患者数据。Agent 随后把所有这些都放进 LLM 的上下文窗口。这就是整个设计。我们只能寄希望于 LLM 做出正确的行为。</p>
+        <aside class="note k-实操"><span class="k">实操</span>想亲手验证这种设计的脆弱性，可以用 OpenAI Evals 或 promptfoo 构造 20 条以上规则，观察模型在规则数增加时的遵循率下降曲线，成本不到 1 美元。</aside>
+        <p>在这种朴素设计中，模型被期望同时处理四件事：1）执行规则，2）在不同系统中找到客户是谁，3）包含模型可能需要的数据，4）确保 Agent 只做它被允许做的事。</p>
+        <p>Agentforce 的第一个版本就是这样处理一切的。据 MK 说，团队不断添加诸如“只做这个”“只做那个”“先获取所有预约”之类的指令。团队的一个有趣观察是：这在最多八条指令时运行良好。但超过八条之后，模型就会丢弃指令。</p>
+        <aside class="note k-数据"><span class="k">数据</span>“八条指令”是 Salesforce 内部观察值，并非普适阈值；它取决于模型上下文长度、指令长度和冲突程度，换用不同模型或更短指令时该数字会变化。</aside>
+        <p>但模型为什么会丢弃一条指令？对模型来说，一条指令未必是一条规则。它只是上下文中的一些文本。没有任何机制保证一条指令会被真正遵循。除此之外，随着我们在上下文中加入更多指令，指令遵循能力也会变差。这不是 Salesforce 特有的问题。一个名为 IFScale 的基准测试用最多 500 条简单指令放在一个 prompt 中测试了 20 个模型，以衡量指令遵循能力，即便是最好的模型在满 500 条时也只遵循了 68%。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>IFScale 论文（2025）还发现指令遵循率随指令数呈对数线性下降，且模型对“否定式指令”的遵循率显著低于肯定式，写规则时应优先用正向表述。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>原文说“模型会丢弃指令”，更准确的机制是注意力被稀释导致部分指令未被激活，而非模型主动删除；这影响调试思路——应检查注意力分布而非指令文本本身。</aside>
+        <p>所以 prompt 只是试图塑造 LLM 的行为。它无法强制该行为。让我们看看 Salesforce 在模型周围构建了什么来解决这个问题。</p>
+        <p>Agentforce 是如何构建的</p>
+        <p>Salesforce 的新设计通过把四项工作从 prompt 中拿出来、由专门的系统分别处理，来解决可靠性问题。为了看清这些系统在哪里，让我们回顾一下当前的 Salesforce 平台栈。栈中的四个主要层次，从下到上是：</p>
+        <p>- 数据层：把公司的数据源转化为一个一致的视图。Salesforce 称之为 Data 360。</p>
+        <p>- 应用层：面向销售、服务、营销的业务应用，提供 Agent 可以执行的操作。Salesforce 称之为 Customer 360。</p>
+        <p>- Agent 层：定义和运行 Agent 的地方。Salesforce 称之为 Agentforce。</p>
+        <p>- 界面层：人与 Agent 对话的地方，例如 Claude 聊天或 Slack。</p>
+        <p>与其把所有东西放进一个 prompt 并期望模型处理每一项工作，不如让每一项工作由这些层中的一个系统单独处理。例如，在 Agentforce 层，一种名为 Agent Script 的脚本语言负责执行规则。在数据层，身份解析负责找到客户的统一画像。Agent Context Engine 是一个独立系统，决定哪些数据到达模型。模型只处理需要推理的步骤。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>这种“确定性外壳 + 概率内核”的思路与 Anthropic 2025 年提出的“workflow vs agent”二分法一致：能用代码编排的步骤不要交给模型决策，可显著降低非确定性。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>自己搭 Agent 时可借鉴：把权限校验、参数格式检查写成 Python 函数在调用 LLM 前后执行，而不是写进 system prompt，这是最小成本的可靠性提升。</aside>
+        <p>在本节的剩余部分，我们逐一介绍为处理每项工作而构建的四个系统。为了具体说明，我们跟随 MK 与我们分享的演示。公司是一家名为 Cumulus 的模拟医疗提供商，患者是 Harper Clark，但据 MK 说，其背后的一切都在生产环境中运行。</p>
+        <p>1. 用 Agent Script 实现确定性指令</p>
+        <p>…（原文过长，此处截断）</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>Agent 可靠性靠把规则、身份、上下文、权限从 prompt 中拆出，交给确定性系统分别处理。</div>
+        <details class="orig">
+          <summary>查看英文原文（5678 字符，可对照译文）</summary>
+          <pre>Datadog’s free eBook covers what actually separates the agents that ship from the pilots that stall. Spoiler: it’s not the model. It’s durable execution, memory management, evaluation pipelines, and observability.
+
+You’ll learn how to:
+
+- Identify the four failure modes that kill agent programs before they ship
+
+- Build evaluation pipelines that let you trust and govern agents at production scale
+
+- Instrument agent workflows with the observability needed to debug non-deterministic behavior in production
+
+- Measure the leading indicators that prove agent ROI to your team and leadership
+
+Salesforce agents have completed 7 billion Agentic Work Units (AWUs), the unit the company uses to count work done by AI agents, across Agentforce and Slack. Of those, 3.2 billion came in its second quarter alone.
+
+But getting agents to follow instructions consistently was a real challenge. The first version of Agentforce, Salesforce’s platform for building and running agents, put all instructions into one large prompt. As the rules piled up, the model began skipping some important ones. For customers using agents to interview job candidates or handle patient data, that was unacceptable.
+
+Salesforce moved to a new design, a multi-layer system that combines deterministic code with reasoning models for maximum reliability. To understand how this works, we met two of the leaders behind it at Dreamforce 2026: Muralidhar Krishnaprasad (MK), President and CTO at Salesforce, and Khushwant Singh, SVP of Product Management for the AI application development platform. Thanks to MK and Khushwant for sharing the details with us.
+
+In this article, you’ll learn:
+
+- Why a naive design that relies on prompting is not reliable
+
+- How to combine deterministic code with probabilistic reasoners to increase reliability
+
+- How to build a data layer that supports identity resolution and links records from many systems into one unified profile
+
+- How to build an efficient context engine
+
+- How Agent Identity gives an agent its own permissions
+
+- How AIforce and the Headless Toolkit let agents in tools such as Slack and Claude reach Salesforce data and actions
+
+The naive design: one large prompt
+
+The simplest way to build an agent is to write everything into a single prompt. That is how most teams build their first agent. Imagine you are building a support agent for a healthcare company. You can write the business rules as natural language instructions (e.g., only discuss the patient’s own records). Then add a description of available tools (e.g., “get scheduled appointments”). You also include other relevant info like patient data. The agent then includes all of this in the LLM’s context window. That’s the whole design. We just hope that the LLM does the right thing.
+
+In this naive design, the model is expected to handle four things at once: 1) enforce the rules, 2) find who the customer is across different systems, 3) include the data the model may need, and 4) ensure the agent does what it is allowed to do.
+
+The first version of Agentforce handled everything this way. According to MK, the team kept adding instructions such as only do this, only do that, and first get all the appointments. An interesting observation from the team was that this worked fine for up to eight instructions. But beyond eight, the model would discard instructions.
+
+But why would a model discard an instruction? To a model, an instruction is not necessarily a rule. It is just some text in the context. There is no guarantee that an instruction will actually be followed. Besides that, instruction following will also get worse as we add more instructions to the context. This is not specific to Salesforce. A benchmark called IFScale tested 20 models with up to 500 simple instructions in one prompt to measure instruction following, and even the best model followed only 68% of them at the full 500.
+
+So a prompt only tries to shape the behavior of the LLM. It cannot enforce that behavior. Let’s see what Salesforce built around the model to fix this.
+
+How Agentforce is built
+
+Salesforce’s new design handles reliability by taking the four jobs out of the prompt and having dedicated systems to handle each. To see where these systems are, let’s review the current Salesforce platform stack. The four main layers in the stack, from bottom to top, are:
+
+- Data layer: Turns a company’s data sources into one consistent view. Salesforce calls this Data 360.
+
+- Application layer: The business applications for sales, service, and marketing, which supply the actions an agent can take. Salesforce calls this Customer 360.
+
+- Agent layer: Where agents are defined and run. Salesforce calls this Agentforce.
+
+- Surface layer: The places where a person talks to the agent, such as a Claude chat or Slack.
+
+Instead of putting everything in a prompt and expecting the model to handle every job, each job is handled separately by a system in one of these layers. For example, in the Agentforce layer, a scripting language called Agent Script ensures to enforce the rules. In the data layer, identity resolution is responsible for finding a unified profile of the customer. Agent Context Engine is a separate system that decides which data reaches the model. The model just handles steps that require reasoning.
+
+In the rest of this section, we go through the four systems built to handle each job one by one. To make it concrete, we follow the demo MK shared with us. The company is a simulated healthcare provider called Cumulus and the patient is Harper Clark, but according to MK everything behind it runs in production.
+
+1. Deterministic instructions with Agent Script
+
+
+…（原文过长，此处截断）</pre>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+    <div class="srcblock">
+      <div class="srcname">Simon Willison's Weblog<span>1 条</span></div>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/26/jason-koebler/" target="_blank" rel="noopener">Quoting Jason Koebler</a></h3>
+<p class="one">大厂没有人工客服，用户转向 ChatGPT 求助，ChatGPT 却让他们去找 404 Media</p><p class="why">说明 LLM 在缺乏依据时会编造权威来源，做 RAG 或客服类应用时，必须给模型加来源约束和拒答机制</p>        <div class="foot">
+<span class="tag">LLM幻觉</span><span class="tag">AI伦理</span><span class="tag">产品设计</span>          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-26</span>
+        </div>
+      </article>
+    </div>
+    <div class="srcblock">
+      <div class="srcname">ByteByteGo<span>1 条</span></div>
+      <article class="mini">
+        <h3><a href="https://blog.bytebytego.com/p/last-chance-to-get-every-live-course" target="_blank" rel="noopener">Last chance to get every live course in one membership</a></h3>
+<p class="one">ByteByteGo Live 年费会员 10 月 28 日停售，之后课程单独售卖</p><p class="why">纯商业通知，但课程列表反映市场热点：AI 成本优化、生产级 AI 系统、evals、Claude Code 工程实践</p>        <div class="foot">
+<span class="tag">课程推广</span><span class="tag">AI工程</span>          <span class="src">ByteByteGo</span>
+          <span class="dt">2026-10-26</span>
+        </div>
+      </article>
+    </div>
+    <div class="srcblock">
+      <div class="srcname">Import AI（Jack Clark）<span>1 条</span></div>
+      <article class="mini">
+        <h3><a href="https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means/" target="_blank" rel="noopener">Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means</a></h3>
+<p class="one">Import AI 478：Resolution 用 agent 编排自动形式化数学证明，另有 ProgramBench 与 RSI 讨论</p><p class="why">展示 agent 编排做长周期科研任务的具体流程（规划、orchestrator、分工 agent、Lean 验证），对 AI for science 方向判断有参考价值</p><p class="act"><span>下 一 步</span>读原文中 orchestrator 与子 agent 的分工描述，作为多 agent 系统设计的案例</p>        <div class="foot">
+<span class="tag">AI-for-science</span><span class="tag">agent编排</span><span class="tag">Lean</span>          <span class="src">Import AI（Jack Clark）</span>
+          <span class="dt">2026-10-26</span>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-26 08:08 · 生成于 2026-10-26 08:08:10</span>
+    <span>本次扫描 2026-10-27 06:23 · 生成于 2026-10-27 06:23:20</span>
   </footer>
 </div>
 </body>
