@@ -178,189 +178,38 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-28 · 第 2 号</div>
+    <div class="sub">2026-10-28</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本期收录 <b>2</b> 条 · 精读 <b>1</b> 篇</span>
-      <span>共 <b>14</b> 条页边批注</span>
+      <span>本次扫描 <b>2026-10-28 08:59</b> · 四个来源暂无新条目</span>
+      <span>已列出各源当前最新内容</span>
     </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">今 日 提 要</div>
+    <div class="sec">本 次 扫 描</div>
+    <p class="note-lead">本次扫描于 2026-10-28 08:59 完成，四个来源都没有新条目。
+      下面是各来源当前最新的一篇，想读可以直接点开。</p>
     <ul class="ov">
-<li>GitHub Universe 会议徽章是一台带彩色屏幕的可编程计算机，有人借助 Gemini 把 NES、Game Boy、Game Boy Color 模拟器移植到上面运行</li><li>ByteByteGo 拆解 Apple 如何在 iPhone 上运行 30 亿参数 LLM，涉及量化、内存与推理优化</li><li>两条信息共同指向一个趋势：端侧推理与嵌入式硬件 hacking 正在成为 AI 工程与系统能力的交叉点</li><li>对考研/就业方向而言，模型压缩（quantization、pruning）与嵌入式部署是比纯 Web 开发更稀缺的技能组合</li>    </ul>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-416.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 416 期）：编程已经面目全非</a></li>
+      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/" target="_blank" rel="noopener">Simon Willison's Weblog · Game Boy Color on My Conference Badge</a></li>
+      <li><a href="https://simonwillison.net/2026/Oct/26/gpt-61-terra/" target="_blank" rel="noopener">Simon Willison's Weblog · GPT-6.1 Terra</a></li>
+      <li><a href="https://blog.bytebytego.com/p/how-apple-fits-an-llm-on-your-iphone" target="_blank" rel="noopener">ByteByteGo · How Apple Fits an LLM on Your iPhone</a></li>
+      <li><a href="https://blog.bytebytego.com/p/last-chance-to-get-every-live-course" target="_blank" rel="noopener">ByteByteGo · Last chance to get every live course in one membership</a></li>
+      <li><a href="https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means</a></li>
+      <li><a href="https://jack-clark.net/2026/10/19/import-ai-477-in-which-i-tell-the-imf-the-singularity-has-begun/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 477: In which I tell the IMF the Singularity has begun</a></li>
+    </ul>
+    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
+      <a href="digest-2026-10-27.html" style="color:var(--accent)">digest-2026-10-27.html</a></p>
   </section>
 
-  <section class="deep">
-    <div class="col clr" style="margin-top:40px">
-      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
-<p class="note-lead">ByteByteGo 这篇直接对应端侧推理这一可操作方向，能帮读者判断是否值得投入模型压缩与嵌入式部署；徽章那条信息密度偏低，作为兴趣线索即可。</p>    </div>
 
-    <article class="full">
-      <div class="col clr">
-        <div class="art-head">
-          <span class="src">ByteByteGo</span>
-          <span class="dt">2026-10-27</span>
-        </div>
-        <h2><a href="https://blog.bytebytego.com/p/how-apple-fits-an-llm-on-your-iphone" target="_blank" rel="noopener">苹果如何把 LLM 装进你的 iPhone</a></h2>
-        <div class="orig-title">How Apple Fits an LLM on Your iPhone</div>
-<p class="standfirst">拆解苹果在 iPhone 上运行 30 亿参数模型的工程手段</p>        <div class="art-meta">
-          <span>35 段</span><span>·</span>
-          <span>14 条批注</span>
-        </div>
-      </div>
-
-      <div class="col reading clr">
-        <p>现在，你就是你的 agent 的上下文引擎。你编写规则文件、维护技能，还要把它错过的 Slack 讨论串粘贴进去。</p>
-        <aside class="note k-背景"><span class="k">背景</span>这里的 agent 指能自主调用工具、执行多步任务的 LLM 应用（如 Claude Code、Cursor），上下文引擎负责在每次调用前筛选、压缩、注入相关信息。</aside>
-        <p>但手工整理的上下文会过时。而且当出现相互矛盾的答案时，你的 agent 无法判断哪个是对的。你为此付出更高的 token 账单和更长的评审时间。</p>
-        <p>10 月 28 日（免费）来参加我们的直播，看看：</p>
-        <p>- AI 成熟度的 8 个层级，以及团队通常卡在哪里</p>
-        <p>- 上下文引擎如何在你的 agent 写下一行代码之前，整理上下文并解决冲突</p>
-        <p>- 现场演示：同一编码任务中的 token 节省，以及代码生成之外的用例</p>
-        <p>额外福利：2 个你今天就能用的开源工具。</p>
-        <p>大语言模型（LLM）是一种神经网络。你可以用它来处理和生成语言。模型的行为取决于你在训练期间教给它的数值。这些数值被称为参数。</p>
-        <aside class="note k-背景"><span class="k">背景</span>参数即权重矩阵中的浮点数，训练就是通过反向传播不断调整这些数，使模型在预测下一个 token 时损失最小。</aside>
-        <p>苹果把一个 30 亿参数的模型装进了你的 iPhone。这意味着该模型大约有 30 亿个数值需要正常工作。这些数值影响模型如何理解输入以及如何产生输出。</p>
-        <aside class="note k-数据"><span class="k">数据</span>30 亿参数在 16-bit 下约 6GB，而 iPhone 16 Pro 的 DRAM 为 8GB，系统与其它 App 已占去大半，所以必须压缩。</aside>
-        <p>苹果是如何做到把这样的模型装进 iPhone，而又不对设备造成任何负面影响的？</p>
-        <p>在本文中，我们将尝试回答这个问题。以下是我们要涵盖的内容：</p>
-        <p>- 在手机上运行 LLM 的问题</p>
-        <p>- 苹果如何让权重存储更便宜</p>
-        <p>- 苹果如何让重复计算更快</p>
-        <p>- adapter 如何帮助不同功能共享基础模型</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>adapter 是 LoRA 一类的小模块，冻结主干只训练低秩矩阵，苹果用多个 adapter 让摘要、校对等任务共用同一份 3B 权重。</aside>
-        <p>- 苹果如何优化硬件来运行模型</p>
-        <p>- 系统如何决定何时使用云端</p>
-        <p>免责声明：本文基于多个来源公开分享的细节。参考文献在文末。如果你发现任何不准确之处，请留言。</p>
-        <p>在手机上运行 LLM 的问题</p>
-        <p>运行 LLM 也称为推理。在这个阶段，LLM 使用其参数来处理请求。</p>
-        <aside class="note k-背景"><span class="k">背景</span>推理分 prefill（并行处理整段 prompt）和 decode（逐 token 生成）两阶段，前者算力密集、后者内存带宽密集。</aside>
-        <p>在处理一些文本之前，LLM 必须将其划分为 token。你可以把 token 看作一个词、词的一部分，甚至标点符号。模型接收这些 token，并生成更多 token 作为响应的一部分。在模型内部，这些 token 会经过一系列处理层。</p>
-        <p>第一个问题是关于存储参数。</p>
-        <p>在 16 位精度下，我们之前提到的 30 亿参数几乎可以占用 6GB。但这还不是全部。你还需要空间来存放输入 prompt、计算过程以及模型所需的临时结果。最后，你还需要用同一块内存运行操作系统和其他应用。如你所见，存储是一个重大决策。</p>
-        <aside class="note k-数据"><span class="k">数据</span>iOS 给单个 App 的内存上限通常远小于设备总 RAM，3B 模型必须压到 2GB 以内才能与系统共存，这是苹果选 2-bit 主干的直接原因。</aside>
-        <p>第二个问题是如何快速将权重从内存移动到处理器。在文本生成过程中，处理器必须反复从内存中获取数值数据。即使你拥有强大的处理器，它也可能花费大量时间仅仅等待数据从内存中取出。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>这就是 memory-bound 问题：decode 阶段每生成一个 token 都要把全部权重读一遍，A17 Pro 的 68GB/s 带宽下 1.4GB 权重理论极限约 48 token/s。</aside>
-        <p>苹果工程团队在尝试让 LLM 在 iPhone 上运行时，还必须应对内存容量和内存带宽方面的挑战。除此之外，手机还必须处理电池消耗、过热以及其他应用试图使用相同资源的问题。你不希望 LLM 让设备的其余部分变得无响应。</p>
-        <aside class="note k-质疑"><span class="k">质疑</span>原文说“无负面影响”，但实测中长时间推理仍会触发降频；苹果的解法是把单次推理限制在秒级并优先调度到 Neural Engine 以控制功耗。</aside>
-        <p>苹果如何让权重存储更便宜</p>
-        <p>减小模型尺寸最直接的方法是使用更少的比特来存储每个权重。这种技术被称为量化。</p>
-        <aside class="note k-背景"><span class="k">背景</span>量化分训练后量化（PTQ）和量化感知训练（QAT），前者快但精度损失大，后者在训练时模拟舍入误差，苹果两种都用。</aside>
-        <p>你可以把量化看作一种用更少的可能性来表示数值的方法。当然，在这个过程中你会丢失一些数值细节。但模型仍然可以以相当不错的水平执行其任务。主要的权衡是选择一种在内存节省和质量之间达到最佳平衡点的表示方法。见下图。</p>
-        <p>苹果工程团队使用了一种称为 palettization 的技术。在这种技术中，你将相似的权重值分组。一个小的查找表存储代表值，各个权重存储对该表的短引用。例如，你可以用一个 2-bit 引用从查找表中的四个条目中进行选择。</p>
-        <aside class="note k-实操"><span class="k">实操</span>苹果开源了 coremltools 的 palettization API，可用 `ct.optimize.coreml.palettize_weights` 对任意 Core ML 模型做 2/4/6-bit 调色板量化并对比精度。</aside>
-        <p>在较早的模型版本中，苹果工程团队结合了 2-bit 和 4-bit 表示。平均每个权重 3.7 比特。这意味着 30 亿个权重可以存储在约 1.39 GB 中。这是一个相当不错的优化。</p>
-        <aside class="note k-数据"><span class="k">数据</span>3.7 bit × 3e9 / 8 ≈ 1.39GB，与原文一致；对比 16-bit 的 6GB，压缩比约 4.3 倍，但质量损失需用基准任务验证。</aside>
-        <p>他们混合不同精度的原因是模型的不同部分可以轻松处理不同量的数值误差。你需要在敏感组件上花费更多比特，以免质量下降。其他组件可以压缩得更多。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>“敏感组件”通常指第一层和最后一层以及 attention 的 QKV 投影，embedding 表虽大但对误差不敏感，所以后文反而给它 4-bit。</aside>
-        <p>苹果后来发布的模型使压缩更加激进。主解码器权重每个权重使用 2 比特。嵌入表每个权重使用 4 比特。为了使这种压缩奏效，苹果使用了量化感知训练。在这种方法中，你模拟量化将施加的那种限制。然后，在这些限制到位的情况下调整模型的权重，以便它学会在限制下工作。</p>
-        <aside class="note k-延伸"><span class="k">延伸</span>2-bit 主干已接近信息论极限，苹果在 2024 年论文中报告用 QAT 后 2-bit 模型在摘要任务上仍能保持与 16-bit 相近的 ROUGE 分数。</aside>
-        <p>苹果如何让重复计算更快</p>
-        <p>权重存储只是整体内存问题的一部分。在你成功压缩模型之后，模型仍然需要内存来处理请求。</p>
-        <p>假设你有一个模型，它已经读完了一段文本并生成了响应的开头。当模型尝试预测下一个 token 时，它需要使用来自较早 token 的信息。然而，如果你必须重新计算每个中间结果，那将是对计算资源的巨大浪费。</p>
-        <aside class="note k-背景"><span class="k">背景</span>这就是 KV cache 的动机：把每层 attention 的 key/value 缓存下来，decode 时只算新 token，避免 O(n²) 重复计算。</aside>
-      </div>
-
-      <div class="col clr">
-        <div class="takeaway"><span>读 完 记 住</span>苹果靠 palettization 量化、KV cache 和 QAT 把 3B 模型压到约 1.4GB 并跑在 iPhone 上。</div>
-        <details class="orig">
-          <summary>查看英文原文（5602 字符，可对照译文）</summary>
-          <pre>Right now, you’re your agent’s context engine. You write the rules files, maintain the skills, and paste in the Slack thread it missed.
-
-But hand-curated context goes stale. And when there are conflicting answers, your agent can’t tell which is right. You pay for it in higher token bills and longer reviews.
-
-Join us live on Oct 28 (FREE) to see:
-
-- The 8-levels of AI maturity and where teams get stuck
-
-- How a context engine curates context and resolves conflicts before your agent writes a line of code
-
-- Live demo: token savings in the same coding task, and use cases beyond code gen
-
-Bonus: 2 open source tools you can use today.
-
-A large language model (LLM) is a neural network. You can use it to process and generate language. How the model behaves is dependent on the numerical values you teach it during training. These numerical values are known as parameters.
-
-Apple fits a 3-billion-parameter model on your iPhone. What this means is that the model has roughly 3 billion numerical values that it needs to work properly. These values influence how the model makes sense of its input and how it produces output.
-
-How is Apple able to fit such a model on an iPhone without any adverse impact on the device?
-
-In this article, we’ll try to answer this question. Here’s what we will cover:
-
-- The problems of running an LLM on a phone
-
-- How Apple makes the weights cheaper to store
-
-- How Apple made repeated calculations faster
-
-- How adapters help features share the foundation
-
-- How Apple optimizes the hardware to run the models
-
-- How does the system decide when to use the cloud
-
-Disclaimer: This post is based on publicly shared details from various sources. References at the end. Please comment if you notice any inaccuracies.
-
-The Problems of Running an LLM on a Phone
-
-Running an LLM is also called inference. In this stage, the LLM uses its parameters to process a request.
-
-Before processing some text, the LLM has to divide it into tokens. You can think of a token as a word, part of a word, or even punctuation. The model takes these tokens and generates more tokens as part of the response. Within the model, these tokens pass through a bunch of processing layers.
-
-The first problem is about storing the parameters.
-
-At 16-bit precision, the 3 billion parameters we talked about earlier can occupy almost 6GB. But that’s not all. You need space for the input prompt, calculations, and temporary results that the model needs. Lastly, you also need to run the OS and other apps using the same memory. As you can see, storage is a big decision.
-
-The second problem is about moving the weights quickly from memory to the processor. During text generation, the processor has to repeatedly fetch numerical data from memory. Even if you have a powerful processor, it might spend a lot of time just waiting for that data to be fetched from memory.
-
-The Apple engineering team also had to deal with the challenges regarding memory capacity and memory bandwidth while trying to make their LLM run on the iPhone. On top of this, a mobile phone also has to take care of battery consumption, overheating, and other apps trying to use the same resources. You don’t want the LLM to make the rest of the device unresponsive.
-
-How Apple Makes the Weights Cheaper to Store
-
-The most direct way of reducing the size of the model is to use fewer bits to store each weight. This technique is known as quantization.
-
-You can think of quantization as a way to represent numerical values using a smaller set of possibilities. Sure, you lose some numerical detail in the process. But the model can still perform its tasks at a pretty good level. The main trade-off is to select a representation approach that sits at the sweet spot for memory savings and quality. See the diagram below.
-
-The Apple engineering team uses a technique known as palettization. In this technique, you group similar weight values. A small lookup table stores representative values, and individual weights store short references to that table. For example, you can have a 2-bit reference select from four entries in a lookup table.
-
-In the earlier model version, the Apple engineering team combined 2-bit and 4-bit representations. It has an average of 3.7 bits per weight. This meant that the 3 billion weights could be stored in approximately 1.39 GB. A pretty good optimization.
-
-They mixed different precisions because different parts of a model can easily handle different amounts of numerical error. You need to spend more bits on sensitive components so that quality doesn’t go down. Other components can be compressed more.
-
-The later model Apple released makes the compression even more aggressive. The main decoder weights use 2 bits per weight. The embedding table uses 4 bits per weight. To make this compression work, Apple uses quantization-aware training. In this approach, you simulate the kind of restrictions that quantization will impose. Then, you adjust the model’s weights with those restrictions in place so that it can learn to work under them.
-
-How Apple Made Repeated Calculations Faster
-
-The weight storage is only one part of the overall memory problem. After you have successfully compressed the model, the model still needs memory to process a request.
-
-Let’s say you have a model that has already read a paragraph of text and generated the beginning of a response. When the model tries to predict the next token, it needs to use information from earlier tokens. However, if you have to recalculate every intermediate result, it would be a big waste of computational resources.
-
-
-…（原文过长，此处截断）</pre>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <section class="rest col">
-    <div class="sec solid">其 余 条 目</div>
-    <div class="srcblock">
-      <div class="srcname">Simon Willison's Weblog<span>1 条</span></div>
-      <article class="mini">
-        <h3><a href="https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/" target="_blank" rel="noopener">Game Boy Color on My Conference Badge</a></h3>
-<p class="one">会议徽章被改造成可运行 NES、Game Boy、GBC 模拟器的彩色屏掌机</p><p class="why">展示 LLM 辅助硬件 hacking 的真实案例：用 Gemini 生成模拟器代码，再移植到资源受限设备。对嵌入式与 AI 工程交叉方向有参考价值，但技术细节少。</p><p class="act"><span>下 一 步</span>找一块带屏的 ESP32 或 RP2040 开发板，尝试移植一个开源模拟器（如 gnuboy），理解帧缓冲与音频时序约束</p>        <div class="foot">
-<span class="tag">hardware-hacking</span><span class="tag">embedded</span><span class="tag">LLM-assisted-coding</span><span class="tag">emulator</span>          <span class="src">Simon Willison's Weblog</span>
-          <span class="dt">2026-10-27</span>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-28 06:53 · 生成于 2026-10-28 06:53:37</span>
+    <span>本次扫描 2026-10-28 08:59 · 生成于 2026-10-28 08:59:47</span>
   </footer>
 </div>
 </body>
