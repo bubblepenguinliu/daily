@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#faf7f2">
-<title>技术情报日报 · 2026-10-28</title>
+<title>技术情报日报 · 2026-10-29</title>
 <style>
   :root{
     --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
@@ -178,38 +178,423 @@
   <header class="masthead col">
     <div class="kicker">Daily Tech Digest</div>
     <h1>技术情报日报</h1>
-    <div class="sub">2026-10-28</div>
+    <div class="sub">2026-10-29 · 第 5 号</div>
     <div class="rule2"></div>
     <div class="lede">
-      <span>本次扫描 <b>2026-10-28 08:59</b> · 四个来源暂无新条目</span>
-      <span>已列出各源当前最新内容</span>
+      <span>本期收录 <b>5</b> 条 · 精读 <b>3</b> 篇</span>
+      <span>共 <b>43</b> 条页边批注</span>
     </div>
-    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
   </header>
 
   <section class="digest col">
-    <div class="sec">本 次 扫 描</div>
-    <p class="note-lead">本次扫描于 2026-10-28 08:59 完成，四个来源都没有新条目。
-      下面是各来源当前最新的一篇，想读可以直接点开。</p>
+    <div class="sec">今 日 提 要</div>
     <ul class="ov">
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-416.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 416 期）：编程已经面目全非</a></li>
-      <li><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-415.html" target="_blank" rel="noopener">阮一峰 · 科技爱好者周刊 · 科技爱好者周刊（第 415 期）：3D 版《看不见的城市》</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/" target="_blank" rel="noopener">Simon Willison's Weblog · Game Boy Color on My Conference Badge</a></li>
-      <li><a href="https://simonwillison.net/2026/Oct/26/gpt-61-terra/" target="_blank" rel="noopener">Simon Willison's Weblog · GPT-6.1 Terra</a></li>
-      <li><a href="https://blog.bytebytego.com/p/how-apple-fits-an-llm-on-your-iphone" target="_blank" rel="noopener">ByteByteGo · How Apple Fits an LLM on Your iPhone</a></li>
-      <li><a href="https://blog.bytebytego.com/p/last-chance-to-get-every-live-course" target="_blank" rel="noopener">ByteByteGo · Last chance to get every live course in one membership</a></li>
-      <li><a href="https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means</a></li>
-      <li><a href="https://jack-clark.net/2026/10/19/import-ai-477-in-which-i-tell-the-imf-the-singularity-has-begun/" target="_blank" rel="noopener">Import AI（Jack Clark） · Import AI 477: In which I tell the IMF the Singularity has begun</a></li>
-    </ul>
-    <p class="note-lead" style="margin-top:24px">上一期有内容的日报：
-      <a href="digest-2026-10-27.html" style="color:var(--accent)">digest-2026-10-27.html</a></p>
+<li>OpenAI 模型命名规则被公开解释：Luna<Terra<Sol<Astra，版本号同时编码发布顺序、同代关系与改进幅度，可作为判断模型定位的参考。</li><li>GitHub Octoverse 2026 数据：月合并 PR 达 2.2 亿、commit 73.8 亿，一年内均增长三倍以上，agentic engineering 对协作流程的冲击已有量化证据。</li><li>Simon Willison 判断 2026 年 10 月是“vibe coding 游戏”的拐点，Claude Opus 5.5 在 3D 建模、音乐生成、游戏设计上有实质提升。</li><li>Uber 工程团队为 AI agent 建了 MCP Gateway，统一工具发现与调用，是企业级 agent 工具治理的落地案例。</li><li>Amazon 工程领导层表态：能说清 AI 在哪些环节帮不上忙的工程师，体现的是被需要的判断力。</li>    </ul>
   </section>
 
+  <section class="deep">
+    <div class="col clr" style="margin-top:40px">
+      <div class="sec solid">值 得 细 读 · 全 文 精 读</div>
+<p class="note-lead">Octoverse 提供可量化的行业趋势，vibe coding 游戏拐点涉及方向判断，Uber MCP Gateway 是可复用的架构案例，三条分别覆盖数据、趋势、工程实现。</p>    </div>
 
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-28</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/28/github-octoverse-2026/" target="_blank" rel="noopener">GitHub Octoverse 2026 年度报告</a></h2>
+        <div class="orig-title">GitHub Octoverse 2026</div>
+<p class="standfirst">GitHub 年度报告显示，agentic engineering 使合并 PR 和提交量激增。</p>        <div class="art-meta">
+          <span>12 段</span><span>·</span>
+          <span>11 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>2026 年 10 月 28 日 - 链接博客</p>
+        <p>GitHub Octoverse 2026。我今天在 GitHub Universe 现场（GitHub 通过他们的“GitHub Stars”项目给了我一张免费门票）。执行副总裁 Jay Parikh 刚刚宣布了今年的 Octoverse 报告，并特别强调了以下数字：</p>
+        <aside class="note k-背景"><span class="k">背景</span>GitHub Stars 是 GitHub 面向活跃开源贡献者的邀请制项目，成员可获得大会门票等福利；Simon Willison 是 Django 联合创始人，长期跟踪开发者工具生态。</aside>
+        <aside class="note k-延伸"><span class="k">延伸</span>Jay Parikh 曾任 Facebook 基础设施副总裁，2025 年加入 GitHub 任 EVP，负责工程与产品；他的发言通常侧重平台规模与 AI 集成。</aside>
+        <p>这是 agentic engineering 对 GitHub 影响的一个相当鲜明的体现。2026 年，合并的 pull request 在不到一年内增长了两倍，达到每月 2.2 亿次。提交量增长了两倍多，达到每月 73.8 亿次，其中大部分增长发生在今年下半年。新仓库创建速率今年翻了一番，达到每月 3030 万个。</p>
+        <aside class="note k-数据"><span class="k">数据</span>2025 年同期合并 PR 约为每月 7300 万，提交约每月 23 亿；对比可知增长主要来自 AI agent 自动提交，而非人类开发者数量激增。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>合并 PR 数暴增可能包含大量低质量或重复提交，GitHub 未披露 PR 的关闭率或平均 review 时长，单看合并数会高估实际工程产出。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>可用 GitHub REST API 的 /search/issues?q=type:pr+is:merged+created:2026-01-01..2026-12-31 自行拉取数据验证月度趋势，注意 API 有速率限制。</aside>
+        <p>报告包含了按行业划分的新数字，并单独列出了涉及“互操作性或逆向工程”的仓库数据。方法学部分包含了他们如何完成这些统计的说明：</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>互操作性/逆向工程仓库的单独统计，可能反映 AI 辅助下协议兼容实现（如 clean room 重写）的增多，这与近年开源社区对 API 兼容层的关注一致。</aside>
+        <p>按公开仓库推送量排名的国家/地区，已根据个人资料位置进行调整。每个国家的推送量在 Octoverse 年度内汇总。为了调整 VPN 使用造成的偏差，使用了 LLM 分类来从该期间贡献推送的 GitHub 用户资料中提取 ISO 3166-1 alpha-2 代码 [...]</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>用 LLM 从个人资料文本推断国家代码，对资料留空或写“Earth”的用户会误判；GitHub 未公布分类准确率，排名靠后的国家误差可能更大。</aside>
+        <aside class="note k-背景"><span class="k">背景</span>ISO 3166-1 alpha-2 是两位国家代码（如 CN、US），GitHub 此前按用户自报位置统计，VPN 普及后偏差增大，才引入 LLM 推断。</aside>
+        <p>行业。2022 至 2026 年创建的公开仓库，通过一个微调的多语言嵌入模型，依据名称、描述、主题和 README，被归入 NAICS 行业分类，每年随机抽样 [...]</p>
+        <aside class="note k-数据"><span class="k">数据</span>NAICS 是北美行业分类系统，共 20 个一级部门；用嵌入模型做文本分类，典型 F1 在 0.7-0.85 之间，行业分布结论应视为趋势而非精确值。</aside>
+        <aside class="note k-实操"><span class="k">实操</span>想复现类似分类，可用 sentence-transformers 加载多语言模型，对 README 取前 512 token 做嵌入，再接一个逻辑回归分类头，成本很低。</aside>
+        <p>互操作性。统计每年创建的公开仓库中，名称、描述、主题或 README 提及互操作性或逆向工程，或相关术语（如 clean room implementation、drop-in replacement 或 protocol re-implementation）的数量。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>仅靠关键词匹配会漏掉未在 README 中明说的逆向工程项目，也会把教程类仓库误计；该方法只能衡量“宣称做互操作”的仓库，而非实际行为。</aside>
+        <p>近期文章</p>
+        <p>- vibe 游戏开发的十月拐点 - 2026 年 10 月 28 日</p>
+        <p>- Battle Drones - 一款基于音频多人的 vibe 编码 RTS - 2026 年 10 月 20 日</p>
+        <p>- 你好 Python 3.15，再见 3.10，现在我可以使用 3.11 了 - 2026 年 10 月 12 日</p>
+        <p>- 我博客的一个新功能，用我的声音构建 - 2026 年 10 月 9 日</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>2026 年 GitHub 合并 PR 达每月 2.2 亿，agentic engineering 正把代码提交量推高一个数量级。</div>
+        <details class="orig">
+          <summary>查看英文原文（1945 字符，可对照译文）</summary>
+          <pre>28th October 2026 - Link Blog
+
+GitHub Octoverse 2026. I'm at GitHub Universe today (GitHub gave me a free ticket through their "GitHub Stars" program). EVP Jay Parikh just announced this year's Octoverse report, and highlighted these numbers in particular:
+
+This is a pretty stark representation of the impact of agentic engineering on GitHub. In 2026, merged pull requests tripled in less than a year to 220 million per month. Commits more than tripled to 7.38 billion per month, with most of that increase in the second half of this year. New repository rate doubled this year, to 30.3 million per month.
+
+The report includes new numbers by industry, and breaks out numbers for repositories that involve "interoperability or reverse engineering". The methodology section includes notes about how they did this:
+
+Top countries by pushes to public repositories, adjusted by profile location. Pushes from each country were summed across the Octoverse year. To adjust for biases caused by VPN usage, LLM classification was used to extract the ISO 3166-1 alpha-2 code from the profiles of GitHub users who contributed pushes during this period [...]
+
+Industry. Public repositories created 2022 to 2026 were sorted into NAICS sectors by a fine-tuned multilingual embedding model using name, description, topics, and README, from random samples per year. [...]
+
+Interoperability. Counts public repositories created each year whose name, description, topics, or README mention interoperability or reverse engineering, or related terms, such as clean room implementation, drop-in replacement, or protocol re-implementation.
+
+Recent articles
+
+- The October inflection point for vibe game development - 28th October 2026
+
+- Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026
+
+- Hello Python 3.15, goodbye 3.10, and now I can use 3.11 - 12th October 2026
+
+- A new feature for my blog, built using my voice - 9th October 2026</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-28</span>
+        </div>
+        <h2><a href="https://simonwillison.net/2026/Oct/28/vibe-game-development/" target="_blank" rel="noopener">vibe 游戏开发的十月拐点</a></h2>
+        <div class="orig-title">The October inflection point for vibe game development</div>
+<p class="standfirst">模型开始能设计出真正好玩的游戏了</p>        <div class="art-meta">
+          <span>28 段</span><span>·</span>
+          <span>18 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>vibe 游戏开发的十月拐点
+
+2026 年 10 月 28 日
+
+我之前写过，2025 年 11 月是 coding agent 的一个拐点——在那一刻，Opus 4.5 和 GPT-5.1 跨过了一个临界点，意味着它们各自的 coding agent 成了软件工程师可靠的日常主力工具。我认为我们在 2026 年 10 月又到了一个新拐点，而这一次是针对 vibe coding 电脑游戏的。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Simon Willison 是 Django 联合创始人、Datasette 作者，他从 2022 年起持续跟踪 LLM 能力边界，其“inflection point”判断常被业界当作能力分水岭的参考。</aside>
+        <aside class="note k-质疑"><span class="k">质疑</span>“可靠日常主力”是主观阈值：SWE-bench 等基准只测补丁通过率，不测多轮交互中的上下文保持与回滚成本，实际团队采纳率远低于个人体验。</aside>
+        <p>尤其是 Claude Opus 5.5，在构建一款引人入胜的游戏所需的几个方面都展现出有意义的提升：</p>
+        <p>- 3D 建模
+
+- 音乐生成（参见 Scrimshaw Jukebox）
+
+- 游戏设计（！）</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>音乐生成可对照 Suno/Udio 的商用争议：训练数据版权诉讼未决，游戏内嵌 AI 音乐在 Steam 上架时需申报，发行前要查平台政策。</aside>
+        <p>最后一项尤其重要。模型早就能做出看起来像游戏的东西了，我之前的实验里就能看到。真正的挑战一直是做出真正好玩的游戏。</p>
+        <aside class="note k-数据"><span class="k">数据</span>“看起来像游戏”的门槛很低：一个 three.js 场景加 WASD 移动约 200 行代码即可，但可玩性需要数值平衡、反馈节奏与难度曲线，这些难以用通过率衡量。</aside>
+        <p>游戏设计是一个很深的学科领域。我不会假装自己精通它——我了解得足够多，足以把它当作一门手艺来尊重。创造一个新颖、引人入胜的 gameplay loop，在恰当的难度上挑战玩家并提供令人满意的学习曲线，是一门精妙的艺术。我原本不认为模型能做到这一点。</p>
+        <aside class="note k-背景"><span class="k">背景</span>游戏设计中“核心循环”概念可追溯到 MDA 框架（机制-动态-美学），2014 年论文；LLM 训练语料含大量 GDC 演讲与设计博客，是其“懂设计”的可能来源。</aside>
+        <p>然后我试着告诉 Claude Opus 5.5“让它好玩得多”……它做到了。</p>
+        <aside class="note k-实操"><span class="k">实操</span>可复现：在 Claude 对话里输入同一句“Make it a LOT more fun”，对比 Opus 5.5 与 GPT-6 Astra 的输出，观察后者是否只增加粒子特效而不改难度曲线。</aside>
+        <p>过去几周，我用 vibe coding 的方式（经典意义上的——完全不看代码）做了四款我真心喜欢玩的游戏。</p>
+        <p>周末我参加了伯克利的 Foo Camp，遇到好几个人有类似的体验。现在做出玩得好的游戏容易得惊人。新的挑战是想出新颖、令人愉悦、且没有 AI 辅助就不会存在的游戏概念。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Foo Camp 是 O'Reilly 办的邀请制非正式聚会，以“无议程”著称，参会者现场贴话题排日程；Simon 常在此类场合做能力演示。</aside>
+        <p>我没有做详尽的研究，但我目前的印象是 GPT-6 Astra 还没完全到位。它绝对能构建一个游戏，但它的“趣味感”比不上 Opus 5.5。我预计 OpenAI 会在年底前追上。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>“趣味感”无法自动评测，作者仅凭个人体验下判断；不同模型对同一提示的随机性也大，单次对比不足以定论，需固定 seed 多次采样。</aside>
+        <p>以下四个游戏项目让我确信，模型现在能在极少指导下做出好玩的游戏。四个都用 HTML 和 JavaScript 构建，完全在浏览器里运行。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>纯浏览器游戏意味着零安装、易分享，适合 vibe coding 快速迭代；但 three.js 场景在移动端 GPU 上易掉帧，发布前需测低端机。</aside>
+        <p>Tree Appreciator
+
+我发现真正令人愉悦的最小游戏是 Tree Appreciator。我用的是普通 Claude 聊天界面——甚至不需要 Claude Code。</p>
+        <p>这是我们沿着 Skyline Boulevard 开车看树时一时兴起做的。我的 prompt 是：</p>
+        <p>Build a three js game called "Tree appreciator" - it shows you two algorithmically generated trees and the game mechanics is about appreciating the differences between them. Think hard about how to make sure it is both fun and beautiful.</p>
+        <aside class="note k-实操"><span class="k">实操</span>“Think hard”会触发扩展思考模式，消耗更多 token 但提升规划质量；在 API 中对应 reasoning effort 参数，成本约翻倍。</aside>
+        <p>我发现让模型用 three.js 效果非常好。Claude 没有自己的图像生成模型，但能构建出看起来和感觉都很出色的全彩 3D 模型。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>“没有图像生成模型”指 Claude 不直接出图，但它可通过代码程序化生成几何与材质；这与扩散模型出图是两条路径，效果上限不同。</aside>
+        <p>这个游戏完全不需要迭代或后续提示——我一次就得到了成品。它给了我一个迷人的、移动端友好的找不同小游戏。你可以在这里玩。这是构建它的聊天记录。</p>
+        <aside class="note k-数据"><span class="k">数据</span>单次生成即可用在简单场景常见，但代码量超过约 500 行后，单次成功率显著下降，需分步提示与人工验收。</aside>
+        <p>它令人愉悦地放松。画面有趣，在“植物标本馆”里收集已完成的树，带来一种美好、温馨的成就感。</p>
+        <p>Emberwick
+
+这是一个更有野心的项目，我同样用普通 Claude 聊天构建。我先做了一个俯视角奇幻 RPG 引擎的实验性原型：</p>
+        <p>Build a demo game engine three.js which is a top down (but at an angle) RPG - the player gets to move through the world with one or two companions. Create a fantasy village setting that demonstrates walking around outside and then shows how when the player enters a building the wall between the player and the camera goes transparent so the user can see what is happening</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>墙体透明是第三人称游戏的经典遮挡处理，常用射线检测+材质淡出；LLM 能直接写出该逻辑，说明其见过大量 Unity/three.js 教程代码。</aside>
+        <p>Add some NPCs and plenty of furniture and different types of building some with an upstairs - be creative, make it look great
+
+这是第一个版本。效果非常好！</p>
+        <p>我受到鼓舞，提高了野心：</p>
+        <p>Make it not so flat - the buildings are great but the landscape itself is completely flat at the moment, fix that
+
+Add basements to two of the buildings with a tunnel system joining them below the village
+
+Add the start of a rocky mountain on one side of the village containing a cave with a sleeping troll
+
+这是那个版本。</p>
+        <aside class="note k-实操"><span class="k">实操</span>地形起伏可用 three.js 的 PlaneGeometry 加顶点位移或 heightmap；提示里点名“not so flat”比“make terrain”更有效，因模型会针对具体缺陷修改。</aside>
+        <p>当这产生了不错的结果，我决定一路推进：</p>
+        <p>Now turn this into an actual game - quadruple the size of the playable area, introduce fun game mechanics, add a plot that isn't too cliche, some twists, a magic system, make it really good
+
+我们又回到了“make it really good”这样的提示！要求情节“不太老套”似乎也奏效了——它还是有点老套，但足够新颖，我喜欢跟着故事走。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>“不太老套”是负面约束，模型只能避开高频套路，无法保证原创；真正的新颖需人类提供核心设定，模型负责填充。</aside>
+        <p>与 Tree Appreciator 不同，这个游戏花了相当多额外的 playtesting 和提示才达到成品版本。这主要是 gameplay 问题——比如某个角色因为另一个剧情元素被移动到别处，导致不在正确位置完成任务。</p>
+        <aside class="note k-数据"><span class="k">数据</span>这类“状态耦合 bug”在 LLM 生成游戏里高频出现，因为模型按局部逻辑写脚本，缺少全局状态机；修复通常需人工指出具体触发链。</aside>
+        <p>这是最终游戏。它有一个完整故事，通关约 15 分钟。</p>
+        <p>甚至还有一个实验性关卡编辑器，如果你想加入自己的房子、家具和景观元素。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>关卡编辑器让玩家用自然语言改世界，是 LLM 游戏的新交互范式；但生成内容需持久化，浏览器端可用 IndexedDB 存 JSON 场景。</aside>
+        <p>当一切正常（并且我迭代修复了一些 gameplay bug）后，我从头到尾玩了一遍，发现自己被结局打动了！我有点不好意思，因为这个游戏里的一切——画面、情节、角色、音乐、对话——都来自模型。我的创作投入几乎只是“这是一个奇幻村庄，洞里睡着一只巨魔”。</p>
+        <aside class="note k-背景"><span class="k">背景</span>“被 AI 作品打动”涉及情感归因：读者知道作者是模型仍产生情绪，说明叙事触发不依赖作者意图，这与自动化新闻写作的实验结论一致。</aside>
+        <p>这是我构建这个游戏的完整共享 Claude 聊天记录。</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>模型已能一次生成可玩小游戏，但复杂项目仍需人工迭代修 gameplay bug。</div>
+        <details class="orig">
+          <summary>查看英文原文（5845 字符，可对照译文）</summary>
+          <pre>The October inflection point for vibe game development
+
+28th October 2026
+
+I’ve written before about how November 2025 was an inflection point for coding agents—the point where Opus 4.5 and GPT-5.1 crossed a tipping point that meant their respective coding agents became reliable daily drivers for software engineers. I think we’ve reached a new inflection point in October 2026, and this time it’s for vibe coding computer games.
+
+Claude Opus 5.5 in particular exhibits meaningful improvements in several areas needed to build a compelling game:
+
+- 3D modeling
+
+- Music generation (see Scrimshaw Jukebox)
+
+- Game design (!)
+
+That last one is particularly important. Models have been able to create something that looks like a game for quite a while now, as seen in my previous experiments. The challenge has been getting to a game that’s actually fun to play.
+
+Game design is a deep subject area. I won’t pretend to be well versed in it—I know enough to have respect for it as a craft. Creating a novel, compelling gameplay loop which challenges players at the right level and provides a satisfying learning curve is a fine art. I didn’t think the models could do it.
+
+Then I tried telling Claude Opus 5.5 to “Make it a LOT more fun”... and it did.
+
+In the past few weeks I’ve vibe coded (in the classic sense of the term—no looking at the code at all) four games that I’ve genuinely enjoyed playing.
+
+I attended Foo Camp in Berkeley over the weekend and met several people who were having similar experiences. Building games that play well is shockingly easy now. The new challenge is coming up with concepts for games that are novel and delightful and that wouldn’t exist without AI assistance.
+
+I haven’t done an exhaustive study, but my current impression is that GPT-6 Astra isn’t quite there yet. It can absolutely build a game, but its sense of fun doesn’t match that of Opus 5.5. I expect OpenAI will get there by the end of the year.
+
+Here are the four game projects that have convinced me that the models are now capable of producing fun games with very little guidance. All four are built in HTML and JavaScript and run entirely in the browser.
+
+Tree Appreciator
+
+The smallest game I found to be genuinely delightful is Tree Appreciator. I used the regular Claude chat interface for this—it didn’t even need Claude Code.
+
+I built this on a whim while we were driving along Skyline Boulevard looking at trees. My prompt was:
+
+Build a three js game called "Tree appreciator" - it shows you two algorithmically generated trees and the game mechanics is about appreciating the differences between them. Think hard about how to make sure it is both fun and beautiful.
+
+I’ve found that telling models to use three.js works really well. Claude doesn’t have its own image generation model but is capable of building full-color 3D models that look and feel excellent.
+
+This game required no iteration or follow-up prompting at all—I got the game in a single shot. It gave me back a charming little mobile-friendly spot-the-difference game. You can play that here. Here’s the chat transcript that built it.
+
+It’s pleasingly relaxing. The graphics are fun, and collecting trees that you have completed in a “herbarium” provides a nice, cosy sense of accomplishment.
+
+Emberwick
+
+This was a more ambitious project that I again built using regular Claude chat. I started out by building an experimental prototype of an engine for a top-down fantasy RPG:
+
+Build a demo game engine three.js which is a top down (but at an angle) RPG - the player gets to move through the world with one or two companions. Create a fantasy village setting that demonstrates walking around outside and then shows how when the player enters a building the wall between the player and the camera goes transparent so the user can see what is happening
+
+Add some NPCs and plenty of furniture and different types of building some with an upstairs - be creative, make it look great
+
+Here’s that first version. It worked really well!
+
+I was inspired to increase my ambitions:
+
+Make it not so flat - the buildings are great but the landscape itself is completely flat at the moment, fix that
+
+Add basements to two of the buildings with a tunnel system joining them below the village
+
+Add the start of a rocky mountain on one side of the village containing a cave with a sleeping troll
+
+Here’s that version.
+
+When that produced a good result, I decided to push it all the way:
+
+Now turn this into an actual game - quadruple the size of the playable area, introduce fun game mechanics, add a plot that isn't too cliche, some twists, a magic system, make it really good
+
+We’re back to prompts like “make it really good” here! Asking for a plot that “isn’t too cliche” seemed to work too—it’s a bit cliché, but still novel enough that I enjoyed following the story.
+
+Unlike Tree Appreciator, this took quite a bit of additional playtesting and prompting to get to a finished version. This was mainly due to gameplay problems—things like a character not being in the right place to complete a quest because a different story element had caused them to move to another location.
+
+Here’s that final game. It has a full story that takes about 15 minutes to play through.
+
+There’s even an experimental level editor if you want to drop in your own houses, furniture, and landscape features.
+
+Once it was all working (and I’d iterated through some gameplay bugs), I played it through from start to finish and found myself emotionally affected by the ending! I’m somewhat embarrassed by this, because everything in this game—the graphics, the plot, the characters, the music, the dialog—came from the model. My creative input was pretty much just “it’s a fantasy village and there’s a troll asleep in a cave”.
+
+Here’s the full shared Claude chat in which I built this game.
+
+
+…（原文过长，此处截断）</pre>
+        </details>
+      </div>
+    </article>
+    <article class="full">
+      <div class="col clr">
+        <div class="art-head">
+          <span class="src">ByteByteGo</span>
+          <span class="dt">2026-10-28</span>
+        </div>
+        <h2><a href="https://blog.bytebytego.com/p/how-uber-built-a-gateway-for-ai-agents" target="_blank" rel="noopener">Uber 如何为 AI Agent 构建访问工具的网关</a></h2>
+        <div class="orig-title">How Uber Built A Gateway For AI Agents To Access Tools</div>
+<p class="standfirst">Uber 用 MCP Gateway 统一管理 AI Agent 的工具发现、调用与权限。</p>        <div class="art-meta">
+          <span>24 段</span><span>·</span>
+          <span>14 条批注</span>
+        </div>
+      </div>
+
+      <div class="col reading clr">
+        <p>市场不等人。在预测市场上，价格以毫秒级变动，每一笔交易都必须在发生的瞬间成交。在 12 月 9 日的 Agentic Data Summit 上，Kalshi 的技术团队成员 Batu Balimtas 将带您深入幕后，参与“为驱动市场的时刻而工程：Kalshi 与 Redpanda”的分享。聆听 Kalshi 的数据基础设施如何在最关键的时刻保持同步，以及在生产环境中运行它需要哪些条件。太平洋时间中午 12:00 观看 Kalshi 的现场分享。本次峰会免费且线上举行，时间为太平洋时间上午 8:30 至下午 2:00，您可以只参加对您最重要的环节。</p>
+        <aside class="note k-背景"><span class="k">背景</span>Kalshi 是美国商品期货交易委员会（CFTC）监管的预测市场，2024 年大选期间其选举合约日交易量曾突破 1 亿美元，对低延迟要求极高。</aside>
+        <p>一个现成的大语言模型可以解释你的代码为什么出错。它可以建议可能的原因。或者它可以执行诸如编写数据库查询之类的任务。然而，所有这些都只是基于模型训练数据的一般层面。你不能指望它基于你系统的内部运作来写出答案。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>这正是 RAG（检索增强生成）和 tool use 要解决的问题：前者把内部文档喂给模型，后者让模型主动调用内部 API 获取实时数据。</aside>
+        <p>这是通过工具来处理的。每个工具都为特定任务而构建。但你最终可能会有很多工具，尤其是在企业环境中。这正是 Uber 工程团队面临的情况。</p>
+        <aside class="note k-数据"><span class="k">数据</span>Uber 公开资料显示其内部有数千个微服务，若每个团队自建 MCP 集成，工具数量很容易达到数百个，发现和权限管理成本呈指数上升。</aside>
+        <p>为了解决这个问题，他们构建了 MCP Gateway。你可以把它看作一个共享平台，让不同的 AI Agent 找到存在哪些工具，并使用它们来执行任务。在本文中，我们将详细探讨 Uber 如何构建这个网关。以下是我们要涵盖的内容：</p>
+        <aside class="note k-背景"><span class="k">背景</span>MCP 由 Anthropic 于 2024 年 11 月开源，旨在标准化 LLM 与外部工具/数据的连接方式，类似“AI 领域的 USB-C”。</aside>
+        <p>- 什么是工具，以及 AI Agent 为什么需要它们
+
+- MCP 在 Uber 的角色
+
+- Uber MCP 网关的设计
+
+- 网关如何发现可用工具
+
+- MCP 网关如何工作
+
+- MCP 网关如何处理权限和访问</p>
+        <p>免责声明：本文基于多个来源公开分享的细节。参考文献在文末。如果您发现任何不准确之处，请留言。</p>
+        <p>为什么 AI Agent 需要工具</p>
+        <p>如果你想让一个通用 LLM 专门为你的当前系统编写答案，你需要让它访问有关你系统的信息。例如，假设一个开发者问一个基于 LLM 的 AI 助手，为什么 XYZ 服务突然开始失败。答案隐藏在系统的日志、部署、指标和事件中。LLM 需要访问这些信息才能回答这个问题。</p>
+        <aside class="note k-实操"><span class="k">实操</span>你可以用 OpenAI 的 function calling 或 Anthropic 的 tool use 快速验证：给模型一个 search_logs 工具定义，看它能否在用户提问时正确选择并填参。</aside>
+        <p>这就是我们可以创建工具的地方。你可以把工具看作 AI 应用可以执行的一个操作。例如，你可以有一个搜索日志的工具。检索事件详情。或者检查部署状态。模型选择一个工具并提供必要的输入。应用程序执行它并将结果发送回模型。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>工具调用依赖模型正确选择工具和填参，但模型可能幻觉出不存在的工具或参数，生产环境需在网关层做 schema 校验和兜底。</aside>
+        <p>许多这样的工具已经以 API 的形式存在。你可能已经知道，API 是一个程序可以通过它向另一个程序请求某些东西的接口。例如，我们可以有一个暴露 API 的日志服务。它接受服务名称和时间范围作为输入，并返回该范围内所有日志条目。</p>
+        <p>然而，为了让 Agent 使用这样的服务，我们需要描述它做什么以及需要什么输入。这种结构化定义以工具的形式呈现，LLM 应用可以使用。在幕后，API 执行真正的搜索。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>OpenAPI/Swagger 规范可以直接转换为 MCP 工具定义，已有开源工具（如 openapi-mcp）做这种转换，减少手写 schema 的工作量。</aside>
+        <p>MCP 在 Uber 的角色</p>
+        <p>MCP 代表模型上下文协议（Model Context Protocol）。通过 MCP，你获得了一种标准方式，让 AI 应用发现可用的外部能力并与它们通信。Uber 将其用于其工具生态系统。</p>
+        <aside class="note k-背景"><span class="k">背景</span>MCP 协议基于 JSON-RPC 2.0，定义了客户端-服务器架构，服务器可暴露 tools、resources、prompts 三类能力，Uber 主要用 tools。</aside>
+        <p>我们必须了解三个重要术语，才能更好地理解 MCP 的作用。</p>
+        <p>首先，你有 MCP 客户端。这是位于 AI 应用内部的组件。它使用 MCP 进行通信，并处理各种交互，例如请求可用工具。或者调用选定的工具。</p>
+        <p>其次，有 MCP 服务器。它通过 MCP 暴露能力（或工具）。在 Uber 的情况下，服务器展示可用工具并接受对这些工具的任何请求。</p>
+        <p>第三，你有 MCP 工具。这是服务器暴露的单个操作。你也可以把它们看作能力。一个服务器可以提供多个工具。</p>
+        <aside class="note k-数据"><span class="k">数据</span>一个 MCP 服务器通常暴露 5-20 个工具，过多会导致模型选择困难；Anthropic 建议单个服务器工具数控制在 20 以内。</aside>
+        <p>MCP 要求你正确定义工具。这个定义由名称、描述和输入 schema 等信息组成。schema 提供数据的结构。比如哪些字段存在、哪些是必填的、它们可以接受什么类型的值。例如，你可以有一个 schema，其中 service_name 必须是字符串，limit 是整数。</p>
+        <aside class="note k-实操"><span class="k">实操</span>用 JSON Schema 定义工具输入时，务必设置 required 和 type，否则模型可能传错类型；可用 jsonschema 库在网关侧做校验。</aside>
+        <p>MCP 使用结构化方式格式化请求或其参数。还有相应的结果或错误。格式通常是 JSON-RPC 2.0。这种标准化使得集成变得容易。你可以让同一个 MCP 客户端与不同的 MCP 服务器通信。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>JSON-RPC 2.0 本身不定义工具发现，MCP 在它之上增加了 tools/list 和 tools/call 等方法，标准化的是消息格式而非工具语义。</aside>
+        <p>然而，这种标准化并非没有代价。必须有人决定存在哪些工具以及它们在哪里运行。此外，你需要跟踪工具的所有权及其工作方式。最初，Uber 内部的工程团队构建了自己的 MCP 集成。在小范围内，自主性很好。但随着采用率增加，很明显每个团队都在解决类似的问题。例如，暴露工具。管理连接。处理权限。等等。更困难的是，找出哪些工具可用很困难。一切都分散了。</p>
+        <aside class="note k-背景"><span class="k">背景</span>这是典型的“平台化”转折点：当重复建设成本超过集中管理成本时，企业会构建内部开发者平台（IDP），如 Backstage 解决服务发现，MCP Gateway 解决工具发现。</aside>
+        <p>最重要的是，Uber 现有的服务格局带来了另一个挑战。Uber 的所有服务并非以相同方式通信。有些使用 HTTP。有些使用 gRPC。还有一些使用 TChannel。例如，你可能有一个使用 JSON 的 HTTP API 和一个使用 Protobuf 消息的 gRPC API。你不能简单地在这些服务之间转发 MCP 请求而不修改请求格式。</p>
+        <aside class="note k-延伸"><span class="k">延伸</span>TChannel 是 Uber 自研的 RPC 协议，2015 年开源，但社区采用有限；Uber 后来主推 gRPC，网关需做协议转换（如 JSON↔Protobuf）。</aside>
+        <p>因此，Uber 需要一个公共层，可以连接 MCP 客户端到工具。他们还希望这个层处理共享发现、安全和运维支持。这个层被称为 MCP Gateway。</p>
+        <aside class="note k-质疑"><span class="k">质疑</span>网关集中管理虽好，但会成为单点故障和性能瓶颈；Uber 需在网关层做水平扩展和缓存，否则工具调用延迟可能翻倍。</aside>
+        <p>Uber MCP 网关的设计</p>
+        <p>…（原文过长，此处截断）</p>
+      </div>
+
+      <div class="col clr">
+        <div class="takeaway"><span>读 完 记 住</span>企业级 AI Agent 工具调用需要统一网关来发现、转换协议和管理权限，避免重复建设。</div>
+        <details class="orig">
+          <summary>查看英文原文（5961 字符，可对照译文）</summary>
+          <pre>Markets don’t wait. On a prediction market, prices move in milliseconds, and every trade has to land the moment it happens. At the Agentic Data Summit on December 9, Batu Balimtas, Member of Technical Staff at Kalshi, takes you behind the scenes in Engineering for the Moments That Move Markets: Kalshi and Redpanda. Hear how Kalshi’s data infrastructure keeps pace when it matters most, and what it takes to run it in production. Catch Kalshi live at 12:00 PM PT. The summit is free and virtual and runs 8:30 AM–2:00 PM PT, so you can join for the sessions that matter most to you.
+
+An off-the-shelf large language model can explain why there’s an error in your code. It can suggest possible causes. Or it can perform tasks like writing a database query. However, all this would be at a general level based on the model’s training. You cannot expect it to write answers based on your system’s internal workings.
+
+This is handled using tools. Each tool is built for a specific job. But you can end up with lots of tools, especially when working in an enterprise setup. This is the situation the Uber engineering team faced.
+
+To deal with this, they built the MCP Gateway. You can think of it as a shared platform that lets different AI agents find which tools are present and use them to perform their job. In this article, we’ll look at how Uber built this gateway in detail. Here’s what we will cover:
+
+- What are tools and why AI agents need them
+
+- The role of MCP at Uber
+
+- How the Uber MCP gateway is designed
+
+- How the gateway finds out the available tools
+
+- How does the MCP gateway work
+
+- How the MCP gateway deals with permission and access
+
+Disclaimer: This post is based on publicly shared details from various sources. References at the end. Please comment if you notice any inaccuracies.
+
+Why AI Agents Need Tools
+
+If you want a general-purpose LLM to write answers specifically for your current systems, you need to give it access to information about your system. For example, let’s say a developer asks an LLM-based AI assistant why XYZ service suddenly started failing. The answer is hidden in the system’s logs, deployments, metrics, and incidents. The LLM needs to access this information to be able to answer this question.
+
+This is where we can create tools. You can think of a tool as an operation an AI application can execute. For example, you can have a tool to search logs. Retrieve incident details. Or check the status of a deployment. The model selects a tool and provides the necessary inputs. The application executes it and sends the result back to the model.
+
+Many of these tools already exist as APIs. As you might already know, an API is an interface through which one program can request something from another program. For example, we can have a logging service that exposes an API. It takes the service name and time range as input and sends back all the log entries that fall within the range.
+
+However, for an agent to use such a service, we need to describe what it does and what inputs it needs. This structured definition takes the form of a tool that the LLM application can use. Behind the scenes, the API performs the real search.
+
+The Role of MCP at Uber
+
+MCP stands for Model Context Protocol. With MCP, you get a standard way for AI applications to find out available external capabilities and talk to them. Uber uses MCP for its tool ecosystem.
+
+We must know three important terms to understand the role of MCP in a better way.
+
+First, you have the MCP client. This is the component that sits inside an AI application. It communicates using MCP and handles various interactions, such as requesting the available tools. Or making calls to the selected tools.
+
+Second, there is the MCP server. It exposes the capabilities (or tools) through MCP. In Uber’s case, the server shows the available tools and accepts any requests made to those tools.
+
+Third, you have the MCP tool. This is the individual operation exposed by a server. You can also think of them as capabilities. One server can provide multiple tools.
+
+MCP requires you to define the tools properly. This definition is made up of information such as name, description, and input schema. A schema provides the structure of data. Things like which fields are present, which are mandatory, and what types of values they can accept. For example, you can have a schema where service_name has to be a string and limit is an integer.
+
+MCP uses a structured way to format a request or its parameters. Also, the corresponding result or error. The format is usually JSON-RPC 2.0. This standardization makes it easy to integrate stuff. You can have the same MCP client talk to different MCP servers.
+
+However, this standardization doesn’t come for free. Someone has to decide which tools exist and where they run. Also, you need to track the ownership of the tools and how they work. Initially, the engineering teams within Uber built their own MCP integrations. The autonomy was great at a small level. But as adoption increased, it was obvious that each team was solving similar problems. For example, exposing tools. Managing connections. Dealing with permissions. And so on. To make things even more difficult, finding out which tools were available was difficult. Everything was scattered.
+
+On top of all this, Uber’s existing service landscape brought another challenge. All the services in Uber didn’t talk to each other in the same way. Some used HTTP. Some used gRPC. And others used TChannel. For example, you might have an HTTP API use JSON and a gRPC API use Protobuf messages. You cannot simply forward an MCP request across these services without modifying the request format.
+
+Therefore, Uber needed a common layer that could connect MCP clients to the tools. They also wanted this layer to handle shared discovery, security, and operational support. This layer is known as the MCP Gateway.
+
+How the Uber MCP Gateway is Designed
+
+
+…（原文过长，此处截断）</pre>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+    <div class="srcblock">
+      <div class="srcname">Simon Willison's Weblog<span>2 条</span></div>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/28/ted-sanders/" target="_blank" rel="noopener">Quoting Ted Sanders</a></h3>
+<p class="one">OpenAI 员工解释模型命名：规模决定性能，版本号编码发布顺序与改进幅度。</p><p class="why">帮你读懂模型发布信号，避免被版本号误导；也提示“模型规模”仍是性能的主要解释变量，选型时先看规模档位再看版本号。</p><p class="act"><span>下 一 步</span>把主流厂商的模型命名规则整理成一张对照表，选型时按“规模档位、版本号、发布时间”三个维度记录。</p>        <div class="foot">
+<span class="tag">LLM</span><span class="tag">OpenAI</span><span class="tag">模型选型</span>          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-28</span>
+        </div>
+      </article>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/28/terk-terkowitz/" target="_blank" rel="noopener">Quoting Terk Terkowitz</a></h3>
+<p class="one">Amazon 工程领导层：说不清 AI 帮不上什么忙，本身就是一种有价值的判断力。</p><p class="why">给“AI 焦虑”一个反向框架：能界定 AI 边界是工程判断力的体现。面试或组内汇报时，具体说明 AI 在哪些环节失效，比泛泛谈提效更有说服力。</p><p class="act"><span>下 一 步</span>在自己的项目里记录 3 个“AI 工具明确帮不上忙”的具体场景及原因。</p>        <div class="foot">
+<span class="tag">职业判断</span><span class="tag">AI 工程</span><span class="tag">Amazon</span>          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-28</span>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <footer class="clr">
     <span>tech-daily-digest · 自动编纂</span>
-    <span>本次扫描 2026-10-28 08:59 · 生成于 2026-10-28 08:59:47</span>
+    <span>本次扫描 2026-10-29 07:12 · 生成于 2026-10-29 07:12:15</span>
   </footer>
 </div>
 </body>
