@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#faf7f2">
+<title>技术情报日报 · 2026-10-30</title>
+<style>
+  :root{
+    --paper:#faf7f2; --ink:#1c1a17; --muted:#6b6357; --soft:#8b8172;
+    --rule:#d8d0c3; --rule-soft:#e7e0d4; --accent:#9b2c20; --tint:#f3ede3;
+    --tw:636px;        /* 正文列宽 */
+    --nw:296px;        /* 页边批注宽 */
+    --gap:40px;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--paper);-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.82;
+    font-family:Georgia,"Source Han Serif SC","Noto Serif SC",SimSun,"Songti SC",serif;
+    background-image:radial-gradient(circle at 16% 6%,rgba(155,44,32,.035),transparent 42%);
+    overflow-wrap:break-word;
+  }
+  ::selection{background:#efe0d4;color:var(--ink)}
+
+  /* 布局：整页左对齐，正文列之外留出批注边栏 */
+  .wrap{max-width:1056px;margin:0 auto;padding:44px 24px 96px}
+  .col{max-width:var(--tw)}
+  .clr{clear:both}
+
+  /* ---------- 报头 ---------- */
+  .masthead{text-align:center;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+  .kicker{font-size:11px;letter-spacing:.42em;color:var(--muted);text-transform:uppercase;
+          font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif}
+  h1{font-size:clamp(30px,5.2vw,44px);margin:12px 0 4px;letter-spacing:.14em;font-weight:600;line-height:1.3}
+  .masthead .sub{font-size:13px;color:var(--muted);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+  .rule2{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);height:4px;margin-top:8px}
+  .lede{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;
+        font-size:12.5px;color:var(--muted);padding:12px 2px 0;
+        font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;letter-spacing:.04em}
+  .lede b{color:var(--accent);font-weight:600}
+  .warn{margin-top:14px;padding:9px 13px;background:#fdf3f1;border:1px solid #e8cdc8;
+        border-radius:3px;font-size:12.5px;color:#8a2b21;text-align:left;
+        font-family:"Microsoft YaHei",system-ui,sans-serif}
+
+  /* ---------- 提要 ---------- */
+  .digest{margin:34px 0 6px}
+  .sec{font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;font-size:12.5px;
+       letter-spacing:.3em;color:var(--accent);border-bottom:1px solid var(--rule);
+       padding-bottom:8px;margin-bottom:16px}
+  .sec.solid{color:var(--ink);border-bottom:2px solid var(--ink)}
+  ul.ov{list-style:none;margin:0;padding:0}
+  ul.ov li{position:relative;padding:8px 0 8px 42px;border-bottom:1px dotted var(--rule)}
+  ul.ov li:last-child{border-bottom:0}
+  ul.ov li::before{content:counter(o,decimal-leading-zero);counter-increment:o;position:absolute;
+    left:0;top:9px;font-size:11.5px;color:var(--accent);font-family:Georgia,serif;letter-spacing:.06em}
+  ul.ov{counter-reset:o}
+  ul.ov li a{color:var(--ink);text-decoration:none}
+  ul.ov li a:hover{color:var(--accent)}
+
+  /* ---------- 深度文章 ---------- */
+  .deep{margin-top:14px}
+  .note-lead{font-size:13px;color:var(--muted);font-style:italic;margin:-6px 0 4px}
+
+  article.full{padding:20px 0 8px;clear:both}
+  article.full+article.full{border-top:2px solid var(--ink);margin-top:34px;padding-top:34px}
+  .art-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+            font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;letter-spacing:.1em;
+            color:var(--muted);margin-bottom:9px}
+  .art-head .dt{margin-left:auto;color:#9a9084;font-variant-numeric:tabular-nums}
+  h2{font-size:clamp(21px,3vw,26px);line-height:1.44;margin:0 0 8px;font-weight:600}
+  h2 a{color:var(--ink);text-decoration:none}
+  h2 a:hover{color:var(--accent)}
+  .orig-title{font-size:13px;color:var(--soft);font-style:italic;margin:-2px 0 12px;line-height:1.6}
+  .standfirst{font-size:17px;color:#3b352c;margin:0 0 14px;padding-left:15px;
+              border-left:2px solid var(--rule)}
+  .art-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+            font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;color:var(--muted);
+            padding-bottom:18px;border-bottom:1px solid var(--rule)}
+  .art-meta .badge-warn{color:#8a2b21;border:1px solid #e8cdc8;background:#fdf3f1;
+                        padding:1px 7px;border-radius:2px}
+  .art-meta .badge-zh{color:#6b5c26;border:1px solid #e2dcc4;background:#fbf8ee;
+                      padding:1px 7px;border-radius:2px}
+
+  /* ---- 正文列 + 页边批注 ---- */
+  .reading{max-width:var(--tw);padding-top:20px}
+  .reading>p{margin:0 0 18px;text-align:justify;text-justify:inter-ideograph}
+
+  .note{
+    float:right;clear:right;width:var(--nw);margin:7px calc(-1 * (var(--nw) + var(--gap))) 20px 0;
+    padding-left:13px;border-left:2px solid var(--rule-soft);
+    font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+    font-size:12.8px;line-height:1.74;color:#5d5648;
+  }
+  .note .k{display:block;font-size:10.5px;letter-spacing:.2em;margin-bottom:4px;font-weight:600}
+  .note.k-背景{border-left-color:#e2d7c4} .note.k-背景 .k{color:#7a6a50}
+  .note.k-延伸{border-left-color:#cfe0d6} .note.k-延伸 .k{color:#3f6650}
+  .note.k-质疑{border-left-color:#e8cdc8} .note.k-质疑 .k{color:#9b2c20}
+  .note.k-数据{border-left-color:#e2dcc4} .note.k-数据 .k{color:#6b5c26}
+  .note.k-实操{border-left-color:#cbd6e2} .note.k-实操 .k{color:#3a5468}
+
+  .takeaway{margin:22px 0 18px;padding:13px 16px;background:var(--tint);
+            border-radius:3px;font-size:14.6px;color:#3b352c}
+  .takeaway span{display:block;font-family:"Microsoft YaHei",system-ui,sans-serif;
+    font-size:10.5px;letter-spacing:.24em;color:var(--accent);margin-bottom:6px}
+
+  details.orig{margin:0 0 6px;font-family:"Microsoft YaHei",system-ui,sans-serif}
+  details.orig summary{cursor:pointer;font-size:12.5px;color:var(--muted);
+    padding:9px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  details.orig summary:hover{color:var(--accent)}
+  details.orig pre{white-space:pre-wrap;font-family:Georgia,"Times New Roman",serif;
+    font-size:13.5px;line-height:1.78;color:#4d473c;background:#f6f2ea;
+    padding:16px 18px;border-radius:3px;margin:14px 0 0;max-height:60vh;overflow:auto}
+
+  /* ---------- 其余条目 ---------- */
+  .rest{margin-top:54px;clear:both}
+  .srcblock{margin-top:34px}
+  .srcname{display:flex;justify-content:space-between;align-items:baseline;
+    font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:12px;letter-spacing:.2em;
+    color:var(--muted);border-bottom:1px solid var(--ink);padding-bottom:7px}
+  .srcname span{letter-spacing:0;font-size:11.5px;color:var(--soft)}
+  article.mini{padding:20px 0;border-bottom:1px solid var(--rule);position:relative}
+  article.mini:last-child{border-bottom:0}
+  article.mini h3{font-size:18.5px;line-height:1.5;margin:0 0 9px;font-weight:600}
+  article.mini h3 a{color:var(--ink);text-decoration:none}
+  article.mini h3 a:hover{color:var(--accent)}
+  article.mini .one{margin:0 0 9px}
+  .why{margin:10px 0;padding-left:15px;border-left:2px solid var(--accent);
+       color:#3b352c;font-size:14.6px}
+  .act{margin:9px 0;font-size:14.4px;color:#2c4a2e}
+  .act span{display:inline-block;font-family:"Microsoft YaHei",system-ui,sans-serif;
+    font-size:10.5px;letter-spacing:.16em;color:#3f6b45;margin-right:9px}
+  .foot{display:flex;align-items:center;gap:9px;margin-top:13px;flex-wrap:wrap;
+        font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px}
+  .foot .src{letter-spacing:.1em;color:var(--muted)}
+  .tag{color:var(--accent);border:1px solid var(--rule);border-radius:2px;padding:1px 7px}
+  .foot .dt{margin-left:auto;color:#9a9084;font-variant-numeric:tabular-nums}
+
+  footer{margin-top:52px;padding-top:16px;border-top:3px double var(--ink);
+    font-family:"Microsoft YaHei",system-ui,sans-serif;font-size:11.5px;color:var(--muted);
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;letter-spacing:.05em}
+
+  /* ================= 手机端 / 窄屏 ================= */
+  @media (max-width:1120px){
+    .note{float:none;width:auto;margin:8px 0 20px 0;max-width:var(--tw)}
+    .col,.reading{max-width:100%}
+  }
+  @media (max-width:760px){
+    body{font-size:16.5px;line-height:1.86}
+    .wrap{padding:26px 17px 72px}
+    h1{letter-spacing:.08em}
+    .kicker{letter-spacing:.3em;font-size:10px}
+    .lede{flex-direction:column;gap:4px;align-items:flex-start}
+    .reading>p{text-align:left}
+    .note{font-size:13.4px;padding:10px 0 0 0;border-left:0;border-top:1px solid var(--rule-soft)}
+    .note .k{margin-bottom:3px}
+    h2{font-size:21px}
+    .standfirst{font-size:16px;padding-left:12px}
+    article.mini h3{font-size:17.5px}
+    .foot .dt{margin-left:0;width:100%}
+    details.orig pre{font-size:13px;padding:13px 14px}
+  }
+  @media (max-width:400px){
+    .wrap{padding:20px 13px 64px}
+    h1{font-size:27px}
+  }
+  @media print{
+    body{background:#fff}
+    .note{float:none;width:auto;margin:6px 0 14px;border-left:2px solid #ccc}
+    details.orig{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead col">
+    <div class="kicker">Daily Tech Digest</div>
+    <h1>技术情报日报</h1>
+    <div class="sub">2026-10-30 · 第 5 号</div>
+    <div class="rule2"></div>
+    <div class="lede">
+      <span>本期收录 <b>5</b> 条 · 精读 <b>0</b> 篇</span>
+      <span>共 <b>0</b> 条页边批注</span>
+    </div>
+    <div class="warn">⚠ 当前为<b>降级模式</b>（未启用 AI 分析）：译文与批注不可用，此处显示原文摘要。配置 <code>AI_API_KEY</code> 后自动恢复。</div>
+  </header>
+
+  <section class="digest col">
+    <div class="sec">今 日 提 要</div>
+    <ul class="ov">
+<li>阮一峰 · 科技爱好者周刊：科技爱好者周刊（第 417 期）：不要让 AI 代表你</li><li>Simon Willison's Weblog：API credits benefit for eligible ChatGPT subscriptions</li><li>Simon Willison's Weblog：Building a multiplayer game world with autonomous Fable-class models</li><li>Simon Willison's Weblog：Quoting Ben Hylak</li>    </ul>
+  </section>
+
+
+  <section class="rest col">
+    <div class="sec solid">其 余 条 目</div>
+    <div class="srcblock">
+      <div class="srcname">阮一峰 · 科技爱好者周刊<span>1 条</span></div>
+      <article class="mini">
+        <h3><a href="http://www.ruanyifeng.com/blog/2026/10/weekly-issue-417.html" target="_blank" rel="noopener">科技爱好者周刊（第 417 期）：不要让 AI 代表你</a></h3>
+<p class="one">这里记录每周值得分享的科技内容，周五发布。</p><p class="why">（未启用 AI 分析：在 .env 里填 AI_API_KEY 后可获得价值判断）</p>        <div class="foot">
+          <span class="src">阮一峰 · 科技爱好者周刊</span>
+          <span class="dt">2026-10-30</span>
+        </div>
+      </article>
+    </div>
+    <div class="srcblock">
+      <div class="srcname">Simon Willison's Weblog<span>3 条</span></div>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/29/api-credits/" target="_blank" rel="noopener">API credits benefit for eligible ChatGPT subscriptions</a></h3>
+<p class="one">API credits benefit for eligible ChatGPT subscriptions Earlier this month Anthropic announ</p><p class="why">（未启用 AI 分析：在 .env 里填 AI_API_KEY 后可获得价值判断）</p>        <div class="foot">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-29</span>
+        </div>
+      </article>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/" target="_blank" rel="noopener">Building a multiplayer game world with autonomous Fable-class models</a></h3>
+<p class="one">How I Built the Most AI-Pilled Company in the World Don't be put off by the clickbait head</p><p class="why">（未启用 AI 分析：在 .env 里填 AI_API_KEY 后可获得价值判断）</p>        <div class="foot">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-29</span>
+        </div>
+      </article>
+      <article class="mini">
+        <h3><a href="https://simonwillison.net/2026/Oct/29/ben-hylak/" target="_blank" rel="noopener">Quoting Ben Hylak</a></h3>
+<p class="one">every product i use should just be a headless mcp, that feeds into an agent, where i never</p><p class="why">（未启用 AI 分析：在 .env 里填 AI_API_KEY 后可获得价值判断）</p>        <div class="foot">
+          <span class="src">Simon Willison's Weblog</span>
+          <span class="dt">2026-10-29</span>
+        </div>
+      </article>
+    </div>
+    <div class="srcblock">
+      <div class="srcname">ByteByteGo<span>1 条</span></div>
+      <article class="mini">
+        <h3><a href="https://blog.bytebytego.com/p/data-movement-strategies-in-system" target="_blank" rel="noopener">Data Movement Strategies In System Design</a></h3>
+<p class="one">Software systems don’t keep information in one place all the time.</p><p class="why">（未启用 AI 分析：在 .env 里填 AI_API_KEY 后可获得价值判断）</p>        <div class="foot">
+          <span class="src">ByteByteGo</span>
+          <span class="dt">2026-10-29</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="clr">
+    <span>tech-daily-digest · 自动编纂</span>
+    <span>本次扫描 2026-10-30 07:14 · 生成于 2026-10-30 07:14:38</span>
+  </footer>
+</div>
+</body>
+</html>
